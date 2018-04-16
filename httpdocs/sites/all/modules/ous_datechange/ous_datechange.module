@@ -1,0 +1,100 @@
+<?php 
+function ous_datechange_menu() {
+	$items = array();
+	
+	$items['newdatefromold'] = array(
+			'title' => 'new date',
+			'description' => t('new date'),
+			'page callback' => 'ous_datechange_newdatefromold',
+			'page arguments' => array(),
+			'access callback' => 'ous_datechange_permissions_custom',
+			'type' => MENU_NORMAL_ITEM,
+	);
+	return $items;
+}
+
+function ous_datechange_permissions_custom() {
+	if(user_access('administer')) {
+		return TRUE;
+	}	
+}
+
+function ous_datechange_newdatefromold() {
+	$path = 'sites/default/files/allmanuals';
+	$file_array = array();
+	$output = '';
+	$found = file_scan_directory($path, '/\.pdf$/');
+	//print '<pre>'; var_dump($found); print '</pre>';
+	$i=0;
+	foreach ($found as $ffile) {
+		$new_file_path = $ffile->uri;
+		if ($ffile->uri == 'sites/default/files/allmanuals/'.$ffile->filename){
+			if(filemtime($ffile->uri) > 1372896000 && filemtime($ffile->uri) < 1373068800){
+			//$output .= 'newfile: <strong>' .$new_file_path . '</strong> last modified: '. date("d-m-Y H:i:s" ,filemtime($ffile->uri)) .'<br>';
+			$fileURL = 'http://resource.glunz-jensen.com/sites/default/files/manuals/'.$ffile->filename;
+			$headers = get_headers($fileURL, 1);
+			$dateold = "Error";
+			if ( $headers && (strpos($headers[0],'200') !== FALSE) ) {
+				$time=strtotime($headers['Last-Modified']);
+				$dateold=date("d-m-Y", $time);
+			}
+			else{
+				$time= '';
+			}
+				//$output .= 'oldfile: <a href="'.$fileURL.'" target="_blank">'.$fileURL.'</a> (Last-Modified: '.$dateold.')<br>';
+			
+				/* Did we failed to get stat information? */
+				
+				if (empty($time)) {
+					$file_array[$ffile->filename] = 'This file dont exist on old db';
+					//$output .= '<strong>Dont change anything on this file because it is not present at the old server</strong>';
+				} else {
+					if($time == filemtime($ffile->uri)){
+						$file_array[$ffile->filename] = 'this file has the same time as on the old server, date is '.date("d-m-Y", filemtime($ffile->uri));
+					
+						
+					}
+					else{
+						/*
+						 * We want the access time to be 1 week
+						* after the current access time.
+						*/
+						
+						//$output .= '<strong>Change the date from the old file to the new, time var is '. $time .'</strong><br><br>';
+						/* Touch the file */
+						if (!touch($new_file_path, $time)) {
+						$file_array[$ffile->filename] = 'failed to touch the file ';
+						} else {
+						$file_array[$ffile->filename] = 'this files date is changed from '.date("d-m-Y", filemtime($ffile->uri)).' to '.date("d-m-Y",$time);
+						$i++;
+						}
+					}
+				}
+			
+				
+				if($i==20) break;
+			}
+		}
+	}	
+	print '<pre>';var_dump($file_array);print '</pre>';
+	//return $output;
+	/*
+	$fileURL='http://resource.glunz-jensen.com/sites/default/files/manuals/51503_BA_NoLabel_UM.pdf';
+	$headers = get_headers($fileURL, 1);
+	$dateold = "Error";
+	//echo "<pre>"; print_r($headers); echo "</pre>";
+	if ( $headers && (strpos($headers[0],'200') !== FALSE) ) {
+		$time=strtotime($headers['Last-Modified']);
+		$dateold=date("d-m-Y H:i:s", $time);
+	}
+	echo 'file: <a href="'.$fileURL.'" target="_blank">'.$fileURL.'</a> (Last-Modified: '.$dateold.')<br>';
+	
+	$new = ("sites/default/files/allmanuals/51503_BA_NoLabel_UM.pdf");
+	$newtimestamp = filemtime($new);
+	$newdate = date("d-m-Y H:i:s", filemtime($new));
+	print $newdate;
+	/*print_r (stat($date));
+	$date2 = ("http://resource.glunz-jensen.com/sites/default/files/manuals/51512_AD_NoLabel_UM_(D).pdf");
+	print_r (stat($date2));*/
+	
+}	

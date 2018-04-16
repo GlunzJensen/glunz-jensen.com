@@ -1,0 +1,47 @@
+name = GLUNZ & JENSEN CORPORATE WEBSITE
+description = The world's leading supplier of innovative solutions for the global prepress industry.
+version = 2015 2.0
+core = 7.x
+engine = phptemplate
+
+
+;-------------- R E G I O N S -------------
+
+regions[websitetabs] = Different website tabs
+regions[loginsearch] = Login, search and language
+regions[loginsearch_open] = Login and search -> open area
+regions[topmenu] = Main menu -> top
+regions[toppic] = Big picture -> top
+regions[tabandsolution] = Solution menu and tabs
+regions[content] = Content
+regions[highlight] = Product highlight
+regions[footer] = Footer
+regions[footermenu] = Menu in the footer
+regions[adress] = Adress in the footer
+
+;-------------- C S S -------------
+	
+
+stylesheets[all][] = assets/css/txt_reset_normalize.css
+stylesheets[all][] = assets/css/screen.css
+
+
+
+
+;-------------- J S -------------
+
+scripts[] = js/hidelogin.js
+scripts[] = js/mobilemenu.js
+scripts[] = js/totop.js
+scripts[] = js/mobileclick.js
+scripts[] = js/skypeFix.js
+scripts[] = js/skypeCheck.js
+scripts[] = js/relevant_products.js
+scripts[] = js/manual_exception.js
+
+
+;-------------- B R E A K P O I N T S (tabs/logo) -------------
+
+
+breakpoints[smarttab] = (max-width: 590px)
+breakpoints[tabscreen] = (min-width: 591px)

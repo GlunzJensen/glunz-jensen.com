@@ -1,0 +1,40 @@
+diff --git a/filefield_sources.module b/filefield_sources.module
+index db43c96..e9dc44a 100644
+--- a/filefield_sources.module
++++ b/filefield_sources.module
+@@ -485,6 +485,13 @@ function filefield_sources_save_file($filepath, $validators = array(), $destinat
+   // Ensure the destination is writable.
+   file_prepare_directory($destination, FILE_CREATE_DIRECTORY);
+ 
++  // Check if this is actually the same file being "attached" to a file record.
++  // If so, it acts as a file replace, except no file is actually moved.
++  $reuse_file = ($destination . $file->filename === $file->uri);
++  if ($reuse_file) {
++    $replace = FILE_EXISTS_REPLACE;
++  }
++
+   $file->destination = file_destination($destination . $file->filename, $replace);
+   // If file_destination() returns FALSE then $replace == FILE_EXISTS_ERROR and
+   // there's an existing file so we need to bail.
+@@ -516,7 +523,7 @@ function filefield_sources_save_file($filepath, $validators = array(), $destinat
+   // directory. This overcomes open_basedir restrictions for future file
+   // operations.
+   $file->uri = $file->destination;
+-  if (!file_unmanaged_copy($filepath, $file->uri, $replace)) {
++  if (!$reuse_file && !file_unmanaged_copy($filepath, $file->uri, $replace)) {
+     drupal_set_message(t('File upload error. Could not move uploaded file.'), 'error');
+     watchdog('file', 'Upload error. Could not move uploaded file %file to destination %destination.', array('%file' => $file->filename, '%destination' => $file->uri));
+     return FALSE;
+diff --git a/sources/attach.inc b/sources/attach.inc
+index a60f18a..8b7cd95 100644
+--- a/sources/attach.inc
++++ b/sources/attach.inc
+@@ -251,7 +251,7 @@ function filefield_source_attach_value($element, &$item) {
+       $item = array_merge($item, (array) $file);
+ 
+       // Delete the original file if "moving" the file instead of copying.
+-      if ($instance['widget']['settings']['filefield_sources']['source_attach']['attach_mode'] !== 'copy') {
++      if ($filepath != $original_filepath && $instance['widget']['settings']['filefield_sources']['source_attach']['attach_mode'] !== 'copy') {
+         @unlink($filepath);
+       }
+     }

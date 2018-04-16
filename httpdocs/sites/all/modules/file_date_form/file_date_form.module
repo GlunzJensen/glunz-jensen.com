@@ -1,0 +1,122 @@
+<?php
+
+function file_date_form_permission() {
+	return array(
+		'administer file date form module' => array(
+			'title' => t('Administer permission for  custom file date form module'),
+			//'description' => t('Some description that would appear on the permission page..'),
+		),
+	);
+}
+function file_date_form_menu() {
+
+
+
+	$items = array();
+	$items['file_date_form'] = array( //this creates a URL that will call this form at "examples/form-example"
+		'title' => 'Form for creating files or changing their dates', //page title
+		'description' => '',
+		'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+		'page arguments' => array('file_date_form_form'), //put the name of the form here
+		//'access callback' => TRUE ,
+		'access arguments' => array('administer file date form module'),
+	);
+	return $items;
+}
+
+function file_date_form_form($form, &$form_state) {
+
+
+	$form['file_path'] = array(
+		'#type' => 'textfield', //you can find a list of available types in the form api
+		'#title' => t('Provide a name of your file'),
+		'#description'=> t('Example: filename.pdf will target a file in the allmanuals folder'),
+		'#size' => 10,
+		'#maxlength' => 200,
+		'#required' => TRUE, //make this field required
+	);
+	$format = 'd-m-Y H:i';
+	$form['date'] = array(
+		'#type' => 'date_popup', // types 'date_text' and 'date_timezone' are also supported. See .inc file.
+		'#title' => t('select a new timestamp'),
+		#'#default_value' => time(),
+		'#date_format' => $format,
+		'#date_label_position' => 'within', // See other available attributes and what they do in date_api_elements.inc
+		'#date_timezone' => 'Europe/Copenhagen', // Optional, if your date has a timezone other than the site timezone.
+		#'#date_increment' => 15, // Optional, used by the date_select and date_popup elements to increment minutes and seconds.
+		#'#date_year_range' => '-3:+3', // Optional, used to set the year range (back 3 years and forward 3 years is the default).
+	);
+
+
+
+
+
+
+	$form['submit_button'] = array(
+		'#type' => 'submit',
+		'#value' => t('Submit'),
+	);
+	return $form;
+}
+
+function file_date_form_form_submit($form, &$form_state) {
+
+	$root_folder='sites/default/files/allmanuals/';
+	
+	//drupal_set_message("submitted");
+	$file= $form['file_path']['#value'];
+	$date =  $form['date']['#value']['date'];
+	$time = $form['date']['#value']['time'];
+
+global $user;
+$submittedDate = $date."-".$time;
+//$timezone = $user->timezone;
+//$newdate = new DateTime($submittedDate, new DateTimeZone($timezone));
+$newdate = new DateTime($submittedDate);
+$unixts = $newdate->getTimestamp();
+
+//	krumo($unixts);
+//	krumo($form);
+//	dsm($form);
+//	exit();
+
+
+//	if (file_exists($root_folder.$file)) {
+//		if(touch($root_folder.$file,$unixts)){
+//			drupal_set_message("file already exists, modified a timestamp");
+//		}
+//		else drupal_set_message("something went wrong with a timestamp modification");
+//
+//	} else {
+//		if(!touch($root_folder.$file)){
+//			drupal_set_message("something went wrong");
+//		}
+//		else drupal_set_message("a file "+$file+" is successfully created ");
+//	}
+
+
+	if (file_exists($root_folder.$file)) {
+		//drupal_set_message($file.' and '.$unixts);
+		if($insert_query = db_update('file_managed') // Table name no longer needs {}
+		->fields(array(
+				'timestamp' => $unixts,
+		))
+		->condition('filename', $file, '=')
+		->execute()){
+			drupal_set_message("a file has now a new timestamp");
+		}
+		/*else{
+			$insert_query = db_update('ous_change_date_table') // Table name no longer needs {}
+			->fields(array(
+					'timestamp' => $unixts,
+			))
+			->condition('filename', $file, '=')
+			->execute()){
+				drupal_set_message("a file has now a new timestamp");
+			drupal_set_message("not in database");
+		}*/
+		//touch($root_folder.$file,$unixts,$unixts);
+		
+	}else drupal_set_message("file does not exist");
+}
+

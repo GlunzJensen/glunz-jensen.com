@@ -1,0 +1,5 @@
+name = ousDatechange
+description = Change date on some manuals form the old server
+core = 7.x
+package = openUsource
+version = 7.x-alpha

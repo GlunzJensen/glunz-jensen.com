@@ -1,0 +1,269 @@
+/*
+Description: FILTERPAGE
+Author URI: http://openusorce.com
+Version: 2018
+*/
+
+
+/* >>FILTERPAGE<<
+################################## */
+.page-product-filter {
+#pagewrapper {
+#content {
+  background: white;
+  position: relative;
+  h1 {
+  &.title {
+
+  }
+  }
+  .view-id-product_filter {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+    .view-filters {
+      display: block;
+      width: 100%;
+      position: relative;
+      float: left;
+      background: $gj-cyan;
+      margin-bottom: 35px;
+      label {
+        display: block;
+        font-weight: bold;
+        color: white;
+        font-size: 1.2em;
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+@include breakpoint($max890) {
+  font-size: 1em;
+}
+      }
+      form {
+        @include content-width;
+        padding-bottom: 20px;
+        float: none;
+        .views-exposed-widget {
+          padding: 0;
+          width: 20%;
+          margin: 0;
+          .form-select {
+          background-color: none;
+          option {
+            content {
+            }
+          }
+          option:checked {
+
+          }
+            /*&:focus {
+              background-color: yellow !important;
+            }*/
+
+&:hover{
+  background-color: white;
+}
+            option {
+
+            }
+          }
+@include breakpoint($max680) {
+  width: 50%;
+  margin-bottom: 15px;
+}
+@include breakpoint($max550) {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-right: 0;
+}
+          @include box-sizing(border-box);
+          padding-right: 20px;
+        }
+        .views-submit-button {display: none;}
+      }
+    }
+    .view-content {
+      @include content-width;
+      position: relative;
+    }
+    .views-row {
+      display: inline-block;
+      width: 31.3333%;
+      float: left;
+      margin-right: 3%;
+      margin-bottom: 45px;
+      height: 535px;
+@include breakpoint($max890) {
+  width: 48%;
+  margin-right: 4%;
+}
+@include breakpoint($max680) {
+  width: 100% !important;
+  margin-right: 0 !important;
+  height: auto !important;
+}
+      &:hover {
+        a {
+        img {
+          -moz-transform: scale(1.15);
+          -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+          @include transition-duration(300ms);     
+          @include transition-timing-function(ease-in);
+        }
+        }
+      }
+      &:nth-child(3n+3) {
+        margin-right: 0;
+@include breakpoint($max890) {
+  margin-right: 4%;
+}
+      }
+      &:nth-child(2n+2) {
+@include breakpoint($max890) {
+  margin-right: 0%;
+}        
+      }
+      h2 {
+        display: block;
+        position: relative;
+        border-bottom: 1px solid $gj-cyan;
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+        a {font-family: 'ArimoBold';}
+      }
+      .filter-body {
+        ul {
+          display: block;
+          position: relative;
+          li {
+          display: inline-block; 
+          position: relative;
+          padding: 0px 0px 0px 25px;
+          margin-bottom: 6px;
+          line-height: 1.3em;
+          color: $txt-gray;
+          &:before {
+            display: inline-block;
+            position: absolute;
+            background: url(../img/corner-pointer-cyan.svg) right 50% no-repeat;  
+            background-size: 5em;
+            width: 12px;
+            height: 20px;
+            content: '';
+            left: 0px;
+            top: 0px;     
+          }             
+          }
+        }
+        p {
+          display: inline-block; 
+          position: relative;
+          padding: 0px 0px 0px 25px;
+          margin-bottom: 6px;
+          line-height: 1.3em;
+          color: $txt-gray;
+          &:before {
+            display: inline-block;
+            position: absolute;
+            background: url(../img/corner-pointer-cyan.svg) right 50% no-repeat;  
+            background-size: 5em;
+            width: 12px;
+            height: 20px;
+            content: '';
+            left: 0px;
+            top: 0px;     
+          }       
+        }
+      }
+      .extra-title-link {
+        a {
+          font-family: 'ArimoRegular';  
+          color: $gj-cyan;
+          text-transform: uppercase;
+          display: inline-block;
+          width: auto;
+          position: relative;
+          bottom: 0px;
+          font-family: "ArimoRegular";
+          margin-top: 40px;
+          &:hover {
+            color: $cyan-highgloss;
+          }
+          &:after {
+            display: inline-block;
+            position: absolute;
+            content: '';
+          background: url(../img/menu-pointer.svg) 0px 1px no-repeat;  
+          background-size: 1.25em;  
+          right: -30px;
+          top: 0px;
+          width: 20px;
+          height: 20px;
+          float: left;          
+          }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  background: url(../img/menu-pointer.svg) 58% 1px no-repeat;  
+  background-size: 20px 70px;
+}           
+        }
+      }
+      a {
+        display: block;
+        position: relative;
+        height: auto;
+        width: 100%;
+        &.colorbox {
+
+        }
+      img {
+        display: block;
+        max-width: 100%;
+        width: auto;
+        height: 220px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      /*-moz-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);*/
+      @include transition-duration(300ms);     
+      @include transition-timing-function(ease-out);
+      }
+      }
+    }
+        ul {
+    &.pager {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding: 65px 0px 30px 0px;
+  @include breakpoint($max680) {
+font-size: 0.8em;
+  }
+     li {
+       padding: 0;
+       margin: 0px 5px 0px 5px;
+       color: $txt-gray;
+       a {
+       font-family: 'ArimoRegular';         
+       }
+       &.pager-current {
+         color: $gj-cyan;
+       }
+       &.pager-item {
+@include breakpoint($max680) {
+display: none;
+}         
+       }
+     } 
+    }
+    }
+  }
+}
+}
+}
+
+/* ############################### */
+/* END >>FILTERPAGE<< */

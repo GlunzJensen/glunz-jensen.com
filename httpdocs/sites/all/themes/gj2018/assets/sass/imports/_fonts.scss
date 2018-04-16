@@ -1,0 +1,133 @@
+/*
+Description: All font settings ind this SCSS
+Author URI: http://openusorce.com
+Version: 2018
+*/
+
+
+/* >>Fonts in use<<
+################################## */
+@include font-face("ArimoRegular", font-files("Arimo.ttf", "Arimo.eot", "Arimo.svg"));
+@include font-face("ArimoBold", font-files("Arimo-Bold.ttf", "Arimo-Bold.eot", "Arimo-Bold.svg"));
+@include font-face("ArimoItalic", font-files("Arimo-Italic.ttf", "Arimo-Italic.eot", "Arimo-Italic.svg"));
+/* ############################### */
+/* END >>Fonts in use<< */
+
+
+
+
+/* Global Styles – (body, paragraphs, lists, etc)
+################################################################## */
+
+
+/* >>Basics<<
+################################## */
+body {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-family: "ArimoRegular";
+  a {
+    text-decoration: none; 
+    cursor: pointer;
+    color: $txt-gray;
+    opacity: 1;
+    cursor: pointer; 
+    &:hover {    
+      opacity: 1;
+      color: $gj-cyan;
+    } 
+    &.active {
+      text-decoration: none;
+    }   
+  }
+}
+/* ############################### */
+/* END >>Basics<< */
+
+
+/* >>General links/fonts<<
+################################## */
+cite {
+  display: block;
+  position: relative;
+  z-index: 150;
+  width: 100%;
+  height: auto;
+  color: $gj-cyan;
+  background: white;
+  background: url(../img/blue-stribing-left.svg) white -14px 0px no-repeat;  
+  background-size: contain; 
+  padding-left: 45px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  font-size: 1.4em;
+  line-height: 1.45em;
+@include breakpoint($max680) {
+  background: url(../img/blue-stribing-left.svg) white -18px 0px no-repeat;  
+  padding-left: 30px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  font-size: 1.3em;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  background-size: 30px 100%;
+}  
+}
+
+h1, .field-name-field-title {
+  font-size: 1.4em;
+  font-family: "ArimoBold";
+  display: inline-block;
+  margin: 0px 0px 10px 0px;
+  display: block;
+  line-height: 1.25em;  
+  color: $txt-gray;  
+}
+.not-front {
+  h1 {
+    &.title {
+      font-size: 1.8em;
+      border-bottom: 1px solid $gj-cyan;
+      padding: 0;
+      padding-bottom: 10px;  
+      padding-top: 35px;    
+    }
+  }
+}
+h2 {
+  font-size: 1.2em;
+  font-family: "ArimoBold";
+  display: inline-block;
+  margin: 0px; 
+  color: $txt-gray;    
+
+}
+h5 {
+  font-size: 1.1em;
+  font-family: "ArimoBold";
+  display: inline-block;
+  margin: 20px 0px 5px 0px; 
+}
+strong {
+  font-family: "ArimoBold";    
+}
+ul, ol {
+
+  li {
+
+  }
+}
+p {
+  font-size: 1em;
+  line-height: 1.25em;
+font-family: "ArimoRegular";
+color: $txt-gray;
+margin-bottom: 0.8em;
+}
+  
+/* ############################### */
+/* END >>General links/fonts<< */
+
+
+
+/* ############################################################### */
+/* END Global Styles – (body, paragraphs, lists, etc) */

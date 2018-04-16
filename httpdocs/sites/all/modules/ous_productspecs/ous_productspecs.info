@@ -1,0 +1,5 @@
+name = ous Product Specifications
+description = QueryPath module for loading XML query for GJ product specifications.
+core = 7.x
+package = openUsource
+version = 7.x-alpha

@@ -1,0 +1,424 @@
+<?php 
+function ous_notification_email_schema() {
+  $schema['ous_notification_email_table'] = array(
+    'description' => t('Ous notification email'),
+    'fields' => array(
+      'uid' => array(
+        'description' => t('Users unique identifier'),
+        'type' => 'serial',
+        'unsigned' => true,
+        'not null' => true,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the user last got a mail.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('uid'),
+  );
+  return $schema;     
+}
+
+function ous_notification_email_cron() {
+	$user_count = 0;
+	$mail_loop_count = 0;
+	$time_two_weeks_ago = time() - (7 * 24 * 60 * 60 *2);
+	//$time_two_weeks_ago = time() - (60 * 60);
+	//$time_two_weeks_ago = time() - (60 * 60 * 24);
+	//$time_two_weeks_ago = time();
+	//$get_last_notification_send = variable_get('ous_email_notification_send_time');
+	//if($get_last_notification_send < $time_two_weeks_ago ){
+		
+		//Finds the userroles role id (rid) for ictp dealer and a oem gj dealer
+		$dealer_roles = array('ictp dealer','oem - gj dealer','administrator');
+		//$dealer_roles = array('administrator');
+		$dealer_roles_rid = array();
+		$dealer_rid = db_query('SELECT r.rid
+		  FROM {role} r
+		  Where r.name IN (:dealer_roles)', array(':dealer_roles' => $dealer_roles)
+		);
+		// saves the rids in a array
+		foreach ($dealer_rid as $dealer_rids) {
+			// Perform operations on $record->title, etc. here.
+			// in this example the available data would be mapped to object properties:
+			$dealer_roles_rid[] = $dealer_rids->rid;
+		}
+		
+
+		$uid_dealers = array();
+		// get all users there is a ictp dealer or a oem gj dealer
+		$get_uid_dealer = db_query('SELECT ur.uid
+		  FROM {users_roles} ur
+		  Where ur.rid IN (:dealer_roles_rid)', array(':dealer_roles_rid' => $dealer_roles_rid)
+		);
+		// Get the user id (uid) for each user that has the role ictp og oem
+		foreach ($get_uid_dealer as $get_uid_dealers) {
+			// Perform operations on $record->title, etc. here.
+			// in this example the available data would be mapped to object properties:
+			
+			
+			$user_count ++;
+			$ous_user_time = 0;
+			$ous_user_time_query = db_query('SELECT ne.changed
+		  FROM {ous_notification_email_table} ne
+		  WHERE ne.uid = :uid', array(':uid' => $get_uid_dealers->uid));
+				
+			foreach($ous_user_time_query as $ous_user_time_record){
+			
+				$ous_user_time = $ous_user_time_record->changed;
+			}
+			if($ous_user_time != 0){
+				if($ous_user_time < $time_two_weeks_ago ){
+			
+			
+					if(ous_notification_send_mail_function($get_uid_dealers->uid)){
+						$insert_query = db_update('ous_notification_email_table') // Table name no longer needs {}
+						->fields(array(
+								'changed' => REQUEST_TIME,
+						))
+						->condition('uid', $get_uid_dealers->uid, '=')
+						->execute();
+						$mail_loop_count ++;
+						
+					}else{
+						watchdog('ous notification', 'could not enter send mail function 1 on user: '.$get_uid_dealers->uid);
+					}
+			
+				}else{
+						
+						
+				}
+			}
+			else {
+				// no results, but good query
+				if(ous_notification_send_mail_function($get_uid_dealers->uid)){
+					$insert_query = db_insert('ous_notification_email_table') // Table name no longer needs {}
+					->fields(array(
+							'uid' => $get_uid_dealers->uid,
+							'changed' => REQUEST_TIME,
+					))
+					->execute();
+						
+					$mail_loop_count ++;
+						
+				}
+				else{
+					watchdog('ous notification', 'could not enter send mail function 2 on user: '.$get_uid_dealers->uid);
+			
+				}
+			
+			}
+				
+				
+				
+				
+				
+				
+				
+			if($mail_loop_count >= 7){
+				watchdog('ous notification', 'the function has looped through '.$user_count.' users');
+				break;
+			}
+				
+			
+		}
+		watchdog('ous notification', 'the function has looped through '.$user_count.' users');
+		// Load each user
+
+		
+		
+	//}
+}
+		
+
+
+function ous_notification_send_mail_function($users = NULL){
+	
+	$output = '';
+	$type_customer_support = 'customer_support';
+	$type_manual = 'manual';
+	$type_news = 'news';
+	$type_software = 'software';
+	$type_product = 'product';
+	//$site_email = variable_get('site_mail', '');
+	$site_email = 'noreply@glunz-jensen.com';
+	
+	$domain_name_array = array();
+	//find the domain_id and the corresponding subdomain name
+	$domain_subs = db_query('SELECT d.domain_id, d.subdomain
+				FROM {domain} d');
+	// saves the subdomain in a array
+	foreach ($domain_subs as $domain_sub) {
+		// Perform operations on $record->title, etc. here.
+		// in this example the available data would be mapped to object properties:
+		$domain_name_array[$domain_sub->domain_id] = $domain_sub->subdomain;
+	}
+	
+	$user_loaded = user_load($users);
+	
+	//$user_loaded = user_load(1);
+	if ($user_loaded->uid) {
+		$user_domains = domain_get_user_domains($user_loaded);
+		$output = '';
+		// Output welcome text
+		$node_time = time() - ( 24 * 60 * 60 * 14);
+		//$node_time = int($node_time);
+		$output .= '<div style="font-family: Arial;font-size:11pt;"><p>Dear '.$user_loaded->name.'</p>';
+		$output .= '<p><em>(Please, do not reply to this email.)</em></p>';
+		$output .= '<p>This mail contains a list of recent updates on <a href='.url('http://glunz-jensen.com/').'>www.glunz-jensen.com</a>, based on your selections in mail notification.</br> If you want to change the selection, please go to your <a href='.url('http://'.$domain_name_array[reset($user_domains)].'/user/' . $user_loaded->uid.'/edit/').'>user page</a><p><em>You may need to login to the website to access the "Read more" links.</em></p>';
+		$mail_send = FALSE;
+		$true = 1;
+		$baseURL =$_SERVER["HTTP_HOST"];
+		//print '<pre>';var_dump($user_loaded); print '</pre>';
+		//$user_loaded->domain_user
+	
+		//create array to all notes
+		$tac_nodes = array();
+		// Create an array an save the taxonomies the nodes must be checked against
+		$tac_array = array();
+		if(!empty($user_loaded->data['tac_lite'][7])){
+			foreach($user_loaded->data['tac_lite'][7] as $tac){
+				$tac_array[] = $tac;
+			}
+			// find all the nodes that has the given tac og tacs
+			$taxonomy_check = db_query('SELECT ti.nid, ti.tid
+				FROM {taxonomy_index} ti
+				Where ti.tid IN (:tac)', array(':tac' => $tac_array ))->fetchAll();
+			// save the node ids (nid) in an array
+			foreach ($taxonomy_check as $taxonomy_checks) {
+				// Perform operations on $record->title, etc. here.
+				// in this example the available data would be mapped to object properties:
+				$tac_nodes[$taxonomy_checks->nid] = $taxonomy_checks->nid;
+			}
+	
+	
+	
+			$domain_checks_array = array();
+			$domain_checks_domain_array = array();
+			$manual_field_type_array = array();
+			$domain_checks = db_query('SELECT da.nid, da.gid
+				FROM {domain_access} da
+				WHERE da.nid IN (:tac_nodes)
+				AND da.gid IN (:user_domains)
+				ORDER BY da.nid', array(':user_domains' => $user_domains, ':tac_nodes' => $tac_nodes ))->fetchAll();
+			// save the node ids (nid) in an array
+			/*foreach ($domain_check as $domain_checks) {
+			// Perform operations on $record->title, etc. here.
+			// in this example the available data would be mapped to object properties:
+			$domain_checks->nid; = $taxonomy_checks->nid;
+			}*/
+			//print '<pre>'; var_dump($domain_check); print '</pre>';
+			foreach($domain_checks as $domain_check){
+				if(empty($domain_checks_array[$domain_check->nid])){
+					$domain_checks_array[$domain_check->nid] = $domain_check->nid;
+					$domain_checks_domain_array[$domain_check->nid] = $domain_check->gid;
+				}
+	
+			}
+			//print'<pre>';var_dump($domain_checks_array);print'</pre>';
+	
+			/*$node_domain_array = array();
+			$node_domains = db_query('SELECT da.nid, da.gid
+			FROM {domain_access} da WHERE da.nid IN (:tac_nodes)', array(':tac_nodes' => $tac_nodes ))->fetchAll();
+			// Result is returned as a iterable object that returns a stdClass object on each iteration
+			foreach ($node_domains as $node_domain) {
+			$node_domain_array[$node_domain->nid][$node_domain->gid] = $node_domain->gid;
+			//$output .= $node_domain->nid.' has domain '.$node_domain->gid.'<br>';
+			}
+			//print'<pre>';var_dump($node_domain_array[1547][1]);print'</pre>';
+	
+			//get the domains that the user has access to
+	
+				
+	
+			//get the domains the node is affiliated with
+			$node_domains = domain_get_node_match($support_node_matches->nid);*/
+			//print'<pre>';var_dump($node_domains);print'</pre>';
+			//print_r($node_domains->domain_id);*/
+			// if user want support notes get all support notes the the given tacs from the database
+			if (!empty($domain_checks_array)){
+				if(isset($user_loaded->field_notification_cus_support["und"][0]['value'])){
+					if($user_loaded->field_notification_cus_support["und"][0]['value'] == 1){
+						$support_node_match = db_query('SELECT n.nid, n.created, n.title, fp.field_platform_tid, fp.entity_id, td.name
+						FROM {node} n
+						LEFT JOIN {field_data_field_platform} fp ON n.nid = fp.entity_id
+						LEFT JOIN {taxonomy_term_data} td ON fp.field_platform_tid = td.tid
+						WHERE n.type = :type AND n.nid IN (:domain_checks_array) AND n.created > :node_time
+						ORDER BY n.title'
+						, array(':type' => $type_customer_support, ':domain_checks_array' => $domain_checks_array, ':node_time' => $node_time ));
+						// Result is returned as a iterable object that returns a stdClass object on each iteration
+						$row_count = $support_node_match->rowCount();
+						// if the query call is not empty
+						if(! $row_count == 0){
+							// output the support node titles and links to the content
+							$output .= 'New content of <strong>Customer support</strong> has been added<ul>';
+							foreach ($support_node_match as $support_node_matches) {
+								// Perform operations on $record->title, etc. here.
+								// in this example the available data would be mapped to object properties:
+								if(!empty($support_node_matches->name)){
+									$platform_string = ' to platform <strong>'.$support_node_matches->name.'</strong>';
+								}
+								else{
+									$platform_string = '';
+								}
+								$output .= '<li><strong>'.$support_node_matches->title.'</strong>'.$platform_string.' - <a href='.url('http://'.$domain_name_array[($domain_checks_domain_array[$support_node_matches->nid])].'/node/' . $support_node_matches->nid.'/').'>Read more</a> </li>';
+							}
+							$output .= '</ul><br>';
+							// if there is content set variables to true
+							$mail_send = TRUE;
+						}
+					}
+				}
+				
+		
+				if(isset($user_loaded->field_notification_manual["und"][0]['value'])){
+					if($user_loaded->field_notification_manual["und"][0]['value'] == 1){
+						$manual_match = db_query('SELECT n.nid, n.title, fmty.field_manual_type_value, fmti.field_manual_title_value, fmsti.field_manual_subtitle_value
+				FROM {node} n
+				LEFT JOIN {field_data_field_manual_type} fmty ON n.nid = fmty.entity_id
+				LEFT JOIN {field_data_field_manual_title} fmti ON n.nid = fmti.entity_id
+				LEFT JOIN {field_data_field_manual_subtitle} fmsti ON n.nid = fmsti.entity_id
+				WHERE n.type = :type AND n.nid IN (:domain_checks_array) AND n.changed > (:node_time)
+				ORDER BY fmti.field_manual_title_value',
+				array(':type' => $type_manual, ':domain_checks_array' => $domain_checks_array, ':node_time' => $node_time ));
+					// Result is returned as a iterable object that returns a stdClass object on each iteration
+					$row_count = $manual_match->rowCount();
+					// if the query call is not empty
+					if(! $row_count == 0){
+						// output the support node titles and links to the content
+						$output .= 'New content of <strong>Manuals</strong> has been added<ul>';
+							foreach ($manual_match as $manual_matches) {
+			// Perform operations on $record->title, etc. here.
+				// in this example the available data would be mapped to object properties:
+								$output .= '<li><strong>'.$manual_matches->field_manual_title_value.' '.$manual_matches->field_manual_subtitle_value.'</strong>-'.'    '.$manual_matches->field_manual_type_value.' - <a href='.url('http://'.$domain_name_array[($domain_checks_domain_array[$manual_matches->nid])].'/node/' . $manual_matches->nid.'/').	'>Read more</a> </li>';
+							}
+							$output .= '</ul><br>';
+							// if there is content set variables to true $manual_matches->title
+							$mail_send = TRUE;
+						}
+					}
+				}
+		
+										
+		
+											// if user want software get all software the the given tacs from the database
+				if(isset($user_loaded->field_notification_software["und"][0]['value'])){
+					if($user_loaded->field_notification_software["und"][0]['value'] == 1){
+						$software_match = db_query('SELECT n.nid, n.title
+	  			    FROM {node} n WHERE n.type = :type AND n.nid IN (:domain_checks_array) AND n.created > (:node_time)',
+		  			    array(':type' => $type_software, ':domain_checks_array' => $domain_checks_array, ':node_time' => $node_time ));
+						// Result is returned as a iterable object that returns a stdClass object on each iteration
+						$row_count = $software_match->rowCount();
+						// if the query call is not empty
+						if(! $row_count == 0){
+							// output the support node titles and links to the content
+							$output .= 'New content has been added to <strong>Software</strong><ul>';
+							foreach ($software_match as $software_matches) {
+								// Perform operations on $record->title, etc. here.
+								// in this example the available data would be mapped to object properties:
+								$output .= '<li><strong>'.$software_matches->title.'</strong> - <a href='.url('http://'.$domain_name_array[($domain_checks_domain_array[$software_matches->nid])].'/node/' . $software_matches->nid.'/').'>Read more</a> </li>';
+							}
+							$output .= '</ul><br>';
+							// if there is content set variables to true
+							$mail_send = TRUE;
+						}
+					}
+				}
+		
+				// if user want News get all news the the given tacs from the database
+				if(isset($user_loaded->field_notification_news["und"][0]['value'])){
+					if($user_loaded->field_notification_news["und"][0]['value'] == 1){
+						$news_match = db_query('SELECT n.nid, n.title
+			  			  FROM {node} n WHERE n.type = :type AND n.nid IN (:domain_checks_array) AND n.created > (:node_time)',
+				  			array(':type' => $type_news, ':domain_checks_array' => $domain_checks_array, ':node_time' => $node_time ));
+						// Result is returned as a iterable object that returns a stdClass object on each iteration
+						$row_count = $news_match->rowCount();
+						// if the query call is not empty
+						if(! $row_count == 0){
+							// output the support node titles and links to the content
+							$output .= 'New content has been added to <strong>News</strong><ul>';
+							foreach ($news_match as $news_matches) {
+								// Perform operations on $record->title, etc. here.
+								// in this example the available data would be mapped to object properties:
+								$output .= '<li><strong>'.$news_matches->title.'</strong> - <a href='.url('http://'.$domain_name_array[($domain_checks_domain_array[$news_matches->nid])].'/node/' . $news_matches->nid.'/').'>Read more</a> </li>';
+							}
+							$output .= '</ul><br>';
+							// if there is content set variables to true
+							$mail_send = TRUE;
+						}
+					}
+				}
+		
+				// if user want produkt get all products the the given tacs from the database
+				if(isset($user_loaded->field_notification_product["und"][0]['value'])){
+					if($user_loaded->field_notification_product["und"][0]['value'] == 1){
+						$product_match = db_query('SELECT n.nid, n.title
+			  			 FROM {node} n WHERE n.type = :type AND n.nid IN (:domain_checks_array) AND n.created > (:node_time)'
+				  		, array(':type' => $type_product, ':domain_checks_array' => $domain_checks_array, ':node_time' => $node_time  ));
+						// Result is returned as a iterable object that returns a stdClass object on each iteration
+						$row_count = $product_match->rowCount();
+						// if the query call is not empty
+						if(! $row_count == 0){
+							// output the support node titles and links to the content
+							$output .= 'New content of <strong>Products</strong> has been added<ul>';
+							foreach ($product_match as $product_matches) {
+								// Perform operations on $record->title, etc. here.
+								// in this example the available data would be mapped to object properties:
+								$output .= '<li><strong>'.$product_matches->title.'</strong> - <a href='.url('http://'.$domain_name_array[($domain_checks_domain_array[$product_matches->nid])].'/node/' . $product_matches->nid.'/').'>Read more</a></li>';
+							}
+							$output .= '</ul><br>';
+							// if there is content set variables to true
+							$mail_send = TRUE;
+						}
+					}
+				}
+	
+			}
+		
+	
+		}
+				
+		if($mail_send == TRUE){
+			$output .= '<p>Best regards,</br>
+		<strong>GLUNZ & JENSEN A/S</strong></br></br>
+					Tel.: +45 5768 8181 </br>
+					Fax: +45 5768 8340 </br>
+					Sales: +45 5768 8899 </br>
+					Call Center: +45 5768 8100 </br>
+					gj@glunz-jensen.com</p>
+					<p><img src="http://www.glunz-jensen.com/sites/default/files/email/image001.gif"/></p></div>';
+			$from = $site_email;
+			$to = $user_loaded->mail;
+			//$to = 'christian@openusource.com';
+			$subject = 'New content on Glunz & Jensen website';
+			$body = $output;
+			$params = array(
+				'subject' => $subject,
+				'body' => $output,
+			);
+				drupal_mail('ous_notification_email', 'information', $to, language_default(), $params, $from);
+				watchdog('ous notification', 'There has been send a mail to '.$to);
+			}
+			if($mail_send == FALSE){
+				watchdog('ous notification', 'There has NOT been send a mail to '.$users);
+			}
+				
+				
+			$mail_send = FALSE;
+						
+	}
+	
+	return TRUE;
+}
+
+
+
+function ous_notification_email_mail($key, &$message, $params) {
+	$message['subject'] = $params['subject'];
+	$message['body'] = array();
+
+	$message['body'][] = $params['body'];
+
+}

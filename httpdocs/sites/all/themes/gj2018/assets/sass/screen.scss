@@ -1,0 +1,936 @@
+/*
+Client: Glunz & Jensen
+Theme Name: corporate
+Description: The main dokument of our SCSS struckture.
+HOW TO?: Maintain our COMPASS Structure -> http://openusorce.com/struckture-description.html
+Author URI: http://openusorce.com
+Version: 2018
+*/
+
+
+/* ### THIS FILE SASS CONTAINS STYLES FOR THE TEMPLATE  ############################################################# */
+/* ### SUB-DIVEDED INTO FOLLOWING SECTIONS: 					  ############################################################# */
+
+
+/*  0. IMPORTS																					<------ */
+/*  1. VARIABLES               													<------ */ 
+/*  2. MIXINS                  												  <------ */
+/*  3. Global Styles – (body, paragraphs, lists, etc)   <------ */
+/*  4. Header																					  <------ */
+/*  5. Page Structure																		<------ */
+/*  6. Navigation     																	<------ */
+/*  7. Forms																						<------ */
+/*  8. Footer																						<------ */
+/*  9. xtra																			  			<------ */
+                    
+
+/* ################################################################################################################# */
+/* ################################################################################################################# */
+
+
+/* 1. VARIABLES
+################################################################## */
+
+
+/* >>COLORS<<
+################################## */
+$gray: rgba(48,48,48, 1);
+
+$gj-cyan: rgba(84,178,239, 1);
+$cyan-highgloss: rgba(124,203,239, 1);
+$gj-red: rgba(197,51,44, 1);
+$txt-gray: rgba(90,90,90, 1);
+$txt-gray-op: rgba(90,90,90, 0.2);
+$gj-cyan-op: rgba(83,177,238, 0.75);
+
+$light-gray: rgba(120,120,120, 1);
+$box-shadow: rgba(0, 0, 0, 0.20); 
+
+
+$gj-light-gray: rgba (245,245,245,1);
+/* ############################### */
+/* END >>COLORS<< */
+
+
+/* >>COMPASS IMPORTS<<
+################################## */
+@import "compass/reset";
+@import "compass/css3";
+@import "breakpoint";
+@import "blueprint/form";
+@import "sassy-buttons";
+/* ############################### */
+/* END >>COMPASS IMPORTS<< */
+
+
+/* >>breakpoints<<
+################################## */
+/*$px10-821: 10px 821px;
+$px321-600: 321px 600px;
+$px490-599: 490px 599px;
+$px600-945: 600px 945px;
+$px601-820: 601px 820px;
+$mm-px620-680: 620px 680px;
+$mm-px620-725: 620px 725px;
+$mm-px620-820: 620px 820px;
+$ekstra-solution-590-680: 590px 680px;
+$px946-1045: 946px 1045px;
+$min480: min-width 480px;
+$max320: max-width 320px;
+$max400: max-width 400px;
+$max480: max-width 480px;
+$max600: max-width 600px;
+$mm-max620: max-width 620px;*/
+$max550: max-width 550px;
+$max680: max-width 680px;
+$max1120: max-width 1120px;
+$max740: max-width 740px;
+$max820: max-width 820px;
+$max890: max-width 890px;
+$max980: max-width 980px;
+$max1160: max-width 1160px;
+$min1600: min-width 1600px;
+$max1320: max-width 1320px;
+/* ############################### */
+/* END >>breakpoints<< */
+
+
+/* >>Transitions<<
+################################## */
+/* ############################### */
+/* END >>Transitions<< */
+
+
+/* ################################################################ */
+/* END 1. VARIABLES */
+
+
+/* 2. MIXINS
+################################################################### */
+/*TABS*/
+/*@mixin tabs { 
+  color: $txt-gray;
+  display: inline-block;
+  padding: 4px 10px 2px 10px;
+  margin: 20px 10px 30px 0px;
+  font-size: 0.8em;
+  border: 1px solid $gj-cyan;   
+  cursor: pointer;
+  &:hover, &.active {
+  color: white;
+  border-color: $gj-cyan;
+  background: $gj-cyan; 
+  }
+}*/
+@mixin content-width { 
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+@include breakpoint($max1320) {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+}
+/* ################################################################ */
+/* END 2. MIXINS */
+
+
+/* 0. IMPORTS
+################################################################## */
+
+
+/* >>SCSS IMPORTS<<
+################################## */
+@import "imports/fonts";
+@import "imports/frontpage";
+@import "imports/header";
+@import "imports/footer";
+/*@import "imports/menu";*/
+@import "imports/drupalresets";
+@import "imports/forms";
+@import "imports/slidesocial";
+@import "imports/product";
+@import "imports/news";
+@import "imports/filters";
+@import "imports/investor";
+@import "imports/support";
+/* ############################### */
+/* END >>SCSS IMPORTS<< */
+
+
+/* ################################################################ */
+/* END 0. IMPORTS */
+
+.contact {
+  #content {
+    background: white;
+  }
+}
+
+.not-front {
+  #content {
+    .region-content {
+      .content {
+      .view {
+        @include content-width;
+        &.view-contacts {
+          .view-content {
+            h3 {
+              display: block;
+              border-bottom: 1px solid $gj-cyan;
+              font-size: 1.8em;
+              margin: 20px 0px 30px 0px;
+              width: 100%;
+              float: left;
+              color: $txt-gray;
+              padding-bottom: 10px;
+            }
+            .views-row {
+              display: inline-block;
+              width: 33.33333%;
+              margin-right: 0;
+              margin-bottom: 60px;
+              float: left;
+              font-size: 0.9em;
+              line-height: 1.4em;
+              height: 180px;
+              @include box-sizing(border-box);
+              color: $txt-gray;
+@include breakpoint($max980) {
+              width: 50%;
+}
+@include breakpoint($max680) {
+              width: 100%;
+}
+              a {
+                font-family: "ArimoRegular";                
+              }
+              .profilepic {
+                display: inline-block;
+                width: 30%;
+                float: left;
+                height: 190px;
+                margin-right: 3%;
+                img {
+                  width: 100%;
+                  height: auto;
+                }
+              }
+              .profilecontent, .field-content {
+                display: inline-block;
+                float: left;
+                width: 62%;
+              }
+              .profiletitle {
+                font-size: 1.35em;
+                margin-bottom: 8px;
+              }
+              .collection-title {
+                color: $gj-cyan;
+                margin-bottom: 8px;
+              }
+            }
+          }
+        }    
+      }
+      .node {
+        &.view-mode-full {
+@include content-width;          
+        }
+      }
+      }
+    }
+  }
+}
+.about-glunz-jensen, .about-gks, .jobs-glunz-jensen, .employee-login, .engineering, .gks-employees {
+  #pagewrapper {
+    .txt-topbanner {
+      .flexslider {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+    } 
+  #content {
+    background: white;
+    #page-title {
+      max-width: 820px;
+    }
+    .region-content {
+      .content {
+        .node.view-mode-full {
+          max-width: 820px;
+        }
+      }
+    }
+  }  
+  }
+}
+span {
+  &.file {
+    display: inline-block;
+    padding: 6px 0px 6px 35px;
+    background: url(../img/pdf_icon.svg) no-repeat top left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: auto;
+    background-size: 2em;
+    float: left;
+@include breakpoint($max680) {
+  clear: both;
+  float: left;
+  margin-bottom: 15px;
+}
+    a {
+      font-family: "ArimoRegular" !important;
+      color: $txt-gray;
+      }
+      img { display: none; }
+      &:hover {
+        background-position: bottom left;
+        a {
+        color: $gj-cyan;
+        }
+      }
+  }
+}
+
+
+/* 3. Global styles
+################################################################### */
+#back-top {
+  position: fixed;
+  bottom: 60px;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  background: url(../img/corner-pointer-white.svg) $gj-cyan center 7px no-repeat;  
+  background-size: 6em;  
+  text-indent: -999px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 999;
+}
+h1 {
+  &.title {
+    @include content-width;
+    padding-top: 25px;  
+  }
+}
+tr.even, tr.odd {
+    background: none;
+    border-bottom: none;
+    padding: 0;
+}
+ul {
+  &.primary {
+     @include content-width;
+  }
+}
+
+#searchbar {
+    display: block;
+    position: absolute;
+    top: -80px;
+    height: 60px;
+    background: $gj-cyan;
+    z-index: 400;
+    float: left;
+    width: 100%;
+    left: 0px;
+    opacity: 0;
+  @include breakpoint($max680) {
+  height: auto;
+  }
+    @include transition-duration(200ms);     
+    @include transition-timing-function(ease-out);
+@include breakpoint($max980) {
+  position: relative;
+  top: 0px;
+  display: none;
+}
+  &.show {
+    top: 62px;
+    opacity: 1;
+    @include transition-duration(200ms);     
+    @include transition-timing-function(ease-out);
+@include breakpoint($max980) {
+  top: 0px;
+  display: block;
+}
+  }
+  .container {
+  display: block;
+  position: relative;
+  width: 100%;
+  float: left;
+
+  .region-search {
+  @include content-width;    
+  }
+  form { width: 100%; padding: 0; margin: 0; padding-top: 4px; 
+  }
+    .container-inline {
+      display: block;
+      width: 100%;
+      position: relative;
+      float: left;
+      float: left;
+      .form-type-textfield {
+        display: inline-block;
+        position: relative;
+        width: 85%;
+        float: left;
+        margin-right: 1%;
+  @include breakpoint($max680) {
+  width: 100%;
+  }
+        input {
+          height: 52px;
+          padding: 10px 0px 8px 20px;
+        }
+      }
+      .form-actions {
+        display: inline-block;
+        position: relative;
+        width: 14%;
+        float: left;
+  @include breakpoint($max680) {
+  width: auto;
+  clear: both;
+  display: block;
+  float: right;
+  }
+        input {
+        margin: 0;
+        background: $gj-cyan;
+        height: 52px;
+        padding: 0;
+        font-size: 1em;
+        border-radius: 0;
+  @include breakpoint($max680) {
+text-align: left;
+padding: 0px 20px 0px 20px;
+  }
+      &:hover {
+        background:$cyan-highgloss;
+        color: white;
+      }
+        }        
+      }
+    .form-item-custom-search-types {
+      display: none;
+    }
+    }
+  }
+}
+.site-push {
+  #content {
+  /*&:before {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100vh;
+    background: rgba(255,255,255, 0.5);
+    content: '';
+    z-index: 350;
+    display: block;
+  }*/
+  }
+}
+/*search result*/
+.page-search { 
+  #content {
+
+    .innerwrapper {
+    @include content-width; 
+    display: block;
+    position: relative;  
+      ul {
+    &.pager {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding: 65px 0px 30px 0px;
+  @include breakpoint($max680) {
+font-size: 0.8em;
+  }
+     li {
+       padding: 0;
+       margin: 0px 5px 0px 5px;
+       color: $txt-gray;
+       a {
+       font-family: 'ArimoRegular';         
+       }
+       &.pager-current {
+         color: $gj-cyan;
+       }
+       &.pager-item {
+@include breakpoint($max680) {
+display: none;
+}         
+       }
+     } 
+    }
+    }
+#page-title { display: none; }
+      .tabs {
+        ul {
+          display: block;
+          position: relative;
+          width: 100%;
+          float: left;
+          border: none;
+          margin: 0;
+          padding: 0;
+          &.primary {
+            li {
+              a {
+               border: none;
+               display: inline-block;
+               float: left;
+               position: relative;
+               height: auto;
+               text-align: center;
+               background: $gj-cyan;
+               padding: 12px 8px 10px 8px;
+               cursor: pointer;
+               color: white;
+               margin-right: 10px;
+               text-transform: uppercase;
+               margin-bottom: 15px;
+@include breakpoint($max980) {
+  margin-top: 10px;
+}
+                &:after {
+                    display: none;
+                    content: '';
+                    position: absolute;
+                    bottom: -12px;
+                    z-index: 300;
+                    width: 100%;
+                    height: 12px;
+                    background: url(../img/tabmark.svg) center no-repeat;  
+                    background-size: contain;
+                    left: 0px;
+                  }  
+                &:hover {
+                    background: $cyan-highgloss;                
+                }                  
+              }
+              &.active {
+                a {
+                  background: $cyan-highgloss;
+                  &:after {
+                    display: inline-block;
+                  }
+                  
+                }
+              }
+            }
+          }
+        }
+      }
+      form {
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+        #edit-discription {
+          margin-bottom: 15px;
+        }
+        .container-inline {
+          margin-bottom: 25px;
+          .form-item-keys {
+            label { display: none;}
+           display: inline-block;
+           width: 85%;
+           float: left;
+           position: relative;
+           margin-right: 1%; 
+           height: 45px;
+@include breakpoint($max980) {
+  width: 75%;
+}
+@include breakpoint($max680) {
+  width: 100%;
+}
+           input {
+             padding: 0;
+             height: 45px;
+             padding: 0 8px 0px 15px;
+             border-radius: 0;
+             color: $gj-cyan;
+           }
+          }
+          .form-submit {
+            display: inline-block;
+            position: relative;
+            width: 14%;
+            height: 45px;
+            padding: 0;
+            margin-top: 0px;
+            border-radius: 0;
+            font-size: 1em;
+@include breakpoint($max980) {
+  width: 24%;
+}
+@include breakpoint($max680) {
+  width: 45%;
+  clear: both;
+  margin-top: 10px;
+}
+          }
+        }
+        .search-advanced {
+          legend { display: none; }
+          .criterion {
+            display: block;
+            width: 100%;
+            position: relative;
+            float: left;
+            margin: 0;
+            .form-checkboxes {
+              display: block;
+              width: 100%;
+              position: relative;
+              float: left;
+              margin: 0;
+              .form-type-checkbox {
+                display: inline-block;
+                width: auto;
+                height: auto;
+                float: left;
+                margin-right: 6px;
+                &:last-child {
+                  &:after {
+                    display: none;
+                  }
+                }
+                &:after {
+                  display: inline-block;
+                  content: '//';
+                  position: relative;
+                  right: 0px;
+                  top: 1px;
+                }
+              }
+            }
+          }
+          .action { display: none; }
+        }
+      }
+      ol { 
+      &.search-results {
+        display: block;
+        position: relative;
+        width: 100%;
+        float: left;
+        margin-top: 10px;
+        li {
+          display: block;
+          position: relative;
+          width: 100%;
+          float: left;
+          margin-bottom: 35px;
+          .search-snippet-info {
+            margin: 0;
+            padding: 0;
+          } 
+          a {
+            font-family: "ArimoRegular";              
+          }       
+        }
+      }
+      }  
+    }
+  }
+}
+
+#content {
+  background-color: white;
+  min-height: 350px;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  height: auto;
+  position: relative;
+  /*@include content-width;*/
+  float: left;
+  &:before {
+    display: none;
+  }
+  .content {
+    a {
+    font-family: "ArimoItalic";
+    }
+  .view-mode-full {
+    ul {
+      color: $txt-gray;
+      padding-left: 15px;
+      margin: 10px 0px 10px 0px;
+      li {
+        list-style: disc;
+        margin-bottom: 4px;
+      }
+    }
+    padding: 10px 0px 40px 0px;
+    .field-name-post-date {
+      color: $txt-gray;
+      font-size: 0.85em;
+      display: block;
+      position: relative;
+      margin-bottom: 10px;
+    }   
+  }
+  }
+}
+#pagewrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  #content {
+    .innerwrapper {
+    /*PARTNER LOGOS*/
+    .region-partners {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 20px 0px 15px 0px;
+      background: white;
+      float: left;
+      .block-views {
+        @include content-width;
+      }
+      h2 {
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        color: $txt-gray;
+        text-align: center;
+        font-family: "ArimoRegular";
+        margin: 20px 0px 15px 0px;
+@include breakpoint($max680) {
+  font-size: 1.5em;
+} 
+      }
+     .flexslider {
+       box-shadow: none;
+       .flex-control-nav {display: none;}
+       &:hover {
+        .flex-direction-nav {
+         .flex-disabled {
+           opacity: 0.3 !important;
+@include breakpoint($max680) {
+ opacity: 1 !important;
+}
+         }
+         .flex-next {
+            right: -36px;
+            opacity: 1 !important;
+          }
+         .flex-prev {
+           left: -36px;
+           opacity: 1 !important;
+         }          
+        }
+ 
+       }
+       .slides {
+         li {
+           .views-field-field-image {
+             display: block;
+             width: 100%;
+             position: relative;
+             height: auto;
+             @include box-sizing(border-box);
+             padding: 20px;
+             img {
+               
+             }
+           }
+         }
+       }
+       .flex-direction-nav {
+         .flex-disabled {
+           opacity: 1 !important;
+         }
+         a {
+          width: 30px;
+          height: 30px;
+          background: url(../img/corner-pointer-cyan.svg) white -72px center no-repeat;  
+          background-size: 6em;  
+          position: absolute;
+          top: 50%;
+          z-index: 150;
+          cursor: pointer;
+          text-indent: -9999px;
+          display: block !important;
+           &.flex-prev {
+            background: url(../img/corner-pointer-cyan.svg) white 6px center no-repeat; 
+            background-size: 6em;        
+            left: -36px;
+            opacity: 1;
+@include breakpoint($max680) {
+ left: 10px;
+ opacity: 1 !important;
+}
+           }
+           &.flex-next {
+             right: -36px;
+             opacity: 1;
+@include breakpoint($max680) {
+ right: 10px;
+ opacity: 1 !important;
+}
+           }
+         }
+       }
+     } 
+    }
+    /*Referres*/
+    .refpic {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 195px;
+      float: left; 
+      background: whitesmoke;
+      padding: 45px 0px 45px 0px;
+      .refcontainer {
+        @include content-width;         
+      .col {
+        display: inline-block;
+        float: left;
+        width: 25%;
+        background: url(../img/one.jpg) no-repeat center center;
+        min-height: 195px;
+        background-size: contain !important;
+@include breakpoint($max820) {
+  width: 50%;
+}
+        &.two { background: url(../img/two.jpg) no-repeat center center; }
+        &.three { background: url(../img/three.jpg) no-repeat center center; }
+        &.four { background: url(../img/four.jpg) no-repeat center center; }       
+      }
+      }     
+    }
+    }
+  }
+}
+
+
+
+.counter {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: auto;
+  background: $gj-cyan;
+  float: left;
+    padding-top: 40px;
+    padding-bottom: 45px;
+  .region-footercounter {
+    @include content-width;  
+    h2 {
+      display: none;
+      width: 100%;
+      height: auto;
+      font-size: 1.8em;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      font-family: "ArimoRegular";
+      margin: 20px 0px 15px 0px;      
+    }  
+    .counters-front {
+      display: block;
+      width: 100%;
+      position: relative;
+      height: auto;
+      float: left;
+      .view-content {
+        display: block;
+        width: 100%;
+        float: left;
+        position: relative;
+      div {
+        display: inline-block;
+        width: 25%;
+        position: relative;
+        height: auto;
+        float: left;
+        text-transform: uppercase;
+        text-align: center;
+@include breakpoint($max890) {
+  width: 50%;
+}
+@include breakpoint($max550) {
+  width: 100%;
+  margin-bottom: 40px;
+}
+        &:nth-child(1), &:nth-child(2) {
+@include breakpoint($max890) {
+  margin-bottom: 40px;
+}
+        }
+        p {
+          font-size: 1.1em;
+          font-family: "ArimoBold";
+          line-height: 1em;
+          margin-bottom: 22px;
+          display: block;
+          position: relative;
+          color: white;
+          @include box-sizing(border-box);
+          width: 100%;
+          padding: 0px 18%;
+        }
+        .counter-title {
+          color: white;
+          font-size: 3.5em;
+          font-family: "ArimoBold"; 
+          margin-bottom: 5px;
+          display: block;
+          position: relative;         
+        }
+        a {
+          margin-bottom: 5px;
+          display: block;
+          position: relative;
+          &:last-child {
+            color: white;
+            font-size: 1em;
+            font-family: "ArimoRegular";
+          &:after {
+            display: inline-block;
+            width: 20px;
+            height: 12px;
+            content: '';
+            position: relative;
+            background: url(../img/white-pointer.svg) 2% 0px no-repeat;  
+            background-size: 0.5em;
+            margin-left: 10px;
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {  
+  background-size: auto 100%;
+}
+          }
+          }
+        }  
+      }
+      }
+    }
+  }
+}
+
+/* ################################################################ */
+/* END 3. Global styles */

@@ -1,0 +1,384 @@
+/*
+Client: Glunz & Jensen -> Landingpage
+Theme Name: Landingpage
+Description: The main dokument of our SCSS struckture.
+Author URI: http://openusorce.com
+Version: 2016
+*/
+
+
+/* ### THIS FILE SASS CONTAINS STYLES FOR THE TEMPLATE  ############################################################# */
+/* ### SUB-DIVEDED INTO FOLLOWING SECTIONS: 					  ############################################################# */
+
+/*  0. VARIABLES // COLOR // IMPORTS // BREAKPOINTS     <------ */ 
+/*  1. MIXINS                  												  <------ */
+/*  2. IMPORTS                												  <------ */
+/*  3. Global Styles – (body, paragraphs, lists, etc)   <------ */
+/*  4. Basic elements																	  <------ */
+                    
+/* ################################################################################################################# */
+/* ################################################################################################################# */
+
+
+/* 0. VARIABLES
+################################################################## */
+
+
+/* >>COLORS<<
+################################## */
+$bg: rgba(244, 237, 220, 1);
+$gj-cyan: rgba(3, 158, 227, 1);
+/* ############################### */
+/* END >>COLORS<< */
+
+
+/* >>breakpoints<<
+################################## */
+$max320: max-width 320px;
+$max400: max-width 400px;
+$max490: max-width 490px;
+$max580: max-width 580px;
+$max680: max-width 680px;
+$max850: max-width 850px;
+$max880: max-width 880px;
+$max1150: max-width 1150px;
+$max1200: max-width 1200px;
+$min851: min-width 851px;
+$min1100: min-width 1100px;
+$min851: 851px 1099px;
+
+
+
+$max720: max-width 720px;
+$max920: max-width 920px;
+$min1250: min-width 1250px;
+$max1250: max-width 1250px;
+$max1550: max-width 1550px;
+$max1100: max-width 1100px;
+/* ############################### */
+/* END >>breakpoints<< */
+
+
+/* >>Transitions<<
+################################## */
+/* ############################### */
+/* END >>Transitions<< */
+
+
+/* ################################################################ */
+/* END 0. VARIABLES */
+
+
+/* 1. MIXINS
+################################################################### */
+
+
+/* ################################################################ */
+/* END 1. MIXINS */
+
+
+/* 2. IMPORTS
+################################################################## */
+
+
+/* >>COMPASS IMPORTS<<
+################################## */
+@import "compass/reset";
+@import "compass/css3";
+@import "breakpoint";
+@import "blueprint/form";
+@import "sassy-buttons";
+/* ############################### */
+/* END >>COMPASS IMPORTS<< */
+
+
+/* >>SCSS IMPORTS<<
+################################## */
+@import "imports/fonts";
+@import "imports/drupalresets";
+@import "imports/header";
+@import "imports/footer";
+@import "imports/forms";
+/* ############################### */
+/* END >>SCSS IMPORTS<< */
+
+
+/* ################################################################ */
+/* END 2. IMPORTS */
+
+
+
+/* 3. Global styles
+################################################################### */
+
+/* >>body page settings<<
+################################## */
+#back-top {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  font-size: 4.5em;
+  z-index: 9999;
+  cursor: pointer;
+  display: none;
+  &:hover {
+  }
+@include breakpoint($max920) {
+  bottom: 0px;
+  right: 0px;
+  padding: 5px 12px 0px 12px;
+}
+}
+html {
+
+}
+.page-overview, .page-user {
+ul {
+ &.primary {
+   li {
+
+     a {
+       padding: 4px 6px 8px 6px;
+     }
+     &.active, &:hover {
+       a {
+       }
+     }
+   }
+ }
+}
+}
+
+ul {
+ &.primary {
+   padding-top: 10px;
+   display: block;
+   width: 90%;
+   float: left;
+   position: relative;
+   li {
+     display: inline-block;
+     cursor: pointer;
+     float: right;
+     a {
+       border: none;
+       padding: 4px 6px 8px 22px;
+       font-size: 0.8em;
+       display: inline-block;
+       opacity: 0.5;
+     }
+     &.active, &:hover {
+       a {
+       border: none;
+       cursor: pointer;
+       opacity: 1;
+       }
+     }
+   }
+ }
+}
+body {
+  &.logged-in {
+    #toolbar {
+    }
+  }
+ ul {
+   &.inline {
+    li {
+    } 
+   }
+
+   li {
+     
+   }
+ } 
+}
+.element-invisible { display: none !important; }
+.logged-in {
+}
+.tabs, .action-links {
+  display: none;
+}
+
+/* ################################################################ */
+/* END 3. Global styles */
+
+
+/* 4. Basic elements
+################################################################### */
+#pagewrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  max-width: 1080px;
+  margin: auto;
+#content {
+  .content {
+    .content {
+      display: block;
+      width: 100%;
+      @include box-sizing(border-box);
+      padding: 0 3%;
+      position: relative;
+      .field {
+        display: inline-block;
+        width: 33%;
+        float: left;
+        position: relative;
+        height: auto;
+        min-height: 280px;
+        @include box-sizing(border-box);
+        padding: 0 3% 0 6.5%;
+@include breakpoint($max1100) {
+  width: 48%;
+}
+@include breakpoint($max720) {
+    width: 100%;
+    padding: 0 10% 0 18%;
+    height: auto;
+    min-height: auto;
+    margin-bottom: 25px; 
+}
+        &.field-name-field-inkjet-technology {
+          &:before {
+            background: url(../img/inkjet.svg) center top no-repeat; 
+          }
+        }
+        &.field-name-field-semi-automated {
+          &:before {
+            background: url(../img/automation.svg) center top no-repeat; 
+          }
+        }
+        &.field-name-field-no-chemistry {
+          &:before {
+            background: url(../img/nochem.svg) center top no-repeat; 
+          }
+        }
+        &.field-name-field-benefits-the-environment {
+          &:before {
+            background: url(../img/enviroment.svg) center top no-repeat; 
+          }
+        }
+        &.field-name-field-space-saving {
+          &:before {
+            background: url(../img/space-saving.svg) center top no-repeat; 
+          }
+        }
+        &:before {
+          display: block;
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          top: 0px;
+          background: url(../img/dollar.svg) center top no-repeat; 
+          background-size: contain;
+          content: '';
+          left: 0;
+@include breakpoint($max920) {
+  width: 45px;
+  height: 45px;
+}
+@include breakpoint($max720) {
+  width: 60px;
+  height: 60px; 
+}
+        }
+        &.field-type-text-with-summary { display: none; }
+        h2 {
+          font-size: 1.2em;
+          display: inline-block;
+          height: auto;
+          border-bottom: 1px dashed black;
+          padding-bottom: 4px;
+        }
+        p {
+          padding-top: 10px;
+        }
+      }
+      .field-collection-container {
+        display: block;
+        width: 100%;
+        position: relative;
+        height: auto;
+        border: none;
+        margin-top: 60px;
+        .field-name-field-testimonials {
+          display: block;
+          width: 100%;
+          position: relative;
+          height: auto;
+          padding: 0;
+          .field {
+            padding: 0;
+          }
+          &:before {
+            display: block;
+            width: 106%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            content: '';
+            height: 6px;
+            background: $gj-cyan;
+            left: -3%;
+          }
+          .field-name-field-testimonial-title {
+            font-size: 1em;
+            font-family: "opensansBold";
+          }
+          .field-name-field-testimonial-text {
+            font-style: italic;
+            font-size: 1em;
+            color: rgba(0,0,0, 0.85);
+          }
+          .field-collection-view {
+            display: inline-block;
+            width: 33%;
+            float: left;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            border: none;
+            @include box-sizing(border-box);
+            padding: 0 3%;
+@include breakpoint($max920) {
+   width: 100%;
+}
+            .field-name-field-testimonial-image, .field-name-field-testimonial-title, .field-name-field-testimonial-text, .field-name-field-testimonial-logo {
+              display: block;
+              width: 100%;
+              clear: both;
+              position: relative;
+              min-height: 20px;
+              img {
+                max-width: 100%;
+                height: auto;
+              }
+              &:before {
+                display: none;
+              }
+            }
+            
+            .field-name-field-testimonial-logo {
+            .field-items {
+              margin: 15px 0px; 
+            }
+              img {
+                max-width: 40%;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
+/* ################################################################ */
+/* END 4. Basic elements */
+
+
+

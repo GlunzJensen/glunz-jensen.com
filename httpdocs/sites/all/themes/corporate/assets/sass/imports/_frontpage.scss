@@ -1,0 +1,219 @@
+/*
+Description: Frontpage design
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* Strukture of Frontpage
+################################################################## */
+.page-frontpage {
+  #content {
+    .title {
+      margin: 0;
+      padding: 0;
+@include breakpoint($max680) {
+  padding-left: 20px;
+}     
+    }
+  }
+}
+#content {
+/* >>Customer logos<<
+################################## */
+  .customer-logos {
+    display: block;
+    width: 100%;
+    background: white;
+    padding: 0% 1% 2% 2%;
+    margin: 30px 0px;
+    @include box-shadow($box-shadow 0 0 7px 6px);
+    img { 
+      margin-right: 3%;
+      margin-top: 3%;
+      border: 0px;
+      max-height: 30px;
+      max-width: 130px;  
+@media (min-width: 600px) and (max-width: 945px) {
+  width: 23%;
+  margin-right: 2%;
+}
+@include breakpoint($max680) {
+  width: 30%;
+  margin-right: 2.2%;
+}
+    } 
+  }
+/* ############################### */
+/* END >>Customer logos<< */
+}
+
+
+/* >>Slideshow<<
+################################## */
+.flexslider {
+  background: none;
+  border: none;
+  @include border-radius(0px);
+  box-shadow: none;
+  margin: 0 0 20px 0px;
+  .slides {
+    position: relative;
+    img {
+      display: block;
+      border: none;
+      @include box-sizing(border-box);  
+    }
+  /* BREAKING NEWS */
+  .BreakingNews {
+   /*img {
+      border: solid 5px red;
+      @include box-sizing(border-box);    
+   }*/
+  /*BANNER*/
+  /*disabled banner - 2015-design*/
+    /*&:after {
+    content: "";
+    display: block;
+    width: 82px;
+    height: 82px;
+    position: absolute;
+    top: -3px;
+    right: 3px;
+    background: url(../img/breakinbanner.png) no-repeat;    
+  } */ 
+  }  
+  }
+}
+.flexslider {
+/* cutmarks/txt field */
+  .cutmarks {
+    display: block;
+    height: 128px; width: 450px;
+    /*background: url(../img/cuttxt.png) no-repeat;*/
+    position: absolute;
+    bottom: 20px;
+    left: 18px;   
+@include breakpoint($mm-max620) { 
+  width: 100%;
+  
+}  
+  }
+  .toppictxt {
+    display: inline-block;
+    height: auto; width: 392px;
+    background-color: rgba(255,255,255,0.85);
+    position: absolute;
+    bottom: 7px;
+    left: 19px;
+    padding: 14px 10px 10px 10px;
+    font-size: 80%;
+    line-height: 1.2em;
+@include breakpoint($mm-max620) { 
+  height: 50px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  bottom: -80px;
+  left: 0px;
+  padding: 0px;
+  font-size: 100%;
+  line-height: 1.2em;
+} 
+    
+  }
+}
+/* END -> cutmarks/txt field */
+.flex-control-nav {
+  bottom: 15px;
+  display: block;
+  z-index: 200;
+  position: absolute;
+  width: 100%;
+  right: 10px;
+@include breakpoint($max680) {  
+  bottom: -68px;
+}
+  li {
+    float: right;
+    margin: 0px 8px 0px 0px; 
+@include breakpoint($mm-max620) {
+  margin: 0px 0px 0px 20px;
+  float: none;  
+}   
+  }  
+}
+/*PRODUCT*/
+.node-type-product {
+  .flex-control-nav {
+@include breakpoint($max680) {  
+  bottom: -4px;
+}    
+  }  
+}
+/* PAGER */
+.flex-control-paging {
+  li {
+    a {
+      background: none repeat scroll 0 0 $gray;
+      border-radius: 0px;
+      @include box-shadow(none);
+      cursor: pointer;
+      display: block;
+      height: 11px;
+      width: 11px; 
+@include breakpoint($max680) {
+  height: 15px;
+  width: 15px;
+}
+@include breakpoint($max480) {
+  width: 15px;
+  height: 15px;
+}
+      &:hover, &.flex-active {
+        background: none repeat scroll 0 0 $gj-cyan;
+      }    
+    }
+  }
+}
+/* ############################### */
+/* END >>Slideshow<< */
+
+
+/* >>SDS (newsflow - FRONT) right/left col.<<
+################################################# */
+.ds-2col {
+  >.group-left {
+    width: 50%;
+    height: auto; /*272px; OLD SETUP*/
+    /*background: url(../img/cut.png) no-repeat center;*/
+    padding: 20px 0px 0px 0px;
+    margin-right: 2%;
+@include breakpoint($max680) {
+  background: none;
+  padding: 0px;
+  height: auto;
+  width: 98%;
+}
+  }
+  >.group-right {
+    width: 45%;
+    padding-top: 20px;
+@include breakpoint($max680) {
+  width: 98%;
+}
+
+@include breakpoint($max320) {
+  padding: 0 10px;
+  margin-bottom: 60px;  
+} 
+@include breakpoint($px321-600) {
+  margin: 20px 8px 0px 8px;
+}
+  }  
+}
+/* ############################################## */
+/* END >>SDS (newsflow - FRONT) right/left col.<< */
+
+/* ################################################################ */
+/* END 1. strukture of Frontpage */

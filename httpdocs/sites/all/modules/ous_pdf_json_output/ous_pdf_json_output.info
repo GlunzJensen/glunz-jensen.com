@@ -1,0 +1,10 @@
+name = "Ous PDF Json output"
+description = "Module that output a list of all files in a local folder in json"
+core = "7.x"
+
+package = openUsource
+
+
+
+
+

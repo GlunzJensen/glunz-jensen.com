@@ -1,0 +1,14 @@
+name = "Ous Search PDF phrase"
+description = "Retrieve data from external pdf and create phrase search function"
+core = "7.x"
+
+package = openUsource
+
+dependencies[] = search
+dependencies[] = ous_pdf_json_output
+
+
+
+
+
+

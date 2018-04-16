@@ -1,0 +1,232 @@
+/******************************
+ Global CSS for ALL menu types
+******************************/
+.menu-block-1 li, .menu-block-2 li, .menu-block-3 li{
+	float:left; padding:10px; font-size:120%; border-bottom:1px solid gray;
+}
+.menu-block-2 li{
+	font-size:100%;
+}
+.menu-block-3 li{
+	font-size:80%;
+}
+
+/* First section on dropdown */
+ul.nice-menu li li{
+  background-color: rgb(0,176,238);
+    z-index: 999;
+    display: block;
+}
+/*ul.nice-menu li li a:hover {
+  font-family: 'ArimoBold';
+  position: relative;
+  z-index: 100;
+}*/
+ul.nice-menu li li:hover{
+  width: 100%;
+  position: relative;
+  z-index: 999;
+
+}
+ul.nice-menu li li a {
+  display: block;
+  position: relative;
+  color: rgb(255,255,255);
+  padding: 13px 0px 11px 10px;
+  z-index: 9999;
+}
+ul.nice-menu a {
+  padding: 15px 30px 15px 10px;
+  color: rgb(90,90,90);
+  *zoom: 1;
+}
+ul.nice-menu a:hover {
+  color: rgb(255,255,255);
+}
+ul.nice-menu li:hover {
+  background-color: rgb(0,176,238);
+}
+ul.nice-menu ul {
+  list-style: none;
+  top: 1.8em;
+  left: -1px; /* LTR */
+  border: 0;
+  margin-right: 0; /* LTR */
+}
+ul.nice-menu ul li {
+  width: 100%;
+}
+ul.nice-menu li.over a {
+  color: rgb(255,255,255);
+}
+/******************************
+ VERTICAL (left/right) menus
+******************************/
+/* This is the default width of all vertical menus. */
+/*ul.nice-menu-right, ul.nice-menu-left,
+ul.nice-menu-right li, ul.nice-menu-left li {
+  width: 12.5em;
+}*/
+/* VERTICAL menus where submenus pop RIGHT (default). */
+/*ul.nice-menu-right ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: -1px;
+}
+ul.nice-menu-right ul ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: -1px;
+}*/
+/* VERTICAL menus where submenus pop LEFT. */
+/*ul.nice-menu-left li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: -1px;
+}
+ul.nice-menu-left li ul li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: -1px;
+}
+ul.nice-menu-left a, ul.nice-menu-left ul a {
+  padding-left: 14px;
+}
+/******************************
+ HORIZONTAL (down) menus
+******************************/
+ul.nice-menu-down {
+  float: left; /* LTR */
+  border: 0;
+}
+/* #####THE MENU-LIST##### */
+/* 1 = (PRODUCTS)*/
+ul.nice-menu-down li:nth-child(1) {
+  border-top: 12px solid rgb(230,247,253);
+}
+/* 2 = (SUPPORT)*/
+ul.nice-menu-down li:nth-child(2) {
+  border-top: 12px solid rgb(200,238,251);
+}
+/* 3 = (INVESTORS)*/
+ul.nice-menu-down li:nth-child(3) {
+  border-top: 12px solid rgb(142,226,248);
+}
+/* 4 = (NEWS)*/
+ul.nice-menu-down li:nth-child(4) {
+  border-top: 12px solid rgb(48,212,248);
+}
+/* 5 = (ABOUT)*/
+ul.nice-menu-down li:nth-child(5) {
+  border-top: 12px solid rgb(0,200,243);
+}
+/* 6 = (CONTACT)*/
+ul.nice-menu-down li:nth-child(6) {
+  border-top: 12px solid rgb(0,186,241);
+}
+#nice-menu-1 li li {
+  border: none;
+}
+/*1.UL Container:BACKGROUND IN DROP DOWN LIST*/
+ul.nice-menu-down li ul {
+  background-color: rgb(0,176,238);
+  margin-top: 14px;
+  padding-bottom: 12px;
+  min-width: 250px;
+  max-width: 100%;
+  border-right: solid 4px rgb(255,255,255);
+  border-bottom: solid 4px rgb(255,255,255); 
+}
+ul.nice-menu-down li li {
+  border-top: 0;
+}
+ul.nice-menu-down ul {
+  left: 0; /* LTR */
+}
+ul.nice-menu-down ul li {
+  clear: both;
+}
+/*2. menu-down-setup*/
+ul.nice-menu-down li ul li ul {
+  left: 12.5em; /* LTR */
+  top: -1px;
+  margin-top: -40px;
+}
+/******************************
+ Garland-specific CSS
+******************************/
+/**
+ * Global CSS for ALL menu types
+ */
+ul.nice-menu li {
+  position: relative;
+  margin-top: -12px;
+  padding-left: 0; /* LTR */
+  background-image: none;
+}
+ul.nice-menu li li {
+  margin-top: 10px;
+}
+#header-region ul.nice-menu li {
+  margin: 0;
+  /* Padding rules are needed to deal with Garland's header line-height. */
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  background: #eee;
+}
+#header-region ul.nice-menu ul {
+  top: 1.8em;
+  left: -1px; /* LTR */
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin-right: 0; /* LTR */
+}
+#header-region ul.nice-menu ul {
+  top: 1.7em;
+}
+/**
+ * HORIZONTAL (down) menus
+ */
+#header-region ul.nice-menu-down li ul li ul {
+  left: 12.5em; /* LTR */
+  top: -1px;
+}
+/******************************
+ MOBILE FRIENDLY!!!!!!!
+******************************/
+ul.nice-menu {
+  list-style: none;
+  *zoom: 1;
+  position: relative;
+}
+ul.nice-menu:before,
+ul.nice-menu:after {
+  content: " ";
+  display: table;
+}
+ul.nice-menu:after {
+  clear: both;
+}
+ul.nice-menu > li {
+  float: left;
+  /*border-top: 5px solid red !important;*/
+  z-index: 9999;
+}
+ul.nice-menu > li > a {
+ display: block;
+}
+ul.nice-menu li ul {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+}
+/*1.UL container*/
+ul.nice-menu > li.hover > ul {
+  left: 0;
+}
+/*2.UL container*/
+ul.nice-menu li li.hover ul {
+  left: 100%;
+  top: 30px;
+}
+

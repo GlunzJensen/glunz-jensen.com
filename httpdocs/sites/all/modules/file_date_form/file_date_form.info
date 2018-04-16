@@ -1,0 +1,11 @@
+name = File Date Form
+description=  Modules creates a file if it does not exist otherwise changes a timestamp
+core = 7.x
+version = 1.0
+package = Custom modules
+
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+
+

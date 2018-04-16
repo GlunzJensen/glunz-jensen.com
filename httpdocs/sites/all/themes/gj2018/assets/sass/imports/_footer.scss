@@ -1,0 +1,153 @@
+/*
+Description: The footer of the site
+Author URI: http://openusorce.com
+Version: 2018
+*/
+
+
+/* >>FOOTER<<
+################################## */
+
+footer {  
+    background: $txt-gray;
+    width: 100%;
+    display: block;
+    position: relative;
+    height: auto;
+    float: left;
+    .footer-container {
+    position: relative;
+    z-index: 200;
+    overflow: hidden;
+    color: white;
+    display: block;
+    @include content-width;
+    p {
+      color: white;
+    }
+    .left, .right {
+      display: inline-block;
+      position: relative;
+      float: left;
+      width: 50%;
+      @include box-sizing(border-box); 
+      padding: 40px 0px 30px 0px;
+@include breakpoint($max820) {
+  width: 100%;
+}
+    }
+    .left {
+      .adress {
+        display: block;
+        width: 100%;
+        position: relative;
+        float: left;
+      }
+      .work-positive {
+        display: block;
+        width: 40%;
+        clear: both;
+        position: relative;
+        float: left; 
+        height: 150px; 
+        background: url(../img/work-positive.svg) left center no-repeat;
+        background-size: contain;      
+      }
+    }
+    .right {
+      float: right;
+      .newsletter {
+        display: block;
+        width: 100%;
+        position: relative;
+        float: left; 
+        height: auto;
+        max-width: 450px;
+        h2 {
+          color: white;
+          font-family: "ArimoRegular";
+          font-size: 1.75em;
+              
+        }
+        form {
+          padding-top: 0;
+          padding-bottom: 35px;
+          #webform-component-description {
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+          .webform-component-email {
+            width: 75%;
+            margin: 0;
+            label {
+              display: none;
+            }
+            input {
+              @include box-sizing(border-box);              
+              border: 1px solid $gj-cyan;
+              background: none;
+              color: white;
+            }
+          }
+          .form-actions {
+            margin: 0;
+            display: inline-block;
+            width: 25%;
+            position: relative;
+          }
+          input {
+            margin: 0;
+            height: 52px;  
+            font-size: 1em;
+            border-radius: 0;
+          }
+        }
+      }
+      .social {
+        display: block;
+        width: 100%;
+        position: relative;
+        float: left;
+        p {
+          display: inline-block;
+          float: left;
+          padding-top: 10px;
+          margin-right: 18px;
+        } 
+        a {
+          display: inline-block;
+          width: 35px;
+          height: 35px;
+          text-indent: -999px;
+          overflow: hidden;
+          float: left;
+          margin-right: 8px;
+          @include border-radius(20px, 20px);
+          border: 1px solid white; 
+          position: relative;
+          &:hover {
+          border: 3px solid white;
+            margin-right: 4px;
+            opacity: 0.9; 
+            left: -2px; 
+            top: -2px;         
+          }
+          &.facebook {
+            background: url(../img/facebook_white.svg) center no-repeat;
+            background-size: 1.4em;             
+          }
+          &.twitter {
+            background: url(../img/twitter_white.svg) center 8px no-repeat; 
+            background-size: 1.4em;            
+          }
+          &.linkedin {
+            background: url(../img/linkedin-white.svg) center no-repeat;       
+            background-size: 1.4em;      
+          }
+        }
+      }
+    }
+}
+}
+/* ############################### */
+/* END >>FOOTER<< */

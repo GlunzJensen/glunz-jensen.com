@@ -1,0 +1,147 @@
+/*
+Description: All font settings ind this SCSS
+HOW TO?: Maintain our COMPASS Structure -> http://openusorce.com/struckture-description.html
+Author URI: http://openusorce.com
+Version: 2014
+*/
+
+
+/* Contacts layout
+################################################################## */
+.profiles {
+  display: block;
+  width: 31%;
+  margin-right: 2%;
+  margin-bottom: 60px;
+  float: left;
+  font-size: 0.77em;
+  line-height: 1em;
+  height: 180px;
+@include breakpoint($px600-945)  {
+  display: block;
+  width: 45%;
+  margin-right: 2%;
+  margin-left: 2%
+}
+@include breakpoint($max600) {
+  height: 260px;
+  display: block;
+  width: 45%;
+  margin-right: 2%;
+  margin-left: 2%  
+}
+@include breakpoint($max320) {
+  width: 100%;
+  font-size: 1em;
+  height: 280px;  
+}
+  .collection-regions { font-style: italic; }
+  .container-inline {
+    margin-left: 100px; 
+    display: block;
+    font-style: italic;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+}
+.profilecontent {
+@include breakpoint($max600) {
+  display: block;
+  margin-left: 0px;
+}
+  .container-inline {
+    margin-left: 100px; 
+    display: block;
+@include breakpoint($max600) {
+  display: block;
+  margin-left: 0px; 
+  font-style: italic;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+  }  
+}
+.department {
+  float: left;
+  display: block;
+  width: 100%;
+  font-size: 120%;
+  font-family: 'ArimoBold';
+  margin-bottom: 30px;
+  margin-top: 40px;
+  border-bottom: 1px solid rgb(90,90,90);
+}
+.profiletitle {
+  font-family: 'ArimoBold';
+  margin-bottom: 5px;
+  display: block;
+@include breakpoint($max600) {
+  margin-top: 15px;  
+}
+@include breakpoint($max320) {
+  margin-top: 0px;
+}
+}
+.profilemail {
+  margin-top: 10px;
+  word-break: break-all;
+  display: block;
+@include breakpoint($max600) {
+  margin-top: 15px;
+}
+}
+.profilephone,
+.profilemobile {
+  margin-left: 0px;
+  display: block;
+}
+.profilephone {
+  margin-bottom: 0px;
+  margin-top: 10px;
+  display: block;
+@include breakpoint($max600) {
+  margin-top: 15px;
+}
+}
+.profileskype {
+  /* clear: both; */
+  display: block;
+  padding-top: 15px;
+  position: relative;
+  /* margin-bottom: 40px; */
+}
+.profilepic {
+  float: left;
+  position: static;
+  margin-right:15px;
+  height: 150px;
+@include breakpoint($max600) {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 120px;  
+}
+}
+.profilemail,
+.profilephone {
+@include breakpoint($max320) {
+  margin-top: 15px; 
+}
+}
+.regions-and-titles,
+.collection-regions {
+font-size: 0.8em;
+}
+.collection-title {
+  .collection-region { font-size: 0.9em; }  
+}
+
+
+/* ########################## July 10 2013 (Arthur) ###############################*/
+.page-contact .field-collection-item-field-regions-and-titles{display: none}
+.page-contact-europe .field-collection-item-field-regions-and-titles.europe{display: block}
+.page-contact-asia .field-collection-item-field-regions-and-titles.asia{display: block}
+.page-contact-world .field-collection-item-field-regions-and-titles.rest_of_the_world{display: block}
+.page-contact .views-field-field-employee-title{margin-left: 100px}
+/* ################################################################ */
+/* END -> Contacts layout */

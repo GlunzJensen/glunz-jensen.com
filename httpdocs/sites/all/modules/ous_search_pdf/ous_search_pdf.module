@@ -1,0 +1,168 @@
+<?php
+function ous_search_pdf_menu() {
+	$items = array();
+	
+	$items['admin/config/search/ous_search_pdf'] = array(
+			'title' => 'Ous search PDF module settings',
+			'description' => 'Define where to retrieve data from',
+			'page callback' => 'drupal_get_form',
+			'page arguments' => array('ous_search_pdf_admin'),
+			'access arguments' => array('administer ous phrase search pdf admin settings'),
+			'type' => MENU_NORMAL_ITEM,
+	);
+	return $items;
+}
+
+function ous_search_pdf_permission() {
+	return array(
+			'administer ous phrase search pdf admin settings' => array(
+					'title' => t('Administer Ous search phrase PDF module'),
+					'description' => t('Perform administration tasks for Ous search phrase PDF module.'),
+			),
+			'search pdf phrase' => array(
+					'title' => t('Search PDF phrase'),
+					'description' => t('Perform a phrase search on PDF'),
+			),
+	);
+}
+
+
+
+function ous_search_pdf_admin() {
+	$form = array();
+
+	$form['ous_search_pdf_normal_search'] = array(
+			'#type' => 'textfield',
+			'#title' => t('Enter url to phrase search'),
+			'#default_value' => variable_get('ous_search_pdf_normal_search', ''),
+			'#size' => 100,
+			'#maxlength' => 100,
+			'#description' => t("enter the absolute path to the url where to retrieve json for normal search (phrase search).<br>Example: http://DOMAINNAME/param1/param2/"),
+			'#required' => TRUE,
+	);
+
+	return system_settings_form($form);
+}
+
+function ous_search_pdf_search_info() {
+  return array(
+      'title' => 'PDF',
+  	  'path'=> 'pdf',	
+  );
+}
+
+/**
+ * Implements hook_search_access().
+ */
+
+function ous_search_pdf_search_access() {
+	return user_access('search pdf phrase');
+}
+
+/**
+ * Implements hook_search_execute().
+ */
+
+function ous_search_pdf_search_execute($keys = NULL, $conditions = NULL) {
+	$form_input = preg_replace('/\s+/', '%20', $keys);
+	
+	$results = array();
+	//$retrieve_url = variable_get('ous_pdf_external_server');
+	$retrieve_url = variable_get('ous_search_pdf_normal_search');
+	
+	$options = array(
+			'headers' => array(
+					'Accept' => 'application/json',
+			),
+			'method' => 'GET',
+			'data' => NULL
+	);
+	$response = drupal_http_request($retrieve_url . $form_input.'.json' , $options);
+	//dpm($response);
+	if(!empty($response)){
+		if ($response->code == 200) {
+		$manual_number = array();
+			$data = json_decode($response->data, true);
+			krsort($data);
+			//kpr($data);
+		
+			foreach($data as $key => $value){
+				$key_exploded = explode('_',$key);
+				$manual_number[$key_exploded[0]][][$key] = $value;
+			}
+			//kpr($manual_number);
+			foreach($manual_number as $key => $newest_manual){
+				$lang_array = array();
+				$count = 0;
+				//kpr($newest_manual);
+				foreach($newest_manual as $manual_key => $allmanuals){
+					$explode_manual = explode('_', key($allmanuals));
+					//kpr($allmanuals);
+					//kpr($explode_manual);
+					//need to add the last things here. explode right. 
+					if(isset($explode_manual[4]) && $explode_manual[4] != '0.pdf'){
+						if (strpos($explode_manual[4], '.') !== false){
+							$explode_manuals = explode('.',$explode_manual[4]);
+							//kpr($explode_manuals);
+							$lang_string = $explode_manuals[0];
+						
+						}
+						else{
+							$lang_string = $explode_manual[4];
+						}
+							
+						//kpr($explode_manual[4]);
+						//kpr($lang_string);
+						//kpr($explode_manual);
+						
+						if(isset($lang_string)){
+							if(!in_array($lang_string, $lang_array)){
+								$lang_array[] = $lang_string;
+								//kpr($lang_array);
+								//kpr($allmanuals[key($allmanuals)]);
+								//kpr(key($allmanuals));
+								$results[] = array(
+										'link' => $allmanuals[key($allmanuals)],
+										'title' => key($allmanuals),
+								);
+							}
+								
+						}
+					}
+					else{
+						if($count == 0){
+							$results[] = array(
+									'link' => $allmanuals[key($allmanuals)],
+									'title' => key($allmanuals),
+							);
+							$count ++;
+						}
+						
+					}
+					//kpr($allmanuals);
+				}
+			}
+		}
+	}
+	$list = $results;
+	$per_page = 10;
+	// Initialise the pager
+	$current_page = pager_default_initialize(count($list), $per_page);
+	
+	
+	// Split your list into page sized chunks
+	$chunks = array_chunk($list,$per_page, TRUE);
+	
+	
+	// Show the pager
+	//print theme('pager', array('quantity',count($list)));
+	
+	
+	// Show the appropriate items from the list
+	print theme('item_list', array(
+			'items' => $chunks[$current_page],
+	));
+  return $chunks[$current_page];
+ 
+}
+	

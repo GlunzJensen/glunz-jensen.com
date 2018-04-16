@@ -1,0 +1,77 @@
+<?php
+
+function ous_pdf_json_output_menu() {
+
+	$items = array();
+
+	$items['admin/config/search/ous_pdf_json_output'] = array(
+			'title' => 'json output',
+			'description' => 'Get all pdf files in a folder and output them in a json list',
+			'page callback' => 'drupal_get_form',
+			'page arguments' => array('ous_pdf_json_output_admin'),
+			'access arguments' => array('administer pdf search internal settings'),
+			'type' => MENU_NORMAL_ITEM,
+	);
+	$items['ous_pdf_json_output/json'] = array(
+			'access callback'   => true, // available to all
+			'page callback'     => 'ous_pdf_json_output_json', // defined below
+			'delivery callback' => 'drupal_json_output'
+	);
+	
+	
+	return $items;
+}
+
+function ous_pdf_json_output_permission() {
+	return array(
+			'administer pdf search internal settings' => array(
+					'title' => t('Administer PDF search internal module'),
+					'description' => t('Perform administration tasks for PDF search internal module.'),
+			),
+	);
+}
+
+function ous_pdf_json_output_admin() {
+	$form = array();
+
+	$form['ous_pdf_json_output_folder'] = array(
+			'#type' => 'textfield',
+			'#title' => t('Enter local folder'),
+			'#default_value' => variable_get('ous_pdf_json_output_folder', ''),
+			'#size' => 100,
+			'#maxlength' => 100,
+			'#description' => t("Enter relative path to the folder that needs to be outputted as json."),
+			'#required' => TRUE,
+	);
+	
+
+	return system_settings_form($form);
+}
+
+
+
+ function ous_pdf_json_output_json() {
+
+ 	$path = variable_get('ous_pdf_json_output_folder');
+	//$path = 'sites/default/files/allmanuals';
+
+	$found = file_scan_directory($path, '/\.pdf$/');
+
+	//
+	// [ STEP: #1 ]
+	// Build a list of recent files currently available on the webserver
+	//
+	$manuallist = array();  // List of all manuals on the disk - of latest revision...
+	foreach ($found as $ffile) {
+
+		$manuallist[] = $GLOBALS['base_url'].'/'.$ffile->uri;
+		//$manuallist[] = $GLOBALS['base_url'].$ffile->uri;
+	}
+
+
+	return $manuallist;
+
+
+}
+
+ 

@@ -1,0 +1,41 @@
+name = GLUNZ & JENSEN CORPORATE WEBSITE
+description = The world's leading supplier of innovative solutions for the global prepress industry.
+version = 2018 1.0
+core = 7.x
+engine = phptemplate
+
+
+;-------------- R E G I O N S -------------
+
+regions[search] = Searchbar
+regions[topmenu] = Main menu
+regions[toppic] = Big picture and txt
+regions[offsetflexictp] = Actionlinks area
+regions[newshighlights] = News on frontpage
+regions[content] = Content
+regions[partners] = Proud to partner with
+regions[referrers] = Referrers blocks
+regions[highlight] = Product highlight
+regions[footercounter] = Counter before footer
+regions[footer] = Footer
+regions[subscribe] = Subscribe to newsletter
+regions[adress] = Adress in the footer
+
+
+;-------------- C S S -------------
+
+
+
+stylesheets[all][] = assets/css/screen.css
+
+
+
+
+;-------------- J S -------------
+
+
+scripts[] = assets/js/scrolltop.js
+scripts[] = assets/js/bellcom.js
+scripts[] = assets/js/togglemenu.js
+scripts[] = assets/js/mobilemenu.js
+scripts[] = assets/js/jquery.formalize.js

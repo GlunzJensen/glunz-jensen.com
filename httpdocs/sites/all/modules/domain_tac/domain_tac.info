@@ -1,0 +1,8 @@
+name = Domain Access Taxonomy Access Control Bridge
+description = Combines node access settings of the Domain Access and Taxonomy Access Control modules into a new access realm
+core = 7.x
+package = Domain Access
+dependencies[] = domain
+dependencies[] = tac_lite
+version = "7.x-1.x-dev"
+core = "7.x"

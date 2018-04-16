@@ -1,0 +1,181 @@
+/*
+Description: Newsflow/page-styling
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* Strukture of Newspage and flow
+################################################################## */
+#content { 
+  .item-list-pager {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 10px;
+@include breakpoint($max480) {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 10px;  
+}
+@include breakpoint($max960) {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+    &:nth-of-type(2) {
+      margin: 0;
+    }
+  a, .current {
+    font-size: 107%;
+    text-transform: uppercase;  
+    padding: 0px 10px 0px 10px;
+@include breakpoint($max960) {
+  font-size: 120%;
+  padding: 0px 15px 30px 15px;
+}    
+  }
+  .current {
+    color: $gj-cyan;
+    font-family: 'ArimoBold';
+    text-decoration: underline;    
+  }
+  .next {
+    float: right;
+  }
+  .previous {
+    display: none;
+  }
+  ul {
+    li {
+@include breakpoint($max480) {
+  display: none;
+}
+  &.next, &.previous {
+@include breakpoint($max480) {
+  display: inline-block;  
+}
+  }
+    }
+  }  
+  }
+}  
+.front {
+  #content {
+    .node-news {
+      border-top: 1px solid $txt-gray;
+      /*&:nth-child(1) {
+        &:before {
+          display: inline-block;
+          position: absolute;
+          content: 'NEWS';
+          top: -10px;
+          font-weight: bold;
+          font-size: 1.2em;
+        }
+      }*/
+@include breakpoint($max680) { 
+  padding: 20px 20px 0px 20px;
+}
+    }
+  }
+}
+/* >>Frontpage newsflow<<
+################################## */
+#content {
+  .node-news {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+/*@include breakpoint($px600-945) {
+  margin-bottom: 150px;
+}*/
+@include breakpoint($max320) {
+ margin-bottom: 10px;  
+}
+    img { float: left; }
+  }
+  .news-title {
+    a {
+      display: inline-block;
+      position: relative;
+      color: $txt-gray;
+      line-height: 130%; 
+      text-transform: uppercase; 
+/*@include breakpoint($px600-945) {
+  display: block;
+  margin-top: 5%;
+  font-size: 150%;
+  line-height: 125%;  
+}*/
+@include breakpoint($max320) {
+  line-height: 130%;
+  margin-top: 20px;  
+}
+      &:hover {
+        text-decoration: none;          
+      }
+    }
+  } 
+  .news-date {
+    color: $gj-cyan;
+    font-size: 80%;
+    margin: 1% 0% 2% 0%;
+    display: block;
+    position: relative;
+@include breakpoint($max320) {
+  margin: 5% 0% 8% 0%;  
+}     
+  }
+  .news-body {
+    display: inline-block;
+    line-height: 1.35em;
+    }
+  .read-news, .news-date {
+    a {
+      display: block;
+      position: relative;
+      left: 0px;
+      font-family: 'ArimoBold';
+      font-size: 100%;
+      color: $gj-cyan;
+      padding-left: 10px;
+      margin-top: 15px;
+      background: url(../img/2015/readmore_news.png) left center no-repeat;
+      text-transform: uppercase;
+/*@include breakpoint($px600-945) {
+  background-position: 205px 6px;
+  padding: 10px 25px 10px 10px;
+  font-size: 184%;
+  bottom: -50px; 
+}*/
+      &:hover {
+        text-decoration: underline; 
+@include breakpoint($px600-945) {
+  background-position: 205px -45px;  
+} 
+@include breakpoint($px321-600) {
+  background-position: right -44px;  
+}
+      }      
+    }
+  }  
+}
+/* ############################### */
+/* END >>Frontpage newsflow<< */
+
+
+/*####NO PICTURE LAYOUT ON NEWSFLOW####*/
+.page-news { 
+  #topwrapper {
+    display: none;
+  }
+}
+/*####/NO PICTURE LAYOUT ON NEWSFLOW####*/
+/*####Press releases and others without pictures####*/
+.view-mode-teaser_no_image { 
+  .group-left {
+    display: none;
+  }
+}
+/*####/Press releases and others without pictures####*/
+/* ################################################################ */
+/* END Strukture of Newspage and flow */

@@ -1,0 +1,223 @@
+/*
+Description: All font settings ind this SCSS
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* >>Fonts in use<<
+################################## */
+@include font-face("ArimoRegular", font-files("Arimo-Regular-Latin-webfont.ttf", "Arimo-Regular-Latin-webfont.eot", "Arimo-Regular-Latin-webfont.svg"));
+@include font-face("ArimoBold", font-files("Arimo-Bold.ttf", "Arimo-Bold-Latin-webfont.eot", "Arimo-Bold-Latin-webfont.svg"));
+/* ############################### */
+/* END >>Fonts in use<< */
+#admin-toolbar {
+  &.vertical {
+    div {
+      &.admin-tab {
+        min-height: 25px;        
+      }
+    }
+  }
+}
+/* Reset DS (newsflow) left/right collum
+################################################################## */
+.page-investor {
+  tr {
+    &.even, &.odd {
+      background-color: none;
+      border: none;     
+    }
+  }
+}
+/* ############################################################### */
+/* END Reset DS (newsflow) left/right collum */
+
+
+/* 2. Global Styles – (body, paragraphs, lists, etc)
+################################################################## */
+
+
+/* >>Basics<<
+################################## */
+body {
+  margin: 0;
+  font-family: 'ArimoRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em; /*14px*/
+  line-height: 1.428571em; /*20px*/
+  color: #333333;
+  background-color: #ffffff;
+  text-align:center; /*For IE6 Shenanigans*/
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.messages, 
+.status,
+.error  {
+  position: static;
+  color: white;
+  background-color: rgb(90,90,90);
+  padding: 10px 20px;
+  width: 100%;
+  display: block;	
+}
+.error {
+  background-color: #C83228;
+}
+.messages, .status {
+  a {
+    color: white;
+    font-family: 'ArimoBold';  
+  }
+}
+/* ############################### */
+/* END >>Basics<< */
+
+
+/* >>General links/fonts<<
+################################## */
+a {
+  color: rgb(90,90,90);
+  text-decoration: none;
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  &:hover {
+    color: $gj-cyan;
+    text-decoration: underline;    
+  }
+}
+p { font-size: 90%; margin-bottom: 0.8em; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: normal;
+  line-height: 1.428571em;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+h1,
+h2,
+h3 {
+  line-height: 2em;
+}
+h1 {
+  font-size: 2.75em; /*38,5px*/
+}
+h2 {
+  font-size: 2.25em; /*31,5px*/
+}
+h3 {
+  font-size: 1.75em; /*24,5px*/
+}
+h4 {
+  font-size: 1.25em; /*17,5px*/
+}
+h5 {
+  font-size: 1em; /*14px*/
+}
+h6 {
+  font-size: 0.85em; /*11.9px*/
+}
+.form-required {
+  color: rgb(90,90,90);
+  span {
+    &.form-required {
+      color: rgb(130,171,65);      
+    }
+  }
+}
+/* ############################### */
+/* END >>General links/fonts<< */
+
+
+/* >>Content<<
+################################## */
+#content {
+  h1, h2 {
+    font-family: 'ArimoBold';
+    font-size: 107%;
+    line-height: 1.2em;
+    vertical-align: baseline;
+    color: rgb(90,90,90);
+  }
+  ul {
+    margin-left: 15px;
+  }
+  strong {
+    font-family: 'ArimoBold';
+  }
+  .tm {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+  }
+}
+/* ############################### */
+/* END >>Content<< */
+
+
+/* >>Nice menu TXT<<
+################################## */
+#nice-menu-1 {
+ font-family: 'ArimoBold', "Helvetica Neue", Helvetica, Arial, sans-serif; 
+ text-transform: uppercase;
+ font-size: 120%;
+ li {
+   li {
+     a {
+       font-family: 'ArimoRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+       font-size: 80%;
+       text-transform: none;       
+     }
+   }
+ }
+}
+ul {
+  &.nice-menu-down {
+    li {
+      border-top: 12px solid #00B0EE;
+      /*MOBILE-LOGIN*/
+      &.menu-path-user-login {
+        display: none;
+@include breakpoint($mm-max620) {
+ display: inline-block;
+}
+      }      
+    }
+  }
+}
+/*PLATEWRITER*/
+.domain-platewriter-glunz-jensen-com {
+  #nice-menu-1 {
+    font-size: 110%;
+  } 
+}
+/* ############################### */
+/* END >>Nice menu TXT<< */
+
+
+/* >>Footer<<
+################################## */
+#footer {
+  .footermenu {
+    .block-menu {
+      h2 {
+        font-family: 'ArimoBold', "Helvetica Neue", Helvetica, Arial, sans-serif;        
+      }
+    }
+  }
+}
+/* ############################### */
+/* END >>Footer<< */
+
+/* ############################################################### */
+/* END 2. Global Styles – (body, paragraphs, lists, etc) */

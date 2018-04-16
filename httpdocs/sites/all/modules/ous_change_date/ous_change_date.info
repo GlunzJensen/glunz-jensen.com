@@ -1,0 +1,5 @@
+name = Ous Change Date
+description = Recreation of the ous datechange to use cron to update old file timestamps and save the timestamp in a custom table in database
+core = 7.x
+package = openUsource
+version = 7.x-alpha

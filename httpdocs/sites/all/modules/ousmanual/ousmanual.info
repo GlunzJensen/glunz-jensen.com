@@ -1,0 +1,6 @@
+name = ousManual
+description = Manual module for working with uploaded manuals on GJ Web project.
+core = 7.x
+package = openUsource
+version = 7.x-alpha
+files[] = ousmanual.module

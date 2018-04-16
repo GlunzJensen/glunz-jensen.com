@@ -1,0 +1,148 @@
+/*
+Description: SUPPORT
+Author URI: http://openusorce.com
+Version: 2018
+*/
+
+
+/* >>SUPPORT<<
+################################## */
+
+.support, .videos  {
+#pagewrapper {
+#content {
+  table {
+    display: block;
+    width: 100%;
+    float: left;
+    position: relative;
+    color: $txt-gray;
+    &.cols-4 {
+      thead, tbody {
+        th, td {
+          width: 30%;
+          &:nth-child(1) {
+            width: 15%;
+          }
+          &:nth-child(2) {
+            width: 45%;
+          }
+          &:nth-child(4) {
+            width: 10%;
+          }
+        }
+      }
+    }
+    thead, tbody {
+      display: block;
+      width: 100%;
+      float: left;
+      position: relative;
+      background: none;
+      a {
+        font-family: "ArimoRegular";
+        color: $txt-gray;  
+        &:hover {
+          color: $gj-cyan;
+        }      
+      }
+      tr {
+        position: relative;
+        display: block;
+        width: 100%;
+        float: left;
+        &:nth-last-child(2) {
+          margin-top: 15px;
+        }
+      }
+      td, th {
+        display: inline-block;
+        position: relative;
+        float: left;
+        width: auto;
+      }
+    }
+    thead {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: $txt-gray;
+      a {
+
+      }
+    }
+    tbody {
+
+    }
+  }
+  .view-customer-support-notes, .view-videos {
+    .view-filters, .view-content {
+      display: block;
+      position: relative;
+      width: 100%;
+      float: left;
+    }
+    .view-filters {
+      form {
+        width: 100%;
+        .views-exposed-widget {
+          padding: 0;
+          width: 30%;
+        }
+        .views-submit-button {
+          padding: 0;
+          .form-submit {
+            height: 46px;
+            margin: 16px 0px 0px 40px;            
+          }
+        }
+      }
+    }
+    .view-content {
+      a {
+        font-family: "ArimoRegular";
+      }
+      h2, h3 {
+        a {
+        font-family: "ArimoRegular";          
+        }
+      }
+    }
+  }
+  .view-id-products {
+    table {
+      tbody {
+        tr {
+          td {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .view-videos {
+    h2 {
+      margin-bottom: 8px;
+    }
+    table {
+      margin-bottom: 25px;
+      .views-field-title {
+        margin-top: 5px;
+        position: relative;
+        display: block;  
+        margin-bottom: 25px;      
+      }
+      tbody {
+        tr {
+          td {
+            
+          }
+        }
+      }
+    }
+  }
+}
+}
+}
+
+/* ############################### */
+/* END >>SUPPORT<< */

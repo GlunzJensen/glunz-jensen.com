@@ -1,0 +1,359 @@
+/*
+Description: Menu-styling
+Author URI: http://openusorce.com
+Version: 2015
+*/
+/* >>MAIN-MENU<<
+################################## */
+/* First section on dropdown */
+ul.nice-menu {
+  li {
+      .menuparent { 
+        background: url(../img/2015/mainmenu_arrow.png) no-repeat 95% center; 
+        &:hover {        background: url(../img/2015/mainmenu_arrow.png) no-repeat 95% center $txt-gray; }
+        }
+    li {
+      background-color: none;
+      &:hover {
+      background: $txt-gray;
+      }
+    }
+  }
+}
+/*1.UL Container:BACKGROUND IN DROP DOWN LIST*/
+ul.nice-menu-down {
+  li {
+    ul {
+      border: none;
+      margin-top: 17px;
+      padding-bottom: 0px;
+    }
+  }
+}
+/* ############################### */
+/* END >>MAIN-MENU<< */
+
+
+/* Strukture of Frontpage
+################################################################## */
+
+/* >>SOLUTION MENU<<
+################################## */
+#solutiontab {
+  display: block;
+  position: relative;
+  height: 232px;
+  margin-top: 22px;
+  color: white;
+@include breakpoint($max680) {
+  display: block;
+  height: auto;
+  margin-top: 60px;
+  color: rgb(255, 255, 255);
+  max-width: 100%; 
+  padding: 0px 15px; 
+}
+@include breakpoint($px600-945) {
+  height: 112px;
+}
+  h2 {
+    display: block;
+    position: absolute;
+    font-family: 'ArimoBold';
+    font-size: 120%;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    bottom: 45px;  
+    margin-left: 10px;
+    width: 22%;
+@include breakpoint($max680) {
+  width: 95%;
+  display: block;
+  font-family: 'ArimoBold';
+  font-size: 180%;
+  text-transform: uppercase;
+  opacity: 0.8;
+  bottom: 45px;
+  position: static;
+  margin-left: 0px;
+  padding: 25px 0% 25px 5%;
+  background: $gj-cyan; 
+  margin-bottom: 0.5em;
+} 
+@include breakpoint($px600-945) {
+  bottom: 5px;
+}
+    &:hover { background: none; } 
+    &:before {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 9px;
+      content: '';
+      background: url(../img/2015/solution_arrow.png);
+      top: -18px;
+      left: 0px;
+@include breakpoint($max680) {
+    background: url(../img/2015/mobilemenu.png) no-repeat right top;
+    top: 0;
+    background-size: 100%;
+    position: relative;
+    float: right;
+    margin-right: 4%;
+    height: 25px;
+    width: 25px;
+    opacity: 0.5;
+}
+    } 
+  }
+  /* Link and background in squares*/
+  /*MEDIUM VOLUME*/  
+  a {
+    display: block;
+    font-size: 80%;
+    line-height: 70.5px;
+    padding-left: 10px;
+    border-top: 1px solid white;
+    color: rgba(255,255,255,1);
+@include breakpoint($max680) {
+  display: block;
+  line-height: 45px;
+  padding-left: 5%;;
+  color: rgba(255, 255, 255, 1);
+  background: none;
+  opacity: 1;  
+}
+@include breakpoint($px600-945) {
+  line-height: 36px;
+}
+  }
+  /*BG in squares*/
+  .leaf {
+    display: block;
+    width: 100%;
+    height: 33.33333%;
+@include breakpoint($max680) {
+  width: 100%;
+  background: $gj-cyan-solution;
+  opacity: 0.95;  
+}
+    &:hover { 
+      background: $gj-cyan;    
+    }    
+  }
+  /*Gray and blue background*/
+  .menu {
+    position: absolute;
+    display: block;
+    width: 22%;
+    z-index: 999;
+    overflow: hidden;
+    height: 200px;
+    opacity: 0;
+    background: $gj-cyan-solution;
+    @include transition-duration(200ms); 
+    @include transition-timing-function(ease-in);
+@include breakpoint($max680) {
+  width: 100%;
+  float: left;
+  margin-top: -115px;
+  height: 115px !important;
+  position: relative;
+  font-size: 0.75em;
+}
+@include breakpoint($px600-945) {
+  height: 110px;
+}
+@include breakpoint($ekstra-solution-590-680) {
+  margin-top: -135px;
+  height: 150px !important;
+}
+@include breakpoint($max480) {
+  margin-top: -132px;
+  height: 128px !important; 
+}
+    a {
+      display: none;
+      position: relative;
+      z-index: 200;
+      width: 200px;
+      color: white;
+      font-size: 1em;     
+      background: $gj-cyan-solution;
+@include breakpoint($max680) {
+  width: 98%;
+  font-size: 100%;
+  line-height: 45px;
+  padding-left: 1em;
+}
+      &:hover { 
+        background: $gj-cyan;
+@include breakpoint($max680) {
+  border: none;
+} 
+      }
+    }
+    &:hover {
+      opacity: 1;
+      @include transition-duration(200ms); 
+      @include transition-timing-function(ease-in);
+      a {
+        display: block;
+      }
+    }
+  }
+ /* #block-menu-menu-packaging, #block-menu-menu-support-service {
+    .menu {
+@include breakpoint($max680) {
+  margin-top: -100px;  
+}      
+    }
+  }*/
+  /*MAIN QUBE-SETINGS*/
+  .block-menu {
+    display: block;
+    cursor: pointer; 
+    float: left;  
+    width: 22%;
+    height: 200px;
+    z-index: 5;
+    background: $gj-cyan;
+    @include background-size(410px 800px);
+@include breakpoint($max680) {
+  display: block;
+  z-index: 5;
+  float: left;
+  width: 100%;
+  height: 115px;
+  background: none;
+  cursor: pointer;
+  margin-right: 0;  
+}
+@include breakpoint($px600-945) {
+  height: 112px;
+}  
+@include breakpoint($max480) {
+ height: 128px; 
+}  
+  }
+  /*LOW VOLUME*/
+ /* .last {
+    a {
+      background-position: -12px 6px;
+      border-bottom: 1px solid $gj-cyan;
+    }
+  }*/
+  /*HIGH VOLUME*/
+  .first {
+    a {
+      background-position: -12px -95px;
+@include breakpoint($max680) {
+  background-position: 50% -100px;  
+}
+    }
+  }
+}
+/*BG in squares*/
+#block-menu-menu-support-service {
+  a { 
+    line-height: 52.5px; 
+@include breakpoint($px600-945) {
+  line-height: 27.5px;
+} 
+@include breakpoint($max680) {
+    line-height: 35px !important;
+} 
+  }
+  .leaf {
+    display: block;
+    width: 100%;
+    height: 25%;
+    &:hover { 
+      background: $gj-cyan;    
+    }    
+  }
+}
+#block-menu-menu-newspaper {
+  background-position: 0px 0px;
+  margin-right: 4%;
+@include breakpoint($max680) {
+  margin-left: 0%;
+}
+  &:hover { background-position: 0px 400px; } 
+}
+#block-menu-menu-commercial {
+  background-position: 0px 600px;
+  margin-right: 4%; 
+  &:hover { background-position: 0px 200px; }
+}
+#block-menu-menu-packaging {
+  background-position: 200px 600px;
+  margin-right: 4%;
+@include breakpoint($max680) {
+  margin-left: 0%;
+} 
+  :hover { background-position: 200px 200px; }
+}
+#block-menu-menu-support-service {
+  background-position: 410px 600px;  
+  &:hover { background-position: 410px 200px; }
+}
+/* SOLUTIONPAGE -> SOLUTIONMENU */
+.node-type-solutions {
+   
+  #solutiontab { 
+    margin-top: 0px;
+    height: 70px;
+    display: none;
+@include breakpoint($max680) { 
+  display: none;
+}
+    a {
+      opacity: 1;
+    }
+    .block-menu {
+      height: 70px;
+@include breakpoint($max680) { 
+ height: auto; 
+}
+      .menu {
+        height: 190px;
+      }
+    }
+    h2 {
+      bottom: 20px;
+      &:before { display: none; }     
+    }
+    .leaf {
+      background-color: rgba($gj-cyan, 0.9);      
+    }
+  } 
+  #topwrapper {
+@include breakpoint($max680) { 
+  padding: 0;  
+}
+    .title {
+@include breakpoint($max680) { 
+  margin-top: 1.5em;  
+}
+    }
+  }
+}
+/* ROLE ADMIN RULES */
+.role-administrator {
+  #solutiontab {
+    .menu {
+      width: 100%;     
+    }
+    h2 {
+      bottom: 12px;
+      width: 100%;     
+    }
+  }
+}
+/* ############################### */
+/* END >>SOLUTION MENU<< */
+
+
+/* ################################################################ */
+/* END 1. strukture of Frontpage */

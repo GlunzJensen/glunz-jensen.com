@@ -1,0 +1,151 @@
+/*
+Description: Menu-styling (Superfish)
+Author URI: http://openusorce.com
+Version: 2018
+*/
+
+
+/* >>Menu<<
+################################## */
+header {
+  
+}
+/* ############################### */
+/* END >>Menu<< */
+
+
+/* >>MobileMENU<<
+################################## */
+/*BURGERMENU*/
+.mm-container {
+  
+}
+/*.nav-closed {
+  top: 120px;
+  right: -400px;
+  position: absolute;
+  @include transition-duration(250ms);     
+  @include transition-timing-function(ease-out);
+  .indhold {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 20px 0px 20px 40px;
+    background: rgba($mygray, 0.8);
+    width: 200px;
+    height: auto;
+    line-height: 1.5em;
+@include breakpoint($max980) {
+    top: -30px;
+}
+@include breakpoint($max790) {
+  padding: 0;
+}
+    .mobile-main {
+      display: none;
+      ul {
+        display: block;
+        &.inline {
+          li {
+            padding: 0;
+          }
+        }
+        li {
+          display: block;
+          width: 100%;
+          position: relative;
+          a {
+            color: white;
+            background: lime;
+            width: 100%;
+            display: block;
+            padding-left: 30px;
+            padding: 6px 0px 6px 30px;
+          }
+        #australia {
+          background: rgba($aus, 0.5);
+          border-color: rgba($aus, 0.2);
+          &:hover {
+          background: rgba($aus, 1);
+          border-color: rgba($aus, 0.2);            
+          }
+        }
+        #new-zealand {
+          background: rgba($nz, 0.5);
+          border-color: rgba($nz, 0.2);
+          &:hover {
+          background: rgba($nz, 1);
+          border-color: rgba($nz, 0.2);            
+          }
+        }
+        #south-africa {
+          background: rgba($sydafrika, 0.5);
+          border-color: rgba($sydafrika, 0.2);
+          &:hover {
+          background: rgba($sydafrika, 1);
+          border-color: rgba($sydafrika, 0.2);            
+          }
+        }
+        #canada {
+          background: rgba($canada, 0.5);
+          border-color: rgba($canada, 0.2);
+          &:hover {
+          background: rgba($canada, 1);
+          border-color: rgba($canada, 0.2);            
+          }
+        }
+        #usa {
+          background: rgba($usa, 0.5);
+          border-color: rgba($usa, 0.2);
+          &:hover {
+          background: rgba($usa, 1);
+          border-color: rgba($usa, 0.2);            
+          }
+        }
+        #travel-type {
+          background: rgba($rejsetype, 0.5);
+          border-color: rgba($rejsetype, 0.2);
+          &:hover {
+          background: rgba($rejsetype, 1);
+          border-color: rgba($rejsetype, 0.2);            
+          }
+          }
+
+        }
+      }
+@include breakpoint($max790) {
+  display: block;
+}
+    }
+    .header-menu {
+      display: block;
+      ul {
+        &.menu {
+          font-size: 1.1em;
+@include breakpoint($max790) {
+  display: block;
+  padding: 12px 0px 12px 30px;
+}
+          li {
+            padding: 0;
+           a {
+             color: white;
+             line-height: 1.4em;
+           } 
+          }
+        }
+      }
+    }
+  }
+ &.nav-open {
+   top: 120px; 
+   right: 0px;
+   @include transition-duration(250ms);     
+   @include transition-timing-function(ease-in);  
+ }
+}*/
+
+/* ############################### */
+/* END >>MobileMENU<< */
+

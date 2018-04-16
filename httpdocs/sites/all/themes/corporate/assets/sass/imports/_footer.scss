@@ -1,0 +1,231 @@
+/*
+Description: Footer styling
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* Footer of the page
+################################################################## */
+/*#bottombar {
+  @include background-image(linear-gradient(to right, $gj-cyan-light, $gj-cyan));
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f7fd', endColorstr='#00b0ee',GradientType=1 ); /* IE6-9 */
+  /*height: 12px;
+  margin-top: 5px;
+  position: absolute;
+  z-index: 0; 
+  @include box-shadow(rgba(0, 0, 0, 0.5) 0px -2px 6px 0px);  
+}*/
+#footer {
+  display: block;
+  height: auto;
+  width: 100%; 
+  background: $txt-gray;
+  position: absolute;
+  color: white;
+@include breakpoint($max960) {
+  padding: 0px 15px 0px 15px;
+}
+  a {
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+    font-size: 90%;
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
+  .wrapper940 { padding-top: 20px; }
+  .container {
+   display: inline-block;
+   float: left;
+   position: relative; 
+   min-height: 30px;
+  }
+  .topfooter {
+    padding: 10px 0px;
+  }
+  .bottomfooter {
+    border-top: 1px solid rgb(78,78,78);
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 10px;
+@include breakpoint($max680) {
+  margin-top: -90px;
+  border: none;
+}
+  }
+  .footermenu {
+    width: 80%;
+@include breakpoint($max960) {
+  display: none; 
+}    
+    .block-menu {
+      display: inline-block;
+      float: left;
+      margin-right: 70px;
+      h2 { text-transform: uppercase; opacity: 0.5; }
+      ul {}
+      li { list-style: none; }
+    }
+  }
+  .socials {
+    width: 20%;
+    cursor: pointer;
+    text-indent: -9999px;
+    overflow: hidden;
+@include breakpoint($max960) {
+  width: 100%;
+}
+@include breakpoint($max680) {
+  margin-top: 60px;
+}
+    a {
+      background: url(../img/2015/socials.png) no-repeat;
+      width: 30px;
+      height: 30px;   
+      display: inline-block;
+      float: right;
+      &.linkedin {}
+      &.facebook {        
+        background-position: -30px 0px;
+      }
+      &.twitter {
+        background-position: -60px 0px;
+      }   
+    }
+  }
+  .adress {
+    width: 80%;
+    p { 
+      display: inline-block; 
+      opacity: 0.5; 
+      padding-right: 15px;
+      &:first-child {
+        opacity: 0.65;
+        font-family: 'ArimoBold', "Helvetica Neue", Helvetica, Arial, sans-serif;        
+      }
+@include breakpoint($max680) {
+  display: block;
+  margin-bottom: 5px;
+} 
+    }
+@include breakpoint($max960) {
+  width: 100%;
+  margin-bottom: 20px;
+}
+@include breakpoint($max680) {
+  width: 70%;
+}
+  }
+  .signup {
+   width: 20%;
+   text-align: right; 
+@include breakpoint($max960) {
+  width: 100%;
+}
+@include breakpoint($max680) {
+  display: none;
+} 
+  }
+  select {
+@include breakpoint($px10-821) {
+  margin-left: 20px;
+  width: 60%;
+  box-shadow: none;  
+}    
+  }
+  .contextual-links-wrapper {
+    display: none;    
+  } 
+}
+
+   
+/* >>FOOTER-LOGO<<
+################################## */
+/*#footerlogo {
+  margin: 0px 10px 0px -10px; 
+  a {
+    background-repeat: no-repeat;
+    display: block;
+    height: 80px;
+    margin-left: 0px;
+    float: left;
+    /*OLD width: 17%; */
+/*    width: 14%;
+    margin-left: 2%;
+    text-indent: -999px;
+    overflow: hidden;
+    opacity: 0.15;
+    @include transition-duration(500ms); 
+    @include transition-timing-function(ease-out);
+    &:hover {
+      opacity: 1; 
+      @include transition-duration(200ms); 
+      @include transition-timing-function(ease-out);     
+    }    
+  }
+  ul { 
+    li {
+      display: inline;
+    }
+  }
+} 
+#footerlogo { 
+  .activetab {
+    opacity: 1;
+  }  
+  /*GLUNZ & JENSEN*/
+/*   .domain-id-1 {
+    background-image: url(../img/glunzogjensen.svg);
+    margin-left: 2%;
+  }
+  /*DEGRAF*/  
+/*  .domain-id-2 {
+    background-image: url(../img/offset.svg);
+  }
+  /*OFFSET*/
+/*  .domain-id-3 {
+    background-image: url(../img/platewriter.svg);
+  }
+  /*ICTP*/
+/*  .domain-id-4 {
+    background-image: url(../img/microflex.svg);
+  }
+  /*MICROFLEX*/
+/*  .domain-id-5 {
+    background-image: url(../img/degraf.svg);
+  }
+  /*GKS*/
+ /* .domain-id-6 {
+    background-image: url(../img/gks_logo.svg);
+    margin-top: -5px;
+  }
+}
+/* ############################### */
+/* END >>FOOTER-LOGO<< */
+
+
+/* Hide clone content on frontpage -> GKS */
+/*.node-type-gksfront { 
+  .action-links {
+    display: none;
+  }
+}
+/* /Hide clone content on frontpage -> GKS */
+/* ########## HIDE SITE-LOGOS FOOTER ########## */
+/*.domain-gks-glunz-jensen-com {
+  #footer {
+    min-height: 40px;   
+  }
+  #footerlogo {
+    a {
+      display: none;
+    }
+  }
+}
+/* /########## HIDE SITE-LOGOS FOOTER ########## */
+/* ################################################################ */
+/* END -> Footer of the page */

@@ -1,0 +1,25 @@
+name = GLUNZ & JENSEN LANDING PAGE
+description = landing page theme 
+version = 2016 1.0
+core = 7.x
+engine = phptemplate
+
+
+;-------------- R E G I O N S -------------
+regions[header] = The header of the site 
+regions[toppicture] = Product picture
+regions[formwrapper] = Product form
+regions[content] = Conten blocks
+regions[ourwordforit] = Tak our word for it...
+regions[footer] = The footer of the site 
+
+;-------------- C S S -------------
+
+stylesheets[all][] = assets/css/screen.css
+
+;-------------- J S -------------
+
+
+
+;-------------- B R E A K P O I N T S (tabs/logo) -------------
+

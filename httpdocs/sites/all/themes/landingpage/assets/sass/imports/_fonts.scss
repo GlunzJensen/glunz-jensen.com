@@ -1,0 +1,84 @@
+/*
+Description: All font settings ind this SCSS
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* >>Fonts in use<<
+################################## */
+@include font-face("opensansRegular", font-files("OpenSans-Regular-webfont.ttf", "OpenSans-Regular-webfont.eot", "OpenSans-Regular-webfont.svg"));
+@include font-face("opensansBold", font-files("OpenSans-Bold-webfont.ttf", "OpenSans-Bold-webfont.eot", "OpenSans-Bold-webfont.svg"));
+@include font-face("gooddogregular", font-files("GoodDog-webfont.ttf", "GoodDog-webfont.eot", "GoodDog-webfont.svg"));
+/* ############################### */
+/* END >>Fonts in use<< */
+
+
+
+
+/* Global Styles – (body, paragraphs, lists, etc)
+################################################################## */
+
+
+/* >>Basics<<
+################################## */
+body {
+  font-family: "opensansRegular";
+  a {
+    text-decoration: none; 
+    cursor: pointer;
+    &:hover {    
+    } 
+    &.active {
+      text-decoration: none;
+    }   
+  }
+}
+/* ############################### */
+/* END >>Basics<< */
+
+
+/* >>General links/fonts<<
+################################## */
+  h1, .field-name-field-title {
+    font-size: 1.35em;
+    font-family: "opensansBold";
+    display: inline-block;
+    margin: 0px 0px 5px 0px;
+    display: block;    
+  }
+ 
+  h2 {
+    font-size: 1.1em;
+    font-family: "opensansBold";
+    display: inline-block;
+    margin: 0px 0px 5px 0px;    
+    &:first-of-type {
+      margin-top: 0px;
+  }
+  h3 {
+
+    }
+  }
+  strong {
+    font-family: "opensansBold";    
+  }
+  ul, ol {
+
+    li {
+
+    }
+  }
+  p {
+	font-size: 1em;
+    line-height: 1.3em;
+    margin-bottom: 0.6em;
+  }
+  
+/* ############################### */
+/* END >>General links/fonts<< */
+
+
+
+/* ############################################################### */
+/* END Global Styles – (body, paragraphs, lists, etc) */

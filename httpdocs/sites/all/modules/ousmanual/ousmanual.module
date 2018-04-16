@@ -1,0 +1,808 @@
+<?php
+/*-----------------------------------------------------------------
+ * Hook Implementations
+ *------------------------------------------------------------------*/
+
+/**
+ * Implements hook_permission().
+ */
+function ousmanual_permission() {
+  return array(
+    'administer manuals' => array(
+      'title' => t('Administer Manuals'),
+      'description' => t('Upload new manualfiles.'),
+    ),
+  'view manuals' => array(
+        'title' => t('View Manuals'),
+        'description' => t('View all manuals.'),
+    ),  
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function ousmanual_menu() {  
+  $items = array();
+
+  $items['admin/config/media/manuals'] = array(
+    'title' => 'Manual settings',
+    'description' => 'Modify Manual settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ousmanual_settings'),
+    'access arguments' => array('administer manuals'),
+  );
+  $items['admin/structure/manuals'] = array(
+        'title' => 'Upload manuals',
+        'description' => t('Upload new manuals'),
+        'page callback' => 'ousmanual_page',
+        'page arguments' => array(),
+        'access arguments' => array('administer manuals'),
+        'type' => MENU_NORMAL_ITEM,
+  );
+  $items['manrevision'] = array(
+      'title' => 'Earlier editions',
+      'description' => 'Complete view of manual revisions',
+      'page callback' => 'ousmanual_manrevisions',
+      'access arguments' => array('view manuals'),
+      'type' => MENU_CALLBACK,
+  );  
+  return $items;
+}
+
+/**
+* Settings form page callback handler.
+*/
+function ousmanual_settings($form, &$form_state) {
+  $form['ousmanual'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Webconnect default settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  // @todo: overrides global / per theme
+  $form['ousmanual']['ousmanual_folder'] = array(
+    '#type' => 'textfield',
+    '#title' => t('The folder were the manuals are uploaded'),
+    '#description' => t('Specify a ftp-folder.'),
+    '#default_value' => variable_get('ousmanual_folder', 'manualupload'),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+* Upload form page callback handler.
+*/
+function ousmanual_page() {
+  //drupal_set_title('Products');
+  $output = '';
+//  $output .= 'Hej Kasper';
+
+  $output .= ousmanual_update();
+
+  return $output;
+}
+
+/**
+ * Implementing function gj_manlib_update()
+ */
+/*
+function ousmanual_update() {
+
+  $path = 'sites/default/files/allmanuals/manual-upload';
+
+  $found = file_scan_directory($path, '/\.pdf$/');
+
+  $count_all = 0;       // Antallet af filer under manualer
+  $count_newest = 0;    // Antallet af filer - hvis der kun tælles seneste revision
+  $count_updated = 0;   // Registreret på node men opdateret
+  $count_deleted = 0;   // Registrering slettet
+  $count_added = 0;     // Registrering tilføjet
+  $count_remaining = 0; // 
+
+  $count_exist = 0;     //
+  $count_manual_u_fil = 0;  // Antal 'manual' nodes hvortil der ikke blev fundet en fil 
+  $count_fil_u_manual = 0;  // Antal filer hvortil der ikke blev fundet en 'manual' node     
+
+  $files_this_node = 0;
+  $files_all_nodes = 0;
+  $files_this_array = 0;
+  $files_all_arrays = 0;
+
+
+  //
+  // [ STEP: #1 ]
+  // Build a list of recent files currently available on the webserver
+  //
+  $manuallist = array();  // List of all manuals on the disk - of latest revision...
+  foreach ($found as $ffile) {
+
+    $file = fopen($ffile->uri,"r");
+    $count_all+=1;
+
+    // Separate the filename in key identifiers
+	$segments = explode("_", $ffile->uri);
+    $manual = array_shift ($segments);
+    $revision = array_shift ($segments);
+    $label = array_shift ($segments);
+    $docid = array_shift ($segments);
+    $language = array_shift ($segments);
+
+    $manual = array_pop(explode('/',$manual));
+
+    if($language == "") {
+//if(is_null($language)) {
+      $language = '(X)';
+    } else {
+      if(strpos($language, '.')) $language = substr($language, 0, -4);  
+    }
+//var_dump($language);
+
+//    if($manuallist[$manual][$language] == "") {
+      $manuallist[$manual][$language] = array('revision' => NULL, 'timestamp' => NULL, 'filesize' => NULL, 'filename' => NULL);
+//    }
+
+    // Store the file data in the array using identifiers as 'key' to 'values'
+//    if (strcmp($revision,$manuallist[$manual][$language]['revision'])>0)  {
+      $manuallist[$manual][$language]['revision'] = $revision;
+      $manuallist[$manual][$language]['timestamp'] = filectime($ffile->uri);
+      $manuallist[$manual][$language]['filesize'] = filesize($ffile->uri);
+      $manuallist[$manual][$language]['filename'] = $ffile->filename;
+      $manuallist[$manual][$language]['filepath'] = $ffile->uri;
+//    }
+//var_dump($manuallist);
+    fclose($file);
+  }
+
+$output = '';
+
+  //
+  // [ STEP: #2 ]
+  // Go through nodes (type = manual) one by one to verify that node data match files on the server
+  //
+
+  $type = 'manual';
+  $status = 1;
+
+//  $sql = "SELECT * FROM {node} WHERE type = '%s' AND status = %d";
+//  $result = db_query(db_rewrite_sql($sql),$type, $status);
+
+  $result = db_query('SELECT * FROM {node} n WHERE n.type = :ntype AND n.title = :manual', array(':ntype' => $type, ':manual' => $manual));
+  $records = $result->rowCount();
+
+  foreach ($result as $data)  {
+
+
+    $node = node_load($data->nid);
+
+    // How many files are already registered on this node?
+    $files_this_node = sizeof($node->field_manual_file);
+    $files_all_nodes += $files_this_node;
+
+    // No files registered to node at present
+    if($files_this_node == 0) {
+    }//THEN?
+
+    // How many files exist on the disk for the manual number?
+    $files_this_array = sizeof($manuallist[$node->title]);
+    $files_all_arrays += $files_this_array;
+
+    // No files registered in array at present
+    if($files_this_array == 0) {
+    }//THEN?
+
+    $save_node = FALSE;
+
+    // Check that files already registered to the node match/exists in the list of manuals found on the server
+    if(array_key_exists('und',$node->field_manual_file)) {
+      foreach ($node->field_manual_file['und'] as $file) {
+
+        $match = FALSE;
+		$segments = explode("_", $file['uri']);
+	    $manual = array_shift ($segments);
+	    $revision = array_shift ($segments);
+	    $label = array_shift ($segments);
+	    $docid = array_shift ($segments);
+	    $language = array_shift ($segments);
+      
+        $manual = array_pop(explode('/',$manual));
+
+        if($language == "") {
+//        if(is_null($language)) {	
+          $language = '(X)';
+        } else {
+          if(strpos($language, '.')) $language = substr($language, 0, -4);  
+        } 
+
+        if(is_array($manuallist[$node->title])) {
+          foreach ($manuallist[$node->title] as $mlanguage => $value) {
+            if($mlanguage == $language) {
+              $match = TRUE;
+              continue;            
+            } // end if
+          } // end foreach
+        } // end if
+
+        switch ($match) {
+          case TRUE:
+            // Same language - check manual revision
+            if($manuallist[$manual][$language]['revision'] <> $revision) {
+            	if($language == '(X)' || $language == '(GB)') {
+            		ousmanual_update_filedate_in_node($node, $manuallist[$node->title][$language]['filepath']);
+            	}
+              ousmanual_update_file_in_node($node, $file['fid'], $manuallist[$node->title][$language]['filepath']);
+                $output .= 'HAPS!!<br/>';            
+//var_dump($manuallist[$node->title][$language]['filepath']);
+             
+              $count_updated+=1;
+              $save_node = TRUE;
+              $output .= '> updated:        '.$file['filename'].'<br/>';
+            } else {
+            } // end if-else
+            $count_newest+=1;
+            unset($manuallist[$manual][$language]);
+            break;
+
+          case FALSE:
+            // The file in the node does not exist on the disc? Delete from node!
+            //  !! DELETE FILE !! ousmanual_delete_file_in_node($node, $file->fid, $file);
+            $count_deleted+=1;
+            $save_node = TRUE;
+            break;
+        } // end switch
+
+      } // end foreach
+      if ($save_node == TRUE) {
+        node_save($node);
+       $save_node = FALSE;
+      } // end if
+    } // end if
+
+
+    // More files in the manual list than on node? Then create new node attachments for these files
+    if(is_array($manuallist[$node->title]) && sizeof($manuallist[$node->title])) {
+      foreach ($manuallist[$node->title] as $mlanguage => $value) {
+        ousmanual_add_file_to_node($node, $manuallist[$node->title][$mlanguage]['filepath']);
+        if($mlanguage == '(X)' || $mlanguage == '(GB)') {
+//          ousmanual_update_filedate_in_node($node, $manuallist[$node->title][$mlanguage]['filepath']);
+        }
+        unset($manuallist[$node->title][$mlanguage]);
+        $count_added+=1;
+        $save_node = TRUE;
+      } // end foreach
+      if ($save_node == TRUE) {
+        node_save($node);
+        $save_node = FALSE;
+      } // end if
+    } // end if
+
+  } // end foreach
+
+
+
+  $output .= '<br/>Statistics<br/><br/>';
+
+  $output .= '> Total number of files registered in manual nodes: '.$files_all_nodes.'<br/>';
+  $output .= '> Total number of corresponding files on disk:      '.$files_all_arrays.'<br/><br/>';
+
+  $output .= '> Total number of manuals on disk: '.$count_all.'<br/>';
+  $output .= '> manual unchanged:        '.$count_newest.'<br/>';
+  $output .= '> manual data updated:     '.$count_updated.'<br/>';
+  $output .= '> manual deleted:          '.$count_deleted.'<br/>';
+  $output .= '> manual added:            '.$count_added.'<br/>';
+  $output .= '> manual remaining:        '.sizeof($manuallist).'<br/>';
+
+  $output .= '<br/>Updating ending!';
+
+  return $output;
+
+
+} // end function
+*/
+function ousmanual_update() {
+
+  $path = 'sites/default/files/allmanuals/manual-upload';
+
+  $found = file_scan_directory($path, '/\.pdf$/');
+
+  $count_all = 0;       // Antallet af filer under manualer
+  $count_newest = 0;    // Antallet af filer - hvis der kun tælles seneste revision
+  $count_updated = 0;   // Registreret på node men opdateret
+  $count_deleted = 0;   // Registrering slettet
+  $count_added = 0;     // Registrering tilføjet
+  $count_remaining = 0; // 
+
+  $count_exist = 0;     //
+  $count_manual_u_fil = 0;  // Antal 'manual' nodes hvortil der ikke blev fundet en fil 
+  $count_fil_u_manual = 0;  // Antal filer hvortil der ikke blev fundet en 'manual' node     
+
+  $files_this_node = 0;
+  $files_all_nodes = 0;
+  $files_this_array = 0;
+  $files_all_arrays = 0;
+  $manual_title = array();
+
+
+  //
+  // [ STEP: #1 ]
+  // Build a list of recent files currently available on the webserver
+  //
+  $manuallist = array();  // List of all manuals on the disk - of latest revision...
+  foreach ($found as $ffile) {
+
+    $file = fopen($ffile->uri,"r");
+    $count_all+=1;
+
+    // Separate the filename in key identifiers
+	$segments = explode("_", $ffile->uri);
+    $manual = array_shift ($segments);
+    $revision = array_shift ($segments);
+    $label = array_shift ($segments);
+    $docid = array_shift ($segments);
+    $language = array_shift ($segments);
+
+    $manual = array_pop(explode('/',$manual));
+    $manual_title[] = $manual;
+    if($language == "") {
+//if(is_null($language)) {
+      $language = '(X)';
+    } else {
+      if(strpos($language, '.')) $language = substr($language, 0, -4);  
+    }
+//var_dump($language);
+
+//    if($manuallist[$manual][$language] == "") {
+      $manuallist[$manual][$language] = array('revision' => NULL, 'timestamp' => NULL, 'filesize' => NULL, 'filename' => NULL);
+//    }
+
+    // Store the file data in the array using identifiers as 'key' to 'values'
+//    if (strcmp($revision,$manuallist[$manual][$language]['revision'])>0)  {
+      $manuallist[$manual][$language]['revision'] = $revision;
+      $manuallist[$manual][$language]['timestamp'] = filectime($ffile->uri);
+      $manuallist[$manual][$language]['filesize'] = filesize($ffile->uri);
+      $manuallist[$manual][$language]['filename'] = $ffile->filename;
+      $manuallist[$manual][$language]['filepath'] = $ffile->uri;
+//    }
+//var_dump($manuallist);
+    fclose($file);
+  }
+
+$output = '';
+
+  //
+  // [ STEP: #2 ]
+  // Go through nodes (type = manual) one by one to verify that node data match files on the server
+  //
+
+  $type = 'manual';
+  $status = 1;
+
+//  $sql = "SELECT * FROM {node} WHERE type = '%s' AND status = %d";
+//  $result = db_query(db_rewrite_sql($sql),$type, $status);
+
+  $result = db_query('SELECT * FROM {node} n WHERE n.type = :ntype AND n.title IN (:manual)', array(':ntype' => $type, ':manual' => $manual_title));
+  $records = $result->rowCount();
+
+  foreach ($result as $data)  {
+
+
+    $node = node_load($data->nid);
+	//dpm($node);
+    // How many files are already registered on this node?
+    $files_this_node = sizeof($node->field_manual_file);
+    $files_all_nodes += $files_this_node;
+
+    // No files registered to node at present
+    if($files_this_node == 0) {
+    }//THEN?
+
+    // How many files exist on the disk for the manual number?
+    $files_this_array = sizeof($manuallist[$node->title]);
+    $files_all_arrays += $files_this_array;
+
+    // No files registered in array at present
+    if($files_this_array == 0) {
+    }//THEN?
+
+    $save_node = FALSE;
+
+    // Check that files already registered to the node match/exists in the list of manuals found on the server
+    if(array_key_exists('und',$node->field_manual_file)) {
+      foreach ($node->field_manual_file['und'] as $file) {
+
+        $match = FALSE;
+		$segments = explode("_", $file['uri']);
+	    $manual = array_shift ($segments);
+	    $revision = array_shift ($segments);
+	    $label = array_shift ($segments);
+	    $docid = array_shift ($segments);
+	    $language = array_shift ($segments);
+      
+        $manual = array_pop(explode('/',$manual));
+
+        if($language == "") {
+//        if(is_null($language)) {	
+          $language = '(X)';
+        } else {
+          if(strpos($language, '.')) $language = substr($language, 0, -4);  
+        } 
+
+        if(is_array($manuallist[$node->title])) {
+          foreach ($manuallist[$node->title] as $mlanguage => $value) {
+            if($mlanguage == $language) {
+              $match = TRUE;
+              continue;            
+            } // end if
+          } // end foreach
+        } // end if
+
+        switch ($match) {
+          case TRUE:
+            // Same language - check manual revision
+            if($manuallist[$manual][$language]['revision'] <> $revision) {
+            	if($language == '(X)' || $language == '(GB)') {
+            		ousmanual_update_filedate_in_node($node, $manuallist[$node->title][$language]['filepath']);
+            	}
+              ousmanual_update_file_in_node($node, $file['fid'], $manuallist[$node->title][$language]['filepath']);
+                $output .= 'HAPS!!<br/>';            
+//var_dump($manuallist[$node->title][$language]['filepath']);
+             
+              $count_updated+=1;
+              $save_node = TRUE;
+              $output .= '> updated:        '.$file['filename'].'<br/>';
+            } else {
+            } // end if-else
+            $count_newest+=1;
+            unset($manuallist[$manual][$language]);
+            break;
+
+          case FALSE:
+            // The file in the node does not exist on the disc? Delete from node!
+            //  !! DELETE FILE !! ousmanual_delete_file_in_node($node, $file->fid, $file);
+            $count_deleted+=1;
+            $save_node = TRUE;
+            break;
+        } // end switch
+
+      } // end foreach
+      if ($save_node == TRUE) {
+        node_save($node);
+       $save_node = FALSE;
+      } // end if
+    } // end if
+
+
+    // More files in the manual list than on node? Then create new node attachments for these files
+    if(is_array($manuallist[$node->title]) && sizeof($manuallist[$node->title])) {
+      foreach ($manuallist[$node->title] as $mlanguage => $value) {
+        ousmanual_add_file_to_node($node, $manuallist[$node->title][$mlanguage]['filepath']);
+        if($mlanguage == '(X)' || $mlanguage == '(GB)') {
+//          ousmanual_update_filedate_in_node($node, $manuallist[$node->title][$mlanguage]['filepath']);
+        }
+        unset($manuallist[$node->title][$mlanguage]);
+        $count_added+=1;
+        $save_node = TRUE;
+      } // end foreach
+      if ($save_node == TRUE) {
+        node_save($node);
+        $save_node = FALSE;
+      } // end if
+    } // end if
+
+  } // end foreach
+
+
+
+  $output .= '<br/>Statistics<br/><br/>';
+
+  $output .= '> Total number of files registered in manual nodes: '.$files_all_nodes.'<br/>';
+  $output .= '> Total number of corresponding files on disk:      '.$files_all_arrays.'<br/><br/>';
+
+  $output .= '> Total number of manuals on disk: '.$count_all.'<br/>';
+  $output .= '> manual unchanged:        '.$count_newest.'<br/>';
+  $output .= '> manual data updated:     '.$count_updated.'<br/>';
+  $output .= '> manual deleted:          '.$count_deleted.'<br/>';
+  $output .= '> manual added:            '.$count_added.'<br/>';
+  $output .= '> manual remaining:        '.sizeof($manuallist).'<br/>';
+
+  $output .= '<br/>Updating ending!';
+
+  return $output;
+
+
+} // end function
+
+
+/**
+ * Implementing function add_file_to_node()
+ */
+function ousmanual_add_file_to_node(&$node, $file) {  
+    if(array_key_exists('und',$node->field_manual_file)) {
+	  $antalfiler = count($node->field_manual_file['und']);
+    } else {
+	  $antalfiler = 0;
+    }
+	$origfile = $file;
+	$filepath = drupal_realpath($file);
+	  // Create managed File object and associate with Image field.
+	  $file = (object) array(
+	    'uid' => 1,
+	    'uri' => $filepath,
+	    'filemime' => file_get_mimetype($filepath),
+	    'status' => 1,
+	    'display' => 1,
+	  );
+
+	  // We save the file to the root of the files directory.
+	  $movedfile = file_copy($file, 'public://allmanuals');
+
+	  $node->field_manual_file[LANGUAGE_NONE][$antalfiler] = (array)$movedfile;
+	  unlink($origfile);
+	  //file_delete($origfile);
+/*
+  $details = stat($file);
+  $filesize = $details['size'];
+  $mtime = $details['mtime'];
+
+  $name = basename($file);
+
+  // build file object
+  $file_obj = new stdClass();
+
+  $file_obj->filename = $name;
+  $file_obj->description = $name;
+  $file_obj->filepath = $file;
+  $file_obj->filemime =  file_get_mimetype($name);
+  $file_obj->filesize = (string) $filesize;
+  $file_obj->filesource = $name;
+  $file_obj->uid = (string) 1;
+  $file_obj->nid = $node->nid;
+  $file_obj->vid = $node->vid;
+  $file_obj->status = FILE_STATUS_TEMPORARY;
+  $file_obj->timestamp = $mtime;
+
+  $file_obj->list = (string)1;
+  $file_obj->new = TRUE;
+
+  // save file to database
+  drupal_write_record('files', $file_obj);
+
+  // change file status to permanent (default is temporary)
+  file_set_status($file_obj,FILE_STATUS_PERMANENT);
+
+  $node->files[$file_obj->fid] = $file_obj;
+
+  //node_save($node);
+  //upload_save(&$node);
+*/
+
+}  
+
+
+/**
+ * Implementing function ousmanual_update_filedate_in_node()
+ */
+function ousmanual_update_filedate_in_node($node, $file) {  
+
+  $details = stat($file);
+  $filesize = $details['size'];
+  $mtime = $details['mtime'];
+
+  $node->field_manual_date['und'][0]['value'] = gmdate('d.m.Y', $mtime);
+
+  $filesize /= 1024;
+  if($filesize > 1024) {
+    $filesize /= 1024;
+    $node->field_manual_size['und'][0]['value'] = round($filesize, 2).' MB';
+  } else {
+    $node->field_manual_size['und'][0]['value'] = round($filesize, 0).' kB';
+  }
+}
+
+/**
+ * Implementing function ousmanual_update_file_in_node()
+ */
+function ousmanual_update_file_in_node(&$node, $fid, $file) {  
+  $antalfiler = count($node->field_manual_file['und']);
+var_dump($node->field_manual_file['und']);
+  $origfile = $file;
+  $filepath = drupal_realpath($file);
+  // Create managed File object and associate with manual field.
+  $file = (object) array(
+    'uid' => 1,
+    'uri' => $filepath,
+    'filemime' => file_get_mimetype($filepath),
+    'status' => 1,
+    'display' => 1,
+  );
+
+  // We save the file to the root of the files directory.
+  $movedfile = file_copy($file, 'public://allmanuals');
+
+  $node->field_manual_file[LANGUAGE_NONE][$antalfiler] = (array)$movedfile;
+  unlink($origfile);
+  //file_delete($origfile);
+/*
+  $details = stat($file);
+  $filesize = $details['size'];
+  $mtime = $details['mtime'];
+
+  $name = basename($file);
+
+  $file_obj = $node->files[$fid];
+
+  $file_obj->filename = $name;
+  $file_obj->description = $name;
+  $file_obj->filepath = $file;
+  $file_obj->filemime =  file_get_mimetype($name);
+  $file_obj->filesize = $filesize;
+  $file_obj->filesource = $name;
+  $file_obj->uid = (string) 1;
+  $file_obj->nid = $node->nid;
+  $file_obj->vid = $node->vid;;
+  //$file_obj->status = FILE_STATUS_TEMPORARY;
+  $file_obj->timestamp = $mtime;
+
+  $file_obj->list = (string) 1;
+  $file_obj->new = FALSE;
+
+  // update file to database
+  drupal_write_record('files', $file_obj, 'fid');
+*/
+}
+
+/**
+ * Implementing function ousmanual_delete_file_in_node()
+ */
+function ousmanual_delete_file_in_node($node, $fid, $file) {  
+/*
+  file_set_status($file, FILE_STATUS_TEMPORARY);
+  unset($node->files[$fid]);
+  db_query("DELETE FROM {files} WHERE fid = %d", $fid);
+  db_query("DELETE FROM {upload} WHERE fid = %d", $fid);
+
+  $node->field_manual_date[0]['value'] = '';
+  $node->field_manual_size[0]['value'] = '';
+
+  //upload_delete_revision($node);
+  //node_save($node);
+*/
+}
+
+function ousmanual_manrevisions() {
+  $path = 'sites/default/files/allmanuals';
+  $output = '';
+  $docID = array(
+		  '_PIM' => t('Pre-Installation manual'),
+		  '_IM'  => t('Installation manual'),
+		  '_SM'  => t('Service manual'),
+		  '_INS' => t('Instruction'),
+		  '_UM'  => t('User manual'),
+		  '_IF'  => t('Interface manual'),
+		  '_QG'  => t('Quick guide'),
+		  '_MC'  => t('Maintainance chart'),
+		  '_RP'  => t('Recycling Passport'),      
+		  '_EIS' => t('Miscellaneous'),      
+  );
+  $roleID = array('agfa','fuji','g&j','halm','heidelberg','kodak','konica','slp','employee','editor');
+  global $user;
+
+  if (user_access('view manuals')) {
+    //permissions check
+    $found = file_scan_directory($path, '/\.pdf$/');
+    $manual = explode("_",arg(1));
+    $filelist = array();
+    $file = array();
+    foreach ($found as $ffile) {
+      //				$output .= $ffile->name.'<br>';
+      $filelist[] = explode("_",$ffile->name);
+    }
+    // Obtain a list of columns
+    foreach ($filelist as $key => $row) {
+      $volume[$key]  = $row[0];
+      $edition[$key] = $row[1];
+    }
+    	
+    // Sort the data with volume descending, edition ascending
+    // Add $data as the last parameter, to sort by the common key
+    if(is_array($volume)) array_multisort($volume, SORT_ASC, $edition, SORT_ASC, $filelist);
+
+    $labelcount = 0;
+    if ($manual[0]) {
+      $output .= '<a name="manuals" href=""></a>';
+      $output .= '<div id="description">'.t('Below are listed the earlier editions of the manual.<br> To identify the right manual edition for your equipment, please look up the production date and the serial No on the
+equipment&#39;s name plate and compare with the date of the manuals listed below.<br>If searching for a <a target="_blank" style="color:#00B0EE;" href="/search/parts_catalogue">parts catalogue</a> it is also possible to identify the correct catalogue by typing the equipment&#39;s serial
+No <a target="_blank" style="color:#00B0EE;" href="/search/parts_catalogue">here</a>.<br>Manuals available in different languages are shown with a language code at the end of the file name. If no language
+code, the manual is available in English only.').'</div>';
+      $label = 1;
+      $latestedition = '';
+      foreach($filelist as $searchlist) {
+        if ($searchlist[0] == $manual[0]) {
+          //	foreach ($user->roles as $role) {
+          //	  if (in_array($role, $roleID) && strtolower($searchlist[2])==strtolower($role) OR in_array($role, $roleID) && strtolower($searchlist[2])==strtolower('NoLabel') OR in_array($role, $roleID) && strstr(strtolower($ffile->name),strtolower('G&J')) OR $role=='employee' OR $role=='editor' ) {
+
+            if ($label) {
+              if (!$labelcount) $output .= '<div id="mancol" style="float:left;">';
+              //$output .= '<h3>'.$docID['_'.$manual[3]].':</h3>';
+              $output .= '<br/>';
+              $label = 0;
+              $labelcount++;
+            }
+
+            $ffilename = $path.'/'.implode('_', $searchlist).'.pdf';
+
+            $details = stat($ffilename);
+            $filesize = $details['size'];
+            $mtime = $details['mtime'];
+
+         //read date from database instead of server
+        	$ous_date_hit = NULL;
+        	
+        	$manual_other_date = db_query('SELECT fm.timestamp
+		 	 	  FROM {file_managed} fm
+		 		  Where fm.filename = :filename', array(':filename' => implode('_', $searchlist).'.pdf')
+        	);
+        	foreach($manual_other_date as $manual_other_dates){
+        		//$output .= gmdate('d.m.Y', $manual_other_dates->timestamp).'    ';
+        		$ous_date_hit = gmdate('d.m.Y', $manual_other_dates->timestamp).'    ';
+        	}
+            
+            if(!isset($ous_date_hit)){
+            	$manual_date = db_query('SELECT ocdt.time
+		 	 		  FROM {ous_change_date_table} ocdt
+		 			   Where ocdt.filename = :filename', array(':filename' => $ffilename)
+            	);
+            	foreach ($manual_date as $manual_dates) {
+            		// Perform operations on $record->title, etc. here.
+            		// in this example the available data would be mapped to object properties:
+            		//$dealer_roles_rid[] = $dealer_rids->rid;
+            		if($manual_dates->time == 0){
+            			$manual_other_date = db_query('SELECT fm.timestamp
+		 	 		  FROM {file_managed} fm
+		 			   Where fm.filename = :filename', array(':filename' => implode('_', $searchlist).'.pdf')
+            			);
+            			foreach($manual_other_date as $manual_other_dates){
+            				//$output .= gmdate('d.m.Y', $manual_other_dates->timestamp).'    ';
+            				$ous_date_hit = gmdate('d.m.Y', $manual_other_dates->timestamp).'    ';
+            			}
+            	
+            			 
+            		}
+            		else{
+            			//$output .= gmdate('d.m.Y', $manual_dates->time).'    ';
+            			$ous_date_hit = gmdate('d.m.Y', $manual_dates->time).'    ';
+            		}
+            	}
+            }
+            if(isset($ous_date_hit)){
+            	$output .= $ous_date_hit;
+            }
+          
+            //outcomment serverdate
+           //$output .= gmdate('d.m.Y', $mtime).'    ';
+
+            $output .= '<a href="/'.$path.'/'.implode('_', $searchlist).'.pdf">'.implode('_', $searchlist).'</a>    ';
+
+            $filesize /= 1024;
+            if($filesize > 1024) {
+              $filesize /= 1024;
+              $output .= round($filesize, 2).' MB<br/>';
+            } else {
+              $output .= round($filesize, 0).' kB<br/>';
+            }
+
+            	
+            //	  }
+            //	}
+          }
+      }
+      if ($labelcount > 3) {
+        $output .= '</div>';
+        $labelcount = 0;
+      }
+    }
+  }
+  //$output .= '<br/><a id="backlink" href="/node/'.arg(2).'#manuals">'.t('Back to product').'</a>';
+  return $output;
+}

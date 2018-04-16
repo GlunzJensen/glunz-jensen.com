@@ -1,0 +1,92 @@
+<?php 
+function ous_change_date_schema() {
+  $schema['ous_change_date_table'] = array(
+    'description' => t('Ous change date'),
+    'fields' => array(
+      'filename' => array(
+        'description' => t('old files and there timestamp'),
+        'type' => 'varchar',
+      	'length' => 255,
+      	'default' => '',
+        'unsigned' => false,
+        'not null' => true,
+      ),
+      'time' => array(
+        'description' => 'The Unix timestamp connected to the file from old server.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('filename'),
+  );
+  return $schema;     
+}
+
+function ous_change_date_cron() {
+	$path = 'sites/default/files/allmanuals';
+	$found = file_scan_directory($path, '/\.pdf$/');
+	$i=0;
+	foreach ($found as $ffile) {
+		$new_file_path = $ffile->uri;
+		if ($ffile->uri == 'sites/default/files/allmanuals/'.$ffile->filename){
+			// find out if file is already in database
+			$file_name_table = db_query('SELECT ch.filename
+		 	 FROM {ous_change_date_table} ch
+		 	 Where ch.filename = :filename ', array(':filename' => $ffile->uri)
+			);
+			if($file_name_table->rowCount()==0){
+				//$output .= 'newfile: <strong>' .$new_file_path . '</strong> last modified: '. date("d-m-Y H:i:s" ,filemtime($ffile->uri)) .'<br>';
+				$fileURL = 'http://resource.glunz-jensen.com/sites/default/files/manuals/'.$ffile->filename;
+				$headers = get_headers($fileURL, 1);
+				$dateold = "Error";
+				if ( $headers && (strpos($headers[0],'200') !== FALSE) ) {
+					$time=strtotime($headers['Last-Modified']);
+					$dateold=date("d-m-Y", $time);
+				}
+				else{
+					$time= '';
+				}
+				//$output .= 'oldfile: <a href="'.$fileURL.'" target="_blank">'.$fileURL.'</a> (Last-Modified: '.$dateold.')<br>';
+					
+				/* Did we failed to get stat information? */
+				
+				if (empty($time)) {
+					watchdog('ous change date', $ffile->uri.' dont exits on old server');
+					$insert_query = db_insert('ous_change_date_table') // Table name no longer needs {}
+					->fields(array(
+							'filename' => $ffile->uri,
+							'time' => 0,
+					))
+					->execute();
+				} else {
+					if($time == filemtime($ffile->uri)){
+						watchdog('ous change date', $ffile->uri.' has the same time as on the old server');
+					}
+					else{
+						/*
+						 * We want the access time to be 1 week
+						* after the current access time.
+						*/
+				
+						//$output .= '<strong>Change the date from the old file to the new, time var is '. $time .'</strong><br><br>';
+						/* Touch the file */
+						if (!touch($new_file_path, $time)) {
+							watchdog('ous change date', $ffile->uri.' could not change the timestamp');
+						} else {
+							watchdog('ous change date', $ffile->uri.' timestamp has been changed to '.$dateold);
+							$insert_query = db_insert('ous_change_date_table') // Table name no longer needs {}
+							->fields(array(
+									'filename' => $ffile->uri,
+									'time' => $time,
+							))
+							->execute();
+							$i++;
+						}
+					}
+				}
+				if($i==20) break;
+			}
+		}
+	}
+}

@@ -1,0 +1,5 @@
+name = Ous Notification Email
+description = Sends email to users (creates its own table in db)
+core = 7.x
+package = openUsource
+version = 7.x-alpha

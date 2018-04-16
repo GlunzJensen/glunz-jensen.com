@@ -1,0 +1,220 @@
+/*
+Description: SCSS for the Solution section
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* Strukture of Solution page (with relevant products)
+################################################################## */
+
+/* >>styling - links top<<
+################################## */
+.node-type-solutions {
+  #content {
+    p, ul, h1, h2 { max-width: 680px; }
+    a {
+      &.toplink {
+        background: url(../img/2015/readmore_news.png) no-repeat center left;
+        display: block;
+        padding-left: 10px;
+        margin-bottom: 10px;       
+      }
+    }
+  }
+  #topwrapper { display: none; }
+  #relevant-products-link {
+@include breakpoint($max600) {
+        font-family: 'ArimoBold';
+        color: rgb(255, 255, 255);
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        padding: 20px 40px 10px 10px;
+        background: url(../img/arrow_white_totop.svg) no-repeat right center rgb(0, 177, 239);
+        background-size: 40px;
+        -webkit-background-size: 40px;
+        -o-background-size: 40px;
+        -moz-background-size: 40px;
+}
+    a {
+@include breakpoint($max600) {
+  color: white;
+}
+    }
+  }
+}
+/* ############################### */
+/* END >>styling - links top<< */
+
+
+/* >>Relevant products<<
+################################## */
+#block-views-products-on-solutions-block {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  bottom: -999px;
+  left: 0px;
+  z-index: 9999;
+  cursor: pointer;
+  padding: 12px 0px 35px 0px;
+  font-size: 90%;
+  @include box-shadow(rgba(0, 0, 0, 0.5) 0px 0px 10px 0px);
+@include breakpoint($px946-1045) {
+  max-height: 80%;
+}
+@include breakpoint($max600) {
+  font-size: 80%;
+  position: static;
+  -webkit-box-shadow: none;
+  box-shadow: none;  
+}
+@include breakpoint($max785) {
+  font-size: 80%;
+}
+@include breakpoint($max960) {
+  max-height: 75%;
+}
+  &.hid {
+    tbody {
+@include breakpoint($max600) {
+  display: none;
+}
+    }
+    h2 {
+@include breakpoint($max600) {
+  position: static;  
+}      
+    }
+  }
+  td {
+@include breakpoint($max600) {
+  display: block;
+  margin-bottom: 15px;  
+}
+  }
+  a {
+    padding-right: 5px;
+    text-decoration: none;
+    line-height: 2em;
+    &:hover { text-decoration: underline; color: $txt-gray; }
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: $gj-cyan;
+      position: relative;
+      margin: 0px 9px 1px 12px;
+    }    
+  }
+  h2 {
+    display: block;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 12%;
+    padding: 10px 12px 8px 28px;
+    background: url(../img/2015/totop.png) no-repeat rgb(0, 177, 239) 6px 15px;
+    @include transition-duration(100ms);     
+    @include transition-timing-function(ease-in);
+@include breakpoint($max785) {
+  opacity: 1;
+}
+    &:hover {
+      background-color: $txt-gray;
+    }  
+  }
+  .views-table {
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: none;
+    padding: 5px 20px 5px 12%;
+    word-break: break-word;
+    tr {
+      &:last-child {
+        a {
+          &:after {
+            display: none;        
+          }
+        }  
+      }
+    }
+@include breakpoint($max600) {
+  border: none;  
+}
+  }
+  tr {
+    &.even, &.odd {
+      float: left;
+      background-color: white;
+      display: inline;
+      border: none;
+      padding: 0;      
+    }
+  }
+  caption {
+    display: inline;
+    float: left;    
+  }
+  tbody {
+    display: block;
+    width: 75%;
+    margin-left: 15%;
+@include breakpoint($max600) {
+  margin-left: 0px;
+  margin-top: 40px;
+  width: 100%;
+  display: block;  
+}   
+  }
+  &.out {
+    h2 {
+    background: url("../img/2015/loginsearch-btton.png") no-repeat $gj-cyan 0px -28px;
+      /*background: none $gj-cyan;
+      position: relative;
+      left: 0%;
+      padding-left: 8%;
+      font-size: 2em;
+      padding: 8px 0px 0px 8%;
+      &:hover {
+        @include box-shadow(none);         
+      */
+@include breakpoint($max600) {
+  padding: 10px 0 10px 10px;
+  font-size: 1.5em;  
+}
+    }
+  }
+  /*product category*/
+  .product-category {
+    font-family: 'ArimoBold';
+    display: block;
+    margin-right: 20px;
+@include breakpoint($max600) {
+  font-size: 120%;  
+}
+  }
+}
+/*####MOBILE LINKE####*/
+#relevant-products-link {
+  display: none;
+}
+#highligt-link-scroll {
+  display: none;
+}
+#highlightet {
+  a {
+  display: none;
+  }
+}
+/*####/MOBILE LINKE####*/
+
+
+/* ############################### */
+/* END >>Relevant products< */
+
+/* ################################################################ */
+/* END 1. Strukture of Solution page (with relevant products) */

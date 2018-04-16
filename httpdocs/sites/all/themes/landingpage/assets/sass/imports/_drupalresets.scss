@@ -1,0 +1,35 @@
+/*
+Description: All Drupal stuff that we need to kill
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+
+
+
+/* 2. Global Styles – (body, paragraphs, lists, etc)
+################################################################## */
+
+
+/* >>Menu<<
+################################## */
+ul {
+  li {
+    &.leaf {
+    list-style-image: none;
+    list-style-type: none;
+    }
+  }
+  &.menu {
+    li {
+      margin: 0;
+    }
+  }
+}
+/* ############################### */
+/* END >>Menu<< */
+
+
+/* ############################################################### */
+/* END 2. Global Styles – (body, paragraphs, lists, etc) */

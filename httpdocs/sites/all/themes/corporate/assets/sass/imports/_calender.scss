@@ -1,0 +1,20 @@
+/* Calender
+################################################################## */
+.calendar-calendar { 
+  td {
+    color: rgb(90,90,90);
+  }  
+  td.empty {
+    color: #00B0EE; 
+  }
+  div.day {
+    width: 100%;
+  } 
+}
+.date-nav-wrapper { 
+  .date-heading {
+  top: 30px;
+  }
+}
+/* ################################################################ */
+/* END Calender */

@@ -1,0 +1,1825 @@
+  /*
+Description: The world's leading supplier of innovative solutions for the global prepress industry.
+Version: 1.0 - 2013
+Author: http://www.openusource.com // @danielqvist
+*/
+html {
+  background-image: url(../img/dushbg.png);
+}
+/*####################################################################################
+   HEADER
+  ##################################################################################*/
+#headerwrapper {
+  -webkit-box-shadow:  0px 6px 7px 0px rgba(0, 0, 0, 0.20);
+  box-shadow:  0px 6px 7px 0px rgba(0, 0, 0, 0.20);
+  position: relative;
+  z-index: 50;
+}
+#header {
+  background-color: rgb(255,255,255);
+}
+.admin-expanded ul.nice-menu .menu-662 li.hover ul {
+left: -100%;
+}
+/*===================================================================================> Logo's*/
+#logospot a {
+  background: no-repeat;
+  display: block;
+  height: 110px;
+  text-indent: -999px;
+  max-width: 95%;
+  margin-top: -10px;
+  margin-left: 0px;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
+.domain-alpha-glunz-jensen-com #logospot a {
+  background: url(../img/glunzogjensen.png) no-repeat;
+  background: rgba(0,0,0,0) url(../img/glunzogjensen.svg) no-repeat 0px 0px;
+}
+.domain-mflex-glunz-jensen-com #logospot a {
+  background: url(../img/microflex.png) no-repeat;
+  background: rgba(0,0,0,0) url(../img/microflex.svg) no-repeat 0px 0px;
+}
+.domain-platewriter-glunz-jensen-com #logospot a {
+  background: url(../img/platewriter.png) no-repeat;
+  background: rgba(0,0,0,0) url(../img/platewriter.svg) no-repeat 0px 0px;
+}
+.domain-offset-glunz-jensen-com #logospot a {
+  background: url(../img/offset.png) no-repeat;
+  background: rgba(0,0,0,0) url(../img/offset.svg) no-repeat 0px 0px;
+}
+.domain-degraf-glunz-jensen-com #logospot a {
+  background: url(../img/degraf.png) no-repeat;
+  background: rgba(0,0,0,0) url(../img/degraf.svg) no-repeat 0px 0px;  
+}
+.domain-gks-glunz-jensen-com #logospot a {
+  background: url(../img/gks_logo.png) no-repeat 0px 30px;
+  /*background: rgba(0,0,0,0) url(../img/gks_logo.svg) no-repeat 0px -5px;*/
+}
+/*#####   IE 10/9 HACK    ######*/
+/*IE 10*/
+/*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+.domain-gks-glunz-jensen-com #logospot a { background-size: 130%; margin-left: -100px; height: 125px;}   
+}*/
+/*IE 9 ->*/
+/*===================================================================================> Website tabs*/
+#righttop {
+  background-color: blue;
+  color: white;
+}
+#websitetabs .contextual-links-wrapper {
+  display: none;
+}
+#websitetabs {
+  width: 68%;
+}
+#websitetabs ul {
+  display: inline; 
+}
+#websitetabs a span {
+  display: block;
+  clear: both;
+  font-size: 65%;
+  line-height: 110%;
+}
+#websitetabs a {
+  font-family: 'ArimoBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 76%;
+  text-transform: uppercase;
+  display: block;
+  color: rgb(90,90,90);
+  padding: 25px 10px 10px 10px;
+  float: right;
+  margin-left: 10px;
+  margin-top: -10px;
+}
+#websitetabs a:hover {
+  text-decoration: none;
+  background-color: rgb(90,90,90);
+  color: rgb(255,255,255);
+  margin-top: -5px;
+  -webkit-box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.5);  
+  -webkit-transition: all 50ms ease-in;
+  -moz-transition: all 50ms ease-in;
+  -ms-transition: all 50ms ease-in;
+  -o-transition: all 50ms ease-in;
+	transition: all 50ms ease-in;	
+}
+#websitetabs .activetab {
+  font-family: 'ArimoBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  background-color: rgb(90,90,90);
+  color: rgb(255,255,255);
+  margin-top: -5px;
+  -webkit-box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+}
+/*===================================================================================> language-form-dropdown*/
+#loginsearch #lang-dropdown-form a {
+  padding: 10px 200px 10px 5px;
+  float: left;
+  color: rgb(255,255,255);
+  background: none;
+}
+#loginsearch #lang-dropdown-form a.selected {
+  background-color: rgba(90,90,90,1);
+}
+#edit-lang-dropdown-select_msdd {
+  width: 0px !important;
+  margin: 6px 40px 0px 0px;
+}
+#lang-dropdown-form .dd {
+  display: block;
+  float: right;
+}
+/*Flag*/
+.dd .ddTitle {
+  background: rgb(255,255,255);
+  border: 0;
+  height: 20px;
+  width: 32px;
+  cursor: pointer;
+}
+/*####Hide dropdown arrow####*/
+#edit-lang-dropdown-select_arrow {
+  display: none;
+}
+/*####/Hide dropdown arrow####*/
+/*Background in dropdown*/
+#edit-lang-dropdown-select_child {
+  background-color: #00B0EE;
+  color: rgb(255,255,255);
+  border: none;
+  border-right: 2px solid ; border-bottom: 2px solid;
+  border-color: rgb(255,255,255);
+  height: auto !important;
+  top: 0px !important;
+}
+/*===================================================================================> Login and search*/
+#loginfield .contextual-links-wrapper {
+  display: none;
+}
+#loginfield {
+  background-image: url(../img/dushbg.png);
+  margin-left: 0px;
+  min-height: 50px;
+  position: relative;
+  padding: 20px 30px 20px 20px;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: none;
+}
+
+/*####IE8 and below hack####*/
+.ie8search {
+  display: none;
+}
+.logged-in .ie8search {
+  display: block\9;
+  text-align: right\9;
+  margin-right: 20px\9;
+}
+/*####/IE8 and below hack####*/ 
+/*####IE10 hack####*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+.logged-in .ie8search { display: none; } 
+}
+/*####/IE10 hack####*/
+
+#loginfield {
+  display: block\9;  
+}
+#loginsearch a {
+  display: none\9; 
+}
+.logged-in #block-search-form .search-form {
+  display: none\9;  
+}
+/*####/IE8 and below hack####*/
+.logged-in #loginfield {
+  display: block;
+}
+/* account-VIEW+EDIT+LOGOUT */
+#loginfield .menu {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  z-index: 999;
+}
+#loginfield .menu a {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  float: right;
+}
+#loginfield h1,
+#loginfield h2 {
+  color: rgb(90,90,90);
+  margin-left: 10px;
+  display: none;
+}
+#loginsearch .contextual-links-wrapper {
+  display: none;
+}
+#edit-name, #edit-pass {
+  background-color: rgb(255,255,255);
+  margin-bottom: 10px;
+  -webkit-box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.4);
+  box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.4);
+}
+#user-login-form {
+  display: block;
+  width: 100%;
+  float: left;
+  margin-top: 5px;
+}
+#block-user-login {
+  max-width: 50%;
+  float: left;
+}
+block-search-form {
+  float: left;
+}
+#edit-name, #edit-pass {
+  color: rgb(130,171,65);
+  border: none;
+}
+#loginfield .form-required label  {
+  display: none;
+}
+#loginsearch {  
+  height: 33px;
+  text-align: right;
+  font-size: 80%;
+  background-color: rgb(255,255,255);
+}
+#loginsearch a {
+  color: rgb(90,90,90);
+  font-family: 'ArimoBold',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding: 10px 30px 10px 10px;
+  margin-left: 10px;
+  background: url(../img/loginsearch_arrow.png) no-repeat rgb(255,255,255);
+   background-position: right bottom;
+}
+#loginsearch a:hover,
+#loginsearch a.active {
+  text-decoration: none;
+  color: rgb(255,255,255);
+  background: url(../img/loginsearch_arrow.png) no-repeat rgb(90,90,90);
+ -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -ms-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+}
+#loginsearch a:hover {
+   background-position: right center;	 
+}
+#loginsearch a.active,
+#loginsearch a.active:hover {
+   background-position: right top;
+}
+/* ------------------------------------------> SEARCH adv.*/
+/*### HIDING TOPWRAPPER ON SEARCHPAGE ###*/
+.page-search #topwrapper {
+  display: none;
+}/*### /HIDING TOPWRAPPER ON SEARCHPAGE ###*/
+/*search this site: HIDDEN*/
+.element-invisible {
+  display: none;
+}
+#block-search-form .search-form {
+  width: 50%;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+#block-search-form .custom-search-box {
+  max-width: 98%;
+  min-width: 98%;
+  -webkit-transition: all 50ms ease-in;
+  -moz-transition: all 50ms ease-in;
+  -ms-transition: all 50ms ease-in;
+  -o-transition: all 50ms ease-in;
+	transition: all 50ms ease-in;
+}
+#block-search-form .custom-search-default-value {
+  width: 96%;
+  -webkit-box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
+}
+#edit-custom-search-types .form-item-custom-search-types {
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+#loginfield .form-item-custom-search-types {
+  margin-top: 10px;
+  font-size: 0.85em;
+}
+#search-block-form {
+  float: right;
+}
+.logged-in #search-block-form  {
+  float: left;
+}
+.admin-vertical #search-block-form {
+  float: right;
+} 
+/*===================================================================================> TO TOP*/
+#back-top {
+  display: block;
+  position: fixed;
+  cursor: pointer;
+  right: 80px;
+  top: 350px;
+  background: url(../img/arrow_white_totop.svg) no-repeat rgb(0,177,239);
+  background-size: cover;
+  width: 45px;
+  height: 45px;
+  z-index: 9999;
+  -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.6);
+  box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.6);
+}
+/*===================================================================================> Topmenu*/
+.topmenu {
+  border-top: 12px solid #00B0EE;
+  width: 100%;
+}
+/*===================================================================================> USER-INFO*/
+#users-info span {
+  display: inline-block;
+  width: 100%;
+  float: left;
+}
+.full-name {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+#users-info .user-email a {
+  color: #00B0EE;
+}
+#users-info .user-email a:hover {
+  text-decoration: underline;
+}
+/*===================================================================================> Create user*/
+.page-user-register .tabs .active {
+  display: none;
+}
+.page-user-register .tabs ul {
+  float: right;
+}
+.page-user-register #edit-actions {
+  display: inline-block;
+  position: absolute;
+  margin-top: 15px;
+}
+.page-user-register .user-info-from-cookie {
+  margin-bottom: 50px;
+}
+/*####################################################################################
+   TOPWRAPPER
+  ##################################################################################*/
+/*===================================================================================> Titel*/
+#topwrapper .title {
+  font-size: 2em;
+  line-height: 1.2em;
+  text-align: left;
+  color: rgb(90,90,90);
+  display: block;
+  margin: 25px 0px 10px 0px;
+}
+#topwrapper {
+  background-image: url(../img/dushbg.png);
+  z-index: 5;
+  position: relative;
+  -webkit-box-shadow:  0px 6px 7px 0px rgba(0, 0, 0, 0.20);
+  box-shadow:  0px 6px 7px 0px rgba(0, 0, 0, 0.20);
+  border-bottom: 1px dashed rgb(150,150,150);
+  min-height: 80px;
+  padding: 30px 10px 20px 10px;
+}
+/*===================================================================================> Top_picture*/
+/* ------------------------------------------> SLIDESHOW*/
+/*FRAME in flexslider*/
+.flexslider .slides img {
+  display: block;
+  border: solid 4px rgb(255,255,255);
+  max-width: 936px;
+  margin: -2px;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.flexslider {
+  background: none;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  margin: 0;
+}
+.flex-control-nav {
+  bottom: 15px;
+  display: block;
+  z-index: 200;
+  position: absolute;
+  right: 20px;
+  width: auto;
+}
+.flex-control-nav li {
+  float: left;
+  margin: 0px 8px 0px 0px;
+}
+/*pager*/
+.flex-control-paging li a {
+    background: none repeat scroll 0 0 rgba(255,255,255,1);
+    border-radius: 0px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+    cursor: pointer;
+    display: block;
+    height: 11px;
+    width: 11px;
+}
+.flex-control-paging li a:hover {
+    background: none repeat scroll 0 0 rgba(0,177,239,0.9);
+}
+.flex-control-paging li a.flex-active {
+    background: none repeat scroll 0 0 rgba(0,177,239,1);
+}
+/* ------------------------------------------> BREAKING NEWS*/
+.flexslider .slides .BreakingNews img  {
+  border: solid 4px #00B1EF;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*BANNER*/
+.flexslider .slides .BreakingNews:after {
+  content: "";
+  display: block;
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  top: -3px;
+  right: 3px;
+  background: url(../img/breakinbanner.png) no-repeat;
+}
+/* ------------------------------------------> cutmarks/txt field*/
+.flex-flexslider .cutmarks {
+  display: block;
+  height: 128px; width: 450px;
+  background: url(../img/cuttxt.png) no-repeat;
+  position: absolute;
+  bottom: 20px;
+  left: 18px;
+}
+.flex-flexslider .toppictxt {
+  display: block;
+  height: 60px; width: 392px;
+  background-color: rgba(255,255,255,1);
+  position: absolute;
+  bottom: 7px;
+  left: 19px;
+  padding: 18px 10px 10px 10px;
+  font-size: 80%;
+  line-height: 1.2em;  
+}
+.slides {
+  position: relative;
+}
+/*===================================================================================> SOLUTION MENU*/
+#solutiontab {
+  display: block;
+  position: relative;
+  height: 232px;
+  margin-top: 22px;
+  color: rgb(255,255,255);
+}
+#solutiontab h2 {
+  display: block;
+  position: absolute;
+  font-family: 'ArimoBold';
+  font-size: 120%;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  bottom: 45px;  
+  margin-left: 10px;
+  width: 22%;
+}
+#solutiontab h2:hover {
+  background: none;
+}
+/* Link and background in squares*/
+/*MEDIUM VOLUME*/
+#solutiontab a {
+  display: block;
+  font-size: 80%;
+  line-height: 45px;
+  padding-left: 10px;
+  color: rgba(255,255,255,1);
+  background: url(../img/square.svg) no-repeat;
+  background-position: -12px -42px;
+  background-size: 40%;
+  -o-background-size: 40%;
+  -moz-background-size: 40%;
+  opacity: 0.70;
+}
+#solutiontab .menu a {
+  display: none;
+  position: relative;
+  z-index: 200;
+  width: 200px;
+}
+/*LOW VOLUME*/
+#solutiontab .last a {
+  background-position: -12px 6px;
+}
+/*HIGH VOLUME*/
+#solutiontab .first a {
+  background-position: -12px -95px;
+}
+#solutiontab .menu:hover a{
+    display:block;
+}
+#solutiontab a:hover {
+  background-color: rgba(90,90,90,0.8);
+  -webkit-box-shadow: inset 1px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 1px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  display:block;
+}
+/*BG in squares*/
+#solutiontab .leaf {
+  background-color: rgba(90,90,90,0.35);
+}
+#block-menu-menu-packaging .leaf a {
+  background: none;
+}
+#block-menu-menu-packaging .leaf a:hover {
+  background-color: rgba(90,90,90,0.8);
+}
+#block-menu-menu-support-service .leaf a {
+  background: none;
+}
+#block-menu-menu-support-service .leaf a:hover {
+  background-color: rgba(90,90,90,0.8);
+}
+#solutiontab .last a {
+  border-bottom: 1px solid #00B0EE;
+}
+  /*Gray and blue background*/
+#solutiontab .menu {
+  position: absolute;
+  display: block;
+  width: 22%;
+  z-index: 999;
+  overflow: hidden;
+  height: 170px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.role-administrator #solutiontab .menu {
+  width: 100%;
+}
+.role-administrator #solutiontab h2 {
+  bottom: 12px;
+  width: 100%;
+}
+#solutiontab .menu:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;	 
+}
+  /*De enkelte blokke*/
+#solutiontab .block-menu {
+  display: block;
+  z-index: 5;
+  float: left;
+  width: 22%;
+  height: 200px;
+  background-image: url(../img/solution.jpg);
+  background-size: 410px 800px;
+  -webkit-background-size: 410px 800px;
+  -o-background-size: 410px 800px;
+  -moz-background-size: 410px 800px;
+  cursor: pointer;
+}
+/*#solutiontab .block-menu:hover { 
+  border-bottom: 2px solid #00B0EE;
+}*/
+#block-menu-menu-newspaper {
+  background-position: 0px 0px;
+  margin-right: 4%; 
+}
+#block-menu-menu-newspaper:hover {
+  background-position: 0px 400px; 
+}
+#block-menu-menu-commercial {
+  background-position: 0px 600px;
+  margin-right: 4%; 
+}
+#block-menu-menu-commercial:hover {
+  background-position: 0px 200px; 
+}
+#block-menu-menu-packaging {
+  background-position: 200px 600px;
+  margin-right: 4%; 
+}
+#block-menu-menu-packaging:hover {
+  background-position: 200px 200px; 
+}
+#block-menu-menu-support-service {
+  background-position: 410px 600px;  
+}
+#block-menu-menu-support-service:hover {
+  background-position: 410px 200px;
+}
+#block-menu-menu-support-service a {
+  line-height: 33px;
+}
+/* ------------------------------------------> SOLUTIONPAGE -> SOLUTIONMENU*/
+.node-type-solutions #solutiontab .block-menu {
+  height: 80px;
+}
+.node-type-solutions #solutiontab {
+  margin-top: 0px;
+  height: 70px;
+}
+.node-type-solutions #solutiontab h2 {
+  bottom: 20px;
+}
+.node-type-solutions #solutiontab .leaf {
+  background-color: rgba(0,177,239,0.9);
+}
+.node-type-solutions #solutiontab a {
+  opacity: 1;
+}
+/*####################################################################################
+   CONTENT
+  ##################################################################################*/
+#content {
+  background-color: rgb(245,245,245);
+  min-height: 350px;
+  padding: 15px 0px 30px 0px;
+  max-width: 100%;
+}
+.horizontal-tabs fieldset.horizontal-tabs-pane {
+  padding: 0;
+}
+.front #content {
+  padding: 60px 0px 30px 0px; 
+}
+#content img {
+  border: solid 4px rgb(255,255,255);
+}/* -----------------------------------------------------------------> Kasper Was here - Inline PDF-files*/
+/* ------------------------------------------> Inline PDF-files*/
+#content .ip-geoloc-map img {
+  border: none;
+}//christian was here, removing border on leaflet map
+#content .pdffile a {
+  display: inline-block;
+  background: url(../img/pdf_icon.svg) no-repeat top left;
+  padding-left: 55px;
+  padding-top: 25px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+/* ------------------------------------------> PDF-files*/
+#content .file a {
+  display: block;
+  height: 50px;
+  background: url(../img/pdf_icon.svg) no-repeat top left;
+  padding-left: 55px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+#content .file a:hover {
+  background-position: bottom left;
+}
+#content img.file-icon {
+  display: none;
+}
+#content .pdffile a:hover {
+  background-position: bottom left;
+}
+#content img.file-icon {
+  display: none;
+}
+/* ------------------------------------------> DL Icons*/
+#content .software-file .file a {
+  display: block;
+  height: 50px;
+  background: url(../img/dl-file-icon.png) no-repeat top left;
+  padding-left: 50px;
+}
+#content .software-file .file a:hover {
+  background-position: bottom left;
+}
+/* ------------------------------------------> List's in content*/
+#content li {
+  list-style: square; /* inside*/
+ /* padding-bottom: 15px;
+  font-family: 'ArimoBold';*/
+}
+.wrapper940 {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin:0 auto;  
+  text-align:left;
+  max-width: 940px;
+}/* ------------------------------------------> TABS - Edit content + more*/
+#content .tabs h2, .manual-product-id {
+  display: none;
+}
+#content .tabs a {
+  color: #00B1EF;
+  text-decoration: underline;
+  opacity: 0.25;
+  font-family: 'ArimoRegular'
+}
+#content .tabs a:hover {
+  color: rgb(90,90,90);
+  opacity: 1;
+}/* ------------------------------------------> DS (newsflow - FRONT) right/left col.*/
+.ds-2col > .group-left {
+  width: 492px;
+  height: 272px;
+  background: url(../img/cut.png) no-repeat center;
+  padding: 20px 0px 0px 20px;
+  margin-right: 2%;
+}
+.ds-2col > .group-right {
+  width: 45%;
+  padding-top: 20px;
+}
+/*===================================================================================> GKS-page*/
+/* ------------------------------------------> Frontpage -> Customer logos */
+#content .customer-logos {
+  display: block;
+  width: 100%;
+  background: white;
+  padding: 0% 1% 2% 2%;
+  margin: 30px 0px;
+  -webkit-box-shadow:  0px 0px 7px 6px rgba(0, 0, 0, 0.2);
+  box-shadow:  0px 0px 7px 6px rgba(0, 0, 0, 0.2);
+}
+#content .customer-logos img {
+  margin-right: 3%;
+  margin-top: 3%;
+  border: 0px;
+  max-height: 30px;
+  max-width: 130px;
+}
+/*===================================================================================> Solution pages*/
+/*styling - links top*/
+.node-type-solutions #content a.toplink {
+  background: url(../img/arrow_gray_bottom.svg) no-repeat bottom left;
+  display: block;
+  padding-bottom: 10px;
+}/* ------------------------------------------> Relevant products*/
+/*####MOBILE LINKE####*/
+#relevant-products-link {
+  display: none;
+}
+#highligt-link-scroll {
+  display: none;
+}
+#highlightet a {
+  display: none;
+}
+/*####/MOBILE LINKE####*/
+#block-views-products-on-solutions-block {
+  background-color: rgb(255,255,255);
+  width: 100%;
+  position: fixed;
+  bottom: -999px;
+  left: 0px;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-box-shadow:  0px -2px 25px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px -2px 25px 0px rgba(0, 0, 0, 0.5);
+}
+#block-views-products-on-solutions-block h2 {
+  display: block;
+  color: rgb(255,255,255);
+  position: fixed;
+  bottom: 0px;
+  left: 8%;
+  padding: 10px 45px 15px 12px;
+  background: url("../img/arrow_white_totop.svg") no-repeat  center right  #00B1EF;
+  opacity: 0.8;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+#block-views-products-on-solutions-block h2:hover {
+  opacity: 1;
+  -webkit-box-shadow:  0px -2px 6px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px -2px 6px 0px rgba(0, 0, 0, 0.5);  
+}
+#block-views-products-on-solutions-block.out h2:hover {
+  -webkit-box-shadow:  none;
+  box-shadow:  none;  
+}
+#block-views-products-on-solutions-block.out h2 {
+  background: none #00B1EF;
+  position: relative;
+  left: 0%;
+  padding-left: 8%;
+  font-size: 2em;
+  padding: 8px 0px 0px 8%;
+}
+#block-views-products-on-solutions-block .views-table {
+  display: block;
+  float: left;
+  width: 95%;
+  border-bottom: dashed 1px;
+  padding: 10px 20px 10px 8%;
+  word-break: break-word;
+}
+#block-views-products-on-solutions-block tr.even, 
+#block-views-products-on-solutions-block tr.odd {
+  float: left;
+  background-color: rgb(255,255,255);
+  display: inline;
+  border: none;
+  padding: 0;
+}
+#block-views-products-on-solutions-block caption {
+  display: inline;
+  float: left;
+}
+#block-views-products-on-solutions-block tbody {
+  display: block;
+  width: 75%;
+  margin-left: 25%;
+}
+/*product category*/
+#block-views-products-on-solutions-block .product-category {
+  font-family: 'ArimoBold';
+  display: block;
+}
+#block-views-products-on-solutions-block a {
+  padding-right: 30px;
+  text-decoration: underline;
+}
+/*===================================================================================> SEARCH-page*/
+.search-advanced .criterion:nth-child(2) {
+  margin-top: 40px;
+}
+/*ADVANCED SEARCH*/
+.search-advanced .action {
+  margin-bottom: -13px;
+  margin-top: 30px;
+}
+/*keywords*/
+#content .form-item-keys input {
+  float: left;
+  margin: 0px 10px 0px 20px;
+}
+#edit-basic {
+  height: 100px;
+  display: block;
+  margin-top: 50px;
+}
+#edit-basic label {
+  float: left;
+  padding-top: 8px;
+}
+/*Advanced search - show */
+#search-form {margin-bottom: 40px;}
+#search-form .criterion .form-item {
+  display: block;
+  float: left;
+}
+#search-form .form-type-checkbox {
+  margin-top: 20px;
+}
+#search-form .criterion .form-item-type label {
+  display: inline;
+  margin-left: -5px;
+  margin-right: 20px;
+}
+#search-form .form-text {
+  float: none;
+}
+#edit-advanced .form-text {
+  width: 440px;
+}
+/*Search list*/
+.search-results li {
+  margin-bottom: 30px;
+}
+.page-search #content h2 {
+  font-size: 2em;
+  line-height: 2em;
+}
+/*TOP*/
+#search-form .criterion label {
+  display: inline-block;
+  width: 100%;
+  margin-top: 30px;
+}
+/*BOTTOM*/
+#edit-type label {
+  display: inline;
+}
+/*===================================================================================> Products*/
+.node-type-product .fieldset-legend {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+}
+.node-type-product fieldset {
+  border: none;
+}
+.group-product {
+  position: relative;
+  z-index: 10;
+  max-width: 98%;
+}
+.node-type-product #topwrapper .title {
+  margin-bottom: 20px; 
+}
+/*.group-product .fieldset-wrapper {
+  margin-left: -10px;*/
+}/* ------------------------------------------> Products overview*/
+/*APPLY ON SEARCH*/
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 2em !important;
+}
+.page-products .content h3 {
+  color: rgb(90,90,90);
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 120%;
+  font-family: 'ArimoBold';
+}
+/*DOWNLOAD TAB*/
+/*FRONT*/
+#content .fieldset-wrapper h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+/*DOWNLOAD -> software*/
+#content .fieldset-wrapper .field-group-format h2,
+#content .group-gallery h2 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+#content .group-gallery .instruction-text h2 {
+  margin-top: 0px;
+}
+#content .node-manual .title,
+#content .fieldset-wrapper .node-manual .title {
+  margin-top: 60px;
+}
+
+.node-software-platform .label-above,
+.node-software-platform .views-label,
+.node-software-platform .software-file,
+.node-software-platform span.title{
+  font-size: 107%;
+  vertical-align: baseline;
+  font-family: 'ArimoBold';
+}
+/*Configuration files (link)*/
+.configfilelink a {
+  display: block;
+  height: 50px;
+  background: url(../img/config_icon.svg) no-repeat top left;
+  padding-left: 55px;
+  margin-bottom: 10px; 
+  font-family: 'ArimoBold'; 
+}
+.configfilelink a:hover {
+    background-position: bottom left;
+}
+.alignit {
+  display: inline-block;
+  width: 120px;
+}
+.node-config-file-manual {
+  margin-top: 35px;
+}
+/*GALLERY*/
+.group-gallery {
+  display: block;
+  width: 100%;
+}
+ .group-gallery .field-content {
+  float: left;
+  min-width: 35%;
+  margin-bottom: 20px;
+  min-height: 200px;
+}
+.group-gallery .product-image-links p {
+  margin: 0;
+}
+/*LINK IN FIELD GRP*/
+#content .fieldset-wrapper .group-header a {
+  text-decoration: underline;
+}
+/*MANUELS*/
+.manualsize,
+.manualdate {
+  float: left;
+  display: block;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+.group-manuals .ds-2col-stacked > .group-right,
+.page-manuals .ds-2col-stacked > .group-right {
+  width: 70%;
+}
+.group-manuals .ds-2col-stacked > .group-left,
+.page-manuals .ds-2col-stacked > .group-left {
+  width: 30%;
+}
+#mancol {
+  display: block;
+}
+#mancol a {
+  text-decoration: underline;
+  margin: 0 15px 0px 15px;
+}
+.page-manrevision #bottombar {
+  margin-top: 40px;
+}
+.more-manuals-link {
+  display: block;
+  margin-top: 80px;
+}
+
+.more-manuals-link {
+  text-decoration: underline !important;
+}
+.manual-title {
+  display: block;
+  clear: both;
+  font-family: 'ArimoBold';
+}
+.manual-subtitle {
+  font-size: 98%;
+}
+
+
+/*.group-manuals .label-inline {
+  float: left;
+}*/
+
+/*#content .fieldset-wrapper .group-gallery .field-content .product-image-links {
+  display: block;
+  width: 65%;
+  float: left;
+}*/
+
+
+
+/*#content .fieldset-wrapper .product-image-links {
+  display: block;
+}
+#content .fieldset-wrapper .product-image-links a {
+
+}
+#content .fieldset-wrapper .group-gallery img {
+  float: left;
+}*/
+
+/*.node-type-product #content .node-manual h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.node-type-product #content .node-manual .node h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}*/
+/*.node-type-product .content h2 {
+  margin-top: 40px !important;
+  margin-bottom: 20px !important;
+}*/
+.page-products .content h3:first-child {
+
+}
+.page-products .views-view-grid {
+  width: 100%;
+}
+.page-products .views-view-grid tr {
+  line-height: 24px;
+}
+.page-products .views-view-grid tbody {
+  margin-bottom: 50px;
+}
+.page-products .views-view-grid tbody span {
+
+}
+.page-products .views-view-grid tbody td {
+  display: block;
+  float: left;
+  width: 34%;
+  margin-right: 2%;
+}
+/* ------------------------------------------> HIGHLIGHT*/
+/*BACKGROUND*/
+#node_product_full_group_highlight .fieldset-wrapper {
+background: rgb(255,255,255); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI4MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjVmNWY1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(left,  rgba(255,255,255,1) 80%, rgba(245,245,245,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(80%,rgba(255,255,255,1)), color-stop(100%,rgba(245,245,245,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 80%,rgba(245,245,245,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(255,255,255,1) 80%,rgba(245,245,245,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(255,255,255,1) 80%,rgba(245,245,245,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(255,255,255,1) 80%,rgba(245,245,245,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',   endColorstr='#f5f5f5',GradientType=1 ); /* IE6-8 */
+-webkit-box-shadow: inset -2px 0px 5px 0px rgba(90, 90, 90, 0.2);
+box-shadow: inset -2px 0px 5px 0px rgba(90, 90, 90, 0.2);
+}
+#node_product_full_group_highlight {
+  display: block;
+  width: 46%;
+  padding: 0;
+  position: absolute;
+  right: 0px;
+  top: 4%;
+  border: none;
+  -webkit-box-shadow: -10px 0px 18px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -10px 0px 18px 0px rgba(0, 0, 0, 0.5);
+}
+#node_product_full_group_highlight a, .highlight-title {
+  font-family: 'ArimoBold';
+}
+#node_product_full_group_highlight span {
+  display: block;
+  overflow: hidden;
+}
+#node_product_full_group_highlight .highlight-image {
+  padding: 6px 10px 10px 10px;
+}
+.highlight-body,
+.highlight-title {
+  padding: 0 15px 0px 15px;
+}
+.highlight-body {
+  border-bottom: 1px dashed;
+  padding-bottom: 15px;
+}
+.highlight-link {
+  border-bottom: 1px dashed;
+  background: url(../img/linkicon.png) no-repeat 90% 5px;
+  width: 96%;
+  height: 40px;
+  padding: 10px 0px 0px 4%;
+}
+.highlight-link:hover {
+  background-position: 90% -44px; 
+}
+.highlight-file {
+  border-bottom: 1px dashed;
+  width: 96%;
+  padding: 10px 0px 10px 4%;
+}
+.highlight-video {
+  border-bottom: 1px dashed;
+  background: url(../img/movieicon.png) no-repeat 90% 5px;
+  width: 96%;
+  height: 40px;
+  padding: 10px 0px 0px 4%;
+  font-family: 'ArimoBold';
+}
+.highlight-video:hover {
+  background-position: 90% -45px; 
+}
+#node_product_full_group_highlight img {
+  border: none;
+}
+.highlight-exist .node {
+  display: block;
+  width: 50%;
+}
+.highlight-exist ul, .highlight-exist > .fieldset-wrapper > p {
+  width: 50%;
+}
+.highlight-exist #node_product_full_group_highlight ul {
+  width: 100%;
+}
+/* ------------------------------------------> Tabs (fieldgroups)*/
+/*HEADER*/
+#node_product_full_group_specifications .row-heading {
+ border: none; 
+}
+div.horizontal-tabs {
+  border: none;
+}
+.horizontal-tabs ul.horizontal-tabs-list {
+  background: none;
+  border-right: none;
+}
+#horizontal-tabs-wrapper {
+  list-style: none;
+}
+#horizontal-tabs-wrapper li {
+  display: inline-block;
+  border-right: none;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 0px;
+}
+#horizontal-tabs-wrapper li:hover {
+  background-color: rgb(150,150,150);
+}
+#horizontal-tabs-wrapper li.selected {
+  -webkit-box-shadow:  0px -5px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow:  0px -5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+#horizontal-tabs-wrapper li a {
+  padding: 9px 20px 8px 8px;
+  background-color: none;
+  display: inline-block;
+  opacity: 0.7;
+}
+#horizontal-tabs-wrapper li.selected a {
+  color: rgb(90,90,90);
+  border-bottom: 2px solid rgba(90,90,90,0.25);
+  opacity: 1;
+  background-color: rgb(255,255,255);
+}
+#horizontal-tabs-wrapper li a:hover {
+  color: rgb(90,90,90);
+  background-color: rgb(255,255,255);
+  opacity: 1;
+}
+#active-horizontal-tab {
+  display: none;
+}
+/* ------------------------------------------> Tabs 2.link (bottons)*/
+#node_product_full_group_specifications .productName,
+.controllers h3  {
+  display: inline-block;
+  padding: 9px 12px 5px 10px;
+  font-size: 85%;
+  margin: 0px 10px 30px 0px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(90,90,90,0.5);
+}
+#node_product_full_group_specifications .productName:hover,
+#node_product_full_group_specifications .productName.active,
+.controllers h3:hover,
+.controllers h3.active {
+  background-color: rgb(255,255,255);
+  border-bottom: 1px solid rgba(90,90,90,1);  
+  color: #00B0EE;
+}
+/* ------------------------------------------> Tabs 2.link (specifications)*/
+#node_product_full_group_specifications .targetDiv {
+display: none;
+}
+#node_product_full_group_specifications .showtable {
+  position: static;
+  top: 20px;
+  display: table;
+}
+#node_product_full_group_specifications .hidetable {
+display: none;
+}
+/* ------------------------------------------> DOWNLOAD TAB*/
+#content .node-manual h2 {
+  margin: 0px;
+}
+
+/*#############HACK PDF TITLE GONE#############*/
+/* ------------------------------------------> Download PDF*/
+#node_product_full_group_download .group-brochures h2 {
+  display: none;
+}
+/*#############/HACK PDF TITLE GONE#############*/
+/* ------------------------------------------> Tabels (specifications)*/
+#node_product_full_group_specifications table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+#node_product_full_group_specifications th {
+  font-family: 'ArimoBold';
+  background-color: rgb(0,177,239);
+  color: rgb(255,255,255);
+  border: none;
+}
+#node_product_full_group_specifications td,
+#node_product_full_group_specifications th {
+  padding: 6px;
+  border: 1px dashed rgb(90,90,90);
+  text-align: left;
+}
+#node_product_full_group_specifications tr:nth-of-type(odd) { 
+  background: rgb(230,247,253); 
+}
+#node_product_full_group_specifications tr:nth-of-type(even) {
+  background-color: rgb(255,255,255);
+}
+/*HEADER*/
+#node_product_full_group_specifications .row-heading td {
+ font-family: 'ArimoBold';
+ border: none;
+ background: rgb(245,245,245);
+ padding: 30px 0px 5px 0px;
+}
+/*===================================================================================> Contacts*/
+.profiles {
+  display: block;
+  width: 31%;
+  margin-right: 2%;
+  margin-bottom: 60px;
+  float: left;
+  font-size: 0.77em;
+  line-height: 1em;
+  height: 180px;
+}
+.profilecontent,
+.profiles .container-inline {
+  margin-left: 100px; 
+  display: block;
+}
+.profiles .container-inline {
+  font-style: italic;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+.department {
+  float: left;
+  display: block;
+  width: 100%;
+  font-size: 120%;
+  font-family: 'ArimoBold';
+  margin-bottom: 30px;
+  margin-top: 40px;
+  border-bottom: 1px solid rgb(90,90,90);
+}
+.profiletitle {
+  font-family: 'ArimoBold';
+  margin-bottom: 5px;
+}
+.profilemail {
+  margin-top: 6px;
+  word-break: break-all;
+}
+.profilephone,
+.profilemobile {
+  margin-left: 0px;
+  margin-bottom:5px;
+}
+.profilephone {
+  margin-bottom: 5px;
+  margin-top: 6px; 
+}
+.profileskype {
+    display: block;
+    position: relative;
+    margin-bottom: 40px;
+}
+.profilepic {
+  float: left;
+  position: static;
+  margin-right:15px;
+  height: 100px;
+}
+.regions-and-titles,
+.collection-regions {
+font-size: 0.8em;
+}
+.profiles .collection-regions {font-style: italic; }
+.collection-title, .collection-region { font-size: 0.9em; }
+/*.profilecontent, .profiles .container-inline,.profiles .field-content,.profiles .collection-regions {margin:0px 0 7px 0;word-break: break-all}*/
+/*.profiles  .collection-title, .profiles .collection-regions {margin-bottom: 10px;}*/
+/*===================================================================================> Investor*/
+.targetyear {
+  float: left;
+}
+.list-of-years {
+  display: block;
+  width: 100%;
+}
+.list-of-years h3 {
+  float: left;
+}
+.list-of-years a {
+  font-family: 'ArimoBold';
+  display: inline-block;
+  margin: 0px 10px 20px 0px;
+  padding: 9px 20px 8px 8px;
+  opacity: 0.7;
+}
+.list-of-years a.active {
+  color: rgb(90,90,90);
+  background-color: rgb(255,255,255);
+  opacity: 1;
+  border-bottom: 2px solid rgba(90,90,90,0.25);
+  -webkit-box-shadow:  0px -5px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow:  0px -5px 10px 0px rgba(0, 0, 0, 0.2); 
+}
+.list-of-years a:hover {
+  color: rgb(90,90,90);
+  background-color: rgb(255,255,255);
+  opacity: 1;  
+}
+/*DATE*/
+.investor-date {
+  display: inline-block;
+  width: 115px;
+  color: #00B1EF;
+  float: left;
+  width: 100%;
+  position: inherit;
+  font-size: 80%;
+}
+.investor-date a {
+  color: #00B1EF; 
+}
+/*TABLES*/
+.investor-tables {
+  display: block;
+  clear: both;
+  float: left;
+  margin-bottom: 20px;
+}
+.view-header {
+
+}
+.investor-pdf {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  margin-left: 40px;
+  opacity: 0.35;
+}
+.investor-pdf:hover {
+  opacity: 1;
+}
+.title-label {
+  height: 10px;
+  color: #5A5A5A;
+  font-size: 107%;
+  line-height: 1.5em;
+  vertical-align: baseline;
+  float: left;
+  max-width: 520px;
+}
+/*INVESTOR-FRONT*/
+#block-views-investornews-block-1,
+#block-views-news-block-3 {
+  line-height: 1.2em;
+}
+.view-display-id-block_1 span {
+  display: block;
+  float: left;
+}
+.view-display-id-block_1 .views-field-field-message-number { margin-right: 20px; }
+.view-display-id-block_1 .title-label { margin-bottom: 30px; }
+
+#block-views-investornews-block-1 h2,
+#block-views-news-block-3 h2 { margin-bottom: 20px; }
+#block-views-news-block-3 h2 { margin-top: 20px; }
+#block-views-news-block-3 .title-label { height: 30px; }
+/*===================================================================================> Calender*/
+.calendar-calendar div.day {
+  width: 100%;
+}
+.calendar-calendar td.empty {
+ color: #00B0EE; 
+}
+.calendar-calendar td {
+  color: rgb(90,90,90);
+}
+.date-nav-wrapper .date-heading {
+  top: 30px;
+}
+/*####################################################################################
+   NEWS
+  ##################################################################################*/
+/*===================================================================================> PAGE newspage newsflow*/
+/*####NO PICTURE LAYOUT ON NEWSFLOW####*/
+.page-news #topwrapper {
+  display: none;
+}
+/*####/NO PICTURE LAYOUT ON NEWSFLOW####*/
+/*####Newsflow (Press releases and others without pictures)####*/
+.view-mode-teaser_no_image .group-left {
+  display: none;
+}
+/*READ NEWS*/
+#content .view-mode-teaser_no_image .read-news a {
+  
+}
+/*####/Newsflow (Press releases and others without pictures)####*/
+#content .item-list-pager {
+  display: block;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+#content .item-list-pager:nth-of-type(2) {
+  margin: 0;
+}
+#content .item-list-pager a, 
+#content .item-list-pager .current {
+  font-size: 107%;
+  text-transform: uppercase;  
+  padding: 0px 10px 0px 10px;
+}
+#content .item-list-pager .current {
+  color: rgb(0,177,239);
+  font-family: 'ArimoBold';
+  text-decoration: underline;
+}
+#content .item-list-pager .next  {
+  float: right;
+}
+#content .item-list-pager .previous {
+  display: none;
+}/* ------------------------------------------> Frontpage newsflow*/
+#content .node-news {
+  position: relative;
+  display: block;
+  margin-bottom: 40px;
+}
+#content .node-news img {
+  float: left;
+}
+#content .news-title a {
+  color: rgb(90,90,90);
+}
+#content .news-title a:hover {
+  text-decoration: none;
+}
+#content .news-date a,
+#content .news-date {
+  color: rgb(0,177,239);
+  font-size: 80%;
+  margin-bottom: 2%;
+  margin-top: 0.5%;
+}
+#content .read-news a {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+  font-family: 'ArimoBold';
+  font-size: 120%;
+  color: rgb(90,90,90);
+  padding: 9px 35px 6px 10px;
+  background: url(../img/arrow_gray.png) no-repeat 140px 6px;
+  text-transform: uppercase;
+}
+#content .read-news a:hover {
+  color: rgb(255,255,255);
+  background-color: rgb(90,90,90);
+  background-position: 146px -45px;
+  text-decoration: none;
+  -webkit-box-shadow:  0px -2px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px -2px 10px 0px rgba(0, 0, 0, 0.5);   
+}
+/*####################################################################################
+   FOOTER
+  ##################################################################################*/ 
+#bottombar {
+  background: #e6f7fd; /* Old browsers */
+  background: -moz-linear-gradient(left,  #e6f7fd 0%, #00b0ee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e6f7fd), color-stop(100%,#00b0ee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #e6f7fd 0%,#00b0ee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #e6f7fd 0%,#00b0ee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #e6f7fd 0%,#00b0ee 100%); /* IE10+ */
+  background: linear-gradient(to right,  #e6f7fd 0%,#00b0ee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f7fd', endColorstr='#00b0ee',GradientType=1 ); /* IE6-9 */
+  height: 12px;
+  margin-top: 5px;
+  position: absolute;
+  z-index: 0; 
+  -webkit-box-shadow:  0px -2px 6px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px -2px 6px 0px rgba(0, 0, 0, 0.5);
+}
+#footer {
+  margin-top: 8px;
+  display: block;
+  height: auto;
+  min-height: 150px;
+  width: 100%;  
+}
+#footer .contextual-links-wrapper {
+  display: none;
+}
+#footerlogo ul li {
+  display: inline;
+}/* ------------------------------------------> Logoer*/
+#footerlogo {
+  margin: 0px 10px 0px -10px; 
+}
+#footerlogo a {
+  background-repeat: no-repeat;
+  display: block;
+  height: 80px;
+  margin-left: 0px;
+  float: left;
+  /*OLD width: 17%; */
+  width: 14%;
+  margin-left: 2%;
+  text-indent: -999px;
+  overflow: hidden;
+  opacity: 0.15;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;	
+}
+#footerlogo a:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;	
+}
+/* ########## HIDE SITE-LOGOS FOOTER ########## */
+.domain-gks-glunz-jensen-com #footerlogo a {
+  display: none;
+}
+.domain-gks-glunz-jensen-com #footer {
+  min-height: 40px;
+}
+/* /########## HIDE SITE-LOGOS FOOTER ########## */
+#footerlogo .activetab {
+  opacity: 1;
+}
+/*GLUNZ & JENSEN*/
+#footerlogo .domain-id-1 {
+  background-image: url(../img/glunzogjensen.svg);
+  margin-left: 2%;
+}
+/*DEGRAF*/
+#footerlogo .domain-id-2 {
+
+    background-image: url(../img/offset.svg);
+}
+/*OFFSET*/
+#footerlogo .domain-id-3 {
+
+    background-image: url(../img/platewriter.svg);
+}
+/*ICTP*/
+#footerlogo .domain-id-4 {
+    background-image: url(../img/microflex.svg);
+}
+/*MICROFLEX*/
+#footerlogo .domain-id-5 {
+    background-image: url(../img/degraf.svg);
+}
+/*GKS*/
+#footerlogo .domain-id-6 {
+    background-image: url(../img/gks_logo.svg);
+    margin-top: -5px;
+}
+/* Hide clone content on frontpage -> GKS */
+.node-type-gksfront .action-links {
+  display: none;
+}
+/* /Hide clone content on frontpage -> GKS */
+
+/* extra styles by Arthur - start */
+/*ul.nice-menu li>ul>li>ul{top:-24px!important;}*/
+/*#solutiontab ul li a{display:none;}*/
+#block-views-user-blocks-block .content{position: static}
+/*#loginfield .menu{position: static}
+.logged-in .search-link{
+    position: relative;
+    z-index: 52;
+}
+#loginfield>.block{float: none;}
+#loginfield>.block:last-of-type{margin-top: 40px}*/
+.page-investor-delårsrapport .investor-tables td,
+.page-investor-årsrapport .investor-tables td,
+.page-investor-udgivelser .investor-tables td {
+    padding-right: 10px;
+}
+.page-investor-delårsrapport .investor-tables td:last-of-type,
+.page-investor-årsrapport .investor-tables td:last-of-type,
+.page-investor-udgivelser .investor-tables td:last-of-type {
+    padding-right: 0px;
+}
+.page-investor-delårsrapport .investor-tables td,
+.page-investor-årsrapport .investor-tables td,
+.page-investor-udgivelser .investor-tables td {
+    padding-bottom: 10px;
+    background: transparent;
+}
+.page-investor-delårsrapport .investor-tables tr,
+.page-investor-årsrapport .investor-tables tr,
+.page-investor-udgivelser .investor-tables tr {
+    background: transparent;
+}
+.page-investor-delårsrapport .investor-tables .file a,
+.page-investor-årsrapport .investor-tables .file a,
+.page-investor-udgivelser .investor-tables .file a { 
+    text-indent: -9999px}
+.page-investor-delårsrapport .view-investornews .item-list-pager,
+.page-investor-årsrapport .view-investornews .item-list-pager {
+    clear: both;
+}
+.page-investor-nyheder-selskabsmeddelelser  .investor-tables td:first-of-type{
+    padding-top: 23px;
+    padding-right: 10px;
+    vertical-align: top;
+}
+#webform-component-installation-date select{
+    width: 100px;
+}
+#webform-component-installation-date label{
+    display: none}
+
+/* ########################## July 10 2013 (Arthur) ###############################*/
+.page-products-oem-dedicated .view-grouping .view-grouping-header,
+.page-products .view-grouping .view-grouping-header,
+.page-support h3 {
+    border-bottom: 1px solid #5A5A5A;
+    display: block;
+    text-align: left;
+    font-family: 'ArimoBold';
+    font-size: 120%;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+.page-contact .field-collection-item-field-regions-and-titles{display: none}
+.page-contact-europe .field-collection-item-field-regions-and-titles.europe{display: block}
+.page-contact-asia .field-collection-item-field-regions-and-titles.asia{display: block}
+.page-contact-world .field-collection-item-field-regions-and-titles.rest_of_the_world{display: block}
+.page-contact .views-field-field-employee-title{margin-left: 100px}
+
+/* ########################## July 11 2013 (Arthur) ###############################*/
+/* ---> VIDEOS PAGES PAGES START <--- */
+.page-about-videos .views-view-grid{margin-bottom: 10px}
+.page-about-videos .views-view-grid:last-of-type{margin-bottom: 0px}
+.page-about-videos .views-view-grid td .field-content:nth-child(2){padding-left: 10px}
+.page-about-videos .views-view-grid td .field-content:nth-child(2) a{vertical-align: top}
+.page-about-videos .content h2{margin-bottom: 5px}
+
+/* ---> VIDEOS PAGES PAGES END <--- */
+/*
+#cboxContent #cboxLoadedContent{width: auto!important;display: table}
+.player iframe{width: 100%!important;height: 100%!important;position: relative;display: block}*/
+/* extra styles by Arthur - end */
+
+/* ########################## dealer map ################################*/
+.page-find-a-dealer .bold{
+	font-weight:bold;
+}
+
+/* ########################## Titles on manual, software and gallery views separeted more ################################*/
+.page-support-download-manuals #content .wrapper940 table, .page-support-download-software #content .wrapper940 table, .page-support-download-gallery #content .wrapper940 table{
+	width:100%;
+}
+.page-support-download-manuals #content .wrapper940 td, .page-support-download-software #content .wrapper940 td, .page-support-download-gallery #content .wrapper940 td{
+	width:50%;
+	float:left;
+	
+}
+
+/* ########################## Vocus data webform styling ################################*/
+
+#webform-component-my-profile-fieldset{
+	margin-bottom:20px;
+}
+#webform-component-subscribed-lists-fieldset{
+	margin-bottom:20px;
+}
+#webform-component-subscribed-lists-fieldset label{
+	width:220px;
+}
+#webform-component-subscribed-lists-fieldset label.option{
+	width:5%;
+}
+
+#webform-component-my-interests-fieldset{
+	margin-bottom:20px;
+}
+
+/* ########################## product oem header change ################################*/
+.page-products-oem-dedicated .view-grouping .view-grouping-header{
+	font-size:200%;
+	line-height:130%;
+	font-style:italic;
+}

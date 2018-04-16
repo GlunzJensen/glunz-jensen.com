@@ -1,0 +1,120 @@
+/* ########################## FORM-StYLING ###############################*/
+    #edit-submitted-machine-spare-part-type-of-equipment label {
+@include breakpoint($max600) {
+  width: 20%;
+}      
+    }
+
+    select,
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"] {
+@include breakpoint($mm-max620) {
+  width: 85%;
+  margin: 0px 20px 10px 10px;
+  box-shadow: none;
+  opacity: 0.5;
+}
+    }
+    select {
+@include breakpoint($mm-max620) {
+  width: 92%;
+}
+@include breakpoint($mm-px620-680) {
+  width: 90%;
+  margin-left: 8%;
+  margin-top: 18px;
+  opacity: 0.5;
+}      
+    }
+
+    #edit-submitted-country {
+@include breakpoint($max600) {
+  opacity: 1;
+  margin: 5px 40px 10px 0px;
+  width: 85%;
+}
+    }
+
+    #edit-submitted-machine-spare-part-installation-date-month,
+    #edit-submitted-machine-spare-part-installation-date-day,
+    #edit-submitted-machine-spare-part-installation-date-year {
+@include breakpoint($max600) {
+  opacity: 1;
+}
+@include breakpoint($max480) {
+  width: 98%;
+}
+@include breakpoint($max320) {
+  width: 85%;
+}
+    }
+    input[type="search"],
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="month"],
+    input[type="date"] {
+@include breakpoint($max600) {
+ width: 85%;
+}
+    }
+    /*Hide calendar icon on mobile*/
+    .webform-calendar {
+@include breakpoint($max600) {
+  opacity: 0;
+}
+    }
+#edit-actions {
+@include breakpoint($max600) {
+  margin-top: -30px;
+}
+}
+input[type="submit"] {
+@include breakpoint($max600) {
+  display: block;
+  margin-top: 40px;
+  width: 98%;
+}
+}
+input[value="Search"] {
+@include breakpoint($max480) {
+  margin-top: 10px;
+}
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+@include breakpoint($max480) {
+  float: left;  
+}
+}
+#edit-lang-dropdown-select_msdd {
+@include breakpoint($max480) {
+  margin: 6px 0 0 12px;  
+}
+}
+.node-type-gksfront {
+  #topwrapper {
+    .title {
+@include breakpoint($max320) {
+  margin-top: 120px;  
+}
+    }
+  }
+}
+
+
+/*FORMS*/
+#webform-client-form-3917 {
+  @include blueprint-form-layout;
+  @include blueprint-form-borders;
+  @include blueprint-form-sizes;
+  
+}
+/* ########################## /END -> FORM-StYLING ###############################*/

@@ -1,0 +1,335 @@
+/*
+Client: Glunz & Jensen
+Theme Name: corporate
+Description: The main dokument of our SCSS struckture.
+HOW TO?: Maintain our COMPASS Structure -> http://openusorce.com/struckture-description.html
+Author URI: http://openusorce.com
+Version: 2014
+*/
+
+
+/* ### THIS FILE SASS CONTAINS STYLES FOR THE TEMPLATE  ############################################################# */
+/* ### SUB-DIVEDED INTO FOLLOWING SECTIONS: 					  ############################################################# */
+
+
+/*  0. IMPORTS																					<------ */
+/*  1. VARIABLES               													<------ */ 
+/*  2. MIXINS                  												  <------ */
+/*  3. Global Styles – (body, paragraphs, lists, etc)   <------ */
+/*  4. Header																					  <------ */
+/*  5. Page Structure																		<------ */
+/*  6. Navigation     																	<------ */
+/*  7. Forms																						<------ */
+/*  8. Footer																						<------ */
+/*  9. xtra																			  			<------ */
+                    
+
+/* ################################################################################################################# */
+/* ################################################################################################################# */
+
+
+/* 1. VARIABLES
+################################################################## */
+
+
+/* >>COLORS<<
+################################## */
+$gray: rgba(48,48,48, 1);
+$gj-red: #C83228;
+$gj-cyan: rgba(0,177,239, 1);
+$gj-cyan-solution: rgba(124,198,242, 1);
+$gj-cyan-light: rgba(230,247,253, 1); 
+$txt-gray: rgba(90,90,90, 1);
+$light-gray: rgba(120,120,120, 1);
+$box-shadow: rgba(0, 0, 0, 0.20); 
+/* ############################### */
+/* END >>COLORS<< */
+
+
+/* >>COMPASS IMPORTS<<
+################################## */
+@import "compass/reset";
+@import "compass/css3";
+@import "breakpoint";
+@import "blueprint/form";
+@import "sassy-buttons";
+/* ############################### */
+/* END >>COMPASS IMPORTS<< */
+
+
+/* >>breakpoints<<
+################################## */
+$px10-821: 10px 821px;
+$px321-600: 321px 600px;
+$px490-599: 490px 599px;
+$px600-945: 600px 945px;
+$px601-820: 601px 820px;
+$mm-px620-680: 620px 680px;
+$mm-px620-725: 620px 725px;
+$mm-px620-820: 620px 820px;
+$ekstra-solution-590-680: 590px 680px;
+$px946-1045: 946px 1045px;
+$min480: min-width 480px;
+$max320: max-width 320px;
+$max400: max-width 400px;
+$max480: max-width 480px;
+$max600: max-width 600px;
+$mm-max620: max-width 620px;
+$max680: max-width 680px;
+$max785: max-width 785px;
+$max960: max-width 960px;
+/* ############################### */
+/* END >>breakpoints<< */
+
+
+/* >>Transitions<<
+################################## */
+/* ############################### */
+/* END >>Transitions<< */
+
+
+/* ################################################################ */
+/* END 1. VARIABLES */
+
+
+/* 2. MIXINS
+################################################################### */
+/*TABS*/
+@mixin tabs { 
+  color: $txt-gray;
+  display: inline-block;
+  padding: 4px 10px 2px 10px;
+  margin: 20px 10px 30px 0px;
+  font-size: 0.8em;
+  border: 1px solid $gj-cyan;   
+  cursor: pointer;
+  &:hover, &.active {
+  color: white;
+  border-color: $gj-cyan;
+  background: $gj-cyan; 
+  }
+}
+/* ################################################################ */
+/* END 2. MIXINS */
+
+
+/* 0. IMPORTS
+################################################################## */
+
+
+/* >>SCSS IMPORTS<<
+################################## */
+@import "imports/fonts";
+@import "imports/frontpage";
+@import "imports/header";
+@import "imports/footer";
+@import "imports/menu";
+@import "imports/news";
+@import "imports/products";
+@import "imports/search";
+@import "imports/solution";
+@import "imports/contacts";
+@import "imports/investor";
+@import "imports/calender";
+@import "imports/drupalhack";
+@import "imports/forms";
+@import "imports/mobilemenu";
+/* ############################### */
+/* END >>SCSS IMPORTS<< */
+
+
+/* ################################################################ */
+/* END 0. IMPORTS */
+
+
+/* 3. Global styles
+################################################################### */
+/*####_ HIDE ADMINPART ON MOBILE'S _####*/
+#admin-toolbar, 
+.contextual-links-trigger,
+.contextual-links-trigger a,
+.tabs {
+@include breakpoint($px10-821) {
+  display: none !important;
+}
+}
+/*####_ /HIDE ADMINPART ON MOBILE'S _####*/
+.controllers h3.gallery {
+@include breakpoint($px10-821) {
+    display: none;
+}
+}
+/*PRODUCT TABS*/
+.horizontal-tab-button {
+@include breakpoint($px10-821) {
+  font-size: 80%;
+}
+}
+
+ 
+.admin-vertical { 
+  #solutiontab { 
+    h2 {
+@include breakpoint($max680) { 
+width: 90%;
+}        
+    }
+    .block-menu {
+    }
+  }  
+}
+.wrapper940 {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin:0 auto;  
+  text-align:left;
+  max-width: 940px;
+@include breakpoint($max480) {
+  width: 98%;  
+}
+}
+
+
+#content {
+  background-color: rgb(245,245,245);
+  min-height: 350px;
+  padding: 15px 0px 30px 0px;
+  max-width: 100%;
+@include breakpoint($px10-821) {
+  padding: 0px 8px 0px 10px;
+}
+@include breakpoint($px321-600) {
+  padding: 0px 10px 0px 8px;  
+}
+@include breakpoint($max960) {
+  padding: 10px 15px 40px 15px;
+}
+  img {
+@include breakpoint($max320) {
+  margin-bottom: 20px;
+}   
+  }
+  li {
+    list-style: disc;  
+    font-size: 90%;
+  }
+  .tabs {
+    h2 {
+      display: none;  
+    }
+    a {
+      color: $gj-cyan;
+      text-decoration: underline;
+      opacity: 0.25;
+      font-family: 'ArimoRegular';   
+      &:hover {
+       color: rgb(90,90,90);
+       opacity: 1;       
+      }   
+    }
+  }
+  .manual-product-id { display: none; } 
+}
+
+
+/* ############ Arthurs(Jul 06) styles start ############# */
+/* as Superfish dropdown was causing positioning problems for the 2nd dropdown's level on iPad - we applied a polifil */
+/* iPad portrain superfish dropdown  fix */
+@media (min-width: 768px) and (max-width: 769px) {
+    ul.nice-menu-down li ul li ul {
+        left: 10.4em !important;
+    }
+}
+@media only screen and (min-width: 1023px) and (max-width: 1024px) {
+    ul.nice-menu-down li ul li ul {
+        left: 13em !important;
+    }
+}
+/* ############ Arthurs styles end  ############# */
+
+
+/* >>body page settings<<
+################################## */
+
+
+/* Titel*/
+#topwrapper {
+  /*background-image: url(../img/dushbg.png);*/
+  background: rgba (248,248,248, 1);
+  z-index: 5;
+  position: relative;
+  @include box-shadow($box-shadow 0px 6px 7px 0px);
+  /*border-bottom: 1px dashed rgb(150,150,150);*/
+  min-height: 80px;
+  padding: 30px 10px 20px 10px;
+@include breakpoint($px10-821) {
+  padding: 30px 0px 20px 0px;  
+  span {
+    margin-left: 15px;    
+  }
+}
+}
+#content {
+  .title {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    text-align: left;
+    color: rgb(90,90,90);
+    display: block;
+    margin: 0px;
+    padding: 0px 0px 20px 0px;
+@include breakpoint($px601-820) {
+  font-size: 1.7em;
+}   
+@include breakpoint($max785) {
+  font-size: 1.5em;
+}
+  }
+}
+/* END -> Titel*/
+
+
+.horizontal-tabs { 
+  fieldset { 
+    &.horizontal-tabs-pane {
+      padding: 0;
+    }
+    &.group-download {
+@include breakpoint($max680) {
+  display: none;
+}      
+    }
+  }
+}
+.front {
+  #content { padding: 30px 0px 30px 0px; }
+}
+/* ############################### */
+/* END >>body page settings<< */
+
+
+/* ########################## July 11 2013 (Arthur) ###############################*/
+/* ---> VIDEOS PAGES PAGES START <--- */
+.page-about-videos .views-view-grid{margin-bottom: 10px}
+.page-about-videos .views-view-grid:last-of-type{margin-bottom: 0px}
+.page-about-videos .views-view-grid td .field-content:nth-child(2){padding-left: 10px}
+.page-about-videos .views-view-grid td .field-content:nth-child(2) a{vertical-align: top}
+.page-about-videos .content h2{margin-bottom: 5px}
+/* ---> VIDEOS PAGES PAGES END <--- */
+/* ########################## Vocus data webform styling ################################*/
+#webform-component-my-profile-fieldset{
+	margin-bottom:20px;
+}
+#webform-component-subscribed-lists-fieldset{
+	margin-bottom:20px;
+}
+#webform-component-subscribed-lists-fieldset > label{
+	size:30px;
+}
+#webform-component-my-interests-fieldset{
+	margin-bottom:20px;
+}
+/* ---> Vocus data webform styling <--- */
+/* ################################################################ */
+/* END 3. Global styles */

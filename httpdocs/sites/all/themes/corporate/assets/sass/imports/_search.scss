@@ -1,0 +1,310 @@
+/*
+Description: ALL search-styling
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* Search-strukture
+################################################################## */
+/*### HIDING TOPWRAPPER ON SEARCHPAGE ###*/
+.page-search #topwrapper {  display: none;  }
+/*### /HIDING TOPWRAPPER ON SEARCHPAGE ###*/
+/*search this site: HIDDEN*/
+.element-invisible { display: none; }
+/*/search this site: HIDDEN*/
+#content {
+  .form-item-keys {
+    input {
+      float: left;
+      margin: 0px 10px 0px 20px;      
+    }
+  } 
+}
+#edit-basic {
+  display: block;
+  margin-top: 20px;
+@include breakpoint($max600) {
+  height: 140px;  
+}
+  label {
+    float: left;
+    padding-top: 8px;
+  }
+  .form-type-textfield {
+@include breakpoint($max600) {
+  max-width: 80%;
+  margin-bottom: 20px;  
+}
+  }  
+}
+/*APPLY ON SEARCH*/
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 2em !important;
+}
+/* >>Advanced Search<<
+################################## */
+.search-advanced {
+  .criterion {
+    /*.form-checkboxes {
+     &:after {
+      display: inline-block;
+      content: 'Click for result ->';
+      height: auto;
+      width: auto;
+      position: relative;
+      top: 19px;
+      left: 30px;
+@include breakpoint($max785) {
+  display: none;
+}
+     } 
+    }*/
+    &:nth-child(2) {
+    
+    }
+  } 
+  .action {
+    margin-top: 18px;
+    clear: none;
+    display: none;
+@include breakpoint($max600) {
+  width: 100%;
+}
+  }
+}
+#block-search-form {
+    width: 100%;
+    display: block;
+    position: relative; 
+    margin-top: 10px; 
+@include breakpoint($max600) {
+  width: 100%;
+  display: block;
+  margin-bottom: 0px;
+  margin-left: 0px;  
+}
+  .search-form {
+    @include blueprint-form-layout;
+    @include blueprint-form-borders;
+    @include blueprint-form-sizes; 
+    margin: -15px 0px 12px 0px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+@include breakpoint($max680) {
+  width: 100%;
+  margin: 10px 0px;
+  float: left;
+}
+    .form-item-search-block-form {
+      display: inline-block;
+      float: left;
+      width: 92%;
+@include breakpoint($mm-max620) {
+  width: 80%;
+}
+    }
+    #edit-actions {
+      display: inline-block;
+      width: auto;
+      padding-top: 12px;
+      text-align: right;
+      float: right;
+      margin-right: 5px;
+      position: relative;
+      max-width: 7%;
+@include breakpoint($mm-max620) {
+  display: inline-block;
+  text-align: right;
+  margin-right: 4%;
+  position: relative;
+  width: 15%;
+  padding-top: 0px;
+  max-width: 15%;
+  position: relative;
+  top: 35px;
+}
+    }
+    input[type="submit"] {
+      background: none;
+      border: none;
+      color: $txt-gray;
+      cursor: pointer;
+@include breakpoint($mm-max620) {
+  background: url(../img/2015/mobilemenu.png) no-repeat $txt-gray 50% 9px;
+  padding: 8px 18px;
+  text-indent: -200px;
+  overflow: hidden;
+  width: auto;
+  margin-top: 0px;
+  display: inline-block;
+  float: right;  
+}
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .form-type-radios {
+      display: none;
+    }
+  }
+  .custom-search-box {
+    max-width: 98%;
+    min-width: 98%;
+    @include transition-duration(50ms);     
+    @include transition-timing-function(ease-in);
+  }
+  .custom-search-default-value {
+    width: 96%;
+    /*@include box-shadow(rgba(0, 0, 0, 0.4) 0 0 6px 0px); */
+  }    
+}
+#edit-custom-search-types {
+  .form-item-custom-search-types {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+  } 
+}
+#loginfield {
+  .form-item-custom-search-types {
+    margin-top: 10px;
+    font-size: 0.85em;
+@include breakpoint($max600) {
+ display: none;
+}
+  }
+}
+#search-block-form {
+  float: right;
+@include breakpoint($max600) {
+  float: left;
+}
+}
+.logged-in { 
+  #search-block-form  {
+    float: left;
+    .search-form {
+@include breakpoint($max600) {
+  width: 92%;
+  margin-top: 0;  
+}
+    }
+  }
+  
+}
+.admin-vertical {
+  #search-block-form {
+    float: right;
+  }
+} 
+/* ############################### */
+/* END >>Advanced Search<< */
+
+
+/* >>RESULTS<<
+################################## */
+#search-form {
+  margin-bottom: 40px;
+  .criterion {
+    .form-item-type {
+      label {
+        display: inline-block;
+        margin-left: -5px;
+        margin-right: 20px; 
+        width: 100%;
+        margin-top: 30px;      
+      }
+    }
+    .form-item {
+      display: block;
+      float: left;      
+    }   
+  }
+  .form-type-checkbox {
+    margin-top: 20px;
+  }
+  .form-text {
+    float: none;
+  }
+}
+#edit-advanced {
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 0;
+  .form-type-checkbox {
+    display: inline-block;
+    float: left;
+    label {
+      display: inline-block;
+      margin-left: -6px;
+      margin-right: 15px;
+    }
+  }
+  legend { display: none; }
+  .form-text {
+    width: 440px;
+@include breakpoint($max600) {
+  width: 100%;  
+}
+  }
+}
+/* Search list */
+.search-results li {
+  margin-bottom: 10px;
+  .search-info { display: none; }
+}
+.page-search { 
+  
+  #content { 
+    ul {
+      margin-left: -10px;
+    }
+    h2 {
+    font-size: 2em;
+    line-height: 2em;
+    }
+    h3 {
+      padding: 0;
+      font-size: 1.1em;
+      margin-bottom: -8px
+    }
+    .tabs {
+      margin-bottom: 20px;
+      a {
+        padding: 9px 10px 8px 10px;
+        background-color: rgb(245,245,245); 
+        display: inline-block;
+        color: $txt-gray;
+        opacity: 1;
+        text-decoration: none;
+        &:hover {
+          color: white;
+          background-color: $txt-gray;       
+        }
+      }
+      li {
+        &.active {
+          a {
+            color: white;
+            background-color: $txt-gray;              
+          }
+        }
+      }      
+    } 
+  }
+}  
+/*BOTTOM*/
+#edit-type {
+  label {
+    display: inline;
+  }
+}
+/* ############################### */
+/* END >>RESULTS<< */
+
+
+/* ################################################################ */
+/* END Search-strukture */

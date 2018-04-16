@@ -1,0 +1,1046 @@
+@charset "UTF-8";
+/*
+Client: Glunz & Jensen -> Landingpage
+Theme Name: Landingpage
+Description: The main dokument of our SCSS struckture.
+Author URI: http://openusorce.com
+Version: 2016
+*/
+/* ### THIS FILE SASS CONTAINS STYLES FOR THE TEMPLATE  ############################################################# */
+/* ### SUB-DIVEDED INTO FOLLOWING SECTIONS: 					  ############################################################# */
+/*  0. VARIABLES // COLOR // IMPORTS // BREAKPOINTS     <------ */
+/*  1. MIXINS                  												  <------ */
+/*  2. IMPORTS                												  <------ */
+/*  3. Global Styles – (body, paragraphs, lists, etc)   <------ */
+/*  4. Basic elements																	  <------ */
+/* ################################################################################################################# */
+/* ################################################################################################################# */
+/* 0. VARIABLES
+################################################################## */
+/* >>COLORS<<
+################################## */
+/* ############################### */
+/* END >>COLORS<< */
+/* >>breakpoints<<
+################################## */
+/* ############################### */
+/* END >>breakpoints<< */
+/* >>Transitions<<
+################################## */
+/* ############################### */
+/* END >>Transitions<< */
+/* ################################################################ */
+/* END 0. VARIABLES */
+/* 1. MIXINS
+################################################################### */
+/* ################################################################ */
+/* END 1. MIXINS */
+/* 2. IMPORTS
+################################################################## */
+/* >>COMPASS IMPORTS<<
+################################## */
+/* line 17, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* ############################### */
+/* END >>COMPASS IMPORTS<< */
+/* >>SCSS IMPORTS<<
+################################## */
+/*
+Description: All font settings ind this SCSS
+Author URI: http://openusorce.com
+Version: 2015
+*/
+/* >>Fonts in use<<
+################################## */
+@font-face {
+  font-family: "opensansRegular";
+  src: url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Regular-webfont.eot') format('embedded-opentype'), url('../fonts/OpenSans-Regular-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "opensansBold";
+  src: url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Bold-webfont.eot') format('embedded-opentype'), url('../fonts/OpenSans-Bold-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "gooddogregular";
+  src: url('../fonts/GoodDog-webfont.ttf') format('truetype'), url('../fonts/GoodDog-webfont.eot') format('embedded-opentype'), url('../fonts/GoodDog-webfont.svg') format('svg');
+}
+
+/* ############################### */
+/* END >>Fonts in use<< */
+/* Global Styles – (body, paragraphs, lists, etc)
+################################################################## */
+/* >>Basics<<
+################################## */
+/* line 25, ../sass/imports/_fonts.scss */
+body {
+  font-family: "opensansRegular";
+}
+/* line 27, ../sass/imports/_fonts.scss */
+body a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* line 32, ../sass/imports/_fonts.scss */
+body a.active {
+  text-decoration: none;
+}
+
+/* ############################### */
+/* END >>Basics<< */
+/* >>General links/fonts<<
+################################## */
+/* line 43, ../sass/imports/_fonts.scss */
+h1, .field-name-field-title {
+  font-size: 1.35em;
+  font-family: "opensansBold";
+  display: inline-block;
+  margin: 0px 0px 5px 0px;
+  display: block;
+}
+
+/* line 51, ../sass/imports/_fonts.scss */
+h2 {
+  font-size: 1.1em;
+  font-family: "opensansBold";
+  display: inline-block;
+  margin: 0px 0px 5px 0px;
+}
+/* line 56, ../sass/imports/_fonts.scss */
+h2:first-of-type {
+  margin-top: 0px;
+}
+
+/* line 63, ../sass/imports/_fonts.scss */
+strong {
+  font-family: "opensansBold";
+}
+
+/* line 72, ../sass/imports/_fonts.scss */
+p {
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-bottom: 0.6em;
+}
+
+/* ############################### */
+/* END >>General links/fonts<< */
+/* ############################################################### */
+/* END Global Styles – (body, paragraphs, lists, etc) */
+/*
+Description: All Drupal stuff that we need to kill
+Author URI: http://openusorce.com
+Version: 2015
+*/
+/* 2. Global Styles – (body, paragraphs, lists, etc)
+################################################################## */
+/* >>Menu<<
+################################## */
+/* line 19, ../sass/imports/_drupalresets.scss */
+ul li.leaf {
+  list-style-image: none;
+  list-style-type: none;
+}
+/* line 25, ../sass/imports/_drupalresets.scss */
+ul.menu li {
+  margin: 0;
+}
+
+/* ############################### */
+/* END >>Menu<< */
+/* ############################################################### */
+/* END 2. Global Styles – (body, paragraphs, lists, etc) */
+/*
+Description: The header of the site
+Author URI: http://openusorce.com
+Version: 2015
+*/
+/* >>HEADER<<
+################################## */
+/* line 10, ../sass/imports/_header.scss */
+header {
+  display: block;
+  width: 100%;
+  clear: both;
+  float: left;
+  height: 80vh;
+  max-height: 1060px;
+  position: relative;
+  z-index: 200;
+  min-height: 960px;
+}
+@media (max-width: 1550px) {
+  /* line 10, ../sass/imports/_header.scss */
+  header {
+    height: 78vh;
+    min-height: 830px;
+  }
+}
+@media (max-width: 720px) {
+  /* line 10, ../sass/imports/_header.scss */
+  header {
+    max-height: 2000px;
+    height: auto;
+    margin-bottom: 20px;
+    min-height: 960px;
+  }
+}
+/* line 30, ../sass/imports/_header.scss */
+header .header-left {
+  display: inline-block;
+  float: left;
+  padding-left: 3%;
+  width: 22%;
+  background: #039ee3;
+}
+/* line 36, ../sass/imports/_header.scss */
+header .header-left #logo {
+  background: url(../img/logo.png) center no-repeat;
+  background: rgba(0, 0, 0, 0) url(../img/logo.svg) center no-repeat;
+  height: 40px;
+  width: 180px;
+  text-indent: -999px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  padding: 0px 0px 25px 0px;
+}
+/* line 48, ../sass/imports/_header.scss */
+header .header-right {
+  display: inline-block;
+  width: 72%;
+  padding-right: 3%;
+  background: #039ee3;
+  height: 67px;
+  /*@include box-sizing(border-box);
+  padding-left: 10px;*/
+  /*MENU-TITLE*/
+  /* /END MENU-TITLE*/
+}
+/* line 58, ../sass/imports/_header.scss */
+header .header-right .mail {
+  display: inline-block;
+  position: relative;
+  background: url(../img/mail.svg) 0px -6px no-repeat;
+  background-size: 2em;
+  width: auto;
+  height: 22px;
+  float: right;
+  margin-top: 23px;
+  margin-right: 4%;
+  padding-left: 40px;
+  color: white;
+  font-size: 0.9em;
+}
+/* line 71, ../sass/imports/_header.scss */
+header .header-right .mail:hover {
+  opacity: 0.85;
+}
+@media (max-width: 720px) {
+  /* line 58, ../sass/imports/_header.scss */
+  header .header-right .mail {
+    width: 30px;
+    overflow: hidden;
+    margin-right: 0;
+    padding-left: 0px;
+    text-indent: -999px;
+  }
+}
+/* line 83, ../sass/imports/_header.scss */
+header .header-right .mobile-menu-wrapper .mm-container {
+  float: right;
+}
+/* line 88, ../sass/imports/_header.scss */
+header .header-right ul.menu {
+  border-bottom: 1px solid lime;
+  float: right;
+}
+/* line 91, ../sass/imports/_header.scss */
+header .header-right ul.menu a {
+  color: lime;
+  display: inline-block;
+  float: left;
+  padding: 8px 7px 10px 8px;
+  border-bottom: 2px solid lime;
+  font-size: 0.80em;
+  margin-left: 4px;
+}
+/* line 99, ../sass/imports/_header.scss */
+header .header-right ul.menu a:before {
+  display: inline-block;
+  position: relative;
+  height: 25px;
+  width: 20px;
+  content: '';
+  overflow: hidden;
+  top: 10px;
+  right: 3px;
+  background-size: 1.5em !important;
+  background-position: bottom center !important;
+}
+/* line 111, ../sass/imports/_header.scss */
+header .header-right ul.menu a:hover {
+  background: lime;
+  color: lime;
+  border-bottom: 2px solid lime;
+}
+/* line 115, ../sass/imports/_header.scss */
+header .header-right ul.menu a:hover:before {
+  background-position: bottom left;
+}
+/* line 122, ../sass/imports/_header.scss */
+header .header-right ul.menu li.active-trail:before {
+  color: lime;
+}
+/* line 126, ../sass/imports/_header.scss */
+header .header-right ul.menu li.leaf {
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+/* line 132, ../sass/imports/_header.scss */
+header .header-right ul.menu li a.active {
+  border-bottom: 2px solid blue;
+}
+/* line 134, ../sass/imports/_header.scss */
+header .header-right ul.menu li a.active:before {
+  color: blue !important;
+}
+/* line 143, ../sass/imports/_header.scss */
+header .picformbg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: url(../img/forrest.jpg) center no-repeat;
+  background-size: cover;
+  position: relative;
+  clear: both;
+  padding-top: 60px;
+  max-height: 800px;
+  margin-top: -5px;
+  min-height: 630px;
+}
+@media (max-width: 1550px) {
+  /* line 143, ../sass/imports/_header.scss */
+  header .picformbg {
+    max-height: 670px;
+  }
+}
+@media (max-width: 720px) {
+  /* line 143, ../sass/imports/_header.scss */
+  header .picformbg {
+    height: 100vh;
+  }
+}
+/* line 161, ../sass/imports/_header.scss */
+header .picformbg .toppicture {
+  display: inline-block;
+  width: 54%;
+  height: auto;
+  position: relative;
+  float: left;
+  min-height: 100vh;
+  margin-left: 3%;
+  margin-right: 3%;
+  background: url(../img/platewriter.png) center 150px no-repeat;
+  background-size: contain;
+  /*@include breakpoint($max1550) {
+    background-position: center 135px;
+  }*/
+  /*@include breakpoint($max1250) {
+    background-position: center 95px;
+  }*/
+}
+@media (max-width: 720px) {
+  /* line 161, ../sass/imports/_header.scss */
+  header .picformbg .toppicture {
+    width: 100%;
+    min-height: 520px;
+    background-position: center 100px;
+  }
+}
+@media (max-width: 490px) {
+  /* line 161, ../sass/imports/_header.scss */
+  header .picformbg .toppicture {
+    background-position: center 150px;
+  }
+}
+/* line 186, ../sass/imports/_header.scss */
+header .picformbg .toppicture h1, header .picformbg .toppicture h4 {
+  padding-left: 2%;
+}
+/* line 189, ../sass/imports/_header.scss */
+header .picformbg .toppicture h1 {
+  font-size: 2.8em;
+}
+@media (max-width: 1250px) {
+  /* line 189, ../sass/imports/_header.scss */
+  header .picformbg .toppicture h1 {
+    font-size: 2.5em;
+  }
+}
+/* line 195, ../sass/imports/_header.scss */
+header .picformbg .toppicture h4 {
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.75);
+}
+@media (max-width: 1250px) {
+  /* line 195, ../sass/imports/_header.scss */
+  header .picformbg .toppicture h4 {
+    font-size: 1.5em;
+  }
+}
+/* line 202, ../sass/imports/_header.scss */
+header .picformbg .toppicture .itcplogo {
+  display: block;
+  width: 200px;
+  height: 160px;
+  position: absolute;
+  top: 460px;
+  left: 0px;
+  background: url(../img/ictp-logo.svg) center top no-repeat;
+  background-size: contain;
+}
+@media (max-width: 1550px) {
+  /* line 202, ../sass/imports/_header.scss */
+  header .picformbg .toppicture .itcplogo {
+    width: 175px;
+    height: 138px;
+    top: 470px;
+  }
+}
+@media (max-width: 720px) {
+  /* line 202, ../sass/imports/_header.scss */
+  header .picformbg .toppicture .itcplogo {
+    width: 125px;
+    height: 105px;
+    top: 390px;
+  }
+}
+/* line 223, ../sass/imports/_header.scss */
+header .picformbg .formwrapper {
+  display: inline-block;
+  width: 37%;
+  height: auto;
+  position: relative;
+  background: #039ee3;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 35px;
+  color: white;
+  margin-bottom: 40px;
+  max-width: 690px;
+}
+/* line 234, ../sass/imports/_header.scss */
+header .picformbg .formwrapper p {
+  font-size: 0.8em;
+}
+/* line 237, ../sass/imports/_header.scss */
+header .picformbg .formwrapper h2 {
+  display: none;
+}
+/* line 238, ../sass/imports/_header.scss */
+header .picformbg .formwrapper input {
+  text-transform: capitalize;
+}
+@media (max-width: 720px) {
+  /* line 223, ../sass/imports/_header.scss */
+  header .picformbg .formwrapper {
+    width: 100%;
+    float: left;
+    max-width: 100%;
+  }
+}
+/* line 248, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form label.option {
+  display: inline-block;
+  position: relative;
+  width: 80%;
+}
+/* line 254, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form #edit-submitted-first-name {
+  background: rgba(255, 255, 255, 0.3) url(../img/firstname.svg) center top no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 1.3em;
+  background-position: 15px 50%;
+}
+/* line 261, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form #edit-submitted-last-name {
+  background: rgba(255, 255, 255, 0.3) url(../img/lastname.svg) center top no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 1.3em;
+  background-position: 15px 50%;
+}
+/* line 268, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form #edit-submitted-company {
+  background: rgba(255, 255, 255, 0.3) url(../img/city.svg) center top no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 1.7em;
+  background-position: 12px 50%;
+}
+/* line 275, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form #edit-submitted-work-email {
+  background: rgba(255, 255, 255, 0.3) url(../img/mail.svg) center top no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 1.4em;
+  background-position: 15px 50%;
+}
+/* line 282, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form #edit-submitted-phone {
+  background: rgba(255, 255, 255, 0.3) url(../img/phone.svg) center top no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 1.4em;
+  background-position: 15px 50%;
+}
+/* line 289, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form #edit-submitted-postal-code {
+  background: rgba(255, 255, 255, 0.3) url(../img/place.svg) center top no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 1.4em;
+  background-position: 15px 50%;
+}
+/* line 298, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form #webform-component-i-have-read-this-agreement label:nth-child(1) {
+  display: none;
+}
+/* line 303, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form input {
+  background: rgba(255, 255, 255, 0.3);
+  height: 2.65em;
+  font-size: 1.2em;
+  padding-left: 50px;
+  width: 88%;
+  border: none;
+  color: white;
+}
+@media (max-width: 1100px) {
+  /* line 303, ../sass/imports/_header.scss */
+  header .picformbg .formwrapper .webform-client-form input {
+    width: 85%;
+  }
+}
+@media (max-width: 720px) {
+  /* line 303, ../sass/imports/_header.scss */
+  header .picformbg .formwrapper .webform-client-form input {
+    width: 90%;
+  }
+}
+/* line 317, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form input.form-radio {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  float: left;
+  position: relative;
+}
+/* line 324, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form input.form-submit {
+  background: rgba(255, 0, 0, 0.9);
+  text-transform: uppercase;
+  font-size: 2em;
+  height: auto;
+  width: 90%;
+  margin-left: 5%;
+  padding: 10px 0 12px 0;
+  margin-top: 15px;
+}
+/* line 333, ../sass/imports/_header.scss */
+header .picformbg .formwrapper .webform-client-form input.form-submit:hover {
+  background: red;
+}
+/* line 339, ../sass/imports/_header.scss */
+header .picformbg .formwrapper:after {
+  display: block;
+  width: 100%;
+  height: 140px;
+  background: url(../img/form-buttom.png) center top no-repeat;
+  background-size: cover;
+  position: absolute;
+  content: '';
+  left: 0px;
+  bottom: -100px;
+}
+@media (max-width: 1550px) {
+  /* line 339, ../sass/imports/_header.scss */
+  header .picformbg .formwrapper:after {
+    bottom: -50px;
+    background: url(../img/form-buttom.png) center -56px no-repeat;
+    height: 100px;
+  }
+}
+@media (max-width: 1100px) {
+  /* line 339, ../sass/imports/_header.scss */
+  header .picformbg .formwrapper:after {
+    background-position: center -73px;
+  }
+}
+@media (max-width: 720px) {
+  /* line 339, ../sass/imports/_header.scss */
+  header .picformbg .formwrapper:after {
+    bottom: -70px;
+  }
+}
+
+/* ############################### */
+/* END >>HEADER<< */
+/*
+Description: The footer of the site
+Author URI: http://openusorce.com
+Version: 2015
+*/
+/* >>FOOTER<<
+################################## */
+/* line 10, ../sass/imports/_footer.scss */
+footer {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 65px;
+  margin-top: 80px;
+  background: white;
+  text-align: center;
+}
+/* line 18, ../sass/imports/_footer.scss */
+footer a {
+  font-size: 1.5em;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "opensansBold";
+}
+/* line 22, ../sass/imports/_footer.scss */
+footer a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+/* line 26, ../sass/imports/_footer.scss */
+footer #block-domain-switcher {
+  display: none;
+}
+
+/* ############################### */
+/* END >>FOOTER<< */
+/*
+Description: FORMS
+Author URI: http://openusorce.com
+Version: 2015
+*/
+/* line 6, ../sass/imports/_forms.scss */
+::-webkit-input-placeholder {
+  color: white;
+}
+
+/* line 10, ../sass/imports/_forms.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+/* line 14, ../sass/imports/_forms.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+/* line 18, ../sass/imports/_forms.scss */
+:-ms-input-placeholder {
+  color: white;
+}
+
+/* line 23, ../sass/imports/_forms.scss */
+.node-type-page ul.primary {
+  padding: 0;
+}
+/* line 26, ../sass/imports/_forms.scss */
+.node-type-page ul.primary li a {
+  padding-left: 6px;
+}
+/* line 32, ../sass/imports/_forms.scss */
+.node-type-page #pagewrapper {
+  padding: 0;
+  width: 100%;
+}
+/* line 35, ../sass/imports/_forms.scss */
+.node-type-page #pagewrapper h1 {
+  padding-left: 10%;
+}
+/* line 38, ../sass/imports/_forms.scss */
+.node-type-page #pagewrapper #content {
+  padding: 0;
+}
+
+/* line 44, ../sass/imports/_forms.scss */
+button {
+  background: lime;
+  border: none;
+}
+
+/* line 50, ../sass/imports/_forms.scss */
+.form-wrapper {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+/* line 57, ../sass/imports/_forms.scss */
+.form-item, .form-action {
+  margin: 20px 0px 20px 0px;
+}
+/* line 59, ../sass/imports/_forms.scss */
+.form-item label, .form-action label {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+/* line 63, ../sass/imports/_forms.scss */
+.form-item .description, .form-action .description {
+  display: block;
+  max-width: 520px;
+  line-height: 1.4em;
+  margin-top: 5px;
+}
+
+/* ############################### */
+/* END >>SCSS IMPORTS<< */
+/* ################################################################ */
+/* END 2. IMPORTS */
+/* 3. Global styles
+################################################################### */
+/* >>body page settings<<
+################################## */
+/* line 116, ../sass/screen.scss */
+#back-top {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  font-size: 4.5em;
+  z-index: 9999;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 920px) {
+  /* line 116, ../sass/screen.scss */
+  #back-top {
+    bottom: 0px;
+    right: 0px;
+    padding: 5px 12px 0px 12px;
+  }
+}
+
+/* line 140, ../sass/screen.scss */
+.page-overview ul.primary li a, .page-user ul.primary li a {
+  padding: 4px 6px 8px 6px;
+}
+
+/* line 153, ../sass/screen.scss */
+ul.primary {
+  padding-top: 10px;
+  display: block;
+  width: 90%;
+  float: left;
+  position: relative;
+}
+/* line 159, ../sass/screen.scss */
+ul.primary li {
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+}
+/* line 163, ../sass/screen.scss */
+ul.primary li a {
+  border: none;
+  padding: 4px 6px 8px 22px;
+  font-size: 0.8em;
+  display: inline-block;
+  opacity: 0.5;
+}
+/* line 171, ../sass/screen.scss */
+ul.primary li.active a, ul.primary li:hover a {
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* line 196, ../sass/screen.scss */
+.element-invisible {
+  display: none !important;
+}
+
+/* line 199, ../sass/screen.scss */
+.tabs, .action-links {
+  display: none;
+}
+
+/* ################################################################ */
+/* END 3. Global styles */
+/* 4. Basic elements
+################################################################### */
+/* line 209, ../sass/screen.scss */
+#pagewrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  max-width: 1080px;
+  margin: auto;
+}
+/* line 219, ../sass/screen.scss */
+#pagewrapper #content .content .content {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 3%;
+  position: relative;
+}
+/* line 225, ../sass/screen.scss */
+#pagewrapper #content .content .content .field {
+  display: inline-block;
+  width: 33%;
+  float: left;
+  position: relative;
+  height: auto;
+  min-height: 280px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 3% 0 6.5%;
+  height: 350px;
+}
+@media (max-width: 1100px) {
+  /* line 225, ../sass/screen.scss */
+  #pagewrapper #content .content .content .field {
+    width: 48%;
+  }
+}
+@media (max-width: 720px) {
+  /* line 225, ../sass/screen.scss */
+  #pagewrapper #content .content .content .field {
+    width: 100%;
+    padding: 0 10% 0 18%;
+    height: auto;
+    min-height: auto;
+    margin-bottom: 25px;
+  }
+}
+/* line 246, ../sass/screen.scss */
+#pagewrapper #content .content .content .field.field-name-field-inkjet-technology:before {
+  background: url(../img/inkjet.svg) center top no-repeat;
+}
+/* line 251, ../sass/screen.scss */
+#pagewrapper #content .content .content .field.field-name-field-semi-automated:before {
+  background: url(../img/automation.svg) center top no-repeat;
+}
+/* line 256, ../sass/screen.scss */
+#pagewrapper #content .content .content .field.field-name-field-no-chemistry:before {
+  background: url(../img/nochem.svg) center top no-repeat;
+}
+/* line 261, ../sass/screen.scss */
+#pagewrapper #content .content .content .field.field-name-field-benefits-the-environment:before {
+  background: url(../img/enviroment.svg) center top no-repeat;
+}
+/* line 266, ../sass/screen.scss */
+#pagewrapper #content .content .content .field.field-name-field-space-saving:before {
+  background: url(../img/space-saving.svg) center top no-repeat;
+}
+/* line 270, ../sass/screen.scss */
+#pagewrapper #content .content .content .field:before {
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  background: url(../img/dollar.svg) center top no-repeat;
+  background-size: contain;
+  content: '';
+  left: 0;
+}
+@media (max-width: 920px) {
+  /* line 270, ../sass/screen.scss */
+  #pagewrapper #content .content .content .field:before {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media (max-width: 720px) {
+  /* line 270, ../sass/screen.scss */
+  #pagewrapper #content .content .content .field:before {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* line 289, ../sass/screen.scss */
+#pagewrapper #content .content .content .field.field-type-text-with-summary {
+  display: none;
+}
+/* line 290, ../sass/screen.scss */
+#pagewrapper #content .content .content .field h2 {
+  font-size: 1.2em;
+  display: inline-block;
+  height: auto;
+  border-bottom: 1px dashed black;
+  padding-bottom: 4px;
+}
+/* line 297, ../sass/screen.scss */
+#pagewrapper #content .content .content .field p {
+  padding-top: 10px;
+}
+/* line 301, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: auto;
+  border: none;
+  margin-top: 60px;
+}
+/* line 308, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: auto;
+  padding: 0;
+}
+/* line 314, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field {
+  padding: 0;
+  height: auto;
+}
+/* line 318, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials:before {
+  display: none;
+}
+/* line 321, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-name-field-testimonial-title {
+  font-size: 1em;
+  font-family: "opensansBold";
+}
+/* line 325, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-name-field-testimonial-text {
+  font-style: italic;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.85);
+}
+/* line 330, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view {
+  display: inline-block;
+  width: 33%;
+  float: left;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 3%;
+}
+@media (max-width: 920px) {
+  /* line 330, ../sass/screen.scss */
+  #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view {
+    width: 100%;
+  }
+}
+/* line 343, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-image, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-title, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-text, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-logo {
+  display: block;
+  width: 100%;
+  clear: both;
+  position: relative;
+  min-height: 20px;
+}
+/* line 349, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-image img, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-title img, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-text img, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-logo img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 353, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-image:before, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-title:before, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-text:before, #pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-logo:before {
+  display: none;
+}
+/* line 359, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-logo .field-items {
+  margin: 15px 0px;
+}
+/* line 362, ../sass/screen.scss */
+#pagewrapper #content .content .content .field-collection-container .field-name-field-testimonials .field-collection-view .field-name-field-testimonial-logo img {
+  max-width: 40%;
+  height: auto;
+}
+
+/* ################################################################ */
+/* END 4. Basic elements */
+
+/* KSN edit */
+div.field-name-field-video {
+  margin-left: 12%;
+}

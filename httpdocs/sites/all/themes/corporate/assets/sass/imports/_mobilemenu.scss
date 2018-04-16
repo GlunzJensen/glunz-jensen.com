@@ -1,0 +1,182 @@
+/*------------------------------  MOBILE ------------------------------*/
+.toggleMenu {
+  display: none;
+  background: url(../img/mobilemenu.png) no-repeat;
+  width: 44px;
+  height: 44px;
+  color: black;
+  text-indent: -999px;
+  margin: 10px 20px 0px 25px;
+  float: left;
+  position: relative;
+  z-index: 9999;
+@include breakpoint($max480) {
+  margin-left: 8px;  
+}
+  &:hover {
+    background-position: bottom;
+  }
+}
+
+
+ul.nice-menu {
+  a {
+@include breakpoint($mm-max620) {
+    color: white;
+    padding-left: 30px;
+} 
+@include breakpoint($mm-px620-820) {
+  font-size: 85%;  
+} 
+@include breakpoint($mm-px620-725) {
+  font-size: 65%;
+}   
+  }
+  > li {
+@include breakpoint($mm-max620) {
+    float: left;
+    width: 100%;
+    margin-top: 0px;
+    background: url(../img/2015/mobilemenu.png) no-repeat $gj-cyan 95% 20px;
+    overflow: hidden;
+    &:hover {
+      background: url(../img/2015/mobilemenu.png) no-repeat $txt-gray 95% -67px;
+    }
+}
+    li {
+      margin: 0px;
+      &:hover {
+@include breakpoint($mm-max620) {
+  background: none; 
+} 
+@include breakpoint($mm-px620-820) {
+  width: 100%;
+  position: relative;
+  z-index: 200;
+  background: none $txt-gray;  
+}     
+      }
+      a {
+@include breakpoint($mm-px620-820) {
+  display: block;
+  position: relative;
+  color: white;
+  padding: 6px 0px 4px 10px;
+  z-index: 100;
+} 
+@include breakpoint($mm-max620) {
+  margin-left: 30px;
+}
+      }
+    }
+    ul {
+@include breakpoint($mm-max620) {
+      border-bottom: 1px dashed rgb(255,255,255);
+      margin: 0px;
+      padding: 0px;
+} 
+    li {
+      ul {
+        margin-top: -30px;
+      }
+    }     
+    }
+    &.hover, &.over {
+@include breakpoint($mm-max620) {
+      background: url(../img/2015/mobilemenu.png) no-repeat $txt-gray 95% -67px;
+}
+      > ul {
+@include breakpoint($mm-max620) {
+        position: static;
+        background: $light-gray; 
+}
+      }
+    }   
+  }
+  
+}
+/* BACKGROUND IN DROP DOWN LIST*/
+ul.nice-menu-down {
+/*- border-top on mobile*/
+  li {
+@include breakpoint($mm-max620) {
+  border-top: 0px !important;
+}
+/*END/ - border-top on mobile*/ 
+    ul {
+@include breakpoint($mm-max620) {
+      width: 100%;  
+      border: none;
+}  
+@include breakpoint($mm-px620-820) {
+  margin-top: 10px;
+} 
+@include breakpoint($mm-px620-725) {
+  margin-top: 9px;
+}   
+    }
+  }
+}
+/*2.led*/
+#nice-menu-1 {
+  ul {
+@include breakpoint($mm-px620-725) {
+  min-width: 180px;
+}
+  }
+  >li {
+    li {
+@include breakpoint($mm-max620) {
+  background: $light-gray;
+  &.menuparent {
+  background: url(../img/2015/mobilemenu.png) no-repeat $light-gray 95% 10px; 
+    &:hover {
+      background: url(../img/2015/mobilemenu.png) no-repeat $txt-gray 95% -77px;
+    } 
+  }
+  &:hover { background: $txt-gray; }
+}  
+    }
+    >ul {
+@include breakpoint($mm-px620-820) {
+  border-width: 2px;
+  min-width: 200px;  
+}
+      a {
+@include breakpoint($mm-px620-820) {
+  font-size: 75%;
+}
+@include breakpoint($mm-px620-725) {
+  font-size: 60%;
+}
+      }
+     >li {
+      >ul {
+@include breakpoint($mm-max620) {
+  margin-top: 0px;
+  position: relative;
+  left:auto;
+  top:auto;
+  z-index: 999;
+  background: $light-gray;
+  padding-left: 20px;  
+}     
+      } 
+     } 
+    }
+  }
+}
+.nav {
+  li {
+    li {
+      &.hover {
+        ul {
+@include breakpoint($mm-max620) {
+         position: static;    
+}      
+        }
+      }
+    }
+  }
+}
+/*------------------------------  /MOBILE ------------------------------*/

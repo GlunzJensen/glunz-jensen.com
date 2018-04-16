@@ -1,0 +1,353 @@
+/*
+Description: The header of the site
+Author URI: http://openusorce.com
+Version: 2015
+*/
+
+
+/* >>HEADER<<
+################################## */
+header {
+  display: block;
+  width: 100%;
+  clear: both;
+  float: left;
+  height: 80vh;
+  max-height: 1060px;
+  position: relative;
+  z-index: 200;
+  min-height: 960px;
+@include breakpoint($max1550) {
+  height: 78vh;
+  min-height: 920px;
+}
+@include breakpoint($max720) {
+  max-height: 2000px;
+  height: auto;
+  margin-bottom: 20px;
+  min-height: 960px;
+}
+  .header-left {
+    display: inline-block;
+    float: left; 
+    padding-left: 3%;
+    width: 22%;
+    background: $gj-cyan;
+    #logo {
+      background: url(../img/logo.png) center no-repeat;
+      background: rgba(0,0,0,0) url(../img/logo.svg) center no-repeat;
+      height: 40px;
+      width: 180px; 
+      text-indent: -999px;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      padding: 0px 0px 25px 0px;
+    }
+  }
+  .header-right {
+    display: inline-block;
+    width: 72%;
+    padding-right: 3%;
+    background: $gj-cyan;
+    height: 67px;
+    /*@include box-sizing(border-box);
+    padding-left: 10px;*/
+    /*MENU-TITLE*/
+    /* /END MENU-TITLE*/ 
+    .mail {
+      display: inline-block;
+      position: relative;
+      background: url(../img/mail.svg) center no-repeat; 
+      background-size: cover;
+      width: 35px;
+      height: 25px;
+      float: right;
+      margin-top: 25px;
+      margin-right: 4%;
+    }
+    .mobile-menu-wrapper {
+      .mm-container {
+        float: right;
+      }
+    } 
+    ul {
+      &.menu {
+        border-bottom: 1px solid lime;
+        float: right;
+        a {
+          color: lime;
+          display: inline-block;
+          float: left;
+          padding: 8px 7px 10px 8px;
+          border-bottom: 2px solid lime;
+          font-size: 0.80em;
+          margin-left: 4px;
+          &:before {
+            display: inline-block;
+            position: relative;
+            height: 25px;
+            width: 20px;
+            content: '';
+            overflow: hidden;
+            top: 10px;
+            right: 3px;
+            background-size: 1.5em !important;
+            background-position: bottom center !important;
+          }
+          &:hover {
+            background: lime;
+            color: lime;
+            border-bottom: 2px solid lime;
+            &:before {
+              background-position: bottom left;
+            }
+          }
+        }
+        li { 
+          &.active-trail {
+          &:before {
+            color: lime;
+          }          
+          }
+          &.leaf {
+            padding: 0;
+            display: inline-block;
+            float: left;
+          }
+          a {
+            &.active {
+              border-bottom: 2px solid blue;
+              &:before {
+                color: blue !important;
+              }
+            }
+          }
+        }
+      }
+    } 
+  }
+  .picformbg {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: url(../img/forrest.jpg) center no-repeat; 
+    background-size: cover;
+    position: relative;
+    clear: both;
+    padding-top: 60px;
+    max-height: 800px;
+    margin-top: -5px;
+@include breakpoint($max1550) {
+    max-height: 670px
+}
+@include breakpoint($max720) {
+    height: 100vh;
+}
+    .toppicture {
+      display: inline-block;
+      width: 54%;
+      height: auto;
+      position: relative;
+      float: left;
+      min-height: 100vh;
+      margin-left: 3%;
+      margin-right: 3%;
+      background: url(../img/platewriter.png) center 150px no-repeat; 
+      background-size: contain;
+/*@include breakpoint($max1550) {
+  background-position: center 135px;
+}*/
+/*@include breakpoint($max1250) {
+  background-position: center 95px;
+}*/
+@include breakpoint($max720) {
+  width: 100%;
+  min-height: 520px;
+  background-position: center 100px;
+  }
+@include breakpoint($max490) {
+  background-position: center 150px;
+  }
+      h1, h4 {
+        padding-left: 2%;
+      }
+      h1 {
+        font-size: 2.8em;
+@include breakpoint($max1250) {
+  font-size: 2.5em;
+}
+      }
+      h4 {
+        font-size: 2em;
+        color: rgba(0,0,0,0.75);
+@include breakpoint($max1250) {
+  font-size: 1.5em;
+}
+      }
+    .itcplogo {
+      display: block;
+      width: 200px;
+      height: 160px;
+      position: absolute;
+      top: 540px;
+      left: 0px;
+      background: url(../img/ictp-logo.svg) center top no-repeat; 
+      background-size: contain;
+@include breakpoint($max1550) {
+  width: 175px;
+  height: 138px;
+  top: 470px;
+}
+@include breakpoint($max720) {
+  width: 125px;
+  height: 105px;
+  top: 390px;
+}
+    }
+    }
+    .formwrapper {
+      display: inline-block;
+      width: 37%;
+      height: auto;
+      position: relative;
+      background: $gj-cyan;
+      @include box-sizing(border-box);
+      padding: 35px;
+      color: white;
+      margin-bottom: 40px;
+      max-width: 690px;
+      p {
+        font-size: 0.8em;
+      }
+      h2 { display: none; }
+      input {
+        text-transform: capitalize;
+      }
+@include breakpoint($max720) {
+  width: 100%;
+  float: left;
+  max-width: 100%;
+}
+      .webform-client-form {
+        label {
+          &.option {
+            display: inline-block;
+            position: relative;
+            width: 80%;
+          }
+        }
+        #edit-submitted-first-name {
+          background: rgba(255,255,255, 0.3) url(../img/firstname.svg) center top no-repeat;     
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: 1.3em;
+          background-position: 15px 50%;
+        }
+        #edit-submitted-last-name {
+          background: rgba(255,255,255, 0.3) url(../img/lastname.svg) center top no-repeat;  
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: 1.3em;
+          background-position: 15px 50%;         
+        }
+        #edit-submitted-company {
+          background: rgba(255,255,255, 0.3) url(../img/city.svg) center top no-repeat;  
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: 1.7em;
+          background-position: 12px 50%;             
+        }
+        #edit-submitted-work-email {
+          background: rgba(255,255,255, 0.3) url(../img/mail.svg) center top no-repeat;  
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: 1.4em;
+          background-position: 15px 50%;             
+        }
+        #edit-submitted-phone {
+          background: rgba(255,255,255, 0.3) url(../img/phone.svg) center top no-repeat;  
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: 1.4em;
+          background-position: 15px 50%;          
+        }
+        #edit-submitted-postal-code {
+          background: rgba(255,255,255, 0.3) url(../img/place.svg) center top no-repeat;  
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: 1.4em;
+          background-position: 15px 50%;           
+        }
+        #webform-component-i-have-read-this-agreement {
+          label { 
+            &:nth-child(1) {
+              display: none; 
+            }
+        }
+        }
+        input {
+          background: rgba(255,255,255, 0.3);
+          height: 2.65em;
+          font-size: 1.2em;
+          padding-left: 50px;
+          width: 88%;
+          border: none;
+          color: white;
+@include breakpoint($max1100) {
+  width: 85%;
+}
+@include breakpoint($max720) {
+  width: 90%;
+}
+          &.form-radio {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            float: left;
+            position: absolute;
+            left: -28px;
+          }
+          &.form-submit {
+            background: rgba(255,0,0,0.9);
+            text-transform: uppercase;
+            font-size: 2em;
+            height: auto;
+            width: 90%;
+            margin-left: 5%;
+            padding: 10px 0 12px 0;
+            margin-top: 15px;
+            &:hover {
+              background: rgba(255,0,0, 1);              
+            }
+          }
+        }
+      }
+      &:after {
+        display: block;
+        width: 100%;
+        height: 140px;
+        background: url(../img/form-buttom.png) center top no-repeat; 
+        background-size: cover;
+        position: absolute;
+        content: '';
+        left: 0px;
+        bottom: -100px;
+@include breakpoint($max1550) {
+  bottom: -50px;
+  background: url(../img/form-buttom.png) center -56px no-repeat;
+  height: 100px;
+}
+@include breakpoint($max1100) {
+  background-position: center -73px;
+}
+@include breakpoint($max720) {
+  bottom: -70px;
+}
+  
+      }
+    }
+  }
+}
+/* ############################### */
+/* END >>HEADER<< */

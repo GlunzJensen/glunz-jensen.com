@@ -1,0 +1,500 @@
+/*
+Description: All forms on site
+Author URI: http://openusorce.com
+Version: 2017
+*/
+
+.contact-me, .complaint-form {
+  #content {
+    background: whitesmoke;
+  }
+}
+/* >>FORMS<<
+################################## */
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
+.contact-me, .complaint-form {
+  h1.title {
+    max-width: 920px;
+  }
+}
+
+.not-front {
+  &.node-type-webform {
+    #content {
+      .region-content {
+        .content {     
+          @include content-width;
+          max-width: 920px;
+        }
+      }
+    }
+  }
+}
+.page-user {
+  .title {
+    display: none;
+  }
+}
+#user-login {
+ @include content-width;
+ float: none;
+ max-width: 630px;
+ .form-item {
+   display: block;
+   position: relative;
+   float: left;
+   width: 100%;
+   margin-bottom: 35px;
+   input {
+    font-family: "ArimoBold";   
+    font-size: 1em;
+    color: $txt-gray;  
+   }
+   &.form-type-password {
+     input {
+      @include box-sizing(border-box);
+      padding: 3%;
+      width: 100%;       
+     }
+   }
+ } 
+}
+form {
+  color: $txt-gray;
+  display: block;
+  position: relative;
+  float: left;
+  padding-top: 20px;
+  padding-bottom: 35px;
+  .form-select {
+    height: 46px;
+    border-radius: 8px;
+    border: none;
+  }
+  .description {
+    display: block;
+    position: relative;
+    margin-top: 4px;
+     
+@include breakpoint($max680) {
+ margin-bottom: 10px;
+}    
+  }
+  .form-radios {
+.form-type-radio {
+input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+.option {
+  position: relative;
+  padding-left: 19px;
+  &:before {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: white;
+    content: '';
+    top: 1px;
+    left: 0px;
+    @include border-radius(12px, 12px);
+    border: 1px solid $gj-cyan;
+  }
+}
+input[type="radio"]:checked ~ .option {
+  color: $gj-cyan;
+  &:before {
+    background: $gj-cyan;
+  }
+}  
+}
+    .form-item {
+    margin: 0px;
+    }
+  }
+  .form-item {
+    margin: 0;
+  }
+  #webform-component-symptom, #webform-component-machine-spare-part--type-of-equipment {
+
+  }
+  #webform-component-parts-failed-under-guarantee {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 25px 0px 25px 0px;
+  }
+  #webform-component-frequency-of-problem {
+    label {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 4px;
+@include breakpoint($max680) {
+  margin-top: 14px;
+}
+    }
+  }
+  #webform-component-description-of-problem {
+    display: block;
+    width: 100%;
+    position: relative;
+    float: left; 
+    margin: 30px 0px 25px 0px;   
+  }
+  #edit-submitted-upload-photo-ajax-wrapper {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: 30px 0px 25px 0px;
+@include breakpoint($max680) {
+  display: none;
+}
+    #webform-component-upload-photo {
+      display: block;
+      position: relative;
+      width: 65%;
+    }
+    label {
+      font-size: 1.2em;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 12px;  
+      text-align: center; 
+      text-transform: uppercase;
+      color: $gj-cyan;  
+    }
+    #edit-submitted-upload-photo-upload {
+    font-size: 1.2em;
+    input {
+      opacity: 0;
+    }
+    }
+    .ajax-processed {
+      background: $gj-cyan;
+      position: relative;
+      display: block;
+      margin: 10px 0px 6px 0px;
+      &:hover {
+        background: $cyan-highgloss;
+      }
+    }
+  }
+  #webform-component-failed-during-installation {
+    display: block;
+    width: 100%;
+    position: relative;
+    float: left;
+    margin: 5px 0px 25px 0px;
+    label {
+      display: inline-block;
+      position: relative;
+      margin: 0px 0px 4px 0px;
+      &.option {
+       margin: 0;
+       padding-left: 19px; 
+@include breakpoint($max680) {
+  margin-bottom: 12px;
+}
+      }
+    }
+    .form-type-radio {
+      position: relative;
+    }
+  }
+  #webform-component-machine-spare-part--installation-date {
+    display: block;
+    width: 100%;
+    position: relative;
+    float: left;
+    margin: 30px 0px 25px 0px;
+      .webform-calendar {
+        height: 40px;
+        width: auto;
+      }
+    label {
+      font-size: 1.2em;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .form-type-select {
+      display: inline-block;
+      position: relative;
+      float: left;
+      width: 15%;
+      margin-right: 2%;
+@include breakpoint($max680) {
+  width: 25%;
+}
+      .form-select {
+        height: 46px;
+      }
+    }
+  }
+  #webform-component-machine-spare-part {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-top: 25px;
+    float: left;
+    legend {
+      font-size: 1.2em;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 12px;
+    }
+  }
+  #webform-component-machine-spare-part--serial-no {
+    margin-right: 0;
+  }
+  #webform-component-customer-reference-number {
+  margin-right: 0px;
+  }
+  #webform-component-details {
+    display: block;
+    position: relative;
+    margin-top: 25px;
+    label {
+      color: $txt-gray;
+    }
+  }
+  #webform-component-contact-reason, #webform-component-type-of-product {
+    .form-type-radio {
+      margin: 0;
+    }
+    label {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 8px;
+      font-size: 1.2em;
+@include breakpoint($max680) {
+        margin-bottom: 15px;
+}
+      &.option {
+        margin-bottom: 8px;
+        font-size: 1em;
+        padding-left: 18px;
+@include breakpoint($max680) {
+        margin-bottom: 20px;
+}
+      }
+    }
+  }
+  #webform-component-type-of-product {
+    margin-top: 25px;
+  }
+  .webform-component-email {
+    display: inline-block;
+    position: relative;
+    width: 49%;    
+    margin-right: 2%;
+    float: left;
+@include breakpoint($max680) {
+  width: 100%;
+  margin: 0px;
+}
+  label {
+    display: inline-block;
+    margin-right: 0;
+    position: relative;
+    margin-top: 30px;
+@include breakpoint($max680) {
+  margin-top: 15px;
+}
+  }
+  }
+  .webform-component-textfield {
+    display: inline-block;
+    position: relative;
+    width: 49%;
+    float: left;
+    @include box-sizing(border-box);
+    margin-right: 2%;
+@include breakpoint($max680) {
+  width: 100%;
+  margin: 0px;
+}
+  label {
+    display: inline-block;
+    margin-right: 0;
+    position: relative;
+    margin-top: 30px;
+@include breakpoint($max680) {
+  margin-top: 10px;
+}
+  }
+  }
+  #webform-component-name, #webform-component-city, #webform-component-postal-zip-code, #webform-component-telephone {
+    margin-right: 0;
+  label {
+    display: inline-block;
+    margin-right: 0;
+    position: relative;
+    margin-top: 30px;
+@include breakpoint($max680) {
+  margin-top: 15px;
+}
+  }
+  }
+  #webform-component-country {
+    display: inline-block;
+    position: relative;
+    width: 49%;
+    float: left;
+@include breakpoint($max680) {
+  width: 100%;
+  margin: 0px;
+}
+    .form-select {
+    height: 45px;      
+    }
+    @include box-sizing(border-box);
+    margin-right: 2%;
+  label {
+    display: inline-block;
+    margin-right: 0;
+    position: relative;
+    margin-top: 30px;
+@include breakpoint($max680) {
+  margin-top: 15px;
+}
+  }
+  }
+.form-type-radio {
+input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+.option {
+  &:before {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: white;
+    content: '';
+    top: 1px;
+    left: 0px;
+    @include border-radius(12px, 12px);
+    border: 1px solid $gj-cyan;
+  }
+}
+input[type="radio"]:checked ~ .option {
+  color: $gj-cyan;
+  &:before {
+    background: $gj-cyan;
+  }
+}  
+}
+.form-type-checkbox {
+  margin: 0;
+  display: block;
+  position: relative;
+input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+.option {
+  padding-left: 19px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+@include breakpoint($max680) {
+  margin-bottom: 15px;
+}
+  &:before {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: white;
+    content: '';
+    top: 0px;
+    left: 0px;
+    @include border-radius(4px, 4px);
+    border: 2px solid $gj-cyan;
+  }
+}
+input[type="checkbox"]:checked ~ .option {
+  color: $gj-cyan;
+  &:before {
+    background: $gj-cyan;
+    border: 2px solid white;
+  }
+}  
+
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="time"],
+input[type="url"],
+textarea,
+select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus
+{
+    box-shadow: 0 0 5px $gj-cyan;
+    padding: 3%;
+    border: 1px solid $gj-cyan;
+}
+input[type="submit"],
+input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: $gj-cyan;
+    border: none;
+    color: white !important;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    margin-top: 30px;
+    cursor: pointer;
+} 
+input[type="submit"]:hover,
+input[type="button"]:hover{
+    background: $cyan-highgloss;
+} 
+}
+
+
+
+
+/* ############################### */
+/* END >>FORMS<< */

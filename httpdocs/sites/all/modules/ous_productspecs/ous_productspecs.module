@@ -1,0 +1,210 @@
+<?php
+/**
+* Implementation of hook_menu().
+*/
+function ous_productspecs_menu() {
+  $items['product-specifications/%'] = array(
+    'title' => 'Specifications',
+    'page callback' => 'ous_productspecs_page',
+    'page arguments' => array(1),
+    'access callback' => 'ous_productspecs_custom_loader',
+    'access arguments' => array(1),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['convertoem'] = array(
+      'title' => 'Convert oem to Tac_lite',
+      'page callback' => 'ous_convertoem_page',
+      'page arguments' => array(),
+      'access arguments' => array('administer views'),
+      'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function ous_productspecs_custom_loader($param) {
+  $node = node_load($param , $revision = NULL, $reset = NULL);
+  if($node->type == 'product') return TRUE;
+  return TRUE;
+}
+
+/**
+* Menu callback; do whatever you want the tab to do here.
+*/
+function ous_convertoem_page() {
+  //var_dump($param);
+  $count = 0;
+  $output = '';
+  $termname = '';
+  $output .= 'This page will convert/transfer OEM values on the user to Tac_lite on the user</br>';
+ 
+  $query = db_select('users', 'u');
+  $query->fields('u',array('uid'));
+  $result = $query->execute();
+  
+  foreach ($result as $record) {
+    $user = user_load($record->uid);
+    //var_dump($record);
+//    $user = user_load($record->uid);
+    //var_dump($user);
+    //var_dump($user->field_oem['und']);
+    if ($user->field_oem['und']) {
+      foreach ($user->field_oem['und'] as $taxid) {
+        //var_dump($taxid);
+        $tid = $taxid['tid'];
+        $termname = taxonomy_term_load($tid);
+        //var_dump($termname);
+        if ($termname->name == 'reg4') {
+          $account = $user;
+          $edit = array();
+          $edit['data']['tac_lite'] = array('7' => array('113' => '113'));
+
+          user_save($account, $edit);
+
+          $count++;
+          $output .= $count.' - '.$record->uid.'</br>';
+          $output .= $termname->tid.' -> '.$termname->vid.' -> '.$termname->name.'</br>';          
+        }
+      }
+    }
+  
+  }
+/*  
+  ["data"]=>
+  array(6) {
+    ["ckeditor_default"]=>
+    string(1) "t"
+    ["ckeditor_show_toggle"]=>
+    string(1) "t"
+    ["ckeditor_width"]=>
+    string(4) "100%"
+    ["ckeditor_lang"]=>
+    string(2) "en"
+    ["ckeditor_auto_lang"]=>
+    string(1) "t"
+    ["tac_lite"]=>
+    array(1) {
+      [7]=>
+      array(1) {
+        [96]=>
+        string(2) "96"
+      }
+    }
+  }
+*/  
+  return $output;
+}
+
+/**
+ * Menu callback; do whatever you want the tab to do here.
+ */
+function ous_productspecs_page($param) {
+
+  $items = rtrim($param, '-');
+  $items = explode('-', $items);
+  
+  $i = 0;
+  $oldheading = '';
+  $output = '';
+  $outputlinks = '';
+  $firstdiv = 'showtable';
+  //$output .= 'Do cool stuff here: ';
+  //var_dump($items);
+
+
+    $class='active';
+
+
+  foreach ($items as $productID) {
+  
+  try {
+    
+    $ul = qp('<?xml version="1.0"?><ul/>');
+    $connecturl = 'https://gii.glunz-jensen.com/axlookup/PIS/';
+    $script = 'productinformationsystem.php';
+    //$productID = '10067572';
+    $rows=array();
+    $header = array('Heading','Units','Value');
+    
+  
+    $url = $connecturl.''.$script.'?ProductID='.$productID;
+  
+    $qp = qp($url, 'AllInclusive');
+
+
+
+    foreach ($qp as $allinclusive) {
+      $data = array();
+      $productName = $allinclusive->children('Product')->attr('ProductName');
+      //$output .= $productName;
+      //$jsscript = 'document.getElementById("div'.$productID.'").className = " JavaScriptfunct";';
+      $outputlinks .= '<a class="productName '.$class.'" target="'.$productID.'" onClick="ousadder('.$productID.')">'.$productName.'</a>';
+      $headinginfo = $allinclusive->children('ProductInformation')->children('HeadingInfo');
+        $class='';
+
+      foreach ($headinginfo as $headingitem) {
+        $heading = $headingitem->attr('HEADING');
+        $productinfo = $headingitem->children('ProductInfo');
+
+        $rows[$i] = array(     
+         'data' => array($heading),
+         'class' => array('row-heading')         
+        );
+        $i = $i + 1;        
+        foreach ($productinfo as $infoitem) {
+          $valuetype = $infoitem->attr('VALUETYPE');
+          $value = $infoitem->attr('VALUE');
+          $units = $infoitem->attr('UNITS');
+          
+          $rows[$i] = array(
+            'data' => array($valuetype, $units, $value),
+            'class' => array('row-value')          	
+          );
+          $i = $i + 1;
+        }
+      }  
+    }
+  
+  
+  }
+  catch (Exception $e) {
+    drupal_set_message('Error:' . $e->getMessage(), 'status');
+  }
+  
+  
+  $output .= '<div id="div'.$productID.'" class="targetDiv '.$firstdiv.'">'.theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('class' => array('product-information')))).'</div>';
+  $firstdiv = 'hidetable';
+  }
+  
+    
+  print $outputlinks;
+  print $output;
+  
+/*
+  print "<script>function oushidebehavior(){
+         $('#showall').click(function(){
+               $('.targetDiv').show();
+        });
+        $('.showSingle').click(function(){
+              $('.targetDiv').hide();
+              $('#div'+$(this).attr('target')).show();
+        });
+     });</script>";
+
+*/
+}
+
+/**
+ * Implements hook_custom_theme().
+ */
+function ous_productspecs_custom_theme() {
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) != 'edit' ) {
+    $lnode = node_load(arg(1));
+    if ($lnode->type == 'landing_page') {
+      //drupal_set_message('Changed theme');
+      return 'landingpage';
+    }
+  }
+  if (arg(0) == 'product-filter') {
+    return 'gj2018';
+  }  
+}
