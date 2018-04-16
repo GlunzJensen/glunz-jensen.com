@@ -21,7 +21,9 @@ Version: 2018
     padding: 13px 0px 3px 0px;
     z-index: 280;
     .breadcrumb {
-    @include content-width;      
+    @include content-width;
+      font-size: 0.8em;
+      margin-bottom: 0.5em;
     }
     a {
       color: $txt-gray;
@@ -139,6 +141,7 @@ padding: 0;
   display: none !important;
 }
           li {
+            margin: 0px;
             li {
               margin: 0px;
             }

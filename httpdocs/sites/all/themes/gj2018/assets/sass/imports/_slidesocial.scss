@@ -90,6 +90,7 @@
       display: block;
       width: 100%;
       margin: 0px;
+      height: auto;
 @include breakpoint($max980) {
   margin: 0px;
 }
@@ -264,8 +265,126 @@ display: none;
 .products {
   #pagewrapper {
     .txt-topbanner {
+      #block-block-12 {
+        display: inline-block;
+        width: 26%;
+        height: 520px;
+        background: #e8f6fd;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 20px 30px 60px 35px;
+        position: absolute;
+        right: 0;
+        top: 104px;
+        z-index: 250;
+        color: #5a5a5a;
+      }
+      @media (max-width: 1160px) {
+        #block-block-12 {
+          width: 32%;
+        }
+      }
+      @media (max-width: 980px) {
+        #block-block-12 {
+          position: relative;
+          width: 100%;
+          padding: 20px 8% 60px 8%;
+          float: left;
+          top: 0px;
+          height: auto;
+        }
+      }
+      #block-block-12 h2 {
+        font-size: 1.8em;
+        text-align: left;
+        font-family: "ArimoRegular";
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      @media (max-width: 1160px) {
+        #block-block-12 h2 {
+          font-size: 2em;
+        }
+      }
+      #block-block-12 .content .contact-photo {
+        display: block;
+        position: relative;
+        width: 170px;
+        height: auto;
+        min-height: 170px;
+        float: left;
+        border: 12px solid white;
+        border-radius: 50%;
+        margin-left: 40px;
+      }
+      #block-block-12 .content span {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        float: left;
+        margin: 8px 0px 8px 10px;
+        padding: 7px 0px 0px 35px;
+        font-size: 0.8em;
+      }
+      #block-block-12 .content span:before {
+        display: inline-block;
+        width: 30px;
+        height: 26px;
+        background: url(../img/c-mail.svg) no-repeat -1px center;
+        background-size: 2em;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        content: '';
+      }
+      #block-block-12 .content span.contact-intro {
+        padding: 0px;
+      }
+      #block-block-12 .content span.contact-intro:before {
+        display: none;
+      }
+      #block-block-12 .content span.contact-title {
+        padding: 8px 0px 0px 0px;
+        margin-top: -5px;
+        color: #54b2ef;
+      }
+      #block-block-12 .content span.contact-title:before {
+        display: none;
+      }
+      #block-block-12 .content span.contact-name {
+        text-transform: uppercase;
+        font-size: 0.95em;
+        font-family: "ArimoBold";
+        margin-top: -2px;
+        padding: 0px;
+      }
+      #block-block-12 .content span.contact-name:before {
+        display: none;
+      }
+      #block-block-12 .content span.contact-email a {
+        color: #5a5a5a;
+      }
+      #block-block-12 .content span.contact-email:before {
+        background: url(../img/c-mail.svg) no-repeat left center;
+        background-size: 2.2em;
+      }
+      #block-block-12 .content span.contact-phone:before {
+        background: url(../img/c-phone.svg) no-repeat -2px center;
+        background-size: 2.5em;
+      }
+      #block-block-12 .content span.contact-mobil:before {
+        background: url(../img/c-mobile.svg) no-repeat -5px center;
+        background-size: 2.8em;
+      }
+      #block-block-12 .content span.contact-skype:before {
+        background: url(../img/c-skype.svg) no-repeat -5px center;
+        background-size: 2.8em;
+      }
+
       .flexslider {
         @include content-width;
+        height: 520px;
       }      
     }
   }  

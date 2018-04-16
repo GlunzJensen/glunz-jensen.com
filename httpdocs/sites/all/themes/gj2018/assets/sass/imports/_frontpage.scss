@@ -4,6 +4,194 @@ Author URI: http://openusorce.com
 Version: 2018
 */
 
+.front span.open-sales {
+  position: fixed;
+  right: 70px;
+  bottom: 150px;
+  color: #54b2ef;
+  padding: 12px 10px 10px 39px;
+  cursor: pointer;
+  z-index: 550;
+  background: url(../img/tandhjul.svg) white no-repeat center left;
+  background-size: 3em;
+  font-size: 0.8em;
+  -webkit-box-shadow: #5a5a5a 0px 0px 8px;
+  -moz-box-shadow: #5a5a5a 0px 0px 8px;
+  box-shadow: #5a5a5a 0px 0px 8px;
+}
+@media (max-width: 680px) {
+  .front span.open-sales {
+    position: relative;
+    width: 95%;
+    right: 0;
+    bottom: 0;
+    float: left;
+    margin-left: 5%;
+    font-size: 1em;
+    padding-left: 48px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
+.front #block-block-13 {
+  display: inline-block;
+  width: 350px;
+  height: auto;
+  background: #e8f6fd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 35px 25px 20px;
+  position: fixed;
+  right: 0;
+  bottom: 0px;
+  z-index: 1000;
+  color: #5a5a5a;
+  display: none;
+}
+.front #block-block-13 .open-close {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  height: 30px;
+  width: 30px !important;
+  overflow: hidden;
+  background: url(../img/x.png) no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+  margin: 0px !important;
+  padding: 0px !important;
+  text-indent: -200px;
+}
+@media (max-width: 980px) {
+  .front #block-block-13 .open-close {
+    top: -20px;
+    left: -20px;
+  }
+}
+.front #block-block-13 .open-close:before {
+  display: none !important;
+}
+@media (max-width: 980px) {
+  .front #block-block-13 {
+    position: relative;
+    width: 100%;
+    padding: 30px 12% 35px 12%;
+    float: left;
+  }
+}
+@media (max-width: 680px) {
+  .front #block-block-13 {
+    padding: 30px 8% 35px 8%;
+  }
+}
+.front #block-block-13 .gks-link {
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: white;
+  padding: 18px 10px 16px 10px;
+  font-size: 0.8em;
+  margin: 20px 0px 25px 0px;
+  background: url(../img/white-pointer.svg) #54b2ef 77% 20px no-repeat;
+  background-size: 0.4em;
+}
+@media (max-width: 980px) {
+  .front #block-block-13 .gks-link {
+    width: auto;
+    clear: both;
+    margin-top: 10px;
+  }
+}
+.front #block-block-13 h2 {
+  font-size: 2.1em;
+  text-align: left;
+  font-family: "ArimoRegular";
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+@media (max-width: 980px) {
+  .front #block-block-13 h2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.front #block-block-13 .content .contact-photo {
+  display: block;
+  position: relative;
+  width: 170px;
+  height: auto;
+  min-height: 170px;
+  float: left;
+  border: 12px solid white;
+  border-radius: 50%;
+  margin-left: 40px;
+}
+.front #block-block-13 .content span {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  float: left;
+  margin: 6px 0px 6px 10px;
+  padding: 7px 0px 0px 35px;
+  font-size: 0.8em;
+}
+.front #block-block-13 .content span:before {
+  display: inline-block;
+  width: 30px;
+  height: 26px;
+  background: url(../img/c-mail.svg) no-repeat -1px center;
+  background-size: 2em;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: '';
+}
+.front #block-block-13 .content span.contact-intro {
+  padding: 0px;
+}
+.front #block-block-13 .content span.contact-intro:before {
+  display: none;
+}
+.front #block-block-13 .content span.contact-title {
+  padding: 8px 0px 0px 0px;
+  margin-top: -5px;
+  color: #54b2ef;
+}
+.front #block-block-13 .content span.contact-title:before {
+  display: none;
+}
+.front #block-block-13 .content span.contact-name {
+  text-transform: uppercase;
+  font-size: 0.95em;
+  font-family: "ArimoBold";
+  margin-top: -2px;
+  padding: 0px;
+}
+.front #block-block-13 .content span.contact-name:before {
+  display: none;
+}
+.front #block-block-13 .content span.contact-email a {
+  color: #5a5a5a;
+}
+.front #block-block-13 .content span.contact-email:before {
+  background: url(../img/c-mail.svg) no-repeat left center;
+  background-size: 2.2em;
+}
+.front #block-block-13 .content span.contact-phone:before {
+  background: url(../img/c-phone.svg) no-repeat -2px center;
+  background-size: 2.5em;
+}
+.front #block-block-13 .content span.contact-mobil:before {
+  background: url(../img/c-mobile.svg) no-repeat -5px center;
+  background-size: 2.8em;
+}
+.front #block-block-13 .content span.contact-skype:before {
+  background: url(../img/c-skype.svg) no-repeat -5px center;
+  background-size: 2.8em;
+}
 
 /* >><<
 ################################## */
@@ -297,6 +485,34 @@ margin-top: 20px;
   } 
               }
             }
+          }
+        }
+      }
+
+      .view-footer {
+        display: block;
+        position: relative;
+        width: 100%;
+        clear: both;
+        text-align: center;
+        background: rgba 245, 245, 245, 1;
+        top: 30px;
+        padding-bottom: 55px;
+
+        a {
+          display: inline-block;
+          padding: 18px 60px 16px 35px;
+          border: 2px solid #54b2ef;
+          color: #54b2ef;
+          text-transform: uppercase;
+          background: url(../img/menu-pointer.svg) 85% 18px no-repeat;
+          background-size: 1.3em;
+          font-family: "ArimoRegular";
+          font-size: 1.08em;
+
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            background: url(../img/menu-pointer.svg) 58% 1px no-repeat;
+            background-size: 20px 70px;
           }
         }
       }

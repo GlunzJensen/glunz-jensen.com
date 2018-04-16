@@ -21,6 +21,7 @@ Version: 2018
       thead, tbody {
         th, td {
           width: 30%;
+          min-height: 1px;
           &:nth-child(1) {
             width: 15%;
           }
@@ -63,11 +64,16 @@ Version: 2018
       }
     }
     thead {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       font-size: 1.2em;
       color: $txt-gray;
-      a {
-
+      border-bottom: 1px solid #54b2ef;
+      padding-bottom: 5px;
+      th {
+        font-family: "ArimoBold";
+      }
+      th a {
+        font-family: "ArimoBold" !important;
       }
     }
     tbody {

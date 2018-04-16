@@ -23,6 +23,10 @@ Version: 2017
   }
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 .not-front {
   &.node-type-webform {
     #content {
@@ -64,6 +68,41 @@ Version: 2017
    }
  } 
 }
+
+.not-front .form-itemss {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 35px;
+
+  inputs {
+    font-family: "ArimoBold";
+    font-size: 1em;
+    color: #5a5a5a;
+  }
+}
+
+#user-pass {
+  display: block;
+  position: relative;
+  float: left;
+  width: 46%;
+  padding-left: 27%;
+  padding-right: 27%;
+
+  @media (max-width: 680px) {
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  @media (max-width: 980px) {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 form {
   color: $txt-gray;
   display: block;
@@ -71,10 +110,80 @@ form {
   float: left;
   padding-top: 20px;
   padding-bottom: 35px;
-  .form-select {
+  &.user-info-from-cookie {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 45px 3% 55px 3%;
+    position: relative;
+    float: none;
+  }
+  &.user-info-from-cookie .form-item {
+    margin: 15px 0px 20px 0px;
+  }
+  &.user-info-from-cookie .form-item-name, &.user-info-from-cookie .form-item-mail {
+    display: inline-block;
+    width: 49%;
+    float: left;
+  }
+  &.user-info-from-cookie .form-item-name {
+    margin-right: 2%;
+  }
+  &.user-info-from-cookie .form-item-mollom-captcha {
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-bottom: 20px;
+    float: left;
+  }
+  &.user-info-from-cookie .form-item-mollom-captcha .field-prefix {
+    display: inline-block;
+    width: 45%;
+    float: left;
+    margin-right: 5%;
+  }
+  &.user-info-from-cookie .form-item-mollom-captcha input {
+    width: 49%;
+    float: left;
+    display: block;
+    padding: 3%;
+    clear: both;
+    max-height: 20px;
+  }
+  &.user-info-from-cookie .form-item-mollom-captcha .description {
+    width: 49%;
+    float: left;
+    display: block;
+    clear: both;
+  }
+  &.user-info-from-cookie .field-name-field-name {
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+  &.user-info-from-cookie .field-name-field-name,
+  &.user-info-from-cookie .field-name-field-company,
+  &.user-info-from-cookie .field-name-field-country {
+    display: inline-block;
+    float: left;
+    width: 49%;
+  }
+  &.user-info-from-cookie .field-name-field-name {
+    margin-right: 2%;
+  }
+  &.user-info-from-cookie fieldset.collapsible {
+    display: block;
+    width: 100%;
+  }
+  &.user-info-from-cookie fieldset.collapsible .description {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+.form-select {
     height: 46px;
     border-radius: 8px;
-    border: none;
+    border: 1px solid #54b2ef;
   }
   .description {
     display: block;
