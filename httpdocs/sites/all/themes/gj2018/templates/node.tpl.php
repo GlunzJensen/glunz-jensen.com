@@ -83,7 +83,7 @@
   !empty($content['taxonomy_vocabulary_1']) && hide($content['taxonomy_vocabulary_1']);
   !empty($content['links']) && hide($content['links']);
 ?>
-<div class="node clearfix">
+<div class="node clearfix view-mode-<?php print $view_mode; ?>">
   <?php if (!$page) { ?>
     <?php print render($title_prefix); ?>
     <h2>
@@ -99,7 +99,6 @@
       <span class="submitted">
         <?php print format_date($node->created); ?>
       </span>
-      Ñ
       Topic:
       <?php print render($content['taxonomy_vocabulary_1']); ?>
     </div>

@@ -333,6 +333,18 @@ $max1320: max-width 1320px;
         }
       }
       }
+
+      > .block > h2 {
+        @include content-width;
+        display: block;
+      }
+    }
+  }
+  .region-toppic {
+    .content {
+      .view-news {
+        @include content-width;
+      }
     }
   }
 }
