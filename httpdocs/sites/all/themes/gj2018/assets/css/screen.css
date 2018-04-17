@@ -4793,6 +4793,37 @@ Version: 2018
     padding-right: 3%;
   }
 }
+.not-front #content .region-content > .block > h2 {
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+@media (max-width: 1320px) {
+  .not-front #content .region-content > .block > h2 {
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+.not-front .region-toppic .content .view-news {
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1320px) {
+  .not-front .region-toppic .content .view-news {
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
 
 .about-glunz-jensen #pagewrapper .txt-topbanner .flexslider, .about-gks #pagewrapper .txt-topbanner .flexslider, .jobs-glunz-jensen #pagewrapper .txt-topbanner .flexslider, .employee-login #pagewrapper .txt-topbanner .flexslider, .engineering #pagewrapper .txt-topbanner .flexslider, .gks-employees #pagewrapper .txt-topbanner .flexslider {
   width: 100%;
