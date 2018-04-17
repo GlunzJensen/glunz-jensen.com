@@ -36,6 +36,12 @@ end
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
 
+# Environment is production by default.
+environment = :production
+
+# No need to compress output style. Drupal will do that.
+output_style = :expanded
+
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
 
