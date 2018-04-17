@@ -1,0 +1,10 @@
+# Drupal
+stage_file_proxy
+
+# Environment
+tmp
+logs
+privat
+
+# Dev
+.idea
