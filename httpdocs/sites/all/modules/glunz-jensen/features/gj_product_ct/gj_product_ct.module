@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Product CT feature.
+ */
+
+include_once 'gj_product_ct.features.inc';
