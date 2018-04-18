@@ -204,35 +204,38 @@ padding: 0;
               background: none;
               height: auto;
               &.menuparent {
+                > a {
+                  background: url(../img/menu-pointer.svg) white 97% -32px no-repeat;
+                  background-size: 1.2em;
+                  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    background: url(../img/menu-pointer.svg) white 97% -34px no-repeat;
+                    background-size: 20px 60px;
+                  }
+                }
+                &:hover {
+                  > a {
+                    background: url(../img/menu-pointer.svg) rgb(245,245,245) 97% 16px no-repeat;
+                    background-size: 1.2em;
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                      background: url(../img/menu-pointer.svg) rgb(245,245,245) 97% 16px no-repeat;
+                      background-size: 20px 60px;
+                    }
+                  }
+                }
                 a {
                   text-transform: none;
-                  background: url(../img/menu-pointer.svg) white 97% -32px no-repeat;  
-                  background-size: 1.2em;
                   padding: 14px 18px 13px 17px;
                   @include box-sizing(border-box);     
                   font-size: 0.8em;  
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  background: url(../img/menu-pointer.svg) white 97% -34px no-repeat;  
-  background-size: 20px 60px;
-}            
-                }
-                &:hover {
-                  a {
-                  background: url(../img/menu-pointer.svg) rgb(245,245,245) 97% 16px no-repeat;  
-                  background-size: 1.2em;
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  background: url(../img/menu-pointer.svg) rgb(245,245,245) 97% 16px no-repeat;  
-  background-size: 20px 60px;
-}
-                  }                  
+
                 }
                 ul {
                   li {
                     a {
-                      background: white !important;
+                      background-color: white !important;
                       color: $txt-gray;
                       &:hover {
-                        background: rgb(245,245,245) !important;
+                        background-color: rgb(245,245,245) !important;
                         color: $gj-cyan;
                       }
                     }
