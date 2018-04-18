@@ -1260,38 +1260,40 @@ Version: 2018
   height: auto;
   /*2. led*/
 }
-#pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent a {
-  text-transform: none;
+#pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent > a {
   background: url(../img/menu-pointer.svg) white 97% -32px no-repeat;
   background-size: 1.2em;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent > a {
+    background: url(../img/menu-pointer.svg) white 97% -34px no-repeat;
+    background-size: 20px 60px;
+  }
+}
+#pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent:hover > a {
+  background: url(../img/menu-pointer.svg) whitesmoke 97% 16px no-repeat;
+  background-size: 1.2em;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent:hover > a {
+    background: url(../img/menu-pointer.svg) whitesmoke 97% 16px no-repeat;
+    background-size: 20px 60px;
+  }
+}
+#pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent a {
+  text-transform: none;
   padding: 14px 18px 13px 17px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 0.8em;
 }
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent a {
-    background: url(../img/menu-pointer.svg) white 97% -34px no-repeat;
-    background-size: 20px 60px;
-  }
-}
-#pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent:hover a {
-  background: url(../img/menu-pointer.svg) whitesmoke 97% 16px no-repeat;
-  background-size: 1.2em;
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent:hover a {
-    background: url(../img/menu-pointer.svg) whitesmoke 97% 16px no-repeat;
-    background-size: 20px 60px;
-  }
-}
 #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent ul li a {
-  background: white !important;
+  background-color: white !important;
   color: #5a5a5a;
 }
 #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent ul li a:hover {
-  background: whitesmoke !important;
+  background-color: whitesmoke !important;
   color: #54b2ef;
 }
 #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li a {
