@@ -67,7 +67,6 @@
 <div id="pagewrapper">
 <div id="back-top">^</div>
 <?php include $theme_path.'/assets/includes/header.inc'; ?>
-  <?php if ($breadcrumb): ?><span class="breadcrumb-wrapper"><?php print $breadcrumb; ?></span><?php endif; ?>
   <div id="searchbar">
     <span class="container">
     <?php print render($page['search']); ?>
