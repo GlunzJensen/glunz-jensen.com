@@ -486,6 +486,8 @@ function gj_investornews_view_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['path'] = '[field_pdf_1]';
+  $handler->display->display_options['fields']['title']['alter']['prefix'] = '<span class="file">';
+  $handler->display->display_options['fields']['title']['alter']['suffix'] = '</span>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: PDF */
@@ -493,6 +495,7 @@ function gj_investornews_view_views_default_views() {
   $handler->display->display_options['fields']['field_pdf']['table'] = 'field_data_field_pdf';
   $handler->display->display_options['fields']['field_pdf']['field'] = 'field_pdf';
   $handler->display->display_options['fields']['field_pdf']['label'] = '';
+  $handler->display->display_options['fields']['field_pdf']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pdf']['alter']['text'] = '[field_pdf-fid]';
   $handler->display->display_options['fields']['field_pdf']['alter']['path'] = '[field_pdf_1]';
   $handler->display->display_options['fields']['field_pdf']['element_label_colon'] = FALSE;
@@ -789,6 +792,8 @@ function gj_investornews_view_views_default_views() {
     t('Page - Delårsrapport'),
     t('Page - Årsrapport'),
     t('Årsrapporter'),
+    t('<span class="file">'),
+    t('</span>'),
     t('[field_pdf-fid]'),
     t('EDIT'),
     t('Block - 3 selskabsmeddeleler'),

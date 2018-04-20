@@ -3,6 +3,7 @@ core = 7.x
 package = Glunz&Jensen
 version = 7.x-1.0
 dependencies[] = domain_views
+dependencies[] = gj_investordata_ct
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2

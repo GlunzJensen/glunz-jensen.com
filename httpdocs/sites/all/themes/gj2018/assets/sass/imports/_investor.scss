@@ -94,7 +94,7 @@ Version: 2018
           position: relative;
           float: left;
           width: 100%;
-          margin-bottom: 45px;
+          margin-bottom: 10px;
           td {
           display: block;
           position: relative;
@@ -105,12 +105,6 @@ Version: 2018
           }
           &.views-field-field-message-number {
             margin-bottom: 8px;
-          }
-          &:first-child {
-            font-size: 1.4em;
-            a {
-              
-            }
           }
           &.investor-date {
             margin: 15px 0px 10px 0px;
