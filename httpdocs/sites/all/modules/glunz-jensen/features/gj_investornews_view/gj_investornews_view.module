@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Investornews view feature.
+ */
+
+include_once 'gj_investornews_view.features.inc';
