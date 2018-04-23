@@ -237,11 +237,25 @@ h1, .field-name-field-title {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-family: "ArimoBold";
   display: inline-block;
   margin: 0px;
   color: #5a5a5a;
+}
+.content .node h2 {
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #5a5a5a;
+  font-family: "ArimoBold";
+}
+.content .node h3 {
+  margin: 10px 0;
+  font-weight: bold;
 }
 
 h5 {
@@ -267,6 +281,32 @@ p {
 /* END >>General links/fonts<< */
 /* ############################################################### */
 /* END Global Styles – (body, paragraphs, lists, etc) */
+.content .node table {
+  margin: 0 0 20px;
+}
+.content .node table th, .content .node table td {
+  padding: 5px 15px;
+  color: #5a5a5a;
+}
+.content .node table th:first-child, .content .node table td:first-child {
+  padding-left: 0;
+}
+.content .node table th:last-child, .content .node table td:last-child {
+  padding-right: 0;
+}
+.Contact .content .node table td {
+  vertical-align: top;
+}
+.Contact .content .node table th {
+  color: #8d8d8d;
+}
+.Contact .content .node table th.st-head-row {
+  color: #5a5a5a;
+}
+.Contact .content .node table th.st-head-row-main {
+  display: none;
+}
+
 /*
 Description: Stylingen af frontpage
 Author URI: http://openusorce.com
@@ -4592,6 +4632,48 @@ Version: 2018
 
 /* ############################### */
 /* END >>SUPPORT<< */
+.stacktable {
+  width: 100%;
+}
+
+.st-head-row {
+  padding-top: 1em;
+}
+
+.st-head-row.st-head-row-main {
+  font-size: 1.5em;
+  padding-top: 0;
+}
+
+.st-key {
+  width: 49%;
+  text-align: right;
+  padding-right: 1%;
+}
+
+.st-val {
+  width: 49%;
+  padding-left: 1%;
+}
+
+/* RESPONSIVE EXAMPLE */
+.stacktable.large-only {
+  display: table;
+}
+
+.stacktable.small-only {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .stacktable.large-only {
+    display: none;
+  }
+
+  .stacktable.small-only {
+    display: table;
+  }
+}
 /* ############################### */
 /* END >>SCSS IMPORTS<< */
 #content .region-content .content .view-investornews .pager li a {
