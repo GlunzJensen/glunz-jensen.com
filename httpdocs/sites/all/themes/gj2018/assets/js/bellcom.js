@@ -22,3 +22,17 @@ var sortSelect = function (select, attr, order) {
 jQuery(document).ready(function () {
     sortSelect('select', 'text', 'asc');
 });
+
+// Document ready.
+(function ($) {
+  'use strict';
+
+    // Init stackable responsive table plugin.
+    Drupal.behaviors.stackable = {
+      attach: function(context, settings){
+        $('table').once('stackable', function() {
+          $(this).stacktable();
+        });
+      }
+    };
+})(jQuery);

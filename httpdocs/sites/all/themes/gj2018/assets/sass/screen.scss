@@ -146,6 +146,7 @@ $max1320: max-width 1320px;
 /* >>SCSS IMPORTS<<
 ################################## */
 @import "imports/fonts";
+@import "imports/common-content";
 @import "imports/frontpage";
 @import "imports/header";
 @import "imports/footer";
@@ -158,6 +159,7 @@ $max1320: max-width 1320px;
 @import "imports/filters";
 @import "imports/investor";
 @import "imports/support";
+@import "imports/stacktable";
 /* ############################### */
 /* END >>SCSS IMPORTS<< */
 

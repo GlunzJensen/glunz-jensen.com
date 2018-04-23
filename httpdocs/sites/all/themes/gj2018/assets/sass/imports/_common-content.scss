@@ -1,0 +1,38 @@
+.content {
+  .node {
+    table {
+      margin: 0 0 20px;
+
+      th, td {
+        padding: 5px 15px;
+        color: $txt-gray;
+
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+
+      }
+
+      .Contact & {
+        td {
+          vertical-align: top;
+        }
+
+        th {
+          color: lighten($txt-gray, 20%);
+
+          &.st-head-row{
+            color: $txt-gray;
+          }
+
+          &.st-head-row-main {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
