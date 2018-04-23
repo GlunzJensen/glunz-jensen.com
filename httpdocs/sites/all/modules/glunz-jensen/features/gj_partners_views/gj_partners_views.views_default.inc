@@ -65,8 +65,18 @@ function gj_partners_views_views_default_views() {
     'partners' => 'partners',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Partners slider */
+  $handler = $view->new_display('block', 'Partners slider', 'block');
+
+  /* Display: Partners slider mobile */
+  $handler = $view->new_display('block', 'Partners slider mobile', 'block_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'partner_slides_mobile';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['partners'] = array(
     t('Master'),
     t('Proud to partner with'),
@@ -76,7 +86,8 @@ function gj_partners_views_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Block'),
+    t('Partners slider'),
+    t('Partners slider mobile'),
   );
   $export['partners'] = $view;
 

@@ -38,6 +38,12 @@ function gj_context_conditions_context_default_contexts() {
           'region' => 'partners',
           'weight' => '-10',
         ),
+        'views-partners-block_1' => array(
+          'module' => 'views',
+          'delta' => 'partners-block_1',
+          'region' => 'partners',
+          'weight' => '-9',
+        ),
       ),
     ),
   );

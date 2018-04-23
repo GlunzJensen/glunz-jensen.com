@@ -83,10 +83,12 @@ $max600: max-width 600px;
 $mm-max620: max-width 620px;*/
 $max550: max-width 550px;
 $max680: max-width 680px;
+$min681: min-width 681px;
 $max1120: max-width 1120px;
 $max740: max-width 740px;
 $max820: max-width 820px;
 $max890: max-width 890px;
+$min891: min-width 891px;
 $max980: max-width 980px;
 $max1160: max-width 1160px;
 $min1600: min-width 1600px;
@@ -876,8 +878,8 @@ display: none;
          a {
           width: 30px;
           height: 30px;
-          background: url(../img/corner-pointer-cyan.svg) white -72px center no-repeat;  
-          background-size: 6em;  
+          background: url(../img/corner-pointer-cyan.svg) white -72px center no-repeat;
+          background-size: 6em;
           position: absolute;
           top: 50%;
           z-index: 150;
@@ -885,26 +887,36 @@ display: none;
           text-indent: -9999px;
           display: block !important;
            &.flex-prev {
-            background: url(../img/corner-pointer-cyan.svg) white 6px center no-repeat; 
-            background-size: 6em;        
+            background: url(../img/corner-pointer-cyan.svg) white 6px center no-repeat;
+            background-size: 6em;
             left: -36px;
             opacity: 1;
-@include breakpoint($max680) {
- left: 10px;
- opacity: 1 !important;
-}
+              @include breakpoint($max890) {
+               left: 10px;
+               opacity: 1 !important;
+             }
            }
            &.flex-next {
              right: -36px;
              opacity: 1;
-@include breakpoint($max680) {
- right: 10px;
- opacity: 1 !important;
-}
+             @include breakpoint($max890) {
+               right: 10px;
+               opacity: 1 !important;
+             }
            }
          }
        }
-     } 
+     }
+      #block-views-partners-block {
+        @include breakpoint($max890) {
+          display: none;
+        }
+      }
+      #block-views-partners-block-1 {
+        @include breakpoint($min891) {
+          display: none;
+        }
+      }
     }
     /*Referres*/
     .refpic {
