@@ -1,0 +1,10 @@
+name = Context conditions
+core = 7.x
+package = Glunz&Jensen
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = views
+features[context][] = partners
+features[context][] = top-images-frontpage
+features[ctools][] = context:context:3
+features[features_api][] = api:2

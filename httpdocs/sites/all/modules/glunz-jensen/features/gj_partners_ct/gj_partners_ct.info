@@ -1,0 +1,11 @@
+name = Partners CT
+core = 7.x
+package = Glunz&Jensen
+dependencies[] = features
+dependencies[] = gj_product_ct
+dependencies[] = image
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = node-partners-body
+features[field_instance][] = node-partners-field_image
+features[node][] = partners

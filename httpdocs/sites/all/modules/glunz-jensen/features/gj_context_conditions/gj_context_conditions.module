@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Context conditions feature.
+ */
+
+include_once 'gj_context_conditions.features.inc';

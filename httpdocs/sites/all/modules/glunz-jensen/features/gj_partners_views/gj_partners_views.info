@@ -1,0 +1,10 @@
+name = Partners view
+core = 7.x
+package = Glunz&Jensen
+dependencies[] = flexslider_views
+dependencies[] = gj_partners_ct
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = partners
+features_exclude[dependencies][ctools] = ctools
