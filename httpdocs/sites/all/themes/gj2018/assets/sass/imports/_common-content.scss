@@ -36,3 +36,9 @@
     }
   }
 }
+
+.page-admin-appearance-styleguide {
+  #block-system-main .content {
+    @include content-width;
+  }
+}
