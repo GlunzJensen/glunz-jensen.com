@@ -291,9 +291,9 @@ Version: 2018
               padding-top: 16px;
               margin-top: 35px;
               padding-left: 0;
-@include breakpoint($max980) {
-  width: 100%;
-}              
+              @include breakpoint($max980) {
+                width: 100%;
+              }
               li {
                 &:before {
                   display: none;
@@ -322,6 +322,7 @@ Version: 2018
               }
             }
             .flexslider {
+              @include products-gallery();
               display: inline-block;
               width: 67%;
               float: left;
@@ -330,81 +331,6 @@ Version: 2018
               border: none;
               border-radius: 0px;
               margin-left: 3%;
-              @include box-shadow(none);
-@include breakpoint($max980) {
-  width: 100%;
-  margin-left: 0%;
-  margin-top: 25px;
-}
-              ul {
-              display: inline-block;
-              position: relative;
-              float: left;
-              width: auto;
-              border-top: none;
-              padding-top: 0;
-              margin-top: 0;
-              li {
-                padding: 0;
-                list-style: none;
-              &:before {
-                display: none !important;
-              }
-              }
-              &.flex-direction-nav {
-              display: inline-block;
-              position: absolute;
-              float: left;
-              width: auto;
-              border-top: none;
-              padding-top: 0;
-              margin-top: 0;
-              top: 32%;
-              width: 100%;
-              a {
-                height: 35px;
-                width: 35px;
-                display: block !important;
-                &.flex-prev {
-                background: url(../img/corner-pointer-cyan.svg) 6px 50% no-repeat;  
-                background-size: 8.5em; 
-                left: 0px;
-                opacity: 1; 
-                }
-                &.flex-next {
-                background: url(../img/corner-pointer-cyan.svg) -107px 50% no-repeat;  
-                background-size: 8.5em; 
-                right: 0px;
-                opacity: 1;   
-                }
-              }                
-              }
-              }
-              .flex-control-thumbs {
-                position: relative;
-                bottom: -10px !important;
-                li {
-                  width: 24%;
-                  float: left;
-                  margin-right: 1.3333%;
-                  margin-bottom: 15px;
-                  img {
-                    border: 1px solid whitesmoke;
-                    @include box-sizing(border-box);
-                    &.flex-active {
-                      border: 1px solid $gj-cyan;                      
-                    }
-                  }
-                  &:nth-child(4) {
-                    margin-right: 0;
-                  } 
-                  &:hover {
-                    img {
-                      border: 1px solid $gj-cyan;
-                    }
-                  }                
-                }
-              }
             }
           }
           .group-specifications {

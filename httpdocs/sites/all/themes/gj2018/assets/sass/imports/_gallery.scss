@@ -1,0 +1,173 @@
+// | This file contains styles for galleries
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+@mixin products-gallery{
+  @include box-shadow(none);
+  @include breakpoint($max980) {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 25px;
+  }
+  ul {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: auto;
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+    li {
+      padding: 0;
+      list-style: none;
+      &:before {
+        display: none !important;
+      }
+    }
+    &.flex-direction-nav {
+      display: inline-block;
+      position: absolute;
+      float: left;
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+      top: 32%;
+      width: 100%;
+      a {
+        height: 35px;
+        width: 35px;
+        display: block !important;
+        &.flex-prev {
+          background: url(../img/corner-pointer-cyan.svg) 6px 50% no-repeat;
+          background-size: 8.5em;
+          left: 0;
+          opacity: 1;
+        }
+        &.flex-next {
+          background: url(../img/corner-pointer-cyan.svg) -107px 50% no-repeat;
+          background-size: 8.5em;
+          right: 0;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .flex-control-thumbs {
+    position: relative;
+    bottom: -10px !important;
+    li {
+      width: 24%;
+      float: left;
+      margin-right: 1.3333%;
+      margin-bottom: 15px;
+      img {
+        border: 1px solid whitesmoke;
+        @include box-sizing(border-box);
+        &.flex-active {
+          border: 1px solid $gj-cyan;
+        }
+      }
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+      &:hover {
+        img {
+          border: 1px solid $gj-cyan;
+        }
+      }
+    }
+  }
+}
+
+
+// --------------------------------------------------
+// Styles
+// --------------------------------------------------
+.view-id-gallery.view-display-id-page {
+  .flexslider {
+    @include products-gallery();
+
+    ul {
+      &.slides,
+      &.flex-direction-nav {
+        display: block;
+        float: none;
+
+        a.flex-prev {
+          left: 33%;
+        }
+      }
+    }
+
+    .flex-control-nav {
+      width: 67%;
+      float: right;
+    }
+  }
+
+  h2 {
+    position: relative;
+    width: 100%;
+    padding-top: 0;
+    left: 0;
+    margin-bottom: 25px;
+
+    #content & a {
+      font-family: "ArimoBold";
+
+      &:hover {
+        color: $txt-gray;
+      }
+    }
+  }
+  h3 {
+    margin: 10px 0;
+  }
+  .product-image-links ul {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 30%;
+    border-top: 1px solid $gj-cyan;
+    padding-top: 16px;
+    padding-left: 0;
+    @include breakpoint($max980) {
+      width: 100%;
+    }
+
+    & {
+      li {
+        position: relative;
+        padding: 0 0 0 25px;
+        margin-bottom: 6px;
+        line-height: 1.3em;
+        color: $txt-gray;
+        list-style: none;
+
+        &::before {
+          display: inline-block !important;
+          position: absolute;
+          background: url(../img/corner-pointer-cyan.svg) right 50% no-repeat;
+          background-size: 5em;
+          width: 12px;
+          height: 20px;
+          content: '';
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .views-field-field-gallery-image {
+    display: inline-block;
+    width: 67%;
+    float: left;
+    position: relative;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    margin-left: 3%;
+  }
+}

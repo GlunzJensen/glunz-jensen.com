@@ -34,15 +34,9 @@ $image1100 = image_style_url('productgallery1100', $path.$uri);
 $image2500 = image_style_url('productgallery2500', $path.$uri);
 
 print '<div class="product-image-links"><ul>';
-print '<li><a href="'.$image2500.'" download="'.$uri.'"><strong>High resolution JPG file</strong>, 300 dpi - 2500 px</a></p></li>';
-print '<li><p><a href="/sites/default/files/imagegallery/'.$tifuri.'" download="'.$tifuri.'"><strong>Max TIF file resolution for printing</strong>, 300 dpi - 30 MB</a></p></li>';
-print '<li><p><a href="'.$image1100.'" download="'.$uri.'"><strong>For Word (printing)</strong>, 150 dpi (max 20 CM) - 1100 px</a></p></li>';
-print '<li><p><a href="'.$image600.'" download="'.$uri.'"><strong>PowerPoint</strong>, 72 dpi (max 20 cm) - 600 px</a></p></li>';
-print '<li><p><a href="'.$image300.'" download="'.$uri.'"><strong>WEB</strong>, 72 dpi (max 10 cm) - 300 px</a></p></li>';
-
-
-
-
-print '</ul></div>';
-
+print '<li><a href="'.$image2500.'" download="'.$uri.'"><strong>High resolution JPG file</strong>, 300 dpi - 2500 px</a></li>';
+print '<li><a href="/sites/default/files/imagegallery/'.$tifuri.'" download="'.$tifuri.'"><strong>Max TIF file resolution for printing</strong>, 300 dpi - 30 MB</a></li>';
+print '<li><a href="'.$image1100.'" download="'.$uri.'"><strong>For Word (printing)</strong>, 150 dpi (max 20 CM) - 1100 px</a>></li>';
+print '<li><a href="'.$image600.'" download="'.$uri.'"><strong>PowerPoint</strong>, 72 dpi (max 20 cm) - 600 px</a></li>';
+print '<li><a href="'.$image300.'" download="'.$uri.'"><strong>WEB</strong>, 72 dpi (max 10 cm) - 300 px</a></li>';
 ?>
