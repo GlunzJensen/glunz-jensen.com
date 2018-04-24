@@ -129,32 +129,26 @@ form {
   &.user-info-from-cookie .form-item-name {
     margin-right: 2%;
   }
-  &.user-info-from-cookie .form-item-mollom-captcha {
+  &.user-info-from-cookie .captcha {
     display: block;
     width: 100%;
     clear: both;
     margin-bottom: 20px;
     float: left;
-  }
-  &.user-info-from-cookie .form-item-mollom-captcha .field-prefix {
-    display: inline-block;
-    width: 45%;
-    float: left;
-    margin-right: 5%;
-  }
-  &.user-info-from-cookie .form-item-mollom-captcha input {
-    width: 49%;
-    float: left;
-    display: block;
-    padding: 3%;
-    clear: both;
-    max-height: 20px;
-  }
-  &.user-info-from-cookie .form-item-mollom-captcha .description {
-    width: 49%;
-    float: left;
-    display: block;
-    clear: both;
+
+    legend {
+      margin: 10px 0;
+    }
+
+    .form-item-captcha-response input {
+      padding: 0.5em;
+      clear: both;
+    }
+
+    .fieldset-description {
+      font-size: 0.85em;
+      margin-bottom: 10px;
+    }
   }
   &.user-info-from-cookie .field-name-field-name {
     display: block;
