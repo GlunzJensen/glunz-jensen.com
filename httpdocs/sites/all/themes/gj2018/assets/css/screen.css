@@ -307,6 +307,22 @@ p {
   display: none;
 }
 
+.page-admin-appearance-styleguide #block-system-main .content {
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1320px) {
+  .page-admin-appearance-styleguide #block-system-main .content {
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
 /*
 Description: Stylingen af frontpage
 Author URI: http://openusorce.com
