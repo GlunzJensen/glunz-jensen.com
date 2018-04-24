@@ -11,6 +11,7 @@
 function gj_deployment_modules_installed($modules) {
   if (in_array('gj_deployment', $modules)) {
     module_enable(array(
+      'diff',
       'gj_product_ct',
       'gj_investordata_ct',
       'gj_investornews_view',
