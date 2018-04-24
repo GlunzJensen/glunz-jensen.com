@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the gj_deployment module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function gj_deployment_install() {
+  module_enable(array(
+    'gj_product_ct',
+    'gj_investordata_ct',
+    'gj_investornews_view',
+    'gj_partners_ct',
+    'gj_partners_views',
+    'gj_context_conditions',
+    'gj_product_views',
+  ), TRUE);
+}

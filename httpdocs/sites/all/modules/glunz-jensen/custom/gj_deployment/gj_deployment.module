@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Main module file for the gj_deployment module.
+ */
+
+/**
+ * Implements hook_modules_installed().
+ */
+function gj_deployment_modules_installed($modules) {
+  if (in_array('gj_deployment', $modules)) {
+    module_enable(array(
+      'gj_product_ct',
+      'gj_investordata_ct',
+      'gj_investornews_view',
+      'gj_partners_ct',
+      'gj_partners_views',
+      'gj_context_conditions',
+      'gj_product_views',
+    ), TRUE);
+  }
+}
