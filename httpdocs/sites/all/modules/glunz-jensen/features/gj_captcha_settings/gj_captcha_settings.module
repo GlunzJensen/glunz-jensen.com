@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Captcha settings feature.
+ */
+
+include_once 'gj_captcha_settings.features.inc';
