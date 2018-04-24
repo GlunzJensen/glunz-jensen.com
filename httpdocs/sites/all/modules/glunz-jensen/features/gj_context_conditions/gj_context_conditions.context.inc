@@ -19,7 +19,6 @@ function gj_context_conditions_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        '<front>' => '<front>',
         '~products/*' => '~products/*',
       ),
     ),
@@ -87,7 +86,7 @@ function gj_context_conditions_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 1;
+  $context->condition_mode = 0;
   $export['top-images-frontpage'] = $context;
 
   return $export;
