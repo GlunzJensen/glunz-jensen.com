@@ -1070,7 +1070,6 @@ Version: 2018
   height: auto;
   background: whitesmoke;
   float: left;
-  border-top: 1px solid rgba(90, 90, 90, 0.5);
   padding: 13px 0px 3px 0px;
   z-index: 280;
 }
@@ -1131,6 +1130,7 @@ Version: 2018
   background: white;
   width: 100%;
   float: left;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.5);
   -webkit-transition-duration: 200ms;
   -moz-transition-duration: 200ms;
   -o-transition-duration: 200ms;
@@ -4636,15 +4636,6 @@ Version: 2018
   width: 100%;
 }
 
-.st-head-row {
-  padding-top: 1em;
-}
-
-.st-head-row.st-head-row-main {
-  font-size: 1.5em;
-  padding-top: 0;
-}
-
 .st-key {
   width: 49%;
   text-align: right;
@@ -4662,12 +4653,12 @@ Version: 2018
 }
 
 .stacktable.small-only {
-  display: none;
+  display: none !important;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 890px) {
   .stacktable.large-only {
-    display: none;
+    display: none !important;
   }
 
   .stacktable.small-only {
