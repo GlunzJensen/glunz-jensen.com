@@ -626,18 +626,88 @@ function gj_user_views_views_default_views() {
     7 => '7',
   );
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_oem' => 'field_oem',
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'rid' => 'rid',
+    'mail' => 'mail',
+    'field_company' => 'field_company',
+    'field_name' => 'field_name',
+    'status' => 'status',
+    'created' => 'created',
+    'access' => 'access',
+    'domain_id' => 'domain_id',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'access';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_oem' => array(
-      'sortable' => 0,
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'rid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_company' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'access' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'domain_id' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -741,6 +811,11 @@ function gj_user_views_views_default_views() {
   $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
   $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
+  /* Field: User: Roles */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['type'] = 'ul';
   /* Field: User: Active */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
@@ -787,7 +862,12 @@ function gj_user_views_views_default_views() {
   $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
   $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
   $handler->display->display_options['filters']['uid_raw']['value']['value'] = '0';
-  $handler->display->display_options['path'] = 'admin/delete-blocked-users';
+  $handler->display->display_options['path'] = 'admin/people/cleanup';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Cleanup';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: admin/people- Active User list */
   $handler = $view->new_display('page', 'admin/people- Active User list', 'page_4');
@@ -1371,9 +1451,6 @@ function gj_user_views_views_default_views() {
     t('Data export'),
     t('Page - Delete blocked users'),
     t('Delete Blocked Users'),
-    t('Created date'),
-    t('Domain'),
-    t('admin/people- Active User list'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -1381,6 +1458,9 @@ function gj_user_views_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Created date'),
+    t('Domain'),
+    t('admin/people- Active User list'),
     t('Oem'),
     t('Admin/people - Delete blocked users'),
     t('Data export Active users'),
