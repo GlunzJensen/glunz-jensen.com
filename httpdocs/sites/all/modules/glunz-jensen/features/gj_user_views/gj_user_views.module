@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the User views feature.
+ */
+
+include_once 'gj_user_views.features.inc';
