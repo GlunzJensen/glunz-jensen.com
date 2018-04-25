@@ -1896,32 +1896,23 @@ form.user-info-from-cookie .form-item-name, form.user-info-from-cookie .form-ite
 form.user-info-from-cookie .form-item-name {
   margin-right: 2%;
 }
-form.user-info-from-cookie .form-item-mollom-captcha {
+form.user-info-from-cookie .captcha {
   display: block;
   width: 100%;
   clear: both;
   margin-bottom: 20px;
   float: left;
 }
-form.user-info-from-cookie .form-item-mollom-captcha .field-prefix {
-  display: inline-block;
-  width: 45%;
-  float: left;
-  margin-right: 5%;
+form.user-info-from-cookie .captcha legend {
+  margin: 10px 0;
 }
-form.user-info-from-cookie .form-item-mollom-captcha input {
-  width: 49%;
-  float: left;
-  display: block;
-  padding: 3%;
+form.user-info-from-cookie .captcha .form-item-captcha-response input {
+  padding: 0.5em;
   clear: both;
-  max-height: 20px;
 }
-form.user-info-from-cookie .form-item-mollom-captcha .description {
-  width: 49%;
-  float: left;
-  display: block;
-  clear: both;
+form.user-info-from-cookie .captcha .fieldset-description {
+  font-size: 0.85em;
+  margin-bottom: 10px;
 }
 form.user-info-from-cookie .field-name-field-name {
   display: block;
