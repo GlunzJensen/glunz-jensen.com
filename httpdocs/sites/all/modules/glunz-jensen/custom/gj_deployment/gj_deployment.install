@@ -4,25 +4,3 @@
  * @file
  * Install, update and uninstall functions for the gj_deployment module.
  */
-
-/**
- * Disable unused Mollom module.
- */
-function gj_deployment_update_7001() {
-  if (module_exists('mollom')) {
-    module_disable(array('mollom'), TRUE);
-    drupal_uninstall_modules(array('mollom'));
-  }
-}
-
-/**
- * Remove spam users.
-
-function gj_deployment_update_7002() {
-  // @TODO Here should be removed users
-  // - blocked
-  // - with empty roles
-  // - never had access
-  // About 250users.
-}
-// */
