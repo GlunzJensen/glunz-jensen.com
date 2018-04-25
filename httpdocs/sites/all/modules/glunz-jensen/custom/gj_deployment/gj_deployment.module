@@ -12,6 +12,7 @@ function gj_deployment_modules_installed($modules) {
   if (in_array('gj_deployment', $modules)) {
     module_enable(array(
       'diff',
+      'gj_captcha_settings',
       'gj_product_ct',
       'gj_investordata_ct',
       'gj_investornews_view',
@@ -19,7 +20,10 @@ function gj_deployment_modules_installed($modules) {
       'gj_partners_views',
       'gj_context_conditions',
       'gj_product_views',
+      'gj_user_views',
       'styleguide',
     ), TRUE);
+
+    gj_deployment_update_7001();
   }
 }
