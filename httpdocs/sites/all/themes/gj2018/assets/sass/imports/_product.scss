@@ -4,9 +4,7 @@ Author URI: http://openusorce.com
 Version: 2018
 */
 
-  $headerheight: 62px;
-
-
+$headerheight: 62px;
 
 /* >>PRODUCT<<
 ################################## */
@@ -31,25 +29,25 @@ Version: 2018
             padding: 0;
             margin: 0;
             margin-right: 5%;
-@include breakpoint($max820) {
-  width: 40%;
-}
-@include breakpoint($max680) {
-  width: 100%;
-  margin-right: 0%;
-}
+            @include breakpoint($max820) {
+              width: 40%;
+            }
+            @include breakpoint($max680) {
+              width: 100%;
+              margin-right: 0%;
+            }
           }
         }
       }
-        h3 {
-          display: block;
-          font-size: 1.2em;
-          position: relative;
-          clear: both;
-          margin-bottom: 20px;
-          color: $txt-gray;
-          margin-top: 25px;
-        }
+      h3 {
+        display: block;
+        font-size: 1.2em;
+        position: relative;
+        clear: both;
+        margin-bottom: 20px;
+        color: $txt-gray;
+        margin-top: 25px;
+      }
       .view-grouping-header {
         display: none;
       }
@@ -83,19 +81,19 @@ Version: 2018
               display: inline-block;
               width: 35%;
               float: left;
-@include breakpoint($max820) {
-  width: 47%;
-  margin-right: 3%;
-}
-@include breakpoint($max680) {
-  width: 100%;
-  margin-right: 0%;
-}
+              @include breakpoint($max820) {
+                width: 47%;
+                margin-right: 3%;
+              }
+              @include breakpoint($max680) {
+                width: 100%;
+                margin-right: 0%;
+              }
             }
             .col-2 {
               display: inline-block;
               width: 50%;
-              float: left;              
+              float: left;
             }
           }
         }
@@ -107,16 +105,16 @@ Version: 2018
           list-style: none;
         }
       }
-        display: block;
-        width: 100%;
-        min-height: 100px;
-        &.view-mode-full {
-          padding-top: 0px;
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 !important;
-          padding: 0 !important;
-        }
+      display: block;
+      width: 100%;
+      min-height: 100px;
+      &.view-mode-full {
+        padding-top: 0px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
       .horizontal-tabs {
         display: block;
         position: relative;
@@ -124,40 +122,40 @@ Version: 2018
         width: 100%;
         margin: 0px;
         padding: 0px;
-          border: none;
+        border: none;
         /*TABS*/
         .tabcontainer {
           display: inline-block;
           clear: both;
           width: 100%;
           float: left;
-          background: $gj-cyan;        
-        ul {
-          margin: 0;
-          &.horizontal-tabs-list {
-            @include content-width;  
-            display: block;
-            background-color: blue;
-            border-right: none;
-@include breakpoint($max980) {
-  width: 100%;
-  padding: 0;
-}  
-            li {
-              background: none;
-              border: none;
-              padding: 0px;
-              margin: 0;
-              display: inline-block;
-              width: 16%;
-              float: left;
-              position: relative;
-@include breakpoint($max980) {
-  width: 20%;
-} 
-@include breakpoint($max740) {
-  width: 50%;
-}
+          background: $gj-cyan;
+          ul {
+            margin: 0;
+            &.horizontal-tabs-list {
+              @include content-width;
+              display: block;
+              background-color: blue;
+              border-right: none;
+              @include breakpoint($max980) {
+                width: 100%;
+                padding: 0;
+              }
+              li {
+                background: none;
+                border: none;
+                padding: 0px;
+                margin: 0;
+                display: inline-block;
+                width: 16%;
+                float: left;
+                position: relative;
+                @include breakpoint($max980) {
+                  width: 20%;
+                }
+                @include breakpoint($max740) {
+                  width: 50%;
+                }
                 &:after {
                   display: none;
                   content: '';
@@ -166,101 +164,101 @@ Version: 2018
                   z-index: 300;
                   width: 100%;
                   height: 30px;
-                  background: url(../img/tabmark.svg) center no-repeat;  
+                  background: url(../img/tabmark.svg) center no-repeat;
                   background-size: contain;
                   left: -2px;
                 }
-              &.selected {
-                a {
-                  background-color: $cyan-highgloss !important;
-                  color: white;
-                  &:after {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    bottom: -29px;
-                    z-index: 300;
-                    width: 100%;
-                    height: 30px;
-                    background: url(../img/tabmark.svg) center no-repeat;  
-                    background-size: contain;
-@include breakpoint($max740) {
-  display: none;
-}
+                &.selected {
+                  a {
+                    background-color: $cyan-highgloss !important;
+                    color: white;
+                    &:after {
+                      display: block;
+                      content: '';
+                      position: absolute;
+                      bottom: -29px;
+                      z-index: 300;
+                      width: 100%;
+                      height: 30px;
+                      background: url(../img/tabmark.svg) center no-repeat;
+                      background-size: contain;
+                      @include breakpoint($max740) {
+                        display: none;
+                      }
+                    }
                   }
                 }
-              }
-              a {
-                display: inline-block;
-                text-decoration: none;
-                padding: 10px;    
-                background: $gj-cyan;
-                color: white; 
-                padding: 65px 0px 25px 0px;
-                width: 100%;
-                float: left;
-                text-align: center;
-                text-transform: uppercase;
-                font-family: "ArimoRegular";
-                background: url(../img/overwiev.svg) center 14px no-repeat;  
-                background-size: 5em;	
-                font-size: 0.9em;
-                strong {
+                a {
+                  display: inline-block;
+                  text-decoration: none;
+                  padding: 10px;
+                  background: $gj-cyan;
                   color: white;
+                  padding: 65px 0px 25px 0px;
+                  width: 100%;
+                  float: left;
+                  text-align: center;
+                  text-transform: uppercase;
                   font-family: "ArimoRegular";
-                }
-                &:hover {
-                  background-color: $cyan-highgloss !important;
+                  background: url(../img/overwiev.svg) center 14px no-repeat;
                   background-size: 5em;
-                }      
-@include breakpoint($max980) {
-  font-size: 0.8em;
-} 
-@include breakpoint($max740) {
-  font-size: 1em;
-  padding: 75px 0px 35px 0px;  
-}
-              }
-              &.group-specifications {
+                  font-size: 0.9em;
+                  strong {
+                    color: white;
+                    font-family: "ArimoRegular";
+                  }
+                  &:hover {
+                    background-color: $cyan-highgloss !important;
+                    background-size: 5em;
+                  }
+                  @include breakpoint($max980) {
+                    font-size: 0.8em;
+                  }
+                  @include breakpoint($max740) {
+                    font-size: 1em;
+                    padding: 75px 0px 35px 0px;
+                  }
+                }
+                &.group-specifications {
                   a {
-                  background: url(../img/spec.svg) center 23px no-repeat;  
-                  background-size: 3.2em;                  
-                }               
-              }
-              &.group-download {
-                .controllers {
+                    background: url(../img/spec.svg) center 23px no-repeat;
+                    background-size: 3.2em;
+                  }
+                }
+                &.group-download {
+                  .controllers {
+                    display: none;
+                  }
+                  a {
+                    background: url(../img/download.svg) center 15px no-repeat;
+                    background-size: 5em;
+                  }
+                }
+                &.group-accessories .controllers {
                   display: none;
                 }
-                  a {
-                  background: url(../img/download.svg) center 15px no-repeat;  
-                  background-size: 5em;                  
+                &.group-accessories a {
+                  background: url(../img/accessories.svg) center 9px no-repeat;
+                  background-size: 5.5em;
                 }
-              }
-              &.group-accessories .controllers {
-                display: none;
-              }
-              &.group-accessories a {
-                background: url(../img/accessories.svg) center 9px no-repeat;
-                background-size: 5.5em;
               }
             }
           }
         }
-        }
         /*CONTENT (TABS)*/
         .horizontal-tabs-panes {
-          background: rgb(245,245,245);
+          background: rgb(245, 245, 245);
           width: 100%;
           display: block;
           position: relative;
-          float: left; 
+          float: left;
           padding-top: 40px;
           padding-bottom: 45px;
           color: $txt-gray;
           strong {
             color: $txt-gray;
-          } 
-          fieldset {             
+          }
+          fieldset {
             &.horizontal-tabs-pane {
               @include content-width;
               display: block;
@@ -269,7 +267,7 @@ Version: 2018
                 display: none;
               }
             }
-          }  
+          }
           .group-overview {
             padding: 0;
             .fieldset-wrapper {
@@ -300,25 +298,25 @@ Version: 2018
                 }
               }
               &:first-of-type {
-              li {
-                position: relative;
-                padding: 0px 0px 0px 25px;
-                margin-bottom: 6px;
-                line-height: 1.3em;
-                color: $txt-gray;
-                list-style: none;
-                &:before {
-                  display: inline-block;
-                  position: absolute;
-                  background: url(../img/corner-pointer-cyan.svg) right 50% no-repeat;  
-                  background-size: 5em;
-                  width: 12px;
-                  height: 20px;
-                  content: '';
-                  left: 0px;
-                  top: 0px;     
+                li {
+                  position: relative;
+                  padding: 0px 0px 0px 25px;
+                  margin-bottom: 6px;
+                  line-height: 1.3em;
+                  color: $txt-gray;
+                  list-style: none;
+                  &:before {
+                    display: inline-block;
+                    position: absolute;
+                    background: url(../img/corner-pointer-cyan.svg) right 50% no-repeat;
+                    background-size: 5em;
+                    width: 12px;
+                    height: 20px;
+                    content: '';
+                    left: 0px;
+                    top: 0px;
+                  }
                 }
-              }                
               }
             }
             .flexslider {
@@ -336,46 +334,46 @@ Version: 2018
           .group-specifications {
             a {
               &.productName {
-               display: inline-block;
-               float: left;
-               position: relative;
-               height: auto;
-               text-align: center;
-               background: $gj-cyan;
-               padding: 12px 8px 10px 8px; 
-               color: white;
-               margin-right: 10px;
-               text-transform: uppercase;
-               margin-bottom: 15px;
-               &.active {
-                   background: $cyan-highgloss;
-                    &:after {
-                      display: block;
-                      content: '';
-                      position: absolute;
-                      bottom: -19px;
-                      z-index: 300;
-                      width: 100%;
-                      height: 20px;
-                      left: 0px;
-                      background: url(../img/tabmark.svg) center no-repeat;  
-                      background-size: contain;
-@include breakpoint($max680) {
-  display: none;
-}
+                display: inline-block;
+                float: left;
+                position: relative;
+                height: auto;
+                text-align: center;
+                background: $gj-cyan;
+                padding: 12px 8px 10px 8px;
+                color: white;
+                margin-right: 10px;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                &.active {
+                  background: $cyan-highgloss;
+                  &:after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    bottom: -19px;
+                    z-index: 300;
+                    width: 100%;
+                    height: 20px;
+                    left: 0px;
+                    background: url(../img/tabmark.svg) center no-repeat;
+                    background-size: contain;
+                    @include breakpoint($max680) {
+                      display: none;
                     }
-               }
-               &:hover {
-                 background: $cyan-highgloss;
-               }              
+                  }
+                }
+                &:hover {
+                  background: $cyan-highgloss;
+                }
               }
             }
             .row-heading {
               border: none;
               background: none;
-@include breakpoint($max680) { 
-  padding: 0;
-}    
+              @include breakpoint($max680) {
+                padding: 0;
+              }
               td {
                 font-family: 'ArimoBold';
                 border: none;
@@ -384,95 +382,97 @@ Version: 2018
                 padding: 10px 10px 8px 10px;
                 display: inline-block;
                 margin-top: 20px;
-                margin-left: -1px;    
+                margin-left: -1px;
               }
             }
             table {
-              width: 100%; 
-              border-collapse: collapse;     
-              thead { display: none; }
+              width: 100%;
+              border-collapse: collapse;
+              thead {
+                display: none;
+              }
             }
             th {
               font-family: 'ArimoBold';
               background-color: $gj-cyan;
               color: white;
-              border: none;    
+              border: none;
             }
             td, th {
               padding: 6px;
               border: 1px solid $txt-gray;
-              text-align: left;   
+              text-align: left;
             }
             td {
-/*@include breakpoint($max320) {
-  border: none;
-  position: relative;
-  padding-left: 50%;
-}*/
-            &:before {
-          /*@include breakpoint($max320) {
-            /* Now like a table header 
-            position: absolute;
-            /* Top/left values mimic padding 
-            top: 6px;
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;  
-          }*/
-            }
-            &:nth-of-type(2) {
+              /*@include breakpoint($max320) {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+              }*/
               &:before {
-/*@include breakpoint($max320) {
-  content: "Units";  
-}*/
+                /*@include breakpoint($max320) {
+                  /* Now like a table header
+                  position: absolute;
+                  /* Top/left values mimic padding
+                  top: 6px;
+                  left: 6px;
+                  width: 45%;
+                  padding-right: 10px;
+                  white-space: nowrap;
+                }*/
               }
-            }
-            &:nth-of-type(3) {
-              &:before {
-/*@include breakpoint($max320) {
-  content: "Value";
-}*/
+              &:nth-of-type(2) {
+                &:before {
+                  /*@include breakpoint($max320) {
+                    content: "Units";
+                  }*/
+                }
               }
-            }
+              &:nth-of-type(3) {
+                &:before {
+                  /*@include breakpoint($max320) {
+                    content: "Value";
+                  }*/
+                }
+              }
             }
             tr {
-              background: white; 
+              background: white;
               td {
                 &:first-child {
-          /*@include breakpoint($max320) {
-            font-family: 'ArimoBold';
-            padding-left: 5px;  
-          }*/
+                  /*@include breakpoint($max320) {
+                    font-family: 'ArimoBold';
+                    padding-left: 5px;
+                  }*/
                 }
               }
               &.row-heading {
                 td {
-          /*@include breakpoint($max320) {
-            font-size: 130%;
-          }*/
+                  /*@include breakpoint($max320) {
+                    font-size: 130%;
+                  }*/
                 }
               }
-              &:nth-of-type(odd) { 
+              &:nth-of-type(odd) {
               }
-              &:nth-of-type(even) { 
+              &:nth-of-type(even) {
               }
-            } 
+            }
           }
           .group-download {
             .controllers {
-             display: block;
-             width: 100%;
-             float: left;
-             position: relative;
-             margin-bottom: 30px;
-             z-index: 200;
-             h3 {
-               color: white;
-               text-transform: uppercase;
-               &.active {
-                 span {
-                   background: $cyan-highgloss;
+              display: block;
+              width: 100%;
+              float: left;
+              position: relative;
+              margin-bottom: 30px;
+              z-index: 200;
+              h3 {
+                color: white;
+                text-transform: uppercase;
+                &.active {
+                  span {
+                    background: $cyan-highgloss;
                     &:after {
                       display: block;
                       content: '';
@@ -481,33 +481,33 @@ Version: 2018
                       z-index: 300;
                       width: 100%;
                       height: 20px;
-                      background: url(../img/tabmark.svg) center no-repeat;  
+                      background: url(../img/tabmark.svg) center no-repeat;
                       background-size: contain;
-@include breakpoint($max680) {
-  display: none;
-}
+                      @include breakpoint($max680) {
+                        display: none;
+                      }
                     }
-                 }
-               }
-               span {
-               display: inline-block;
-               float: left;
-               position: relative;
-               height: auto;
-               text-align: center;
-               background: $gj-cyan;
-               padding: 12px 8px 10px 8px;
-               cursor: pointer;
-               color: white;
-               margin-right: 10px;
-               text-transform: uppercase;
-               margin-bottom: 15px;
-@include breakpoint($max680) {
-  width: 50%;
-}
-               &:hover {
-                 background: $cyan-highgloss;
-               }
+                  }
+                }
+                span {
+                  display: inline-block;
+                  float: left;
+                  position: relative;
+                  height: auto;
+                  text-align: center;
+                  background: $gj-cyan;
+                  padding: 12px 8px 10px 8px;
+                  cursor: pointer;
+                  color: white;
+                  margin-right: 10px;
+                  text-transform: uppercase;
+                  margin-bottom: 15px;
+                  @include breakpoint($max680) {
+                    width: 50%;
+                  }
+                  &:hover {
+                    background: $cyan-highgloss;
+                  }
                   &:after {
                     display: none;
                     content: '';
@@ -516,54 +516,58 @@ Version: 2018
                     z-index: 300;
                     width: 100%;
                     height: 20px;
-                    background: url(../img/tabmark.svg) center no-repeat;  
+                    background: url(../img/tabmark.svg) center no-repeat;
                     background-size: contain;
                     left: 0px;
-                  }  
-                  }             
-             } 
+                  }
+                }
+              }
             }
             .fieldset-wrapper {
               h2 {
-                  display: none;
+                display: none;
               }
 
               img {
-                  width: 50%;
+                width: 50%;
+                height: auto;
+                @include breakpoint($max820) {
+                  width: auto;
                   height: auto;
-@include breakpoint($max820) {
-  width: auto;
-  height: auto;
-}
-                }
-              span {
-                &.file {
-      display: inline-block;
-      padding: 6px 0px 6px 35px;
-      background: url(../img/pdf_icon.svg) no-repeat top left;
-      margin-bottom: 5px;
-      margin-top: 10px;
-      width: auto;
-      background-size: 2em;
-      float: left;
-@include breakpoint($max680) {
-  clear: both;
-  float: left;
-  margin-bottom: 15px;
-}
-      a {
-      color: $txt-gray;
-      }
-      img { display: none; }
-      &:hover {
-        background-position: bottom left;
-        a {
-        color: $gj-cyan;
-        }
-      }
                 }
               }
-              .label-above { display: none; }
+              span {
+                &.file {
+                  display: inline-block;
+                  padding: 6px 0px 6px 35px;
+                  background: url(../img/pdf_icon.svg) no-repeat top left;
+                  margin-bottom: 5px;
+                  margin-top: 10px;
+                  width: auto;
+                  background-size: 2em;
+                  float: left;
+                  @include breakpoint($max680) {
+                    clear: both;
+                    float: left;
+                    margin-bottom: 15px;
+                  }
+                  a {
+                    color: $txt-gray;
+                  }
+                  img {
+                    display: none;
+                  }
+                  &:hover {
+                    background-position: bottom left;
+                    a {
+                      color: $gj-cyan;
+                    }
+                  }
+                }
+              }
+              .label-above {
+                display: none;
+              }
               header {
                 height: auto;
                 background: none;
@@ -572,16 +576,16 @@ Version: 2018
                 padding: 0;
                 .group-left {
                   width: 25%;
-@include breakpoint($max820) {
-  width: 100%;
-}
+                  @include breakpoint($max820) {
+                    width: 100%;
+                  }
                 }
                 .group-right {
                   width: 75%;
-@include breakpoint($max820) {
-  width: 100%;
-  margin-top: 10px;
-}
+                  @include breakpoint($max820) {
+                    width: 100%;
+                    margin-top: 10px;
+                  }
                   .manual-title {
                     display: none;
                   }
@@ -596,28 +600,30 @@ Version: 2018
                   .file {
                     &:nth-last-child(4) {
                       a {
-                      &:after { display: none; }
-                    }
-                    }
-                    a {
-                    &:after {
-                      content: '//';
-                      display: inline-block;
-                      position: relative;
-                      margin-right: 14px;
-                      color: $cyan-highgloss;
-                      left: 7px;
-                      top: 1px;
-@include breakpoint($max680) {
-  display: none;
-}
-                    }
-                    &:hover {
-                      &:after {
-                        color: $gj-cyan;
+                        &:after {
+                          display: none;
+                        }
                       }
                     }
-                    } 
+                    a {
+                      &:after {
+                        content: '//';
+                        display: inline-block;
+                        position: relative;
+                        margin-right: 14px;
+                        color: $cyan-highgloss;
+                        left: 7px;
+                        top: 1px;
+                        @include breakpoint($max680) {
+                          display: none;
+                        }
+                      }
+                      &:hover {
+                        &:after {
+                          color: $gj-cyan;
+                        }
+                      }
+                    }
 
                   }
                   .manualdate {
@@ -638,21 +644,21 @@ Version: 2018
                   }
                   a {
                     &.more-manuals-link {
-                    display: inline-block;
-                    position: relative;
-                    clear: both;
-                    margin-top: 5px;
-                    background: url(../img/menu-pointer.svg) right 1px no-repeat;
-                    background-size: 1.2em;  
-                    color: $gj-cyan;                    
-                    width: 175px;
-                    text-transform: uppercase;
-                    margin-top: 18px;
-                    float: left;
-                    font-family: "ArimoRegular";
-@include breakpoint($max680) {
-float: right;
-}
+                      display: inline-block;
+                      position: relative;
+                      clear: both;
+                      margin-top: 5px;
+                      background: url(../img/menu-pointer.svg) right 1px no-repeat;
+                      background-size: 1.2em;
+                      color: $gj-cyan;
+                      width: 175px;
+                      text-transform: uppercase;
+                      margin-top: 18px;
+                      float: left;
+                      font-family: "ArimoRegular";
+                      @include breakpoint($max680) {
+                        float: right;
+                      }
                     }
                   }
                 }
@@ -666,72 +672,72 @@ float: right;
             }
           }
           .group-software {
-              .ds-2col-stacked {
-                padding-top: 0px;
+            .ds-2col-stacked {
+              padding-top: 0px;
+              width: 100%;
+              padding-left: 0;
+              padding-right: 0;
+              margin: 0;
+              max-width: 100%;
+              header {
+                margin-top: 25px;
+                float: left;
+              }
+              .group-left, .group-right {
                 width: 100%;
-                padding-left: 0;
-                padding-right: 0;
-                margin: 0;
-                max-width: 100%;
-                header {
-                  margin-top: 25px;
-                  float: left;
+                .label-inline {
+                  font-size: 1.2em;
+                  font-family: "ArimoBold";
+                  display: block;
                 }
-                .group-left, .group-right {
-                  width: 100%;
-                  .label-inline {
-                    font-size: 1.2em;
-                    font-family: "ArimoBold";
-                    display: block;    
-                  }
-                  header {
+                header {
                   .label-inline {
                     font-size: 1em;
                     font-family: "helvetica";
-                    display: block;    
+                    display: block;
                   }
-                  }
                 }
-                .group-left .view {
-                  width: 100%;
-                  padding: 0;
-                }
-                .group-left .view.view-software {
-                  margin-bottom: 30px;
-                  float: left;
-                }
-                .group-left .view .field-content {
-                  display: block;
-                  position: relative;
-                  float: left;
-                  width: 100%;
-                }
-                .group-left .label-inline {
-                  width: 100%;
-                  display: block;
-                  float: left;
-                  position: relative;
-                }
-                .group-right {
-                  p {
-                    a {
+              }
+              .group-left .view {
+                width: 100%;
+                padding: 0;
+              }
+              .group-left .view.view-software {
+                margin-bottom: 30px;
+                float: left;
+              }
+              .group-left .view .field-content {
+                display: block;
+                position: relative;
+                float: left;
+                width: 100%;
+              }
+              .group-left .label-inline {
+                width: 100%;
+                display: block;
+                float: left;
+                position: relative;
+              }
+              .group-right {
+                p {
+                  a {
                     display: inline-block;
                     position: relative;
                     clear: both;
                     background: url(../img/menu-pointer.svg) right 5px no-repeat;
-                    background-size: 1.2em;  
-                    color: $gj-cyan;                    
+                    background-size: 1.2em;
+                    color: $gj-cyan;
                     width: 208px;
                     text-transform: uppercase;
                     font-family: "ArimoRegular";
-@include breakpoint($max680) {
-float: right;
-}
+                    @include breakpoint($max680) {
+                      float: right;
                     }
                   }
                 }
-                }
-          } 
+              }
+            }
+          }
           .group-brochures {
 
             .node-brochures {
@@ -756,15 +762,15 @@ float: right;
                 left: 7px;
                 top: 17px;
                 visibility: visible;
-              }              
+              }
             }
-          }  
+          }
           .group-accessories {
             .node {
               margin-bottom: 35px;
-@include breakpoint($max820) {
-  margin-bottom: 15px;
-}
+              @include breakpoint($max820) {
+                margin-bottom: 15px;
+              }
               h2 {
                 display: block;
                 clear: both;
@@ -778,26 +784,26 @@ float: right;
                 display: inline-block;
                 width: 30%;
                 float: left;
-@include breakpoint($max820) {
-  width: 100%;
-  margin-bottom: 15px;
-}
+                @include breakpoint($max820) {
+                  width: 100%;
+                  margin-bottom: 15px;
+                }
               }
               p {
                 display: inline-block;
                 width: 70%;
-                float: right; 
+                float: right;
                 a {
                   width: 100%;
                 }
-@include breakpoint($max820) {
-  width: 100%;
-  float: left;
-}               
+                @include breakpoint($max820) {
+                  width: 100%;
+                  float: left;
+                }
               }
             }
-          }  
-        }  
+          }
+        }
       }
     }
     #block-views-video-gallery-block {
@@ -808,8 +814,12 @@ float: right;
       width: 100%;
       height: auto;
       padding-top: 35px;
-      .flex-direction-nav {display: none;}
-      h2 { display: none; }
+      .flex-direction-nav {
+        display: none;
+      }
+      h2 {
+        display: none;
+      }
       .view-video-gallery {
         @include content-width;
         .attachment-after {
@@ -849,11 +859,11 @@ float: right;
                 @include box-sizing(border-box);
                 border: 1px solid $gj-cyan;
                 cursor: pointer;
-@include breakpoint($max680) { 
-  width: 48%;
-  margin-right: 4%;
-  margin-bottom: 60px;
-}
+                @include breakpoint($max680) {
+                  width: 48%;
+                  margin-right: 4%;
+                  margin-bottom: 60px;
+                }
                 .views-field-title {
                   display: block;
                   position: absolute;
@@ -865,9 +875,9 @@ float: right;
                   margin-right: 0;
                 }
                 &:nth-child(2) {
-@include breakpoint($max680) { 
-  margin-right: 0%;
-}                  
+                  @include breakpoint($max680) {
+                    margin-right: 0%;
+                  }
                 }
                 img {
                   display: block;
@@ -907,22 +917,22 @@ float: right;
             width: 100% !important;
             height: auto !important;
             position: relative !important;
-            
-          .views_slideshow_slide {
-            /*width: 100% !important;
-            height: auto !important;
-            position: relative !important;*/
+
+            .views_slideshow_slide {
+              /*width: 100% !important;
+              height: auto !important;
+              position: relative !important;*/
+            }
+            iframe {
+              display: block;
+              position: relative;
+              max-width: 100% !important;
+              width: 100%;
+              float: left;
+              height: 560px;
+            }
           }
-          iframe {
-            display: block;
-            position: relative;
-            max-width: 100% !important;
-            width: 100%;
-            float: left;
-            height: 560px;
-          }
-          }
-          .views-slideshow-cycle-main-frame-row  {
+          .views-slideshow-cycle-main-frame-row {
             max-width: 100% !important;
             height: auto !important;
             width: 100% !important;
@@ -942,30 +952,30 @@ float: right;
     .txt-topbanner {
       .flexslider {
         li {
-         .textlink-wrapper {
+          .textlink-wrapper {
             .body {
               padding-top: 20%;
               position: relative;
               display: inline-block;
               p {
-                color: $txt-gray; 
+                color: $txt-gray;
                 font-size: 0.75em;
                 strong {
                   color: $gj-cyan;
                   font-size: 1.35em;
                   font-family: "ArimoRegular";
-                }               
+                }
               }
             }
-            background: url(../img/blue-stribing-left.svg) -14px 0px no-repeat;  
+            background: url(../img/blue-stribing-left.svg) -14px 0px no-repeat;
             background-size: contain;
-@include breakpoint($max980) {
-  display: none;
-}
-         } 
+            @include breakpoint($max980) {
+              display: none;
+            }
+          }
         }
       }
-    }  
+    }
   }
   #content {
     .region-content {
@@ -976,10 +986,10 @@ float: right;
       }
     }
     h1 {
-  &.title {
-    display: none;
-  }
-}
+      &.title {
+        display: none;
+      }
+    }
   }
 }
 

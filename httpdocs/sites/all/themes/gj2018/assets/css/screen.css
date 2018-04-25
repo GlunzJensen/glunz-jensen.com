@@ -3487,19 +3487,19 @@ Version: 2018
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-specifications td:before {
   /*@include breakpoint($max320) {
-  /* Now like a table header 
+  /* Now like a table header
   position: absolute;
-  /* Top/left values mimic padding 
+  /* Top/left values mimic padding
   top: 6px;
   left: 6px;
   width: 45%;
   padding-right: 10px;
-  white-space: nowrap;  
+  white-space: nowrap;
 }*/
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-specifications td:nth-of-type(2):before {
   /*@include breakpoint($max320) {
-    content: "Units";  
+    content: "Units";
   }*/
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-specifications td:nth-of-type(3):before {
@@ -3513,7 +3513,7 @@ Version: 2018
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-specifications tr td:first-child {
   /*@include breakpoint($max320) {
     font-family: 'ArimoBold';
-    padding-left: 5px;  
+    padding-left: 5px;
   }*/
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-specifications tr.row-heading td {
