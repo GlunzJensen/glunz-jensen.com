@@ -5,6 +5,8 @@ stage_file_proxy
 tmp
 logs
 privat
+.DS_Store
 
 # Dev
 .idea
+.phpintel
