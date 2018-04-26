@@ -1,0 +1,12 @@
+name = Captcha settings
+core = 7.x
+package = Glunz&Jensen
+dependencies[] = captcha
+dependencies[] = ctools
+dependencies[] = image_captcha
+features[captcha_points][] = user_login
+features[captcha_points][] = user_login_block
+features[captcha_points][] = user_pass
+features[captcha_points][] = user_register_form
+features[ctools][] = captcha:captcha:1
+features[features_api][] = api:2
