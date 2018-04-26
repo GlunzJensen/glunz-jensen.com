@@ -4850,6 +4850,94 @@ Version: 2018
     display: table;
   }
 }
+/*
+ * Newsletter signup on frontpage
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-17 | @mnbellcom
+ */
+.front #block-views-buzzers-block::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.front .region-content .block-webform {
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+}
+@media (max-width: 1320px) {
+  .front .region-content .block-webform {
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+.front .region-content .block-webform .block-inner {
+  padding: 30px;
+  background-color: #5a5a5a;
+}
+.front .region-content .block-webform h2 {
+  color: #fff;
+}
+.front .region-content .block-webform p {
+  color: #fff;
+}
+.front .region-content .block-webform form {
+  float: none;
+  padding-bottom: 0;
+  color: #fff;
+}
+.front .region-content .block-webform input[type="text"],
+.front .region-content .block-webform input[type="date"],
+.front .region-content .block-webform input[type="datetime"],
+.front .region-content .block-webform input[type="email"],
+.front .region-content .block-webform input[type="number"],
+.front .region-content .block-webform input[type="search"],
+.front .region-content .block-webform input[type="time"],
+.front .region-content .block-webform input[type="url"],
+.front .region-content .block-webform textarea,
+.front .region-content .block-webform select {
+  padding: 15px;
+  background-color: transparent;
+  border-color: #54b2ef;
+}
+.front .region-content .block-webform input[type="submit"],
+.front .region-content .block-webform input[type="button"] {
+  padding: 15px;
+}
+.front .region-content .block-webform .form-actions {
+  margin-bottom: 0;
+}
+.front .region-content .block-webform .webform-component-email,
+.front .region-content .block-webform .webform-component-textfield,
+.front .region-content .block-webform .webform-component-checkboxes {
+  float: left;
+  padding-top: 30px;
+  margin: 0;
+}
+.front .region-content .block-webform .webform-component-email label,
+.front .region-content .block-webform .webform-component-textfield label,
+.front .region-content .block-webform .webform-component-checkboxes label {
+  display: block;
+  margin: 0;
+}
+.front .region-content .block-webform .webform-component-email:nth-child(even),
+.front .region-content .block-webform .webform-component-textfield:nth-child(even),
+.front .region-content .block-webform .webform-component-checkboxes:nth-child(even) {
+  width: 47%;
+  margin-right: 3%;
+}
+.front .region-content .block-webform .webform-component-email:nth-child(odd),
+.front .region-content .block-webform .webform-component-textfield:nth-child(odd),
+.front .region-content .block-webform .webform-component-checkboxes:nth-child(odd) {
+  width: 47%;
+  margin-left: 3%;
+}
+
 /* ############################### */
 /* END >>SCSS IMPORTS<< */
 #content .region-content .content .view-investornews .pager li a {
