@@ -76,12 +76,90 @@ window.addEventListener("load", function(){
 	})
 });
 
-
 </script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php print $page_top; ?>
   <?php print $page; ?>
+
+  <div class="toggler" data-toggle="#after-sales-service">
+      <div class="toggler__icon">
+          <i class="fas fa-cogs"></i>
+      </div>
+
+      <div class="toggler__text">
+          Need after sales service?
+      </div>
+
+      <div class="toggler__icon">
+          <i class="fas fa-angle-up"></i>
+      </div>
+  </div>
+
+  <div class="popup-cta" id="after-sales-service">
+      <button class="popup-cta__close" data-toggle="#after-sales-service">
+          <i class="fas fa-times"></i>
+      </button>
+
+      <div class="popup-cta__heading">
+          <h2 class="popup-cta__heading__title">How can i help?</h2>
+      </div>
+
+      <div class="popup-cta__image">
+          <img src="<?= $theme_path ?>/assets/img/popup-cta__how-can-i-help.jpg"
+               alt="">
+      </div>
+
+      <div class="popup-cta__body">
+          <div>
+              <h5>Contact:</h5>
+          </div>
+          <div class="popup-cta__contact">
+              <h3>GKS INTERNATIONAL</h3>
+          </div>
+          <div class="popup-cta__contact_description">
+              Your global after sales service provider
+          </div>
+
+          <div class="popup-cta__contact-item">
+              <div class="popup-cta__contact-item__icon">
+                  <i class="fas fa-envelope"></i>
+              </div>
+              <div class="popup-cta__contact-item__text">
+                  <a href="mailto:info@gks-international.com">info@gks-international.com</a>
+              </div>
+          </div>
+          <div class="popup-cta__contact-item">
+              <div class="popup-cta__contact-item__icon">
+                  <i class="fas fa-phone"></i>
+              </div>
+              <div class="popup-cta__contact-item__text">
+                  +45 5782 0910 (DK)
+              </div>
+          </div>
+          <div class="popup-cta__contact-item">
+              <div class="popup-cta__contact-item__icon">
+                  <i class="fas fa-phone"></i>
+              </div>
+              <div class="popup-cta__contact-item__text">
+                  +1 574 272 9950 (USA)
+              </div>
+          </div>
+          <div class="popup-cta__contact-item">
+              <div class="popup-cta__contact-item__icon">
+                  <i class="fas fa-home"></i>
+              </div>
+              <div class="popup-cta__contact-item__text">
+                  <a href="http://gks-international.com/" target="_blank">www.gks-international.com</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Begin - load javascript files -->
+  <?php print $scripts; ?>
+  <!-- End - load javascript files -->
+
   <?php print $page_bottom; ?>
 </body>
 </html>

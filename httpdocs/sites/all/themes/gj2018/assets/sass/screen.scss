@@ -419,9 +419,11 @@ span {
 /* 3. Global styles
 ################################################################### */
 #back-top {
+  display: none !important;
+
   position: fixed;
-  bottom: 60px;
-  right: 5%;
+  bottom: 30px;
+  right: 20px;
   width: 30px;
   height: 30px;
   background: url(../img/corner-pointer-white.svg) $gj-cyan center 7px no-repeat;  

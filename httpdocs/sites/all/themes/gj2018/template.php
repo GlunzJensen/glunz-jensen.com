@@ -134,20 +134,36 @@ function gj2018_preprocess_field(&$variables) {
 }
 
 function gj2018_preprocess_html(&$vars) {
- if ($vars['user']) {
-   foreach($vars['user']->roles as $key => $role){
-     $role_class = 'role-' . str_replace(' ', '-', $role);
-     $vars['classes_array'][] = $role_class;
-   }
- }
- $path = drupal_get_path_alias();
- $aliases = explode('/', $path);
+  $theme_path = path_to_theme();
 
- foreach($aliases as $alias) {
-   $vars['classes_array'][] = drupal_clean_css_identifier($alias);
- }
+  $current_theme = variable_get('theme_default', 'none');
+
+  if ($vars['user']) {
+    foreach ($vars['user']->roles as $key => $role) {
+      $role_class = 'role-' . str_replace(' ', '-', $role);
+      $vars['classes_array'][] = $role_class;
+    }
+  }
+  $path = drupal_get_path_alias();
+  $aliases = explode('/', $path);
+
+  foreach ($aliases as $alias) {
+    $vars['classes_array'][] = drupal_clean_css_identifier($alias);
+  }
+
+  $vars['theme_path'] = $theme_path;
+
+  // Add javascript files
+  drupal_add_js($theme_path . '/assets/js/bellcom.js',
+    array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'group' => JS_THEME,
+    ));
+
+  // Add fontawesome library
+  drupal_add_js('https://use.fontawesome.com/releases/v5.0.10/js/all.js', ['type' => 'external']);
 }
-
 
 /**
 * Implements hook_form_alter().
