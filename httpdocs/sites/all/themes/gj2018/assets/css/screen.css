@@ -3598,7 +3598,6 @@ Version: 2018
   margin-top: 10px;
   width: auto;
   background-size: 2em;
-  float: left;
 }
 @media (max-width: 680px) {
   #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper span.file {
@@ -3653,9 +3652,15 @@ Version: 2018
   display: block;
   position: relative;
   clear: both;
-  font-size: 1.2em;
+  font-size: 26px;
+  font-weight: bold;
   color: #5a5a5a;
   margin-bottom: 15px;
+}
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .manual-product-id {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 20px;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .file:nth-last-child(4) a:after {
   display: none;
@@ -3683,7 +3688,12 @@ Version: 2018
   clear: both;
   margin-top: 10px;
   color: #5a5a5a;
-  float: left;
+}
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .manualdate .label-inline {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .manualsize {
   display: block;
@@ -3691,7 +3701,12 @@ Version: 2018
   clear: both;
   margin-top: 5px;
   color: #5a5a5a;
-  float: left;
+}
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .manualsize .label-inline {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right a.more-manuals-link {
   display: inline-block;
@@ -3704,13 +3719,7 @@ Version: 2018
   width: 175px;
   text-transform: uppercase;
   margin-top: 18px;
-  float: left;
   font-family: "ArimoRegular";
-}
-@media (max-width: 680px) {
-  #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right a.more-manuals-link {
-    float: right;
-  }
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper .description {
   display: block;
@@ -3730,15 +3739,23 @@ Version: 2018
   margin-top: 25px;
   float: left;
 }
-#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left, #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right {
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left,
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right {
   width: 100%;
 }
-#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left .label-inline, #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right .label-inline {
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left > .label-inline,
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right > .label-inline {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left .label-inline,
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right .label-inline {
   font-size: 1.2em;
   font-family: "ArimoBold";
   display: block;
 }
-#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left header .label-inline, #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right header .label-inline {
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left header .label-inline,
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right header .label-inline {
   font-size: 1em;
   font-family: "helvetica";
   display: block;
@@ -3787,19 +3804,6 @@ Version: 2018
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-brochures .node-brochures h2 {
   display: none;
-}
-#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-brochures .node-brochures:last-child:after {
-  display: none;
-}
-#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-brochures .node-brochures:after {
-  content: '//';
-  display: inline-block;
-  position: relative;
-  margin-right: 14px;
-  color: #7ccbef;
-  left: 7px;
-  top: 17px;
-  visibility: visible;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-accessories .node {
   margin-bottom: 35px;
@@ -4022,6 +4026,45 @@ Version: 2018
 }
 .node-type-product #content h1.title {
   display: none;
+}
+
+/*
+ * Manuals are messy
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-9 | @mnbellcom
+ */
+.group-manuals .group-header {
+  margin-bottom: 30px;
+}
+
+.group-manuals .node-manual {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  background-color: #fff !important;
+}
+
+.node-manual .manual-subtitle {
+  font-weight: bold;
+}
+
+/*
+ * Software is messy
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-10 | @mnbellcom
+ */
+.group-software .group-header {
+  margin-bottom: 30px;
+}
+
+.group-software .node-software-platform > .group-left > .label-inline {
+  font-size: 30px !important;
+  margin-bottom: 10px;
+}
+
+.group-software .node-software-platform .node-manual {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  background-color: #fff !important;
 }
 
 /*
