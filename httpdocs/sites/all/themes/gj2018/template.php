@@ -162,7 +162,7 @@ function gj2018_preprocess_html(&$vars) {
     ));
 
   // Add fontawesome library
-  drupal_add_js('https://use.fontawesome.com/releases/v5.0.10/js/all.js', ['type' => 'external']);
+  drupal_add_js('https://use.fontawesome.com/releases/v5.0.10/js/all.js',array('type' => 'external'));
 }
 
 /**
