@@ -4942,7 +4942,7 @@ Version: 2018
 /*
  * Popup call-to-action
  * ---------------------------------------------------------------------------------------------------------------------------------------------------------
- * GJ-7 | @mnbellcom
+ * GJ-7a | @mnbellcom
  */
 .toggler {
   position: fixed;
@@ -5080,6 +5080,104 @@ Version: 2018
 }
 
 .popup-cta__contact-item__text a {
+  text-decoration: underline;
+}
+
+/*
+ * Product call-to-action
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-7b | @mnbellcom
+ */
+.region-toppic {
+  position: relative;
+}
+.region-toppic::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.product-cta {
+  padding: 45px;
+  color: #5a5a5a;
+  background-color: #dff5fd;
+  opacity: .9;
+}
+.product-cta h1, .product-cta h2, .product-cta h3, .product-cta h4, .product-cta h5 {
+  margin: 0;
+}
+.product-cta h5 {
+  font-weight: normal;
+}
+.product-cta h1, .product-cta h2, .product-cta h3, .product-cta h4, .product-cta h5,
+.product-cta p,
+.product-cta a {
+  color: #5a5a5a;
+}
+@media (min-width: 891px) {
+  .product-cta {
+    position: absolute;
+    top: 63px;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 300px;
+  }
+}
+
+.product-cta__heading {
+  text-align: center;
+}
+
+.product-cta__heading__title {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.product-cta__image {
+  padding: 15px 0;
+  text-align: center;
+}
+.product-cta__image img {
+  max-width: 170px;
+  border-radius: 100%;
+  border: 10px solid #fff;
+}
+
+.product-cta__contact {
+  padding: 5px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.product-cta__contact + .product-cta__contact_description {
+  margin-top: 10px;
+}
+
+.product-cta__contact_description {
+  color: #24aef2;
+}
+.product-cta__contact_description + .product-cta__contact-item {
+  margin-top: 25px;
+}
+
+.product-cta__contact-item {
+  display: flex;
+  align-items: center;
+}
+.product-cta__contact-item + .product-cta__contact-item {
+  margin-top: 10px;
+}
+
+.product-cta__contact-item__icon {
+  font-size: 24px;
+  color: #24aef2;
+}
+.product-cta__contact-item__icon + .product-cta__contact-item__text {
+  margin-left: 15px;
+}
+
+.product-cta__contact-item__text a {
   text-decoration: underline;
 }
 

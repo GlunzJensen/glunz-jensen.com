@@ -73,7 +73,7 @@ function gj2018_section() {
  }
 }
 
-function gj2018_process_html(&$vars) {
+function gj2018_process_html(&$variables) {
  $before = array(
    "/>\s\s+/",
    "/\s\s+</",
@@ -85,26 +85,26 @@ function gj2018_process_html(&$vars) {
  $after = array('> ', ' <', '> <', ' ', ' ');
 
 
- $page_top = $vars['page_top'];
+ $page_top = $variables['page_top'];
  $page_top = preg_replace($before, $after, $page_top);
- $vars['page_top'] = $page_top;
+ $variables['page_top'] = $page_top;
 
 
- if (!preg_match('/<pre|<textarea/', $vars['page'])) {
-   $page = $vars['page'];
+ if (!preg_match('/<pre|<textarea/', $variables['page'])) {
+   $page = $variables['page'];
    $page = preg_replace($before, $after, $page);
-   $vars['page'] = $page;
+   $variables['page'] = $page;
  }
 
- $page_bottom = $vars['page_bottom'];
+ $page_bottom = $variables['page_bottom'];
  $page_bottom = preg_replace($before, $after, $page_bottom);
- $vars['page_bottom'] = $page_bottom . drupal_get_js('footer');
+ $variables['page_bottom'] = $page_bottom . drupal_get_js('footer');
 
 
 }
 
-function gj2018_process_node(&$vars) {
-    switch($vars['type']){
+function gj2018_process_node(&$variables) {
+    switch($variables['type']){
         case 'product':
              drupal_add_js(drupal_get_path('theme','gj2018').'/assets/js/tabs.js');
              drupal_add_js(drupal_get_path('theme','gj2018').'/assets/js/view.product.js');
@@ -133,25 +133,25 @@ function gj2018_preprocess_field(&$variables) {
     }
 }
 
-function gj2018_preprocess_html(&$vars) {
+function gj2018_preprocess_html(&$variables) {
   $theme_path = path_to_theme();
 
   $current_theme = variable_get('theme_default', 'none');
 
-  if ($vars['user']) {
-    foreach ($vars['user']->roles as $key => $role) {
+  if ($variables['user']) {
+    foreach ($variables['user']->roles as $key => $role) {
       $role_class = 'role-' . str_replace(' ', '-', $role);
-      $vars['classes_array'][] = $role_class;
+      $variables['classes_array'][] = $role_class;
     }
   }
   $path = drupal_get_path_alias();
   $aliases = explode('/', $path);
 
   foreach ($aliases as $alias) {
-    $vars['classes_array'][] = drupal_clean_css_identifier($alias);
+    $variables['classes_array'][] = drupal_clean_css_identifier($alias);
   }
 
-  $vars['theme_path'] = $theme_path;
+  $variables['theme_path'] = $theme_path;
 
   // Add javascript files
   drupal_add_js($theme_path . '/assets/js/bellcom.js',
@@ -192,4 +192,10 @@ function gj2018_form_alter(&$form, &$form_state, $form_id) {
 
 
  }
+}
+
+function gj2018_preprocess_block(&$variables) {
+  $theme_path = path_to_theme();
+
+  $variables['theme_path'] = $theme_path;
 }

@@ -82,6 +82,7 @@ window.addEventListener("load", function(){
   <?php print $page_top; ?>
   <?php print $page; ?>
 
+  <!-- Begin - toggler -->
   <div class="toggler" data-toggle="#after-sales-service">
       <div class="toggler__icon">
           <i class="fas fa-cogs"></i>
@@ -95,7 +96,9 @@ window.addEventListener("load", function(){
           <i class="fas fa-angle-up"></i>
       </div>
   </div>
+  <!-- End - toggler -->
 
+  <!-- Begin - popup cta -->
   <div class="popup-cta" id="after-sales-service">
       <button class="popup-cta__close" data-toggle="#after-sales-service">
           <i class="fas fa-times"></i>
@@ -106,7 +109,7 @@ window.addEventListener("load", function(){
       </div>
 
       <div class="popup-cta__image">
-          <img src="<?= $theme_path ?>/assets/img/popup-cta__how-can-i-help.jpg"
+          <img src="/<?= $theme_path ?>/assets/img/popup-cta.jpg"
                alt="">
       </div>
 
@@ -155,6 +158,7 @@ window.addEventListener("load", function(){
           </div>
       </div>
   </div>
+  <!-- End - popup cta -->
 
   <!-- Begin - load javascript files -->
   <?php print $scripts; ?>
