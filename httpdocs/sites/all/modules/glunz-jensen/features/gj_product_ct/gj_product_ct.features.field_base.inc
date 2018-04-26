@@ -245,7 +245,7 @@ function gj_product_ct_field_default_field_bases() {
   // Exported field_base: 'field_filter_technology'.
   $field_bases['field_filter_technology'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_filter_technology',
