@@ -538,16 +538,16 @@ $headerheight: 62px;
               }
               span {
                 &.file {
-                  display: inline-block;
+                  display: block;
                   padding: 6px 0px 6px 35px;
                   background: url(../img/pdf_icon.svg) no-repeat top left;
                   margin-bottom: 5px;
                   margin-top: 10px;
                   width: auto;
                   background-size: 2em;
+                  float: none;
                   @include breakpoint($max680) {
                     clear: both;
-                    float: left;
                     margin-bottom: 15px;
                   }
                   a {
@@ -607,25 +607,6 @@ $headerheight: 62px;
                       a {
                         &:after {
                           display: none;
-                        }
-                      }
-                    }
-                    a {
-                      &:after {
-                        content: '//';
-                        display: inline-block;
-                        position: relative;
-                        margin-right: 14px;
-                        color: $cyan-highgloss;
-                        left: 7px;
-                        top: 1px;
-                        @include breakpoint($max680) {
-                          display: none;
-                        }
-                      }
-                      &:hover {
-                        &:after {
-                          color: $gj-cyan;
                         }
                       }
                     }

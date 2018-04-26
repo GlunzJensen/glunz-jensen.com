@@ -3591,18 +3591,18 @@ Version: 2018
   }
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper span.file {
-  display: inline-block;
+  display: block;
   padding: 6px 0px 6px 35px;
   background: url(../img/pdf_icon.svg) no-repeat top left;
   margin-bottom: 5px;
   margin-top: 10px;
   width: auto;
   background-size: 2em;
+  float: none;
 }
 @media (max-width: 680px) {
   #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper span.file {
     clear: both;
-    float: left;
     margin-bottom: 15px;
   }
 }
@@ -3664,23 +3664,6 @@ Version: 2018
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .file:nth-last-child(4) a:after {
   display: none;
-}
-#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .file a:after {
-  content: '//';
-  display: inline-block;
-  position: relative;
-  margin-right: 14px;
-  color: #7ccbef;
-  left: 7px;
-  top: 1px;
-}
-@media (max-width: 680px) {
-  #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .file a:after {
-    display: none;
-  }
-}
-#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .file a:hover:after {
-  color: #54b2ef;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-download .fieldset-wrapper header .group-right .manualdate {
   display: block;
