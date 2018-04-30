@@ -3226,6 +3226,13 @@ Version: 2018
   background: url(../img/accessories.svg) center 9px no-repeat;
   background-size: 5.5em;
 }
+#content .innerwrapper .node-product .horizontal-tabs .tabcontainer ul.horizontal-tabs-list li.group-case-stories .controllers {
+  display: none;
+}
+#content .innerwrapper .node-product .horizontal-tabs .tabcontainer ul.horizontal-tabs-list li.group-case-stories a {
+  background: url(../img/case.svg) center 9px no-repeat;
+  background-size: 6.5em;
+}
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes {
   background: whitesmoke;
   width: 100%;
