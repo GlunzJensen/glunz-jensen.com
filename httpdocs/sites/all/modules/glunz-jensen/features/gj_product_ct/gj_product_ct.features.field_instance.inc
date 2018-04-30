@@ -386,9 +386,8 @@ function gj_product_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 37,
       ),
       'teaser' => array(
@@ -514,7 +513,7 @@ function gj_product_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 27,
+      'weight' => 28,
     ),
   );
 
@@ -1126,6 +1125,47 @@ If so, choose the appropriate OEMs.',
     ),
   );
 
+  // Exported field_instance: 'node-product-field_prod_case_stories'.
+  $field_instances['node-product-field_prod_case_stories'] = array(
+    'bundle' => 'product',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 41,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_prod_case_stories',
+    'label' => 'Case stories',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 27,
+    ),
+  );
+
   // Exported field_instance: 'node-product-field_product_category'.
   $field_instances['node-product-field_product_category'] = array(
     'bundle' => 'product',
@@ -1494,6 +1534,7 @@ Choose all the appropriate groups, e.g. "Agfa". G&J Employees can see all produc
   t('Accessory');
   t('Body');
   t('Brochure');
+  t('Case stories');
   t('Discontinued');
   t('Filter format');
   t('Filter functions');

@@ -72,6 +72,33 @@ function gj_product_ct_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_case_stories|node|product|default';
+  $field_group->group_name = 'group_case_stories';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'product';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_product';
+  $field_group->data = array(
+    'label' => 'Case stories',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_prod_case_stories',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-case-stories field-group-htab',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_case_stories|node|product|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_download|node|product|default';
   $field_group->group_name = 'group_download';
   $field_group->entity_type = 'node';
@@ -80,7 +107,7 @@ function gj_product_ct_field_group_info() {
   $field_group->parent_name = 'group_product';
   $field_group->data = array(
     'label' => 'Download',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'group_brochures',
       1 => 'group_software',
@@ -245,6 +272,7 @@ The equipment will be delivered with a hardcopy of the <a href="/manual/21741"><
       1 => 'group_accessories',
       2 => 'group_specifications',
       3 => 'group_download',
+      4 => 'group_case_stories',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -346,6 +374,7 @@ The equipment will be delivered with a hardcopy of the <a href="/manual/21741"><
   t(' ');
   t('Accessories');
   t('Brochures');
+  t('Case stories');
   t('Download');
   t('Highlight');
   t('Manuals');
