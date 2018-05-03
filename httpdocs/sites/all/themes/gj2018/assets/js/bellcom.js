@@ -41,13 +41,37 @@ jQuery(document).ready(function () {
     $('[data-toggle]').on('click', function (event) {
         event.stopImmediatePropagation();
         event.preventDefault();
-        console.log('Clicked');
 
         var $element = $(this),
             target = $element.attr('data-toggle'),
             $target = $(target);
 
         $target.toggleClass('visible');
+    });
+
+    // Remove .nolink and .separator
+    $('.slinky-menu, .navigation-bar__dropup')
+        .find('.nolink, .separator')
+        .parent()
+        .remove();
+
+    // Sidr
+    $('.slinky-menu')
+        .find('ul, li, a')
+        .removeClass();
+
+    $('.sidr__toggle').sidr({
+        name: 'sidr-main',
+        side: 'left',
+        displace: false,
+        renaming: false,
+        source: '.sidr-source-provider'
+    });
+
+    // Slinky
+    $('.sidr .slinky-menu').slinky({
+        title: true,
+        label: ''
     });
 
 })(jQuery);

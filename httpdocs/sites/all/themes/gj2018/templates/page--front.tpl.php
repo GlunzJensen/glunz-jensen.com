@@ -65,48 +65,65 @@ $path_alias = $base_url . '/' . drupal_lookup_path('alias', $path);
 $url_encoded = urlencode($path_alias);
 ?>
 <div id="pagewrapper">
-    <div id="back-top">^</div>
-    <?php include $theme_path . '/assets/includes/header.inc'; ?>
-    <div id="searchbar">
+  <div id="back-top">^</div>
+
+  <!-- Begin - sidr source provider -->
+  <aside class="sidr-source-provider">
+
+    <!-- Begin - navigation -->
+    <div class="slinky-menu">
+
+      <?php if (!empty($menu_slinky_custom__primary)): ?>
+        <?php print render($menu_slinky_custom__primary); ?>
+      <?php endif; ?>
+
+    </div>
+    <!-- End - navigation -->
+
+  </aside>
+  <!-- End - sidr source provider -->
+
+  <?php include $theme_path . '/assets/includes/header.inc'; ?>
+  <div id="searchbar">
     <span class="container">
     <?php print render($page['search']); ?>
     </span>
-    </div>
-    <?php if ($page['toppic']): ?>
-        <span class="txt-topbanner">
+  </div>
+  <?php if ($page['toppic']): ?>
+    <span class="txt-topbanner">
       <?php print render($page['toppic']); ?>
     </span><!--/txt-topbanner-->
-    <?php endif; ?>
-    <div class="socials-top">
-        <a id="facebook" class="facebook popup"
-           href="https://www.facebook.com/sharer/sharer.php?u=<?php print $url_encoded; ?>&t=<?php print urlencode($title); ?>">Share
-            on facebook</a>
-        <a id="twitter" class="twitter popup"
-           href="http://twitter.com/share?url=<?php print $url_encoded; ?>&text=<?php print urlencode($title) ?>&via=TWITTER_HANDLE">Share
-            on twitter</a>
-        <a id="linkedin" class="linkedin popup"
-           href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $url_encoded; ?>&title=<?php print urlencode($title) ?>&source=LinkedIn
+  <?php endif; ?>
+  <div class="socials-top">
+    <a id="facebook" class="facebook popup"
+       href="https://www.facebook.com/sharer/sharer.php?u=<?php print $url_encoded; ?>&t=<?php print urlencode($title); ?>">Share
+      on facebook</a>
+    <a id="twitter" class="twitter popup"
+       href="http://twitter.com/share?url=<?php print $url_encoded; ?>&text=<?php print urlencode($title) ?>&via=TWITTER_HANDLE">Share
+      on twitter</a>
+    <a id="linkedin" class="linkedin popup"
+       href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $url_encoded; ?>&title=<?php print urlencode($title) ?>&source=LinkedIn
   ">Share on LinkedIn</a>
-        <a class="contact"
-           href="mailto:?&subject=I wanted you to see this site&body=Check out this site: <?php print $url_encoded; ?>">Share
-            by E-mail</a>
-    </div><!--/Socials-top-->
+    <a class="contact"
+       href="mailto:?&subject=I wanted you to see this site&body=Check out this site: <?php print $url_encoded; ?>">Share
+      by E-mail</a>
+  </div><!--/Socials-top-->
 
-    <div id="content">
+  <div id="content">
   <span class="innerwrapper">
     <?php if ($tabs): ?>
-        <div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-      <?php if ($action_links): ?>
-          <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-      <div class="msg-wrapper"><?php print $messages; ?></div><!--msg-wrapper-->
-      <!--<?php if ($title): ?>
+      <div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+    <?php if ($action_links): ?>
+      <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+    <div class="msg-wrapper"><?php print $messages; ?></div><!--msg-wrapper-->
+    <!--<?php if ($title): ?>
   <h1 class="title" id="page-title"><?php print $title; ?></h1>
   <?php endif; ?>-->
-      <?php print render($page['content']); ?>
-      <?php print render($page['partners']); ?>
-      <?php print render($page['highlight']); ?>
+    <?php print render($page['content']); ?>
+    <?php print render($page['partners']); ?>
+    <?php print render($page['highlight']); ?>
   </span><!--/innerwrapper-->
-    </div><!--/content-->
-    <span class="counter"> <?php print render($page['footercounter']); ?> </span>
-    <?php include $theme_path . '/assets/includes/footer.inc'; ?>
+  </div><!--/content-->
+  <span class="counter"> <?php print render($page['footercounter']); ?> </span>
+  <?php include $theme_path . '/assets/includes/footer.inc'; ?>
 </div><!--/pagewrapper-->

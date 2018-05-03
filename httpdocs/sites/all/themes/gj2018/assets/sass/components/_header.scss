@@ -1,0 +1,437 @@
+/*
+Description: The header of the site
+Author URI: http://openusorce.com
+Version: 2018
+*/
+
+$headerheight: 62px;
+
+/* >>HEADER<<
+################################## */
+#pagewrapper {
+  .breadcrumb-wrapper {
+    display: block;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    height: auto;
+    background: whitesmoke;
+    float: left;
+    padding: 13px 0px 3px 0px;
+    z-index: 280;
+    .breadcrumb {
+      @include content-width;
+      font-size: 0.8em;
+      margin-bottom: 0.5em;
+    }
+    a {
+      color: $txt-gray;
+      position: relative;
+      &:hover {
+        color: $gj-cyan;
+      }
+    }
+    &:after {
+      display: inline-block;
+      position: absolute;
+      width: 13%;
+      background: whitesmoke;
+      height: 40px;
+      content: '';
+      float: left;
+      top: -1px;
+      right: -13%;
+      border-top: 1px solid rgba($txt-gray, 0.5);
+    }
+    &:before {
+      display: inline-block;
+      position: absolute;
+      width: 13%;
+      background: whitesmoke;
+      height: 40px;
+      content: '';
+      float: left;
+      top: -1px;
+      left: -13%;
+      border-top: 1px solid rgba($txt-gray, 0.5);
+    }
+  }
+  header {
+    display: block;
+    clear: both;
+    height: auto;
+    position: relative;
+    z-index: 499;
+    background: white;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid rgba($txt-gray, 0.5);
+    @include transition-duration(200ms);
+    @include transition-timing-function(ease-out);
+    @include breakpoint($max980) {
+      width: 100%;
+      padding: 0;
+    }
+    .container {
+      @include content-width;
+      display: block;
+      position: relative;
+      height: 62px;
+      @include breakpoint($max890) {
+        width: 100%;
+        padding: 0;
+      }
+    }
+    &.scroll {
+      @include transition-duration(200ms);
+      @include transition-timing-function(ease-in);
+      #mm-button {
+      }
+    }
+    .logocontainer {
+      display: inline-block;
+      width: 16%;
+      position: relative;
+      float: left;
+      margin-left: 0%;
+      height: 62px;
+      @include breakpoint($max980) {
+
+      }
+      @include breakpoint($max890) {
+        width: 100%;
+      }
+      a {
+        background: url(../img/logo.svg) left center no-repeat;
+        background-size: contain;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: $headerheight;
+        text-indent: -300px;
+        margin-left: -10px;
+        overflow: hidden;
+        @include breakpoint($max980) {
+
+        }
+        @include breakpoint($max890) {
+          background-position: center center;
+          margin-left: 0px;
+        }
+      }
+    }
+    .mainmenu-wrapper {
+      display: inline-block;
+      position: relative;
+      width: 68%;
+      float: left;
+      margin-left: 2%;
+      margin-right: 0%;
+      @include breakpoint($max1120) {
+        margin-left: 0%;
+        width: 70%;
+      }
+      @include breakpoint($max980) {
+
+      }
+
+      ul {
+        &.nice-menu {
+          @include breakpoint($max890) {
+            display: none !important;
+          }
+          li {
+            margin: 0px;
+            li {
+              margin: 0px;
+            }
+          }
+        }
+        &.nice-menu-down {
+          display: block;
+          width: 100%;
+          position: relative;
+          float: left;
+          /*TOPMENU LINE*/
+          li {
+            background: white;
+            display: inline-block;
+            width: auto;
+            float: left;
+            position: relative;
+            text-align: left;
+            border: none !important;
+            height: 62px;
+            a {
+              color: $txt-gray;
+              padding: 0px;
+              width: 100%;
+              display: inline-block;
+              opacity: 1;
+              font-size: 0.9em;
+              text-align: left;
+              padding: 25px 18px 20px 17px;
+              text-transform: uppercase;
+              @include breakpoint($min1600) {
+                font-size: 1em;
+              }
+              @include breakpoint($max1120) {
+                font-size: 0.8em;
+                padding: 28px 12px 15px 11px;
+              }
+              &:hover {
+                color: $gj-cyan;
+              }
+            }
+            /*DROPDOWN*/
+            ul {
+              left: 0px;
+              top: 60px;
+              display: block;
+              width: 185px;
+              position: absolute;
+              z-index: 999;
+              background-color: none;
+              margin: 0;
+              padding: 0;
+              border: none;
+              max-width: 185px;
+              min-width: auto;
+              /* 1.led*/
+              li {
+                display: block;
+                width: 100%;
+                background: none;
+                height: auto;
+                &.menuparent {
+                  > a {
+                    background: url(../img/menu-pointer.svg) white 97% -32px no-repeat;
+                    background-size: 1.2em;
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                      background: url(../img/menu-pointer.svg) white 97% -34px no-repeat;
+                      background-size: 20px 60px;
+                    }
+                  }
+                  &:hover {
+                    > a {
+                      background: url(../img/menu-pointer.svg) rgb(245, 245, 245) 97% 16px no-repeat;
+                      background-size: 1.2em;
+                      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        background: url(../img/menu-pointer.svg) rgb(245, 245, 245) 97% 16px no-repeat;
+                        background-size: 20px 60px;
+                      }
+                    }
+                  }
+                  a {
+                    text-transform: none;
+                    padding: 14px 18px 13px 17px;
+                    @include box-sizing(border-box);
+                    font-size: 0.8em;
+
+                  }
+                  ul {
+                    li {
+                      a {
+                        background-color: white !important;
+                        color: $txt-gray;
+                        &:hover {
+                          background-color: rgb(245, 245, 245) !important;
+                          color: $gj-cyan;
+                        }
+                      }
+                    }
+                  }
+                }
+                a {
+                  text-transform: none;
+                  background: white;
+                  padding: 14px 18px 13px 17px;
+                  @include box-sizing(border-box);
+                  font-size: 0.8em;
+                  &:hover {
+                    background: rgb(245, 245, 245);
+                  }
+                }
+                &.over {
+                  a {
+                    color: $gj-cyan;
+                  }
+                }
+                /*2. led*/
+                ul {
+                  position: absolute;
+                  left: 185px;
+                  top: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .searchlogin {
+      display: inline-block;
+      width: 14%;
+      position: relative;
+      float: left;
+      height: $headerheight;
+      @include box-sizing(border-box);
+      border-left: 1px solid $txt-gray;
+      @include breakpoint($max1120) {
+        font-size: 0.8em;
+      }
+      @include breakpoint($max890) {
+        width: 30%;
+        font-size: 1em;
+      }
+      @include breakpoint($max550) {
+        width: 45%;
+      }
+      a {
+        display: inline-block;
+        position: relative;
+        float: left;
+        height: $headerheight;
+        background: none;
+        @include box-sizing(border-box);
+        overflow: hidden;
+        &.search {
+          width: 38%;
+          background: url(../img/search.svg) center no-repeat;
+          background-size: 2.8em;
+          text-indent: -999px;
+          @include breakpoint($max550) {
+            width: 50%;
+          }
+          &.open {
+            background: url(../img/close-burger.svg) white center 20px no-repeat;
+            background-size: 1.8em;
+          }
+        }
+        &.login {
+          width: 62%;
+          background: url(../img/user.svg) $gj-cyan 90% 22px no-repeat;
+          background-size: 1.5em;
+          padding: 29px 0px 0px 12px;
+          text-transform: uppercase;
+          color: white;
+          font-size: 0.9em;
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            background-size: auto 34%;
+          }
+          @include breakpoint($max890) {
+            background-position: 64% 22px;
+          }
+          @include breakpoint($max680) {
+            background-position: 80% 22px;
+          }
+          @include breakpoint($max550) {
+            text-indent: -500px;
+            overflow: hidden;
+            background-position: center;
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*MOBILE MENU*/
+.mm-container {
+  display: none;
+  #mm-button {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background: url(../img/burger.svg) white center 7px no-repeat;
+    background-size: 3.5em;
+    border: none;
+    z-index: 500;
+    right: 10px;
+    &.push {
+      background: url(../img/close-burger.svg) white center 7px no-repeat;
+      background-size: 3.5em;
+      top: 0px;
+      left: 30px;
+    }
+  }
+  @include breakpoint($max890) {
+    display: block;
+    position: relative;
+    width: 70%;
+    float: left;
+    text-align: right;
+  }
+  @include breakpoint($max550) {
+    width: 50%;
+    margin-right: 5%;
+    text-align: right;
+  }
+}
+
+.mobile-menu-wrapper {
+  display: none;
+  @include breakpoint($max890) {
+    display: block;
+  }
+}
+
+#mobile-nav {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: rgba($gj-cyan, 0.8);
+  position: absolute;
+  top: 62px;
+  right: 0px;
+  z-index: 400;
+  @include box-sizing(border-box);
+  padding: 50px 30px 0px 30px;
+  &.nav-closed {
+    right: -1200px;
+  }
+  &.nav-open {
+    right: 0px;
+  }
+  .indhold {
+    .nice-menu {
+      a {
+        display: block;
+        width: 100%;
+        position: relative;
+        float: left;
+        font-size: 1.5em;
+        text-align: center;
+        background: $gj-cyan;
+        color: white;
+        padding: 18px 0px 14px 0px;
+        text-transform: uppercase;
+        border-bottom: 1px dashed white;
+      }
+      li {
+        display: block;
+        a {
+          display: block;
+
+        }
+      }
+      ul {
+        display: block;
+        width: 100%;
+        float: left;
+        position: relative;
+        a {
+          display: block;
+          text-transform: none;
+          background: white;
+          color: $txt-gray;
+        }
+      }
+    }
+  }
+}
+
+/* ############################### */
+/* END >>HEADER<< */

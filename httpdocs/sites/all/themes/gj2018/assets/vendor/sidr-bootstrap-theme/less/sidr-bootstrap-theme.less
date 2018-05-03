@@ -1,0 +1,119 @@
+// |--------------------------------------------------------------------------
+// | Sidr bootstrap theme
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sidr
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@import "variables";
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@import "mixins";
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.layout__wrapper {
+  .box-shadow(@sidr-box-shadow);
+}
+
+.sidr-source-provider {
+  display: none;
+}
+
+.sidr {
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+
+  top: 0;
+  z-index: -1;
+
+  height: 100%;
+  width: @sidr-width;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background-color: @sidr-background-color;
+
+  &.left {
+    left: floor( (0 - @sidr-width) );
+    right: auto;
+  }
+
+  &.right {
+    left: auto;
+    right: floor( (0 - @sidr-width) );
+  }
+
+  > * {
+    flex-shrink: 0;
+  }
+}
+.sidr-inner {
+  display: flex;
+
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+// What, why this?
+// --------------------------------------------------------------------------------
+// Well... sidr is via jQuery inlining position absolute on the .sidr-open, when
+// toggling the sidr.
+// This makes the sidr scrollable from side-to-side. Try uncommenting the following
+// and open the left sidr (only an issue on the left sidr) on your phone.
+// You can then slide the body wrapper from right to left underneath the sidr.
+// Overflow:hidden on body does not work.
+.sidr-main-open {
+    position: fixed !important;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media @breakpoint-mobile-and-up {}
+
+// Mobile - only
+@media @breakpoint-mobile-only {}
+
+// Tablet - and up
+@media @breakpoint-tablet-and-up {}
+
+// Tablet - only
+@media @breakpoint-tablet-only {}
+
+// Desktop - and up
+@media @breakpoint-desktop-and-up {}
+
+// Desktop - only
+@media @breakpoint-desktop-only {}
+
+// Large desktop - and up
+@media @breakpoint-large-desktop-and-up {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

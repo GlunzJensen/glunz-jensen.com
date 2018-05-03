@@ -1,0 +1,46 @@
+// Legacy
+/*$px10-821: 10px 821px;
+$px321-600: 321px 600px;
+$px490-599: 490px 599px;
+$px600-945: 600px 945px;
+$px601-820: 601px 820px;
+$mm-px620-680: 620px 680px;
+$mm-px620-725: 620px 725px;
+$mm-px620-820: 620px 820px;
+$ekstra-solution-590-680: 590px 680px;
+$px946-1045: 946px 1045px;
+$min480: min-width 480px;
+$max320: max-width 320px;
+$max400: max-width 400px;
+$max480: max-width 480px;
+$max600: max-width 600px;
+$mm-max620: max-width 620px;*/
+$max550: max-width 550px;
+$max680: max-width 680px;
+$min681: min-width 681px;
+$max1120: max-width 1120px;
+$max740: max-width 740px;
+$max820: max-width 820px;
+$max890: max-width 890px;
+$min891: min-width 891px;
+$max980: max-width 980px;
+$max1160: max-width 1160px;
+$min1600: min-width 1600px;
+$max1320: max-width 1320px;
+
+// Bootstrap breakpoints
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;

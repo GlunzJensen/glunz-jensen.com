@@ -28,7 +28,7 @@
 
             <div class="product-cta__contact-item">
                 <div class="product-cta__contact-item__icon">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fa fa-envelope"></i>
                 </div>
                 <div class="product-cta__contact-item__text">
                     <a href="mailto:gj@glunz-jensen.com">gj@glunz-jensen.com</a>
@@ -36,7 +36,7 @@
             </div>
             <div class="product-cta__contact-item">
                 <div class="product-cta__contact-item__icon">
-                    <i class="fas fa-phone"></i>
+                    <i class="fa fa-phone"></i>
                 </div>
                 <div class="product-cta__contact-item__text">
                     +45 5768 8181

@@ -1,0 +1,158 @@
+// |--------------------------------------------------------------------------
+// | Slinky bootstrap theme
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .pace
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@import "variables";
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@import "mixins";
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.slinky-menu {
+  overflow: hidden;
+
+  transform: translateZ(0);
+  @include transition(all $slinky-menu-transition-time ease-in-out);
+
+  .header {
+    display: flex;
+    position: relative;
+
+    padding: $slinky-menu-link-inner-top-bottom-padding floor( ( $grid-gutter-width / 2 ) );
+
+    align-items: center;
+    justify-content: center;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      padding: 0;
+
+      font-family: $slinky-menu-header-font-family;
+      font-size: $slinky-menu-header-font-size;
+      font-weight: $slinky-menu-header-font-weight;
+      @include line-height-heading($slinky-menu-header-font-size);
+    }
+  }
+
+  .back {
+    position: absolute;
+    left: floor( ( $grid-gutter-width / 2 ) );
+
+    &:before {
+      content: $slinky-menu-back-unicode;
+      margin-right: 1em;
+      float: left;
+    }
+  }
+
+  .next {
+
+    &:after {
+      content: $slinky-menu-next-unicode;
+      margin-left: 1em;
+      float: right;
+    }
+  }
+
+  > ul {
+    position: relative;
+    left: 0;
+
+    transform: translateZ(0);
+
+    .no-touchevents & {
+      @include transition(all $slinky-menu-transition-time ease-in-out);
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  li ul {
+    display: none;
+    left: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  a {
+    display: block;
+
+    color: inherit;
+    text-decoration: none;
+
+    &:not(.back) {
+      padding: $slinky-menu-link-inner-top-bottom-padding floor( ( $grid-gutter-width / 2 ) );
+
+      .no-touchevents & {
+
+        &:hover {
+          background-color: $slinky-menu-link-hover-background-color;
+        }
+      }
+
+      .touchevents & {
+        -webkit-tap-highlight-color: $slinky-menu-link-hover-background-color;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

@@ -1,4 +1,6 @@
 <?php
+include( dirname(__FILE__) . '/include/menu.inc');
+
 /**
 * include template overwrites
 */
@@ -160,9 +162,19 @@ function gj2018_preprocess_html(&$variables) {
       'scope' => 'footer',
       'group' => JS_THEME,
     ));
+}
 
-  // Add fontawesome library
-  drupal_add_js('https://use.fontawesome.com/releases/v5.0.10/js/all.js',array('type' => 'external'));
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function gj2018_preprocess_page(&$variables) {
+  $primary_navigation_name = variable_get('menu_main_links_source', 'main-menu');
+  $secondary_navigation_name = variable_get('menu_secondary_links_source', 'user-menu');
+
+  // Navigation
+  $variables['menu_slinky_custom__primary'] = _bellcom_generate_menu($primary_navigation_name, 'slinky-custom', TRUE);
+  $variables['menu_slinky_custom__secondary'] = _bellcom_generate_menu($secondary_navigation_name, 'slinky-custom', TRUE);
 }
 
 /**
@@ -198,4 +210,42 @@ function gj2018_preprocess_block(&$variables) {
   $theme_path = path_to_theme();
 
   $variables['theme_path'] = $theme_path;
+}
+
+/*
+ * Implements theme_menu_tree().
+ * For custom slinky menu types.
+ */
+function gj2018_menu_tree__slinky_custom(&$variables) {
+  return $variables['tree'];
+}
+
+/*
+ * Implements theme_menu_link().
+ */
+function gj2018_menu_link__slinky_custom(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+
+    // Prevent dropdown functions from being added to management menu so it
+    // does not affect the navbar module.
+    if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
+      $sub_menu = drupal_render($element['#below']);
+    }
+
+    elseif ((!empty($element['#original_link']['depth']))) {
+
+      // Add our own wrapper.
+      unset($element['#below']['#theme_wrappers']);
+
+      // Submenu classes
+      $sub_menu = ' <ul>' . drupal_render($element['#below']) . '</ul>';
+    }
+  }
+
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  return '<li>' . $output . $sub_menu . "</li>\n";
 }

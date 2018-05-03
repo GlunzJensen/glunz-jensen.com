@@ -36,6 +36,7 @@ stylesheets[all][] = assets/css/screen.css
 
 scripts[] = assets/js/scrolltop.js
 scripts[] = assets/js/togglemenu.js
-scripts[] = assets/js/mobilemenu.js
 scripts[] = assets/js/jquery.formalize.js
 scripts[] = assets/js/stacktable.js
+scripts[] = assets/vendor/sidr/dist/jquery.sidr.js
+scripts[] = assets/js/custom-slinky.js
