@@ -673,13 +673,13 @@ function gj_product_ct_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_prod_case_stories'.
-  $field_bases['field_prod_case_stories'] = array(
+  // Exported field_base: 'field_prod_testimonials'.
+  $field_bases['field_prod_testimonials'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_prod_case_stories',
+    'field_name' => 'field_prod_testimonials',
     'indexes' => array(
       'format' => array(
         0 => 'format',

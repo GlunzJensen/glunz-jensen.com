@@ -1125,8 +1125,8 @@ If so, choose the appropriate OEMs.',
     ),
   );
 
-  // Exported field_instance: 'node-product-field_prod_case_stories'.
-  $field_instances['node-product-field_prod_case_stories'] = array(
+  // Exported field_instance: 'node-product-field_prod_testimonials'.
+  $field_instances['node-product-field_prod_testimonials'] = array(
     'bundle' => 'product',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1148,7 +1148,7 @@ If so, choose the appropriate OEMs.',
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_prod_case_stories',
+    'field_name' => 'field_prod_testimonials',
     'label' => 'Case stories',
     'required' => 0,
     'settings' => array(
