@@ -1534,7 +1534,6 @@ Choose all the appropriate groups, e.g. "Agfa". G&J Employees can see all produc
   t('Accessory');
   t('Body');
   t('Brochure');
-  t('Testimonials');
   t('Discontinued');
   t('Filter format');
   t('Filter functions');
@@ -1575,6 +1574,7 @@ If so, choose the appropriate OEMs.');
   t('Software');
   t('Solution');
   t('Standard features');
+  t('Testimonials');
   t('User access');
   t('Video');
 

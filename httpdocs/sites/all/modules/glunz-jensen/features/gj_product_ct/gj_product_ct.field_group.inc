@@ -72,33 +72,6 @@ function gj_product_ct_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_testimonials|node|product|default';
-  $field_group->group_name = 'group_testimonials';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'product';
-  $field_group->mode = 'default';
-  $field_group->parent_name = 'group_product';
-  $field_group->data = array(
-    'label' => 'Testimonials',
-    'weight' => '6',
-    'children' => array(
-      0 => 'field_prod_testimonials',
-    ),
-    'format_type' => 'htab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-testimonials field-group-htab',
-        'id' => '',
-      ),
-    ),
-  );
-  $field_groups['group_testimonials|node|product|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_download|node|product|default';
   $field_group->group_name = 'group_download';
   $field_group->entity_type = 'node';
@@ -346,6 +319,33 @@ The equipment will be delivered with a hardcopy of the <a href="/manual/21741"><
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_testimonials|node|product|default';
+  $field_group->group_name = 'group_testimonials';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'product';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_product';
+  $field_group->data = array(
+    'label' => 'Testimonials',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_prod_testimonials',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-testimonials field-group-htab',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_testimonials|node|product|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_videos|node|product|default';
   $field_group->group_name = 'group_videos';
   $field_group->entity_type = 'node';
@@ -374,13 +374,13 @@ The equipment will be delivered with a hardcopy of the <a href="/manual/21741"><
   t(' ');
   t('Accessories');
   t('Brochures');
-  t('Testimonials');
   t('Download');
   t('Highlight');
   t('Manuals');
   t('Overview');
   t('Software');
   t('Specifications');
+  t('Testimonials');
   t('Videos');
 
   return $field_groups;
