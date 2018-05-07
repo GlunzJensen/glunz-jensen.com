@@ -8205,13 +8205,14 @@ Version: 2018
 }
 
 .product-cta {
+  display: none;
   padding: 45px;
   color: #5a5a5a;
   background-color: #dff5fd;
   opacity: .9;
 }
-.front .product-cta {
-  display: none;
+.node-type-product .product-cta {
+  display: block;
 }
 .product-cta h1, .product-cta .heading-h1, .product-cta h2, .product-cta .heading-h2, .product-cta h3, .product-cta .heading-h3, .product-cta h4, .product-cta .heading-h4, .product-cta h5, .product-cta .heading-h5 {
   margin: 0;

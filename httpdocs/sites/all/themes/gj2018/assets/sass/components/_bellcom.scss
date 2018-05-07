@@ -287,14 +287,16 @@
 
 // Product CTA
 .product-cta {
+  display: none;
+
   padding: 45px;
 
   color: #5a5a5a;
   background-color: #dff5fd;
   opacity: .9;
 
-  .front & {
-    display: none;
+  .node-type-product & {
+    display: block;
   }
 
   h1, h2, h3, h4, h5 {
