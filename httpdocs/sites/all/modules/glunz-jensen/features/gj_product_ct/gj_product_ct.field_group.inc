@@ -374,7 +374,7 @@ The equipment will be delivered with a hardcopy of the <a href="/manual/21741"><
   t(' ');
   t('Accessories');
   t('Brochures');
-  t('Case stories');
+  t('Testimonials');
   t('Download');
   t('Highlight');
   t('Manuals');

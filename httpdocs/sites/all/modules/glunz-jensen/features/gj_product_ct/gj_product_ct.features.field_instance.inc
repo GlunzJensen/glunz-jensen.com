@@ -1149,7 +1149,7 @@ If so, choose the appropriate OEMs.',
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_prod_testimonials',
-    'label' => 'Case stories',
+    'label' => 'Testimonials',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -1534,7 +1534,7 @@ Choose all the appropriate groups, e.g. "Agfa". G&J Employees can see all produc
   t('Accessory');
   t('Body');
   t('Brochure');
-  t('Case stories');
+  t('Testimonials');
   t('Discontinued');
   t('Filter format');
   t('Filter functions');
