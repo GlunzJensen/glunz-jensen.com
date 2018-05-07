@@ -89,7 +89,7 @@ function gj_product_ct_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-case-stories field-group-htab',
+        'classes' => 'group-testimonials field-group-htab',
         'id' => '',
       ),
     ),
