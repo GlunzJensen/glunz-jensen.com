@@ -8308,6 +8308,29 @@ Version: 2018
   text-decoration: underline;
 }
 
+/*
+ * Contact page
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-11 | @mnbellcom
+ */
+.node-type-page .stacktable {
+  margin-bottom: 50px !important;
+}
+.node-type-page .stacktable tr {
+  background-color: #fafafa;
+}
+.node-type-page .stacktable tr:first-child {
+  background-color: #f6f6f6;
+}
+.node-type-page .stacktable tr th,
+.node-type-page .stacktable tr td {
+  padding: 10px 15px !important;
+  border: 1px solid #fff;
+}
+.node-type-page .stacktable tr th {
+  font-weight: bold;
+}
+
 .sidr {
   z-index: 2000;
 }

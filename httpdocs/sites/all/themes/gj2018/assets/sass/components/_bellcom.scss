@@ -413,3 +413,34 @@
     text-decoration: underline;
   }
 }
+
+/*
+ * Contact page
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-11 | @mnbellcom
+ */
+
+.node-type-page {
+
+  .stacktable {
+    margin-bottom: 50px !important;
+
+    tr {
+      background-color: #fafafa;
+
+      &:first-child {
+        background-color: #f6f6f6;
+      }
+
+      th,
+      td {
+        padding: 10px 15px !important;
+        border: 1px solid #fff;
+      }
+
+      th {
+        font-weight: bold;
+      }
+    }
+  }
+}
