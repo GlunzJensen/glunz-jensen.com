@@ -4427,6 +4427,7 @@ Version: 2018
 #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent:hover > a {
   background: url(../img/menu-pointer.svg) whitesmoke 97% 16px no-repeat;
   background-size: 1.2em;
+  color: #4aa9ed;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent:hover > a {
@@ -4443,7 +4444,7 @@ Version: 2018
   font-size: 0.8em;
 }
 #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent ul li a {
-  background-color: white !important;
+  background-color: white;
   color: #5a5a5a;
 }
 #pagewrapper header .mainmenu-wrapper ul.nice-menu-down li ul li.menuparent ul li a:hover {

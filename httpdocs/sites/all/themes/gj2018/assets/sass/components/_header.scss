@@ -216,6 +216,7 @@ $headerheight: 62px;
                     > a {
                       background: url(../img/menu-pointer.svg) rgb(245, 245, 245) 97% 16px no-repeat;
                       background-size: 1.2em;
+                      color: #4aa9ed;
                       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
                         background: url(../img/menu-pointer.svg) rgb(245, 245, 245) 97% 16px no-repeat;
                         background-size: 20px 60px;
@@ -232,8 +233,9 @@ $headerheight: 62px;
                   ul {
                     li {
                       a {
-                        background-color: white !important;
+                        background-color: white;
                         color: $txt-gray;
+
                         &:hover {
                           background-color: rgb(245, 245, 245) !important;
                           color: $gj-cyan;
