@@ -4,10 +4,10 @@
 
 /* RESPONSIVE EXAMPLE */
 
-.stacktable.large-only { display: table; }
+.stacktable.large-only { display: table !important; }
 .stacktable.small-only { display: none !important; }
 
 @include breakpoint($max890) {
   .stacktable.large-only { display: none !important; }
-  .stacktable.small-only { display: table; }
+  .stacktable.small-only { display: table !important; }
 }

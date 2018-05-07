@@ -7941,7 +7941,7 @@ Version: 2018
 
 /* RESPONSIVE EXAMPLE */
 .stacktable.large-only {
-  display: table;
+  display: table !important;
 }
 
 .stacktable.small-only {
@@ -7954,7 +7954,7 @@ Version: 2018
   }
 
   .stacktable.small-only {
-    display: table;
+    display: table !important;
   }
 }
 /*
