@@ -148,7 +148,7 @@
 
   z-index: 1000;
 
-  padding: 30px;
+  padding: 20px;
 
   width: 235px;
 
@@ -222,16 +222,27 @@
 }
 
 .popup-cta__image {
-  padding: 15px 0;
+  padding: 5px 0;
 
   text-align: center;
 
   img {
-    max-width: 170px;
+    max-width: 140px;
 
     border-radius: 100%;
 
-    border: 10px solid #fff;
+    border: 5px solid #fff;
+  }
+
+  // Desktop
+  @include breakpoint($min891) {
+    padding: 15px 0;
+
+    img {
+      max-width: 170px;
+
+      border-width: 10px;
+    }
   }
 }
 .popup-cta__body {}
