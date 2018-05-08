@@ -7959,6 +7959,30 @@ Version: 2018
   }
 }
 /*
+ * Button
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+.btn {
+  display: inline-block;
+  padding: 18px 35px;
+  text-transform: uppercase;
+  font-family: "ArimoRegular";
+  font-size: 1.08em;
+  color: #54b2ef;
+}
+.btn.btn-block {
+  display: block;
+}
+.btn.btn-primary {
+  color: #fff;
+  background-color: #7ab0ec;
+}
+.btn.btn-secondary {
+  color: #fff;
+  background-color: #5a5a5a;
+}
+
+/*
  * Newsletter signup on frontpage
  * ---------------------------------------------------------------------------------------------------------------------------------------------------------
  * GJ-17 | @mnbellcom
@@ -8193,6 +8217,9 @@ Version: 2018
 .popup-cta__contact-item + .popup-cta__contact-item {
   margin-top: 10px;
 }
+.popup-cta__contact-item + .popup-cta__action {
+  margin-top: 20px;
+}
 
 .popup-cta__contact-item__icon {
   font-size: 24px;
@@ -8204,6 +8231,10 @@ Version: 2018
 
 .popup-cta__contact-item__text a {
   text-decoration: underline;
+}
+
+.popup-cta__action {
+  text-align: center;
 }
 
 /*
