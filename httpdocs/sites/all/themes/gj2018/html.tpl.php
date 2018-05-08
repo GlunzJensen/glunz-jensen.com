@@ -156,6 +156,9 @@ window.addEventListener("load", function(){
                   <a href="http://gks-international.com/" target="_blank">www.gks-international.com</a>
               </div>
           </div>
+          <div class="popup-cta__action">
+              <?php print l(t('Contact us'), 'node/3918', array('attributes' => array('class' => array('btn', 'btn-secondary')))); ?>
+          </div>
       </div>
   </div>
   <!-- End - popup cta -->
