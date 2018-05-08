@@ -8180,7 +8180,7 @@ Version: 2018
   text-align: center;
 }
 .popup-cta__image img {
-  max-width: 140px;
+  max-width: 100px;
   border-radius: 100%;
   border: 5px solid #fff;
 }
