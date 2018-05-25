@@ -1,17 +1,17 @@
 .socials-top {
   display: block;
   position: fixed;
-  top: 160px; 
+  top: 160px;
   right: 0px;
   height: auto;
   width: 150px;
   z-index: 305;
-@include breakpoint($max980) {
- position: relative;
- width: 100%;
- top: 0px;
- clear: both;
-}
+  @include breakpoint($max980) {
+    position: relative;
+    width: 100%;
+    top: 0px;
+    clear: both;
+  }
   a {
     display: block;
     width: 100%;
@@ -25,60 +25,61 @@
     padding-top: 12px;
     font-size: 0.8em;
     background-size: 1.6em;
-@include breakpoint($max980) {
-  left: 0px;
-  width: 25%;
-  float: left;
-  background-position: center center !important;
-  text-indent: -999px;
-  margin: 15px 0px 20px 0px;
-  padding: 0px;
-  height: 35px;
-}
-    @include transition-duration(200ms);     
+    @include breakpoint($max980) {
+      left: 0px;
+      width: 25%;
+      float: left;
+      background-position: center center !important;
+      text-indent: -999px;
+      margin: 15px 0px 20px 0px;
+      padding: 0px;
+      height: 35px;
+    }
+    @include transition-duration(200ms);
     @include transition-timing-function(ease-out);
     &:hover {
       left: 0px;
-      @include transition-duration(200ms);     
+      @include transition-duration(200ms);
       @include transition-timing-function(ease-in);
     }
     &.facebook {
-     background: url(../img/facebook_blue.svg) white 4px 6px no-repeat;  
-     background-size: 2em; 
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  background: url(../img/facebook_blue.svg) white -63px 2px no-repeat;  
-  background-size: auto 85%; 
-} 
+      background: url(../img/facebook_blue.svg) white 4px 6px no-repeat;
+      background-size: 2em;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: url(../img/facebook_blue.svg) white -63px 2px no-repeat;
+        background-size: auto 85%;
+      }
     }
     &.twitter {
-     background: url(../img/twitter_blue.svg) white 4px 6px no-repeat;  
-     background-size: 2em;  
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  background: url(../img/twitter_blue.svg) white -62px 4px no-repeat;  
-  background-size: auto 85%; 
-}
+      background: url(../img/twitter_blue.svg) white 4px 6px no-repeat;
+      background-size: 2em;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: url(../img/twitter_blue.svg) white -62px 4px no-repeat;
+        background-size: auto 85%;
+      }
     }
     &.linkedin {
-     background: url(../img/linkedin-blue.svg) white 5px 6px no-repeat;  
-     background-size: 1.8em; 
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  background: url(../img/linkedin-blue.svg) white -57px 2px no-repeat;  
-  background-size: auto 80%; 
-} 
+      background: url(../img/linkedin-blue.svg) white 5px 6px no-repeat;
+      background-size: 1.8em;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: url(../img/linkedin-blue.svg) white -57px 2px no-repeat;
+        background-size: auto 80%;
+      }
     }
     &.contact {
-     background: url(../img/mail-blue.svg) white 4px 5px no-repeat;  
-     background-size: 2em;
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  background: url(../img/mail-blue.svg) white -57px 2px no-repeat;  
-  background-size: auto 80%; 
-}  
+      background: url(../img/mail-blue.svg) white 4px 5px no-repeat;
+      background-size: 2em;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: url(../img/mail-blue.svg) white -57px 2px no-repeat;
+        background-size: auto 80%;
+      }
     }
   }
 }
-      .flex-control-nav {
-        bottom: 30px !important;
-      }
+
+.flex-control-nav {
+  bottom: 30px !important;
+}
 
 #pagewrapper {
   .txt-topbanner {
@@ -91,9 +92,9 @@
       width: 100%;
       margin: 0px;
       height: auto;
-@include breakpoint($max980) {
-  margin: 0px;
-}
+      @include breakpoint($max980) {
+        margin: 0px;
+      }
       .slides {
         display: block;
         width: 100%;
@@ -103,26 +104,26 @@
           .grid-on {
             .image {
               &:before {
-              display: block;
-              width: 100%;
-              height:100vh;
-              background: url(../img/grid.svg);  
-              background-size: 3px 3px;
-              opacity: 0.70;
-              position: absolute;
-              top: 0px;
-              left: 0px;
-              content: '';
-@include breakpoint($max980) {
-  background: url(../img/nonevector-grid.png);  
-  background-size: auto;
-  opacity: 0.6;
-}
+                display: block;
+                width: 100%;
+                height: 100vh;
+                background: url(../img/grid.svg);
+                background-size: 3px 3px;
+                opacity: 0.70;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                content: '';
+                @include breakpoint($max980) {
+                  background: url(../img/nonevector-grid.png);
+                  background-size: auto;
+                  opacity: 0.6;
+                }
               }
             }
           }
           .grid-off {
-            
+
           }
           .textlink-wrapper {
             display: inline-block;
@@ -134,38 +135,38 @@
             height: 200px;
             color: white;
             background: $gj-cyan-op;
-            background: url(../img/blue-stribing-left.svg) $gj-cyan-op -14px 0px no-repeat;  
-            background-size: contain; 
+            background: url(../img/blue-stribing-left.svg) $gj-cyan-op -14px 0px no-repeat;
+            background-size: contain;
             padding-left: 32px;
             padding-top: 10px;
             text-transform: uppercase;
             font-size: 1.2em;
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  background-size: 30px 100%;
-}
-@include breakpoint($min1600) {
-  left: 12%;
-}
-@include breakpoint($max1160) {
-  left: 4%;
-  top: 70px;
-  width: 290px;
-  height: 180px;
-  font-size: 1em;
-  overflow: hidden;
-}
-@include breakpoint($max980) {
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: auto;
-  font-size: 1em;
-  background: $gj-cyan-op;
-  padding: 10px 0px 6px 14px;
-}
-@include breakpoint($max680) {
-display: none;
-}
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+              background-size: 30px 100%;
+            }
+            @include breakpoint($min1600) {
+              left: 12%;
+            }
+            @include breakpoint($max1160) {
+              left: 4%;
+              top: 70px;
+              width: 290px;
+              height: 180px;
+              font-size: 1em;
+              overflow: hidden;
+            }
+            @include breakpoint($max980) {
+              left: 0px;
+              top: 0px;
+              width: 100%;
+              height: auto;
+              font-size: 1em;
+              background: $gj-cyan-op;
+              padding: 10px 0px 6px 14px;
+            }
+            @include breakpoint($max680) {
+              display: none;
+            }
             /*&:before {
               display: inline-block;
               position: absolute;
@@ -176,11 +177,11 @@ display: none;
               top: 0px;
               left: -10px;
             }*/
-            .body { 
-              font-size: 1.3em; 
-@include breakpoint($max980) {
-  font-size: 1em;
-}
+            .body {
+              font-size: 1.3em;
+              @include breakpoint($max980) {
+                font-size: 1em;
+              }
               p {
                 line-height: 1.35em;
                 color: white;
@@ -196,21 +197,21 @@ display: none;
                   margin-right: 10px;
                   position: relative;
                   right: -5px;
-                  
-@include breakpoint($max980) {
-  display: inline-block;
-}
+
+                  @include breakpoint($max980) {
+                    display: inline-block;
+                  }
                 }
-@include breakpoint($max980) {
-  display: inline-block;
-  width: auto;
-  float: left;
-}
+                @include breakpoint($max980) {
+                  display: inline-block;
+                  width: auto;
+                  float: left;
+                }
               }
               strong {
                 color: white;
               }
-              }
+            }
             .link {
               a {
                 display: inline-block;
@@ -220,13 +221,13 @@ display: none;
                 bottom: 6px;
                 color: white;
                 background: none;
-@include breakpoint($max980) {
-  width: auto;
-  bottom: 3px;
-  text-align: center;
-  margin-left: 10px;
-  padding: 8px 11px 5px 11px;
-}
+                @include breakpoint($max980) {
+                  width: auto;
+                  bottom: 3px;
+                  text-align: center;
+                  margin-left: 10px;
+                  padding: 8px 11px 5px 11px;
+                }
               }
             }
           }
@@ -234,30 +235,30 @@ display: none;
       }
 
       .flex-control-paging {
-          li {
-            margin: 0px 8px;
-            a {
-              width: 14px;
-              height: 14px;
-              display: block;
-              background: rgba(255,255,255, 1);
-              cursor: pointer;
-              text-indent: -9999px;
-              border-radius: 28px;
-              box-shadow: none;
+        li {
+          margin: 0px 8px;
+          a {
+            width: 14px;
+            height: 14px;
+            display: block;
+            background: rgba(255, 255, 255, 1);
+            cursor: pointer;
+            text-indent: -9999px;
+            border-radius: 28px;
+            box-shadow: none;
+            border: 1px solid $gj-cyan;
+            &:hover {
+              background: $gj-cyan !important;
               border: 1px solid $gj-cyan;
-              &:hover {
-                background: $gj-cyan !important;
-                border: 1px solid $gj-cyan;
-              }
-              &.flex-active {
-                background: $gj-cyan;
-                border: 1px solid $gj-cyan;
-               
-              }
+            }
+            &.flex-active {
+              background: $gj-cyan;
+              border: 1px solid $gj-cyan;
+
             }
           }
         }
+      }
     }
   }
 }
@@ -385,16 +386,17 @@ display: none;
       .flexslider {
         @include content-width;
         height: 520px;
-      }      
+      }
     }
-  }  
+  }
 }
+
 .not-front {
   #pagewrapper {
     .txt-topbanner {
       .flexslider {
 
-      }      
+      }
     }
   }
   &.node-type-news {
