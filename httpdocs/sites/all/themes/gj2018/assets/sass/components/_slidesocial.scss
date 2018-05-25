@@ -100,6 +100,13 @@
         width: 100%;
         position: relative;
         height: auto;
+        img {
+          max-width: 883px;
+          margin: auto;
+        }
+        .views-field-field-image {
+          padding-top: 50px;
+        }
         li {
           .grid-on {
             .image {
@@ -130,7 +137,7 @@
             position: absolute;
             z-index: 150;
             top: 100px;
-            left: 9%;
+            left: 4%;
             width: 365px;
             height: 200px;
             color: white;
@@ -144,11 +151,7 @@
             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
               background-size: 30px 100%;
             }
-            @include breakpoint($min1600) {
-              left: 12%;
-            }
             @include breakpoint($max1160) {
-              left: 4%;
               top: 70px;
               width: 290px;
               height: 180px;
@@ -385,7 +388,15 @@
 
       .flexslider {
         @include content-width;
-        height: 520px;
+        height: 470px;
+
+        @include breakpoint($max980) {
+          height: 420px;
+        }
+
+        @include breakpoint($max680) {
+          height: 240px;
+        }
       }
     }
   }

@@ -5607,6 +5607,13 @@ form input[type="button"]:hover {
   position: relative;
   height: auto;
 }
+#pagewrapper .txt-topbanner .flexslider .slides img {
+  max-width: 883px;
+  margin: auto;
+}
+#pagewrapper .txt-topbanner .flexslider .slides .views-field-field-image {
+  padding-top: 50px;
+}
 #pagewrapper .txt-topbanner .flexslider .slides li .grid-on .image:before {
   display: block;
   width: 100%;
@@ -5631,7 +5638,7 @@ form input[type="button"]:hover {
   position: absolute;
   z-index: 150;
   top: 100px;
-  left: 9%;
+  left: 4%;
   width: 365px;
   height: 200px;
   color: white;
@@ -5658,14 +5665,8 @@ form input[type="button"]:hover {
     background-size: 30px 100%;
   }
 }
-@media (min-width: 1600px) {
-  #pagewrapper .txt-topbanner .flexslider .slides li .textlink-wrapper {
-    left: 12%;
-  }
-}
 @media (max-width: 1160px) {
   #pagewrapper .txt-topbanner .flexslider .slides li .textlink-wrapper {
-    left: 4%;
     top: 70px;
     width: 290px;
     height: 180px;
@@ -5891,13 +5892,23 @@ form input[type="button"]:hover {
   max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
-  height: 520px;
+  height: 470px;
 }
 @media (max-width: 1320px) {
   .products #pagewrapper .txt-topbanner .flexslider {
     width: 94%;
     padding-left: 3%;
     padding-right: 3%;
+  }
+}
+@media (max-width: 980px) {
+  .products #pagewrapper .txt-topbanner .flexslider {
+    height: 420px;
+  }
+}
+@media (max-width: 680px) {
+  .products #pagewrapper .txt-topbanner .flexslider {
+    height: 240px;
   }
 }
 
@@ -6977,7 +6988,7 @@ Version: 2018
 }
 #content .innerwrapper #block-views-video-gallery-block .view-video-gallery .flexslider {
   border: none;
-  margin: 25px 0 45px 0px;
+  margin: 25px 0 45px 0;
   background: none;
 }
 #content .innerwrapper #block-views-video-gallery-block .view-video-gallery .flexslider .views-field-title {
@@ -8117,7 +8128,7 @@ Version: 2018
   position: fixed;
   right: 30px;
   bottom: 30px;
-  z-index: 250;
+  z-index: 1000;
   padding: 20px;
   width: 235px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
@@ -8272,13 +8283,13 @@ Version: 2018
 .product-cta a {
   color: #5a5a5a;
 }
-@media (min-width: 891px) {
+@media (min-width: 980px) {
   .product-cta {
     position: absolute;
     top: 63px;
     right: 0;
     bottom: 0;
-    z-index: 1000;
+    z-index: 250;
     width: 300px;
   }
 }
@@ -8301,6 +8312,11 @@ Version: 2018
   max-width: 170px;
   border-radius: 100%;
   border: 10px solid #fff;
+}
+
+.product-cta__body {
+  margin: auto;
+  max-width: 440px;
 }
 
 .product-cta__contact {

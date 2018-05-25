@@ -177,7 +177,7 @@
   right: 30px;
   bottom: 30px;
 
-  z-index: 250;
+  z-index: 1000;
 
   padding: 20px;
 
@@ -371,14 +371,14 @@
   }
 
   // Desktop
-  @include breakpoint($min891) {
+  @include breakpoint(min-width 980px) {
     position: absolute;
 
     top: 63px; // height of topbar + 1px border
     right: 0;
     bottom: 0;
 
-    z-index: 1000;
+    z-index: 250;
 
     width: 300px;
   }
@@ -407,7 +407,10 @@
     border: 10px solid #fff;
   }
 }
-.product-cta__body {}
+.product-cta__body {
+  margin: auto;
+  max-width: 440px;
+}
 
 .product-cta__contact {
   padding: 5px 0;
