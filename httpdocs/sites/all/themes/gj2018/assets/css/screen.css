@@ -6850,6 +6850,14 @@ Version: 2018
   font-size: 30px;
   margin-bottom: 10px;
 }
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left span.software-file,
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left .views-label,
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right span.software-file,
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right .views-label {
+  display: block;
+  margin-top: 30px;
+  font-weight: bold;
+}
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left .label-inline,
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right .label-inline {
   font-size: 1.2em;
@@ -6868,18 +6876,13 @@ Version: 2018
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left .view.view-software {
   margin-bottom: 30px;
-  float: left;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left .view .field-content {
   display: block;
-  position: relative;
-  float: left;
-  width: 100%;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-left .label-inline {
   width: 100%;
   display: block;
-  float: left;
   position: relative;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-software .ds-2col-stacked .group-right p a {

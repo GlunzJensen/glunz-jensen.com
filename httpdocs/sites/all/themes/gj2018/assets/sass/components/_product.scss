@@ -695,6 +695,15 @@ $headerheight: 62px;
                   margin-bottom: 10px;
                 }
 
+                span.software-file,
+                .views-label {
+                  display: block;
+
+                  margin-top: 30px;
+
+                  font-weight: bold;
+                }
+
                 .label-inline {
                   font-size: 1.2em;
                   font-family: "ArimoBold";
@@ -714,18 +723,13 @@ $headerheight: 62px;
               }
               .group-left .view.view-software {
                 margin-bottom: 30px;
-                float: left;
               }
               .group-left .view .field-content {
                 display: block;
-                position: relative;
-                float: left;
-                width: 100%;
               }
               .group-left .label-inline {
                 width: 100%;
                 display: block;
-                float: left;
                 position: relative;
               }
               .group-right {
