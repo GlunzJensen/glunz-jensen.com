@@ -44,7 +44,8 @@ Version: 2018
     padding: 0;
     max-width: 100%;
     .view-filters {
-      display: block;
+      // GJ-38 Hide block until we don't have filters fixed.
+      display: none;
       width: 100%;
       position: relative;
       float: left;
@@ -108,6 +109,8 @@ Version: 2018
     .view-content {
       @include content-width;
       position: relative;
+      // GJ-38 Hide block until we don't have filters fixed.
+      margin-top: 20px;
     }
     .views-row {
       display: inline-block;
