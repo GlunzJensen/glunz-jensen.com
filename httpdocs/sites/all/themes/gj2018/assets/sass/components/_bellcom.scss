@@ -504,13 +504,6 @@
 #pagewrapper {
   padding-top: 125px;
 
-  .toolbar & {
-    padding-top: (125px + 30px);
-  }
-  .toolbar-drawer & {
-    padding-top: (125px + 30px + 35px);
-  }
-
   @include breakpoint(min-width 980px) {
     padding-top: 63px;
   }

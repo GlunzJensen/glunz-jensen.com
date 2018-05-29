@@ -8393,12 +8393,6 @@ Version: 2018
 #pagewrapper {
   padding-top: 125px;
 }
-.toolbar #pagewrapper {
-  padding-top: 155px;
-}
-.toolbar-drawer #pagewrapper {
-  padding-top: 190px;
-}
 @media (min-width: 980px) {
   #pagewrapper {
     padding-top: 63px;
