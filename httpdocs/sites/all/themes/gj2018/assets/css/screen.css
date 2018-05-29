@@ -4239,7 +4239,7 @@ Version: 2018
   display: block;
   clear: both;
   height: auto;
-  position: fixed;
+  position: relative;
   z-index: 499;
   background: white;
   width: 100%;
@@ -8395,6 +8395,7 @@ Version: 2018
   }
 }
 #pagewrapper > header {
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
