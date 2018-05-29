@@ -8162,11 +8162,11 @@ Version: 2018
 
 .popup-cta__close {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   height: 40px;
   width: 40px;
-  margin-top: -20px;
+  margin-bottom: -20px;
   margin-left: -20px;
   border: 0;
   border-radius: 100%;

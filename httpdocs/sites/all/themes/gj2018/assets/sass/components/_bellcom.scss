@@ -217,13 +217,13 @@
 .popup-cta__close {
   position: absolute;
 
-  top: 0;
+  bottom: 0;
   left: 0;
 
   height: 40px;
   width: 40px;
 
-  margin-top: -20px; // half the height
+  margin-bottom: -20px; // half the height
   margin-left: -20px; // half the width
 
   border: 0;
