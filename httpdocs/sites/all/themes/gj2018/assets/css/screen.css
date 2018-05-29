@@ -8399,6 +8399,11 @@ Version: 2018
 .toolbar-drawer #pagewrapper {
   padding-top: 190px;
 }
+@media (min-width: 980px) {
+  #pagewrapper {
+    padding-top: 63px;
+  }
+}
 #pagewrapper > header {
   top: 0;
   right: 0;
@@ -8412,17 +8417,6 @@ Version: 2018
   padding-top: 65px;
 }
 
-@media (min-width: 980px) {
-  #pagewrapper {
-    padding-top: 63px;
-  }
-  .toolbar #pagewrapper {
-    padding-top: 93px;
-  }
-  .toolbar-drawer #pagewrapper {
-    padding-top: 128px;
-  }
-}
 .sidr {
   z-index: 2000;
 }
