@@ -8405,6 +8405,12 @@ Version: 2018
   left: 0;
   float: none;
 }
+.toolbar #pagewrapper > header {
+  padding-top: 30px;
+}
+.toolbar-drawer #pagewrapper > header {
+  padding-top: 65px;
+}
 
 @media (min-width: 980px) {
   #pagewrapper {
