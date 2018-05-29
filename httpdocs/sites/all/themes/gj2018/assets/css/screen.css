@@ -8049,7 +8049,7 @@ Version: 2018
 .front .region-content .block-webform input[type="url"],
 .front .region-content .block-webform textarea,
 .front .region-content .block-webform select {
-  padding: 15px;
+  padding: 10px;
   color: #fff;
   background-color: transparent;
   border-color: #54b2ef;
@@ -8065,7 +8065,7 @@ Version: 2018
 .front .region-content .block-webform .webform-component-textfield,
 .front .region-content .block-webform .webform-component-checkboxes {
   float: left;
-  padding-top: 30px;
+  padding-top: 20px;
   margin: 0;
 }
 .front .region-content .block-webform .webform-component-email label,
@@ -8074,17 +8074,12 @@ Version: 2018
   display: block;
   margin: 0;
 }
-.front .region-content .block-webform .webform-component-email:nth-child(even),
-.front .region-content .block-webform .webform-component-textfield:nth-child(even),
-.front .region-content .block-webform .webform-component-checkboxes:nth-child(even) {
-  width: 47%;
-  margin-right: 3%;
+.front .region-content .block-webform .webform-component {
+  width: 30%;
+  margin-right: 2%;
 }
-.front .region-content .block-webform .webform-component-email:nth-child(odd),
-.front .region-content .block-webform .webform-component-textfield:nth-child(odd),
-.front .region-content .block-webform .webform-component-checkboxes:nth-child(odd) {
-  width: 47%;
-  margin-left: 3%;
+.front .region-content .block-webform .webform-component-markup {
+  width: 100%;
 }
 
 /*
