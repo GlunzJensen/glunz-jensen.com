@@ -7345,7 +7345,7 @@ Version: 2018
   max-width: 100%;
 }
 .page-product-filter #pagewrapper #content .view-id-product_filter .view-filters {
-  display: block;
+  display: none;
   width: 100%;
   position: relative;
   float: left;
@@ -7425,6 +7425,7 @@ Version: 2018
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  margin-top: 20px;
 }
 @media (max-width: 1320px) {
   .page-product-filter #pagewrapper #content .view-id-product_filter .view-content {
