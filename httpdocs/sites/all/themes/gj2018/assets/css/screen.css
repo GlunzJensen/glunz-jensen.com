@@ -8411,10 +8411,10 @@ Version: 2018
   float: none;
 }
 .toolbar #pagewrapper > header {
-  padding-top: 30px;
+  top: 30px;
 }
 .toolbar-drawer #pagewrapper > header {
-  padding-top: 65px;
+  top: 65px;
 }
 
 .sidr {

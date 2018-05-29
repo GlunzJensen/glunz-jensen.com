@@ -524,11 +524,11 @@
   }
 
   .toolbar & > header {
-    padding-top: 30px;
+    top: 30px;
   }
 
   .toolbar-drawer & > header {
-    padding-top: (30px + 35px);
+    top: (30px + 35px);
   }
 }
 
