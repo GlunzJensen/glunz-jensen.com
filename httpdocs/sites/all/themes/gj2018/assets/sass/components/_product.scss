@@ -755,12 +755,15 @@ $headerheight: 62px;
           .group-brochures {
 
             .node-brochures {
-              display: inline-block;
-              width: auto;
-              float: left;
               position: relative;
+              width: auto;
+
               h2 {
                 display: none;
+              }
+
+              .file {
+                float: left !important;
               }
             }
           }

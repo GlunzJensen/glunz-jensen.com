@@ -6903,13 +6903,14 @@ Version: 2018
   }
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-brochures .node-brochures {
-  display: inline-block;
-  width: auto;
-  float: left;
   position: relative;
+  width: auto;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-brochures .node-brochures h2, #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-brochures .node-brochures .heading-h2 {
   display: none;
+}
+#content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-brochures .node-brochures .file {
+  float: left !important;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-accessories .node {
   margin-bottom: 35px;
@@ -8381,11 +8382,6 @@ Version: 2018
   font-weight: bold;
 }
 
-/*
- * Contact page
- * ---------------------------------------------------------------------------------------------------------------------------------------------------------
- * GJ-11 | @mnbellcom
- */
 /*
  * Fixed header
  * ---------------------------------------------------------------------------------------------------------------------------------------------------------
