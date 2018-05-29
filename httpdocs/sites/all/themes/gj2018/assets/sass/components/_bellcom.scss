@@ -80,7 +80,7 @@
       input[type="url"],
       textarea,
       select {
-        padding: 15px;
+        padding: 10px;
 
         color: #fff;
         background-color: transparent;
@@ -101,7 +101,7 @@
       .webform-component-checkboxes {
         float: left;
 
-        padding-top: 30px;
+        padding-top: 20px;
         margin: 0;
 
         label {
@@ -109,16 +109,15 @@
 
           margin: 0;
         }
+      }
 
-        &:nth-child(even) {
-          width: 47%;
-          margin-right: 3%;
-        }
+      .webform-component {
+        width: 30%;
+        margin-right: 2%;
+      }
 
-        &:nth-child(odd) {
-          width: 47%;
-          margin-left: 3%;
-        }
+      .webform-component-markup {
+        width: 100%;
       }
     }
   }
