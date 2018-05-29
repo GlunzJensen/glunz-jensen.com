@@ -8259,12 +8259,6 @@ Version: 2018
  */
 .region-toppic {
   position: relative;
-  margin-top: 63px;
-}
-@media (max-width: 890px) {
-  .region-toppic {
-    margin-top: 125px;
-  }
 }
 .region-toppic::after {
   display: block;
@@ -8276,8 +8270,7 @@ Version: 2018
   display: none;
   padding: 45px;
   color: #5a5a5a;
-  background-color: #dff5fd;
-  opacity: .9;
+  background-color: #def4fd;
 }
 .node-type-product .product-cta {
   display: block;
@@ -8296,7 +8289,7 @@ Version: 2018
 @media (min-width: 980px) {
   .product-cta {
     position: absolute;
-    top: 63px;
+    top: 0;
     right: 0;
     bottom: 0;
     z-index: 250;
@@ -8386,6 +8379,30 @@ Version: 2018
 }
 .node-type-page .stacktable tr th {
   font-weight: bold;
+}
+
+/*
+ * Contact page
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-11 | @mnbellcom
+ */
+/*
+ * Fixed header
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+#pagewrapper {
+  padding-top: 125px;
+}
+@media (min-width: 980px) {
+  #pagewrapper {
+    padding-top: 63px;
+  }
+}
+#pagewrapper header {
+  top: 0;
+  right: 0;
+  left: 0;
+  float: none;
 }
 
 .sidr {

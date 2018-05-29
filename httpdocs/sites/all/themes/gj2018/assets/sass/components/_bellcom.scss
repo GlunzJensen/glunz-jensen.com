@@ -338,10 +338,7 @@
 
 .region-toppic {
   position: relative;
-  margin-top: 63px;
-  @include breakpoint($max890) {
-    margin-top: 125px;
-  }
+
   @include clearfix;
 }
 
@@ -352,8 +349,7 @@
   padding: 45px;
 
   color: #5a5a5a;
-  background-color: #dff5fd;
-  opacity: .9;
+  background-color: #def4fd;
 
   .node-type-product & {
     display: block;
@@ -377,7 +373,8 @@
   @include breakpoint(min-width 980px) {
     position: absolute;
 
-    top: 63px; // height of topbar + 1px border
+    //top: 63px; // height of topbar + 1px border
+    top: 0;
     right: 0;
     bottom: 0;
 
@@ -487,5 +484,35 @@
         font-weight: bold;
       }
     }
+  }
+}
+
+/*
+ * Contact page
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-11 | @mnbellcom
+ */
+
+
+
+
+/*
+ * Fixed header
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+#pagewrapper {
+  padding-top: 125px;
+
+  @include breakpoint(min-width 980px) {
+    padding-top: 63px;
+  }
+
+  header {
+    top: 0;
+    right: 0;
+    left: 0;
+
+    float: none;
   }
 }
