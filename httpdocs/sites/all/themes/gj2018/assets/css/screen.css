@@ -5586,6 +5586,14 @@ form input[type="button"]:hover {
   bottom: 30px !important;
 }
 
+.node-type-product #pagewrapper .txt-topbanner .flexslider .slides img {
+  max-width: 883px;
+  margin: auto;
+}
+.node-type-product #pagewrapper .txt-topbanner .flexslider .slides .views-field-field-image {
+  padding-top: 50px;
+}
+
 #pagewrapper .txt-topbanner .flexslider {
   border-radius: 0px;
   border: none;
@@ -5606,13 +5614,6 @@ form input[type="button"]:hover {
   width: 100%;
   position: relative;
   height: auto;
-}
-#pagewrapper .txt-topbanner .flexslider .slides img {
-  max-width: 883px;
-  margin: auto;
-}
-#pagewrapper .txt-topbanner .flexslider .slides .views-field-field-image {
-  padding-top: 50px;
 }
 #pagewrapper .txt-topbanner .flexslider .slides li .grid-on .image:before {
   display: block;

@@ -81,6 +81,24 @@
   bottom: 30px !important;
 }
 
+.node-type-product {
+  #pagewrapper {
+    .txt-topbanner {
+      .flexslider {
+        .slides {
+          img {
+            max-width: 883px;
+            margin: auto;
+          }
+          .views-field-field-image {
+            padding-top: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
 #pagewrapper {
   .txt-topbanner {
     .flexslider {
@@ -100,13 +118,6 @@
         width: 100%;
         position: relative;
         height: auto;
-        img {
-          max-width: 883px;
-          margin: auto;
-        }
-        .views-field-field-image {
-          padding-top: 50px;
-        }
         li {
           .grid-on {
             .image {
