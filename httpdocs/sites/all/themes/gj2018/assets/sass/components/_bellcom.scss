@@ -338,7 +338,10 @@
 
 .region-toppic {
   position: relative;
-
+  margin-top: 63px;
+  @include breakpoint($max890) {
+    margin-top: 125px;
+  }
   @include clearfix;
 }
 
