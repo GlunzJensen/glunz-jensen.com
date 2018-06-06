@@ -441,30 +441,19 @@ height: auto;
                 line-height: 1.15em;
                 display: inline-block;
                 width: 100%;
-
-                position: absolute;
-                top: 0px;
                 color: $txt-gray;
-  @include breakpoint($max680) {
-position: relative;
-margin-bottom: 25px;
-  }
+                @include breakpoint($max680) {
+                  position: relative;
+                  margin-bottom: 25px;
+                }
               } 
               p {
                 display: inline-block;
                 width: 100%;
-                position: absolute;
-                top: 80px; 
+                min-height: 230px;
                 color: $txt-gray;
                 font-size: 0.9em;
                 line-height: 1.25em;
-  @include breakpoint($max1120) {
-  top: 70px;
-  }
-  @include breakpoint($max680) {
-position: relative;
-top: 0px;
-  }               
               }   
               .news-front-read-more {
                 color: $gj-cyan;
@@ -473,8 +462,6 @@ top: 0px;
                 background-size: 1.4em;
                 display: block;
                 width: 100%;
-                position: absolute;
-                bottom: 0px;
                 font-family: "ArimoRegular";
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   background: url(../img/menu-pointer.svg) 58% 1px no-repeat;  

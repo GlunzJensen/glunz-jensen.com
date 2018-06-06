@@ -3917,8 +3917,6 @@ Version: 2018
   line-height: 1.15em;
   display: inline-block;
   width: 100%;
-  position: absolute;
-  top: 0px;
   color: #5a5a5a;
 }
 @media (max-width: 680px) {
@@ -3930,22 +3928,10 @@ Version: 2018
 .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right p {
   display: inline-block;
   width: 100%;
-  position: absolute;
-  top: 80px;
+  min-height: 230px;
   color: #5a5a5a;
   font-size: 0.9em;
   line-height: 1.25em;
-}
-@media (max-width: 1120px) {
-  .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right p {
-    top: 70px;
-  }
-}
-@media (max-width: 680px) {
-  .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right p {
-    position: relative;
-    top: 0px;
-  }
 }
 .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right .news-front-read-more {
   color: #54b2ef;
@@ -3954,8 +3940,6 @@ Version: 2018
   background-size: 1.4em;
   display: block;
   width: 100%;
-  position: absolute;
-  bottom: 0px;
   font-family: "ArimoRegular";
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
