@@ -5956,7 +5956,7 @@ form input[type="button"]:hover {
   border-top: none;
   padding-top: 0;
   margin-top: 0;
-  top: 32%;
+  top: 310px;
   width: 100%;
 }
 .view-id-gallery.view-display-id-page .flexslider ul.flex-direction-nav a {
@@ -6471,7 +6471,7 @@ Version: 2018
   border-top: none;
   padding-top: 0;
   margin-top: 0;
-  top: 32%;
+  top: 310px;
   width: 100%;
 }
 #content .innerwrapper .node-product .horizontal-tabs .horizontal-tabs-panes .group-overview .flexslider ul.flex-direction-nav a {
