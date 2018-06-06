@@ -513,7 +513,7 @@ function gj_product_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 28,
+      'weight' => 30,
     ),
   );
 
@@ -1411,6 +1411,59 @@ Choose all the appropriate groups, e.g. "Agfa". G&J Employees can see all produc
     ),
   );
 
+  // Exported field_instance: 'node-product-field_weight'.
+  $field_instances['node-product-field_weight'] = array(
+    'bundle' => 'product',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'The hierachy order between 0 and 30. 
+0 = low priority
+30 = high priority',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 42,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_weight',
+    'label' => 'Weight',
+    'required' => 0,
+    'settings' => array(
+      'max' => 30,
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 28,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-oem-field_image'.
   $field_instances['taxonomy_term-oem-field_image'] = array(
     'bundle' => 'oem',
@@ -1575,8 +1628,12 @@ If so, choose the appropriate OEMs.');
   t('Solution');
   t('Standard features');
   t('Testimonials');
+  t('The hierachy order between 0 and 30. 
+0 = low priority
+30 = high priority');
   t('User access');
   t('Video');
+  t('Weight');
 
   return $field_instances;
 }
