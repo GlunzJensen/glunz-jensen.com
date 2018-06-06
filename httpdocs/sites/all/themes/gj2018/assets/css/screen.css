@@ -6091,7 +6091,7 @@ form input[type="button"]:hover {
   }
   .view-id-gallery.view-display-id-page .views-field-field-gallery-image img {
     margin: 0;
-    max-width: 0;
+    max-width: none;
   }
 }
 
