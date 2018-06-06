@@ -6072,14 +6072,25 @@ form input[type="button"]:hover {
   top: 0;
 }
 .view-id-gallery.view-display-id-page .views-field-field-gallery-image {
-  display: inline-block;
-  width: 67%;
-  float: left;
+  display: block;
   position: relative;
   background: none;
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   margin-left: 3%;
+}
+.view-id-gallery.view-display-id-page .views-field-field-gallery-image img {
+  margin: auto;
+}
+@media (min-width: 891px) {
+  .view-id-gallery.view-display-id-page .views-field-field-gallery-image {
+    display: inline-block;
+    width: 67%;
+    float: left;
+  }
+  .view-id-gallery.view-display-id-page .views-field-field-gallery-image img {
+    margin: 0;
+  }
 }
 
 /*

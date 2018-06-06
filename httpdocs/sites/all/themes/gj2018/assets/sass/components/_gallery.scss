@@ -172,13 +172,26 @@
   }
 
   .views-field-field-gallery-image {
-    display: inline-block;
-    width: 67%;
-    float: left;
+    display: block;
     position: relative;
     background: none;
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
     margin-left: 3%;
+
+    img {
+      margin: auto;
+    }
+
+    // Desktop
+    @include breakpoint($min891) {
+      display: inline-block;
+      width: 67%;
+      float: left;
+
+      img {
+        margin: 0;
+      }
+    }
   }
 }
