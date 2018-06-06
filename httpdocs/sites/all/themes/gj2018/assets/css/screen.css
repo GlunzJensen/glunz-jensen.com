@@ -3856,6 +3856,7 @@ Version: 2018
 .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item img {
   display: block;
   width: 100%;
+  max-width: 270px;
   clear: both;
   position: relative;
   margin-bottom: 15px;
