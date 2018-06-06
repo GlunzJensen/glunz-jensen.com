@@ -3919,7 +3919,6 @@ Version: 2018
 .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right p {
   display: inline-block;
   width: 100%;
-  min-height: 230px;
   color: #5a5a5a;
   font-size: 0.9em;
   line-height: 1.25em;
