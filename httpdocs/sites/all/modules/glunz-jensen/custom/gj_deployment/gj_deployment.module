@@ -12,6 +12,7 @@ function gj_deployment_modules_installed($modules) {
   if (in_array('gj_deployment', $modules)) {
     module_enable(array(
       'diff',
+      'gj_front',
       'gj_captcha_settings',
       'gj_product_ct',
       'gj_investordata_ct',

@@ -1,0 +1,7 @@
+name = Front
+core = 7.x
+package = Glunz&Jensen
+version = 7.x-1.1
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = news_teaser
