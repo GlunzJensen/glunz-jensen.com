@@ -6081,6 +6081,7 @@ form input[type="button"]:hover {
 }
 .view-id-gallery.view-display-id-page .views-field-field-gallery-image img {
   margin: auto;
+  max-width: 67%;
 }
 @media (min-width: 891px) {
   .view-id-gallery.view-display-id-page .views-field-field-gallery-image {
@@ -6090,6 +6091,7 @@ form input[type="button"]:hover {
   }
   .view-id-gallery.view-display-id-page .views-field-field-gallery-image img {
     margin: 0;
+    max-width: 0;
   }
 }
 
