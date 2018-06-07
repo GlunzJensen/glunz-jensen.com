@@ -429,7 +429,7 @@ Version: 2018
               padding-left: 8px;
               padding-bottom: 35px;
               position: relative;
-              min-height: 300px;
+              min-height: 250px;
               h2 {
                 text-transform: uppercase;
                 font-size: 1em;
@@ -437,11 +437,8 @@ Version: 2018
                 display: inline-block;
                 width: 100%;
                 color: $txt-gray;
-                @include breakpoint($max680) {
-                  position: relative;
-                  margin-bottom: 25px;
-                }
-              } 
+                margin-bottom: 10px;
+              }
               p {
                 display: inline-block;
                 width: 100%;

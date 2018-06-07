@@ -3900,7 +3900,7 @@ Version: 2018
   padding-left: 8px;
   padding-bottom: 35px;
   position: relative;
-  min-height: 300px;
+  min-height: 250px;
 }
 .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right h2, .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right .heading-h2 {
   text-transform: uppercase;
@@ -3909,12 +3909,7 @@ Version: 2018
   display: inline-block;
   width: 100%;
   color: #5a5a5a;
-}
-@media (max-width: 680px) {
-  .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right h2, .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right .heading-h2 {
-    position: relative;
-    margin-bottom: 25px;
-  }
+  margin-bottom: 10px;
 }
 .front #pagewrapper #content .innerwrapper .news-front .view-content .front-news-item a .news-front-right p {
   display: inline-block;
