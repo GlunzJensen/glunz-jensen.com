@@ -1,4 +1,20 @@
 /*
+ * Element wrapper link.
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+.element-wrapper-link {
+  display: block;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/*
  * Button
  * ---------------------------------------------------------------------------------------------------------------------------------------------------------
  */
@@ -552,11 +568,18 @@ footer {
 }
 
 // Investor videos.
+.view-investor-video {
+
+  &.view-display-id-page {
+    padding: 40px 0;
+  }
+}
 #block-views-investor-video-block {
   padding: 40px 0;
 
   background-color: whitesmoke;
 }
+
 .node-type-investor-video {
 
   .refpic {
@@ -564,11 +587,43 @@ footer {
   }
 }
 
-.entity-teaser {}
+// Full.
+.node-investor-video {
+
+  &:not(.node-teaser) {
+    @include content-width;
+
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+}
+
+.node__video {
+
+  + .node__date,
+  + .node__body {
+    margin-top: 10px;
+  }
+}
+
+.node__date {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+
+  + .node__body {
+    margin-top: 10px;
+  }
+}
+
+// Teaser.
+.entity-teaser {
+  margin-bottom: 30px;
+}
 .entity-teaser--investor-video {}
 
 .entity-teaser__preview-image {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   min-height: 180px;
 
   img {
@@ -590,6 +645,7 @@ footer {
   font-size: 20px;
   font-weight: bold;
   font-style: normal;
+  font-family: "ArimoBold";
 }
 
 .entity-teaser__date {

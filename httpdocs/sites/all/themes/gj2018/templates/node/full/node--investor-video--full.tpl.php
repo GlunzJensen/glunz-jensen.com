@@ -1,28 +1,20 @@
 <article id="node-<?php print $node->nid; ?>"
          class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
-    <!-- Begin - image -->
-    <div class="node__image">
-      <?php print render($content['field_os2web_base_field_lead_img']); ?>
+  <?php if (isset($content['field_video'])): ?>
+    <!-- Begin - video -->
+    <div class="node__video">
+      <?php print render($content['field_video']); ?>
     </div>
     <!-- End - image -->
   <?php endif; ?>
 
-  <?php if (!empty($title)): ?>
-    <!-- Begin - heading -->
-    <div class="node__heading">
-      <h1 class="node__heading__title"><?php print $title; ?></h1>
+  <?php if (isset($content['field_date'])): ?>
+    <!-- Begin - date -->
+    <div class="node__date">
+      <?php print render($content['field_date']); ?>
     </div>
-    <!-- End - heading -->
-  <?php endif; ?>
-
-  <?php if (isset($content['field_os2web_base_field_summary'])): ?>
-    <!-- Begin - intro -->
-    <div class="node__intro">
-      <?php print render($content['field_os2web_base_field_summary']); ?>
-    </div>
-    <!-- End - intro -->
+    <!-- End - date -->
   <?php endif; ?>
 
   <?php if (isset($content['body'])): ?>
@@ -33,12 +25,14 @@
     <!-- End - body -->
   <?php endif; ?>
 
-  <?php if ( isset( $content['field_os2web_base_field_media'] ) ): ?>
-    <!-- Begin - PDF files -->
-    <div class="node__pdf-files">
-      <?php print render( $content['field_os2web_base_field_media'] ); ?>
+  <?php if ( isset( $content['field_files_for_download'] ) ): ?>
+    <!-- Begin - files for download -->
+    <div class="node__files-for-download">
+      <h4><strong><?php print t('Files for download'); ?></strong></h4>
+
+      <?php print render( $content['field_files_for_download'] ); ?>
     </div>
-    <!-- End - PDF files -->
+    <!-- End - files for download -->
   <?php endif; ?>
 
 </article>

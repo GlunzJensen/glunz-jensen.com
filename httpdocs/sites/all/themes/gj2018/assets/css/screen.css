@@ -8867,6 +8867,18 @@ Version: 2018
   }
 }
 /*
+ * Element wrapper link.
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+.element-wrapper-link {
+  display: block;
+}
+.element-wrapper-link, .element-wrapper-link:hover, .element-wrapper-link:focus, .element-wrapper-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
  * Button
  * ---------------------------------------------------------------------------------------------------------------------------------------------------------
  */
@@ -9316,6 +9328,10 @@ footer .newsletter {
   }
 }
 
+.view-investor-video.view-display-id-page {
+  padding: 40px 0;
+}
+
 #block-views-investor-video-block {
   padding: 40px 0;
   background-color: whitesmoke;
@@ -9325,8 +9341,44 @@ footer .newsletter {
   background-color: #fff !important;
 }
 
+.node-investor-video:not(.node-teaser) {
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+@media (max-width: 1320px) {
+  .node-investor-video:not(.node-teaser) {
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+.node__video + .node__date,
+.node__video + .node__body {
+  margin-top: 10px;
+}
+
+.node__date {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+}
+.node__date + .node__body {
+  margin-top: 10px;
+}
+
+.entity-teaser {
+  margin-bottom: 30px;
+}
+
 .entity-teaser__preview-image {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   min-height: 180px;
 }
 .entity-teaser__preview-image img {
@@ -9343,6 +9395,7 @@ footer .newsletter {
   font-size: 20px;
   font-weight: bold;
   font-style: normal;
+  font-family: "ArimoBold";
 }
 
 .entity-teaser__date {
