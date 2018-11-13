@@ -8404,6 +8404,20 @@ Version: 2018
   top: 65px;
 }
 
+/*
+ * Hide newsletter signup on frontpage.
+ * Hide newsletter signup in footer.
+ * ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ * GJ-61 | @mnbellcom
+ */
+.front .region-content .block-webform {
+  display: none !important;
+}
+
+footer .newsletter {
+  display: none !important;
+}
+
 .sidr {
   z-index: 2000;
 }
