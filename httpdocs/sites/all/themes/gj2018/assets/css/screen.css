@@ -9325,6 +9325,31 @@ footer .newsletter {
   background-color: #fff !important;
 }
 
+.entity-teaser__preview-image {
+  margin-bottom: 10px;
+  min-height: 180px;
+}
+.entity-teaser__preview-image img {
+  display: block;
+  width: 100%;
+}
+
+.entity-teaser__heading + .entity-teaser__date {
+  margin-top: 8px;
+}
+
+.entity-teaser__heading__title {
+  margin: 0 !important;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.entity-teaser__date {
+  font-size: 16px;
+  font-style: italic;
+}
+
 .sidr {
   z-index: 2000;
 }

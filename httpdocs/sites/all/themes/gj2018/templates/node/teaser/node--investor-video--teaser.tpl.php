@@ -3,12 +3,12 @@
   <a href="<?php print $node_url; ?>" id="node-<?php print $node->nid; ?>"
      class="<?php print $classes; ?> element-wrapper-link clearfix"<?php print $attributes; ?>>
 
-    <?php if (isset($content['field_os2web_news_date_start'])): ?>
-      <!-- Begin - date -->
-      <div class="entity-teaser__date">
-        <?php print render($content['field_os2web_news_date_start']); ?>
+    <?php if (isset($content['field_preview_image'])): ?>
+      <!-- Begin - preview image -->
+      <div class="entity-teaser__preview-image">
+        <?php print render($content['field_preview_image']); ?>
       </div>
-      <!-- End - date -->
+      <!-- End - preview image -->
     <?php endif; ?>
 
     <div class="entity-teaser__heading">
@@ -17,17 +17,13 @@
       </h2>
     </div>
 
-    <div class="entity-teaser__body">
-
-      <?php if ( isset( $content['field_os2web_base_field_summary'] ) ): ?>
-        <!-- Begin - description -->
-        <div class="entity-teaser__description">
-          <?php print render( $content['field_os2web_base_field_summary'] ); ?>
-        </div>
-        <!-- End - description -->
-      <?php endif; ?>
-
-    </div>
+    <?php if (isset($content['field_date'])): ?>
+      <!-- Begin - date -->
+      <div class="entity-teaser__date">
+        <?php print render($content['field_date']); ?>
+      </div>
+      <!-- End - date -->
+    <?php endif; ?>
 
   </a>
   <!-- End - teaser -->

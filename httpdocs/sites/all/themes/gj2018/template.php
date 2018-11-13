@@ -105,20 +105,49 @@ function gj2018_process_html(&$variables) {
 
 }
 
+/**
+ * Implements template_preprocess_node().
+ */
 function gj2018_process_node(&$variables) {
-    switch($variables['type']){
-        case 'product':
-             drupal_add_js(drupal_get_path('theme','gj2018').'/assets/js/tabs.js');
-             drupal_add_js(drupal_get_path('theme','gj2018').'/assets/js/view.product.js');
-            drupal_add_js(drupal_get_path('module','ous_productspecs').'/js/scripts.js');
-            drupal_add_js(drupal_get_path('module','ous_productspecs').'/js/clickshow.js');
-            break;
-    }
+  switch ($variables['type']) {
+    case 'product':
+      drupal_add_js(drupal_get_path('theme', 'gj2018') . '/assets/js/tabs.js');
+      drupal_add_js(drupal_get_path('theme',
+          'gj2018') . '/assets/js/view.product.js');
+      drupal_add_js(drupal_get_path('module',
+          'ous_productspecs') . '/js/scripts.js');
+      drupal_add_js(drupal_get_path('module',
+          'ous_productspecs') . '/js/clickshow.js');
+      break;
+  }
 
-    if(arg(0)=='about'&& arg(1)=='videos'){
-        drupal_add_js(drupal_get_path('theme','corporate').'/js/videos-page-mobile-fix.js');
-    }
+  if (arg(0) == 'about' && arg(1) == 'videos') {
+    drupal_add_js(drupal_get_path('theme',
+        'corporate') . '/js/videos-page-mobile-fix.js');
+  }
 
+  $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
+  $content_type = $node->type;
+
+  // Entity variables
+  $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode);
+  $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode . '--' . $content_type);
+
+  $variables['classes_array'][] = drupal_html_class('node--' . $content_type . '--' . $view_mode);
+
+  // Add node--view_mode.tpl.php suggestions.
+  $variables['theme_hook_suggestions'][] = 'node__' . $view_mode;
+
+  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
+  $variables['theme_hook_suggestions'][] = 'node__' . $content_type . '__' . $view_mode;
+
+  // Optionally, run node-type-specific preprocess functions, like
+  // foo_preprocess_node_page() or foo_preprocess_node_story().
+  $function = __FUNCTION__ . '__' . $content_type;
+  if (function_exists($function)) {
+    $function($variables);
+  }
 }
 
 function gj2018_preprocess_field(&$variables) {
