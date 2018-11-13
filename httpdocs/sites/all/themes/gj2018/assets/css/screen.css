@@ -8418,6 +8418,12 @@ footer .newsletter {
   display: none !important;
 }
 
+@media (max-width: 680px) {
+  .counter {
+    display: none !important;
+  }
+}
+
 .sidr {
   z-index: 2000;
 }

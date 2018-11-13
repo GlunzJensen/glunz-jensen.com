@@ -517,8 +517,6 @@
   }
 }
 
-
-
 /*
  * Hide newsletter signup on frontpage.
  * Hide newsletter signup in footer.
@@ -541,6 +539,13 @@
 footer {
 
   .newsletter {
+    display: none !important;
+  }
+}
+
+// Hide counter on mobile devices.
+.counter {
+  @include breakpoint($max680) {
     display: none !important;
   }
 }
