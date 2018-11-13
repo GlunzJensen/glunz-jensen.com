@@ -14,3 +14,12 @@ function gj_deployment_update_7001() {
     drupal_uninstall_modules(array('mollom'));
   }
 }
+
+/**
+ * Enable investor video feature.
+ */
+function gj_deployment_update_7002() {
+  module_enable(array(
+    'investor_video',
+  ), TRUE);
+}

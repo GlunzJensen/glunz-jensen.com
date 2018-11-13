@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Investor video feature.
+ */
+
+include_once 'investor_video.features.inc';
