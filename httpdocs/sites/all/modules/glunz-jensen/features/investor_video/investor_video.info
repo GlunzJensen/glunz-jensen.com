@@ -18,6 +18,7 @@ features[field_instance][] = node-investor_video-field_date
 features[field_instance][] = node-investor_video-field_files_for_download
 features[field_instance][] = node-investor_video-field_preview_image
 features[field_instance][] = node-investor_video-field_video
+features[image][] = preview_image
 features[node][] = investor_video
 features[views_view][] = investor_video
 features_exclude[dependencies][ctools] = ctools
