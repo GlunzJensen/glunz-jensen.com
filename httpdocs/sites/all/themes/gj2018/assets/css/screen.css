@@ -9359,8 +9359,7 @@ footer .newsletter {
   }
 }
 
-.node__video + .node__date,
-.node__video + .node__body {
+.node__video + .node__date {
   margin-top: 10px;
 }
 
@@ -9371,6 +9370,20 @@ footer .newsletter {
 }
 .node__date + .node__body {
   margin-top: 10px;
+}
+.node__date + .node__files-for-download {
+  margin-top: 15px;
+}
+
+.node__body + .node__files-for-download {
+  margin-top: 15px;
+}
+
+.node__files-for-download span.file {
+  display: block;
+}
+.node__files-for-download span.file + .file {
+  margin-top: 5px;
 }
 
 .entity-teaser {

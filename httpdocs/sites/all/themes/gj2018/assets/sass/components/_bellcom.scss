@@ -600,8 +600,7 @@ footer {
 
 .node__video {
 
-  + .node__date,
-  + .node__body {
+  + .node__date {
     margin-top: 10px;
   }
 }
@@ -613,6 +612,28 @@ footer {
 
   + .node__body {
     margin-top: 10px;
+  }
+
+  + .node__files-for-download {
+    margin-top: 15px;
+  }
+}
+
+.node__body {
+
+  + .node__files-for-download {
+    margin-top: 15px;
+  }
+}
+
+.node__files-for-download {
+
+  span.file {
+    display: block;
+
+    + .file {
+      margin-top: 5px;
+    }
   }
 }
 
