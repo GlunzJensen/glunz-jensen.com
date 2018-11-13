@@ -520,6 +520,7 @@
 /*
  * Hide newsletter signup on frontpage.
  * Hide newsletter signup in footer.
+ * Investor videos.
  * ---------------------------------------------------------------------------------------------------------------------------------------------------------
  * GJ-61 | @mnbellcom
  */
@@ -547,5 +548,18 @@ footer {
 .counter {
   @include breakpoint($max680) {
     display: none !important;
+  }
+}
+
+// Investor videos.
+#block-views-investor-video-block {
+  padding: 40px 0;
+
+  background-color: whitesmoke;
+}
+.node-type-investor-video {
+
+  .refpic {
+    background-color: #fff !important;
   }
 }
