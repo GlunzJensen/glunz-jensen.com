@@ -578,6 +578,10 @@ footer {
   padding: 40px 0;
 
   background-color: whitesmoke;
+
+  > h2 {
+    margin-bottom: 20px;
+  }
 }
 
 .node-type-investor-video {
@@ -615,14 +619,14 @@ footer {
   }
 
   + .node__files-for-download {
-    margin-top: 15px;
+    margin-top: 30px;
   }
 }
 
 .node__body {
 
   + .node__files-for-download {
-    margin-top: 15px;
+    margin-top: 30px;
   }
 }
 
@@ -630,9 +634,10 @@ footer {
 
   span.file {
     display: block;
+    float: none;
 
     + .file {
-      margin-top: 5px;
+      margin-top: 10px;
     }
   }
 }

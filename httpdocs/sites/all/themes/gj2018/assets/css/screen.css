@@ -9336,6 +9336,9 @@ footer .newsletter {
   padding: 40px 0;
   background-color: whitesmoke;
 }
+#block-views-investor-video-block > h2, #block-views-investor-video-block > .heading-h2 {
+  margin-bottom: 20px;
+}
 
 .node-type-investor-video .refpic {
   background-color: #fff !important;
@@ -9372,18 +9375,19 @@ footer .newsletter {
   margin-top: 10px;
 }
 .node__date + .node__files-for-download {
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .node__body + .node__files-for-download {
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .node__files-for-download span.file {
   display: block;
+  float: none;
 }
 .node__files-for-download span.file + .file {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .entity-teaser {
