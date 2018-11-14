@@ -9328,20 +9328,31 @@ footer .newsletter {
   }
 }
 
-.view-investor-video.view-display-id-page {
-  padding: 40px 0;
-}
-
-#block-views-investor-video-block {
+#block-views-investor-video-block,
+#block-views-investor-video-block-1 {
   padding: 40px 0;
   background-color: whitesmoke;
 }
-#block-views-investor-video-block > h2, #block-views-investor-video-block > .heading-h2 {
+#block-views-investor-video-block > h2, #block-views-investor-video-block > .heading-h2,
+#block-views-investor-video-block-1 > h2,
+#block-views-investor-video-block-1 > .heading-h2 {
   margin-bottom: 20px;
 }
 
+.page-investor-presentations .refpic,
 .node-type-investor-video .refpic {
   background-color: #fff !important;
+}
+
+.page-investor-presentations .view-investor-video .view,
+.page-investor-presentations .view-investor-video .node-investor-video {
+  width: initial !important;
+  padding-top: initial !important;
+  padding-left: initial !important;
+  padding-right: initial !important;
+  margin-left: initial !important;
+  margin-right: initial !important;
+  max-width: initial !important;
 }
 
 .node-investor-video:not(.node-teaser) {

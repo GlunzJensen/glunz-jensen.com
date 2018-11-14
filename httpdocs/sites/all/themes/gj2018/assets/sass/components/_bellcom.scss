@@ -568,13 +568,8 @@ footer {
 }
 
 // Investor videos.
-.view-investor-video {
-
-  &.view-display-id-page {
-    padding: 40px 0;
-  }
-}
-#block-views-investor-video-block {
+#block-views-investor-video-block,
+#block-views-investor-video-block-1 {
   padding: 40px 0;
 
   background-color: whitesmoke;
@@ -584,10 +579,33 @@ footer {
   }
 }
 
+.page-investor-presentations,
 .node-type-investor-video {
 
   .refpic {
     background-color: #fff !important;
+  }
+}
+
+// Investor presentations overview.
+.page-investor-presentations {
+
+  .view-investor-video {
+
+    // GJ-61 @mn_bellcom
+    // The ugliest hack to include the full node version of
+    // the nodetype "Investor video".
+    // The client was in a hurry, why we did it this way.
+    .view,
+    .node-investor-video {
+      width: initial !important;
+      padding-top: initial !important;
+      padding-left: initial !important;
+      padding-right: initial !important;
+      margin-left: initial !important;
+      margin-right: initial !important;
+      max-width: initial !important;
+    }
   }
 }
 
