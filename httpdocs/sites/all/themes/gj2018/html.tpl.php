@@ -118,7 +118,7 @@ window.addEventListener("load", function(){
               <h5>Contact:</h5>
           </div>
           <div class="popup-cta__contact">
-              <h3>GKS INTERNATIONAL</h3>
+              <h3>Glunz & Jensen Call Center</h3>
           </div>
           <div class="popup-cta__contact_description">
               Your global after sales service provider
@@ -129,7 +129,7 @@ window.addEventListener("load", function(){
                   <i class="fa fa-envelope"></i>
               </div>
               <div class="popup-cta__contact-item__text">
-                  <a href="mailto:info@gks-international.com">info@gks-international.com</a>
+                  <a href="mailto:info@gks-international.com">callcenter@glunz-jensen.com</a>
               </div>
           </div>
           <div class="popup-cta__contact-item">
@@ -137,7 +137,7 @@ window.addEventListener("load", function(){
                   <i class="fa fa-phone"></i>
               </div>
               <div class="popup-cta__contact-item__text">
-                  +45 5782 0910 (DK)
+                  +45 5768 8100 (DK)
               </div>
           </div>
           <div class="popup-cta__contact-item">
@@ -145,10 +145,10 @@ window.addEventListener("load", function(){
                   <i class="fa fa-phone"></i>
               </div>
               <div class="popup-cta__contact-item__text">
-                  +1 574 272 9950 (USA)
+                  +1 874 568 4638 (USA)
               </div>
           </div>
-          <div class="popup-cta__contact-item">
+          <div class="popup-cta__contact-item" style="display: none;">
               <div class="popup-cta__contact-item__icon">
                   <i class="fa fa-home"></i>
               </div>
