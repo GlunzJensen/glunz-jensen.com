@@ -1,0 +1,6 @@
+name = Landing pages
+core = 7.x
+package = Glunz&Jensen
+
+dependencies[] = elements
+dependencies[] = mail_logger

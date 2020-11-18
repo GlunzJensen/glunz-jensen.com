@@ -1,0 +1,362 @@
+// |--------------------------------------------------------------------------
+// | Plate writer
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .ictp-infuse
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin ictp-infuse-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.ictp-infuse {
+  .container, .container-fluid {
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto
+  }
+  .row {
+    margin-right:-15px;
+    margin-left:-15px
+  }
+  .img-responsive {
+    display:block;
+    max-width:100%;
+    height:auto
+  }
+
+  .logo {
+    margin: 1em 0;
+  }
+
+  .innerwrapper {
+    background: #5AC4F1;
+
+    h1, h2, h3, p, a {
+      color: #FFFFFF;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+
+  .content-wrapper {
+    .text {
+      padding-top: 2em;
+      padding-bottom: 1em;
+    }
+
+    .image {
+      margin-bottom: 1em;
+    }
+  }
+
+  .node-page {
+    color: #FFFFFF;
+    margin-left: 1em;
+    line-height: 1.5em;
+
+    ul {
+      margin-left: 2em;
+
+      li {
+        list-style: disc;
+      }
+    }
+  }
+
+  .additional {
+    margin-top: 1em;
+
+    .image {
+      margin-top: 1em;
+    }
+    .text {
+      margin: 1em 0;
+      padding: 1em;
+      white-space: nowrap;
+
+      &.save-money {
+        background: #00B1EB;
+      }
+      &.renew {
+        background: #5BC3F1;
+      }
+      &.assemble {
+        background: #A1D9F7;
+      }
+    }
+
+    .arrow-top {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 0.7em solid transparent;
+      border-right: 0.7em solid transparent;
+      border-bottom: 0.7em solid black;
+      vertical-align: top;
+      margin: 2px 2px 0 0;
+    }
+  }
+
+  .form {
+    margin: 1em 0;
+  }
+
+  .footer .container {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: #717171;
+  }
+}
+
+#gj-landing-pages-ictp-infuse {
+  background-color: #009FE3;
+  padding: 1em 2em;
+  margin: 0 15px;
+
+  .description {
+    color: #FFFFFF;
+    font-size: 1.3em;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 1em;
+    &:not(.error) {
+      border-color: #5E747F;
+    }
+
+    &[type="submit"] {
+      text-transform: none;
+      background-color: #FF0000;
+      border-radius: 1em;
+      border: 1px solid #D22420;
+      font-size: 1em;
+      margin: 5px 0 0;
+      padding: 1em;
+      white-space: normal;
+      vert-align: middle;
+      min-height: 60px;
+    }
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+  .ictp-infuse {
+    .col-xs-1,
+    .col-xs-10,
+    .col-xs-11,
+    .col-xs-12,
+    .col-xs-2,
+    .col-xs-3,
+    .col-xs-4,
+    .col-xs-5,
+    .col-xs-6,
+    .col-xs-7,
+    .col-xs-8,
+    .col-xs-9 {
+      float:left
+    }
+    .col-xs-12 {
+      width:100%
+    }
+    .col-xs-11 {
+      width:91.66666667%
+    }
+    .col-xs-10 {
+      width:83.33333333%
+    }
+    .col-xs-9 {
+      width:75%
+    }
+    .col-xs-8 {
+      width:66.66666667%
+    }
+    .col-xs-7 {
+      width:58.33333333%
+    }
+    .col-xs-6 {
+      width:50%
+    }
+    .col-xs-5 {
+      width:41.66666667%
+    }
+    .col-xs-4 {
+      width:33.33333333%
+    }
+    .col-xs-3 {
+      width:25%
+    }
+    .col-xs-2 {
+      width:16.66666667%
+    }
+    .col-xs-1 {
+      width:8.33333333%
+    }
+  }
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+  .ictp-infuse {
+    .content-wrapper {
+      .text, .image {
+        margin: 1em;
+      }
+    }
+
+    .additional {
+      .image {
+        margin: 1em 1em 0;
+      }
+      .text {
+        margin: 1em;
+      }
+    }
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+  .ictp-infuse {
+    .form {
+      position: relative;
+    }
+  }
+
+  #gj-landing-pages-ictp-infuse {
+    padding: 0.7em 1.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    .description {
+      font-size: 1.2em;
+    }
+  }
+
+  .ictp-infuse {
+    .col-sm-1,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9 {
+      float:left
+    }
+    .col-sm-12 {
+      width:100%
+    }
+    .col-sm-11 {
+      width:91.66666667%
+    }
+    .col-sm-10 {
+      width:83.33333333%
+    }
+    .col-sm-9 {
+      width:75%
+    }
+    .col-sm-8 {
+      width:66.66666667%
+    }
+    .col-sm-7 {
+      width:58.33333333%
+    }
+    .col-sm-6 {
+      width:50%
+    }
+    .col-sm-5 {
+      width:41.66666667%
+    }
+    .col-sm-4 {
+      width:33.33333333%
+    }
+    .col-sm-3 {
+      width:25%
+    }
+    .col-sm-2 {
+      width:16.66666667%
+    }
+    .col-sm-1 {
+      width:8.33333333%
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+  .ictp-infuse {
+    .node-page {
+      margin-bottom: 8em;
+    }
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+  .ictp-infuse {
+    input {
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-extra-large-desktop-and-up} {
+  .ictp-infuse {
+    .container {
+      width: 90em;
+    }
+
+    .additional {
+      .arrow-top {
+        margin: 2px 5px 0 0;
+      }
+    }
+
+    #gj-landing-pages-ictp-infuse {
+      padding: 1em 2em;
+    }
+
+    .node-page {
+      margin-bottom: 4em;
+    }
+  }
+}
+
+// Print
+@media print {}
