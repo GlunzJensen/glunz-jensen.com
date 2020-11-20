@@ -27,7 +27,7 @@ $module_path = $base_url . '/' . drupal_get_path('module', 'gj_landing_pages');
         <div class="content-wrapper row">
           <div class="text col-sm-12 col-md-6">
             <?php if ($title): ?>
-              <h1><?php print $title; ?> test</h1>
+              <h1><?php print $title; ?></h1>
             <?php endif; ?>
             <?php print render($page['content']['system_main']['nodes']); ?>
           </div>
