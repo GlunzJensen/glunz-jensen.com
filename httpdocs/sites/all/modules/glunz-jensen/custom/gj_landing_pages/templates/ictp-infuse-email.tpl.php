@@ -4,7 +4,7 @@
  */
 ?>
 <p>Hi</p>
-<p>There has been made request for more information about iCtP TM Infuse-kit on page <?php print $page; ?></p>
+<p>There has been made request for more information about iCtP™ Infuse-kit on page <?php print $page; ?></p>
 <p>Request details:</p>
 <ul>
   <li>Name: <?php print $name; ?></li>
