@@ -40,7 +40,7 @@ function gj_landing_pages_ictp_infuse($form, &$form_state) {
 
   $form['description'] = array(
     '#type' => 'markup',
-    '#markup' => '<p class="description">' . t('Yes, I want to know more about the new iCtP™ Infuse-kit!') . '</p>',
+    '#markup' => '<p class="description">' . t('Yes, I want to know more about the new iCtP&trade; Infuse-kit!') . '</p>',
   );
   $form['name'] = array(
     '#type' => 'textfield',

@@ -71,7 +71,7 @@ $module_path = $base_url . '/' . drupal_get_path('module', 'gj_landing_pages');
   </div><!--/content-->
   <div class="footer">
     <div class="container">
-      Glunz & Jensen <?php print date('Y', strtotime('now')); ?>
+      &#169; Glunz & Jensen <?php print date('Y', strtotime('now')); ?>
       <div class="row"></div>
     </div>
   </div>
