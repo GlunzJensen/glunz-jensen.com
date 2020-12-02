@@ -9517,6 +9517,7 @@ footer .newsletter {
   color: #FFFFFF;
   margin-left: 1em;
   line-height: 1.5em;
+  font-family: "Arial";
 }
 .ictp-infuse .node-page ul {
   margin-left: 2em;
@@ -9571,6 +9572,7 @@ footer .newsletter {
 #gj-landing-pages-ictp-infuse .description {
   color: #FFFFFF;
   font-size: 1.3em;
+  font-family: "Arial";
 }
 #gj-landing-pages-ictp-infuse input {
   width: 100%;
