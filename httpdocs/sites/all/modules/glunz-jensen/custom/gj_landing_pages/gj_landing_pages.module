@@ -119,6 +119,7 @@ function gj_landing_pages_mail($key, &$message, $params) {
         'page' => url(current_path(), array('absolute' => TRUE)),
       ));
       $message['body'][] = check_markup($params['message']);
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8';
       break;
   }
 }
